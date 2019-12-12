@@ -45,6 +45,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:new_force">new_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:add_unit">add_unit</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:add_mandatory_unit">add_mandatory_unit</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:set_faction">set_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:generate_force">generate_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:remove_force">remove_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:random_army_manager:mandatory_unit_count">mandatory_unit_count</a></li>
@@ -91,6 +92,8 @@
 					<li><strong> > Random Army Manager</strong></li>
 					<li><a href="script_messager.html">Script Messager</a></li>
 					<li><a href="text_pointer.html">Text Pointers</a></li>
+					<li><a href="unique_table.html">Unique Table</a></li>
+					<li><a href="weighted_list.html">Weighted List</a></li>
 
 				</ul>
 			</div>
@@ -214,7 +217,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 66</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 67</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -270,7 +273,52 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 82</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 83</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:random_army_manager:set_faction"><h3 class="function_name"><strong><code>random_army_manager:set_faction(string </strong></code><i class="parameter">key of the force</i><code><strong>, string </strong></code><i class="parameter">key of the faction</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the faction key associated with this force - Allows you to store the faction key used to spawn the army from the force
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>key of the force</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>key of the faction</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 99</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -326,7 +374,7 @@
 							<ol>
 								<li><code>object</code> Either a table containing the unit keys, or a comma separated string of units</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 98</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 111</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -360,7 +408,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 141</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 157</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -394,7 +442,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 154</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_random_army.lua, line 170</p>
 						</dd>
 					</dl>
 				</div>
@@ -404,7 +452,7 @@
 
 		</div>
 
-		<div id="about">Last updated 09/11/19 09:48:18</div>
+		<div id="about">Last updated 12/10/19 15:46:48</div>
 
 	</div>
 

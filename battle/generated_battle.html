@@ -475,13 +475,43 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
-							<a name="function:generated_battle:get_army"><h3 class="function_name"><strong><code>generated_battle:get_army()</code></strong></h3></a>
+							<a name="function:generated_battle:get_army"><h3 class="function_name"><strong><code>generated_battle:get_army(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">alliance index</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">script name</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Returns a <code><a href="#class:generated_army">generated_army</a></code> corresponding to the supplied arguments. Use in one of two modes:<br />
 							&emsp;- Supply an alliance number, an army number, and (optionally) a script name. This is the original way armies were specified in quest battle scripts. Returns a <code><a href="#class:generated_army">generated_army</a></code> corresponding to the supplied alliance/army numbers, containing all units where the name matches the supplied script name (or all of them if one was not supplied). WARNING: at time of writing the ordering of armies in an alliance beyond the first cannot be guaranteed if loading from campaign, so specifying an army index in this case may not be a good idea.<br />
-							&emsp;- Supply an alliance number and an optional script name. This supports the randomised ordering of armies in an alliance that we see from campaign.
+							&emsp;- Supply an alliance number and a script name. This supports the randomised ordering of armies in an alliance that we see from campaign.
 
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>alliance index</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>script name</p>
+									</td>
+								</tr>
+							</table>
 
 							<h4>Returns:</h4>
 							<ol>
@@ -553,7 +583,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 606</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 608</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -587,7 +617,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 616</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 618</p>
 						</dd>
 					</dl>
 				</div>
@@ -652,7 +682,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 635</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 637</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -745,7 +775,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 673</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 675</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -802,7 +832,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 747</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 749</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -883,7 +913,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 785</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 787</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -940,7 +970,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 844</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 846</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1021,7 +1051,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 887</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 889</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1078,7 +1108,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 932</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 934</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1135,7 +1165,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 972</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 974</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1192,7 +1222,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1012</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1014</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1282,7 +1312,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1052</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1054</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1362,7 +1392,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1113</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1115</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1419,7 +1449,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1174</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1176</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1464,7 +1494,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1259</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1261</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1509,7 +1539,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1284</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1286</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1566,7 +1596,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1309</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1311</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1623,7 +1653,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1349</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1351</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1728,7 +1758,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1389</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1391</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1774,7 +1804,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1461</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1463</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1831,7 +1861,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1493</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1495</p>
 						</dd>
 					</dl>
 				</div>
@@ -1884,7 +1914,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1591</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1593</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1929,7 +1959,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1640</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1642</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1999,7 +2029,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1679</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1681</p>
 						</dd>
 					</dl>
 				</div>
@@ -2028,7 +2058,7 @@
 							<ol>
 								<li><code>string</code> script_name</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1967</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1969</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2043,7 +2073,7 @@
 							<ol>
 								<li><code>unitcontroller</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1975</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1977</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2058,7 +2088,7 @@
 							<ol>
 								<li><code>number</code> army handicap</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1983</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1985</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2073,7 +2103,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1991</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1993</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2088,7 +2118,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 1999</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2001</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2103,7 +2133,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2021</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2023</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2118,7 +2148,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2043</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2045</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2133,7 +2163,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2065</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2067</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2148,7 +2178,7 @@
 							<ol>
 								<li><code>number</code> casualties</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2087</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2089</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2163,7 +2193,7 @@
 							<ol>
 								<li><code>number</code> rout proportion</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2095</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2097</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2178,7 +2208,7 @@
 							<ol>
 								<li><code>number</code> shattered proportion</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2112</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2114</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2193,7 +2223,7 @@
 							<ol>
 								<li><code>boolean</code> army contains types</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2129</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2131</p>
 						</dd>
 					</dl>
 				</div>
@@ -2237,7 +2267,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2167</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2169</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2272,7 +2302,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2179</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2181</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2287,7 +2317,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2187</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2189</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2302,7 +2332,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2194</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2196</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2317,7 +2347,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2201</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2203</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2332,7 +2362,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2208</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2210</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2347,7 +2377,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2216</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2218</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2406,7 +2436,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2224</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2226</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2441,7 +2471,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2246</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2248</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2488,7 +2518,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2266</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2268</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2523,7 +2553,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2296</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2298</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2580,7 +2610,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2304</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2306</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2614,7 +2644,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2316</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2318</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2629,7 +2659,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2335</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2337</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2644,7 +2674,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2353</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2355</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2678,7 +2708,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2370</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2372</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2734,7 +2764,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2390</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2392</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2749,7 +2779,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2407</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2409</p>
 						</dd>
 					</dl>
 				</div>
@@ -2814,7 +2844,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2440</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2442</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2860,7 +2890,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2462</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2464</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2927,7 +2957,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2483</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2485</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2972,7 +3002,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2506</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2508</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3028,7 +3058,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2524</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2526</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3073,7 +3103,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2556</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2558</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3119,7 +3149,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2582</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2584</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3165,7 +3195,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2620</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2622</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3222,7 +3252,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2658</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2660</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3301,7 +3331,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2702</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2704</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3347,7 +3377,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2753</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2755</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3393,7 +3423,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2786</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2788</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3438,7 +3468,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2822</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2824</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3472,7 +3502,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2852</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2854</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3530,7 +3560,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2871</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2873</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3623,7 +3653,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2896</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2898</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3692,7 +3722,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2976</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 2978</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3726,7 +3756,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3003</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3005</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3760,7 +3790,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3022</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3024</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3863,7 +3893,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3041</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3043</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3897,7 +3927,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3091</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3093</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3967,7 +3997,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3112</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3114</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4013,7 +4043,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3159</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3161</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4058,7 +4088,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3192</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3194</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4117,7 +4147,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3218</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3220</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4163,7 +4193,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3259</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3261</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4197,7 +4227,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3305</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3307</p>
 						</dd>
 					</dl>
 				</div>
@@ -4251,7 +4281,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3346</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3348</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4296,7 +4326,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3383</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3385</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4341,7 +4371,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3423</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3425</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4397,7 +4427,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3468</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3470</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4442,7 +4472,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3512</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3514</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4487,7 +4517,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3549</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3551</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4521,7 +4551,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3586</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3588</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4555,7 +4585,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3615</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3617</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4589,7 +4619,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3644</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3646</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4623,7 +4653,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3682</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3684</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4657,7 +4687,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3711</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3713</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4691,7 +4721,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3757</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3759</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4725,7 +4755,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3803</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3805</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4759,7 +4789,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3835</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3837</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4793,7 +4823,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3897</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3899</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4827,7 +4857,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3916</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_generated_battle.lua, line 3918</p>
 						</dd>
 					</dl>
 				</div>
@@ -4837,7 +4867,7 @@
 
 		</div>
 
-		<div id="about">Last updated 09/10/19 15:14:11</div>
+		<div id="about">Last updated 12/10/19 15:46:48</div>
 
 	</div>
 
