@@ -80,6 +80,7 @@
 <dt><a href="#CharacterTurnStart">CharacterTurnStart</a></dt>
 <dt><a href="#CharacterUnassignedFromPost">CharacterUnassignedFromPost</a></dt>
 <dt><a href="#CharacterWaaaghOccurred">CharacterWaaaghOccurred</a></dt>
+<dt><a href="#CharacterWillPerformSettlementSiegeAction">CharacterWillPerformSettlementSiegeAction</a></dt>
 <dt><a href="#CharacterWoundHealedEvent">CharacterWoundHealedEvent</a></dt>
 <dt><a href="#CharacterWoundReceivedEvent">CharacterWoundReceivedEvent</a></dt>
 <dt><a href="#CharacterWounded">CharacterWounded</a></dt>
@@ -186,6 +187,8 @@
 <dt><a href="#ScriptedAgentCreationFailed">ScriptedAgentCreationFailed</a></dt>
 <dt><a href="#ScriptedForceCreated">ScriptedForceCreated</a></dt>
 <dt><a href="#SeaTradeRouteRaided">SeaTradeRouteRaided</a></dt>
+<dt><a href="#SettlementAboutToBeCaptured">SettlementAboutToBeCaptured</a></dt>
+<dt><a href="#SettlementCaptured">SettlementCaptured</a></dt>
 <dt><a href="#SettlementDeselected">SettlementDeselected</a></dt>
 <dt><a href="#SettlementEvent">SettlementEvent</a></dt>
 <dt><a href="#SettlementRazed">SettlementRazed</a></dt>
@@ -216,12 +219,14 @@
 <dt><a href="#UnitSelectedCampaign">UnitSelectedCampaign</a></dt>
 <dt><a href="#UnitTrained">UnitTrained</a></dt>
 <dt><a href="#WorldCreated">WorldCreated</a></dt>
+<dt><a href="#WorldEndOfRoundEvent">WorldEndOfRoundEvent</a></dt>
 <dt><a href="#WorldLeaderRegionAdded">WorldLeaderRegionAdded</a></dt>
 <dt><a href="#WorldPowerTokenAvoidedCaptureEvent">WorldPowerTokenAvoidedCaptureEvent</a></dt>
 <dt><a href="#WorldPowerTokenCapturedEvent">WorldPowerTokenCapturedEvent</a></dt>
 <dt><a href="#WorldPowerTokenEvent">WorldPowerTokenEvent</a></dt>
 <dt><a href="#WorldPowerTokenGainedEvent">WorldPowerTokenGainedEvent</a></dt>
 <dt><a href="#WorldPowerTokenRemovedEvent">WorldPowerTokenRemovedEvent</a></dt>
+<dt><a href="#WorldStartOfRoundEvent">WorldStartOfRoundEvent</a></dt>
 <dt><a href="#campaign_event">campaign_event</a></dt>
 <dt><a href="#campaign_ui_callback_enabled_event">campaign_ui_callback_enabled_event</a></dt>
 <dt><a href="#component_campaign_ui_event">component_campaign_ui_event</a></dt>
@@ -1990,32 +1995,6 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 </dd>
-<dd><h4><a name="CharacterParticipatedAsSecondaryGeneralInBattle">CharacterParticipatedAsSecondaryGeneralInBattle (code name CHARACTER_WITHDREW_FROM_BATTLE)</a></h4>
-<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEquery_character">query_character</a></dd>
-<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEmodify_character">modify_character</a></dd>
-<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEmodify_model">modify_model</a></dd>
-<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEquery_model">query_model</a></dd>
-<br><dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEquery_character">query_character</a></dd>
-<dd>Description: Access to the query character interface</dd>
-<dd>Parameters: ()</dd>
-<dd>Return: (RETURN_<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
-<br>
-<dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEmodify_character">modify_character</a></dd>
-<dd>Description: Access to the modify character interface</dd>
-<dd>Parameters: ()</dd>
-<dd>Return: (RETURN_<a href="#MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
-<br>
-<dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEmodify_model">modify_model</a></dd>
-<dd>Description: Access to the modify model interface</dd>
-<dd>Parameters: ()</dd>
-<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
-<br>
-<dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEquery_model">query_model</a></dd>
-<dd>Description: Access to the query model interface</dd>
-<dd>Parameters: ()</dd>
-<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
-<br>
-</dd>
 <dd><h4><a name="CharacterParticipatedAsSecondaryGeneralInBattle">CharacterParticipatedAsSecondaryGeneralInBattle (code name CHARACTER_PARTICIPATED_AS_SECONDARY_GENERAL_IN_BATTLE)</a></h4>
 <dd><a href="#CHARACTER_PARTICIPATED_AS_SECONDARY_GENERAL_IN_BATTLEquery_character">query_character</a></dd>
 <dd><a href="#CHARACTER_PARTICIPATED_AS_SECONDARY_GENERAL_IN_BATTLEmodify_character">modify_character</a></dd>
@@ -2037,6 +2016,32 @@
 <dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="CHARACTER_PARTICIPATED_AS_SECONDARY_GENERAL_IN_BATTLEquery_model">query_model</a></dd>
+<dd>Description: Access to the query model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+</dd>
+<dd><h4><a name="CharacterParticipatedAsSecondaryGeneralInBattle">CharacterParticipatedAsSecondaryGeneralInBattle (code name CHARACTER_WITHDREW_FROM_BATTLE)</a></h4>
+<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEquery_character">query_character</a></dd>
+<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEmodify_character">modify_character</a></dd>
+<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEmodify_model">modify_model</a></dd>
+<dd><a href="#CHARACTER_WITHDREW_FROM_BATTLEquery_model">query_model</a></dd>
+<br><dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEquery_character">query_character</a></dd>
+<dd>Description: Access to the query character interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEmodify_character">modify_character</a></dd>
+<dd>Description: Access to the modify character interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEmodify_model">modify_model</a></dd>
+<dd>Description: Access to the modify model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WITHDREW_FROM_BATTLEquery_model">query_model</a></dd>
 <dd>Description: Access to the query model interface</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
@@ -2074,6 +2079,8 @@
 <dd><a href="#CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONmodify_character">modify_character</a></dd>
 <dd><a href="#CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONmodify_model">modify_model</a></dd>
 <dd><a href="#CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONquery_model">query_model</a></dd>
+<dd><a href="#CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONaction_option_record_key">action_option_record_key</a></dd>
+<dd><a href="#CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONoption_outcome_enum_key">option_outcome_enum_key</a></dd>
 <br><dd>Function: <a name="CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONgarrison_residence">garrison_residence</a></dd>
 <dd>Description: Access the target garrison in the event</dd>
 <dd>Parameters: ()</dd>
@@ -2098,6 +2105,16 @@
 <dd>Description: Access to the query model interface</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONaction_option_record_key">action_option_record_key</a></dd>
+<dd>Description: String key for the action option record used (from SETTLEMENT_SIEGE_ACTION_OPTIONS_TABLE)</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (String)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_PERFORMS_SETTLEMENT_SIEGE_ACTIONoption_outcome_enum_key">option_outcome_enum_key</a></dd>
+<dd>Description: String for the option outcome used (from SETTLEMENT_SIEGE_ACTION_OUTCOME enum)</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (String)</dd>
 <br>
 </dd>
 <dd><h4><a name="CharacterPostBattleEnslave">CharacterPostBattleEnslave (code name CHARACTER_POSTBATTLE_ENSLAVE_EVENT)</a></h4>
@@ -2528,6 +2545,50 @@
 <dd>Description: Access to the query model interface</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+</dd>
+<dd><h4><a name="CharacterWillPerformSettlementSiegeAction">CharacterWillPerformSettlementSiegeAction (code name CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTION)</a></h4>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONgarrison_residence">garrison_residence</a></dd>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONquery_character">query_character</a></dd>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONmodify_character">modify_character</a></dd>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONmodify_model">modify_model</a></dd>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONquery_model">query_model</a></dd>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONaction_option_record_key">action_option_record_key</a></dd>
+<dd><a href="#CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONoption_outcome_enum_key">option_outcome_enum_key</a></dd>
+<br><dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONgarrison_residence">garrison_residence</a></dd>
+<dd>Description: Access the target garrison in the event</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_GARRISON_RESIDENCE_SCRIPT_INTERFACE">QUERY_GARRISON_RESIDENCE_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONquery_character">query_character</a></dd>
+<dd>Description: Access to the query character interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONmodify_character">modify_character</a></dd>
+<dd>Description: Access to the modify character interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONmodify_model">modify_model</a></dd>
+<dd>Description: Access to the modify model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONquery_model">query_model</a></dd>
+<dd>Description: Access to the query model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONaction_option_record_key">action_option_record_key</a></dd>
+<dd>Description: String key for the action option record used (from SETTLEMENT_SIEGE_ACTION_OPTIONS_TABLE)</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (String)</dd>
+<br>
+<dd>Function: <a name="CHARACTER_WILL_PERFORM_SETTLEMENT_SIEGE_ACTIONoption_outcome_enum_key">option_outcome_enum_key</a></dd>
+<dd>Description: String for the option outcome used (from SETTLEMENT_SIEGE_ACTION_OUTCOME enum)</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (String)</dd>
 <br>
 </dd>
 <dd><h4><a name="CharacterWoundHealedEvent">CharacterWoundHealedEvent (code name CHARACTER_WOUND_HEALED_EVENT)</a></h4>
@@ -3386,21 +3447,21 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 </dd>
-<dd><h4><a name="FactionGovernmentTypeChanged">FactionGovernmentTypeChanged (code name FACTION_GOVERNMENT_TYPE_CHANGED)</a></h4>
-<dd><a href="#FACTION_GOVERNMENT_TYPE_CHANGEDfaction">faction</a></dd>
-<dd><a href="#FACTION_GOVERNMENT_TYPE_CHANGEDmodify_model">modify_model</a></dd>
-<dd><a href="#FACTION_GOVERNMENT_TYPE_CHANGEDquery_model">query_model</a></dd>
-<br><dd>Function: <a name="FACTION_GOVERNMENT_TYPE_CHANGEDfaction">faction</a></dd>
+<dd><h4><a name="FactionGovernmentTypeChanged">FactionGovernmentTypeChanged (code name FACTION_REPORT_GOVERNMENT_TYPE_CHANGED)</a></h4>
+<dd><a href="#FACTION_REPORT_GOVERNMENT_TYPE_CHANGEDfaction">faction</a></dd>
+<dd><a href="#FACTION_REPORT_GOVERNMENT_TYPE_CHANGEDmodify_model">modify_model</a></dd>
+<dd><a href="#FACTION_REPORT_GOVERNMENT_TYPE_CHANGEDquery_model">query_model</a></dd>
+<br><dd>Function: <a name="FACTION_REPORT_GOVERNMENT_TYPE_CHANGEDfaction">faction</a></dd>
 <dd>Description: Access the faction in the event</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_FACTION_SCRIPT_INTERFACE">QUERY_FACTION_SCRIPT_INTERFACE</a>)</dd>
 <br>
-<dd>Function: <a name="FACTION_GOVERNMENT_TYPE_CHANGEDmodify_model">modify_model</a></dd>
+<dd>Function: <a name="FACTION_REPORT_GOVERNMENT_TYPE_CHANGEDmodify_model">modify_model</a></dd>
 <dd>Description: Access to the modify model interface</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
-<dd>Function: <a name="FACTION_GOVERNMENT_TYPE_CHANGEDquery_model">query_model</a></dd>
+<dd>Function: <a name="FACTION_REPORT_GOVERNMENT_TYPE_CHANGEDquery_model">query_model</a></dd>
 <dd>Description: Access to the query model interface</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
@@ -5106,6 +5167,46 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 </dd>
+<dd><h4><a name="SettlementAboutToBeCaptured">SettlementAboutToBeCaptured (code name SETTLEMENT_ABOUT_TO_BE_CAPTURED)</a></h4>
+<dd><a href="#SETTLEMENT_ABOUT_TO_BE_CAPTUREDsettlement">settlement</a></dd>
+<dd><a href="#SETTLEMENT_ABOUT_TO_BE_CAPTUREDmodify_model">modify_model</a></dd>
+<dd><a href="#SETTLEMENT_ABOUT_TO_BE_CAPTUREDquery_model">query_model</a></dd>
+<br><dd>Function: <a name="SETTLEMENT_ABOUT_TO_BE_CAPTUREDsettlement">settlement</a></dd>
+<dd>Description: Access the settlement in the event</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_SETTLEMENT_SCRIPT_INTERFACE">QUERY_SETTLEMENT_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="SETTLEMENT_ABOUT_TO_BE_CAPTUREDmodify_model">modify_model</a></dd>
+<dd>Description: Access to the modify model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="SETTLEMENT_ABOUT_TO_BE_CAPTUREDquery_model">query_model</a></dd>
+<dd>Description: Access to the query model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+</dd>
+<dd><h4><a name="SettlementCaptured">SettlementCaptured (code name SETTLEMENT_CAPTURED)</a></h4>
+<dd><a href="#SETTLEMENT_CAPTUREDsettlement">settlement</a></dd>
+<dd><a href="#SETTLEMENT_CAPTUREDmodify_model">modify_model</a></dd>
+<dd><a href="#SETTLEMENT_CAPTUREDquery_model">query_model</a></dd>
+<br><dd>Function: <a name="SETTLEMENT_CAPTUREDsettlement">settlement</a></dd>
+<dd>Description: Access the settlement in the event</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_SETTLEMENT_SCRIPT_INTERFACE">QUERY_SETTLEMENT_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="SETTLEMENT_CAPTUREDmodify_model">modify_model</a></dd>
+<dd>Description: Access to the modify model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="SETTLEMENT_CAPTUREDquery_model">query_model</a></dd>
+<dd>Description: Access to the query model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+</dd>
 <dd><h4><a name="SettlementDeselected">SettlementDeselected (code name SETTLEMENT_DESELECTED_EVENT)</a></h4>
 <dd><a href="#SETTLEMENT_DESELECTED_EVENTcan_request_model_callback">can_request_model_callback</a></dd>
 <dd><a href="#SETTLEMENT_DESELECTED_EVENTcreate_model_callback_request">create_model_callback_request</a></dd>
@@ -5970,6 +6071,20 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 </dd>
+<dd><h4><a name="WorldEndOfRoundEvent">WorldEndOfRoundEvent (code name WORLD_END_OF_ROUND)</a></h4>
+<dd><a href="#WORLD_END_OF_ROUNDmodify_model">modify_model</a></dd>
+<dd><a href="#WORLD_END_OF_ROUNDquery_model">query_model</a></dd>
+<br><dd>Function: <a name="WORLD_END_OF_ROUNDmodify_model">modify_model</a></dd>
+<dd>Description: Access to the modify model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="WORLD_END_OF_ROUNDquery_model">query_model</a></dd>
+<dd>Description: Access to the query model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+</dd>
 <dd><h4><a name="WorldLeaderRegionAdded">WorldLeaderRegionAdded (code name WORLD_LEADER_REGION_ADDED_EVENT)</a></h4>
 <dd><a href="#WORLD_LEADER_REGION_ADDED_EVENTregion">region</a></dd>
 <dd><a href="#WORLD_LEADER_REGION_ADDED_EVENTmodify_model">modify_model</a></dd>
@@ -6005,7 +6120,7 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="WORLD_POWER_TOKEN_AVOIDED_CAPTURE_EVENTtoken">token</a></dd>
-<dd>Description: World power token key</dd>
+<dd>Description: Returns the world power token key</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (String)</dd>
 <br>
@@ -6025,7 +6140,7 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="WORLD_POWER_TOKEN_CAPTURED_EVENTtoken">token</a></dd>
-<dd>Description: World power token key</dd>
+<dd>Description: Returns the world power token key</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (String)</dd>
 <br>
@@ -6033,7 +6148,6 @@
 <dd><h4><a name="WorldPowerTokenEvent">WorldPowerTokenEvent (code name WORLD_POWER_TOKEN_EVENT)</a></h4>
 <dd><a href="#WORLD_POWER_TOKEN_EVENTmodify_model">modify_model</a></dd>
 <dd><a href="#WORLD_POWER_TOKEN_EVENTquery_model">query_model</a></dd>
-<dd><a href="#WORLD_POWER_TOKEN_EVENTtoken">token</a></dd>
 <br><dd>Function: <a name="WORLD_POWER_TOKEN_EVENTmodify_model">modify_model</a></dd>
 <dd>Description: Access to the modify model interface</dd>
 <dd>Parameters: ()</dd>
@@ -6043,11 +6157,6 @@
 <dd>Description: Access to the query model interface</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
-<br>
-<dd>Function: <a name="WORLD_POWER_TOKEN_EVENTtoken">token</a></dd>
-<dd>Description: World power token key</dd>
-<dd>Parameters: ()</dd>
-<dd>Return: (String)</dd>
 <br>
 </dd>
 <dd><h4><a name="WorldPowerTokenGainedEvent">WorldPowerTokenGainedEvent (code name WORLD_POWER_TOKEN_GAINED_EVENT)</a></h4>
@@ -6065,7 +6174,7 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="WORLD_POWER_TOKEN_GAINED_EVENTtoken">token</a></dd>
-<dd>Description: World power token key</dd>
+<dd>Description: Returns the world power token key</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (String)</dd>
 <br>
@@ -6085,9 +6194,23 @@
 <dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="WORLD_POWER_TOKEN_REMOVED_EVENTtoken">token</a></dd>
-<dd>Description: World power token key</dd>
+<dd>Description: Returns the world power token key</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (String)</dd>
+<br>
+</dd>
+<dd><h4><a name="WorldStartOfRoundEvent">WorldStartOfRoundEvent (code name WORLD_START_OF_ROUND)</a></h4>
+<dd><a href="#WORLD_START_OF_ROUNDmodify_model">modify_model</a></dd>
+<dd><a href="#WORLD_START_OF_ROUNDquery_model">query_model</a></dd>
+<br><dd>Function: <a name="WORLD_START_OF_ROUNDmodify_model">modify_model</a></dd>
+<dd>Description: Access to the modify model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="WORLD_START_OF_ROUNDquery_model">query_model</a></dd>
+<dd>Description: Access to the query model interface</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_MODEL_SCRIPT_INTERFACE">QUERY_MODEL_SCRIPT_INTERFACE</a>)</dd>
 <br>
 </dd>
 <dd><h4><a name="campaign_event">campaign_event (code name CAMPAIGN_EVENT)</a></h4>
@@ -7212,6 +7335,8 @@
 <dd><a href="#MODIFY_WORLD_SCRIPT_INTERFACEmodel">model</a></dd>
 <dd><a href="#MODIFY_WORLD_SCRIPT_INTERFACEquery_world">query_world</a></dd>
 <dd><a href="#MODIFY_WORLD_SCRIPT_INTERFACEget_modify_world_power_tokens">get_modify_world_power_tokens</a></dd>
+<dd><a href="#MODIFY_WORLD_SCRIPT_INTERFACEadd_world_leader_region_status">add_world_leader_region_status</a></dd>
+<dd><a href="#MODIFY_WORLD_SCRIPT_INTERFACEremove_world_leader_region_status">remove_world_leader_region_status</a></dd>
 <br><dd>Function: <a name="MODIFY_WORLD_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -7231,6 +7356,16 @@
 <dd>Description: Returns the modify world power tokens interface from a QUERY_QUERY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE_SCRIPT_INTERFACE</dd>
 <dd>Parameters: (<a href="#QUERY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE">QUERY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE</a>* query_interface)</dd>
 <dd>Return: (RETURN_<a href="#MODIFY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE">MODIFY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="MODIFY_WORLD_SCRIPT_INTERFACEadd_world_leader_region_status">add_world_leader_region_status</a></dd>
+<dd>Description: Disable factions being able to propose diplomatic treaty components to other factions with a reason. Filters can contain comma separated elements. Valid elements are "all", "faction:faction_key", "subculture:subculture_key" and "culture:culture_key". component_keys is a comma separated list of campaign_diplomacy_treaty_component keys. reason_key is a key from the campaign_diplomacy_treaty_availability_reasons table.</dd>
+<dd>Parameters: (String region_key)</dd>
+<dd>Return: (void)</dd>
+<br>
+<dd>Function: <a name="MODIFY_WORLD_SCRIPT_INTERFACEremove_world_leader_region_status">remove_world_leader_region_status</a></dd>
+<dd>Description: Disable factions being able to propose diplomatic treaty components to other factions with a reason. Filters can contain comma separated elements. Valid elements are "all", "faction:faction_key", "subculture:subculture_key" and "culture:culture_key". component_keys is a comma separated list of campaign_diplomacy_treaty_component keys. reason_key is a key from the campaign_diplomacy_treaty_availability_reasons table.</dd>
+<dd>Parameters: (String region_key)</dd>
+<dd>Return: (void)</dd>
 <br>
 <h4><a name="MODIFY_MODEL_SCRIPT_INTERFACE">MODIFY_MODEL_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Model is the central access point of the campaign. Everything should be reachable from this interface</dd>
@@ -7452,12 +7587,15 @@
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEshow_message_event_located">show_message_event_located</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_force">create_force</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_force_with_general">create_force_with_general</a></dd>
-<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_force_with_existing_general">create_force_with_existing_general</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_agent">create_agent</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEapply_effect_bundle">apply_effect_bundle</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEremove_effect_bundle">remove_effect_bundle</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEtrigger_custom_mission">trigger_custom_mission</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcancel_custom_mission">cancel_custom_mission</a></dd>
+<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcomplete_custom_mission">complete_custom_mission</a></dd>
+<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcomplete_scripted_mission_objective">complete_scripted_mission_objective</a></dd>
+<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEset_scripted_mission_text">set_scripted_mission_text</a></dd>
+<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEset_scripted_mission_position">set_scripted_mission_position</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEincrease_treasury">increase_treasury</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACElock_technology">lock_technology</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEunlock_technology">unlock_technology</a></dd>
@@ -7489,6 +7627,8 @@
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_character_with_gender">create_character_with_gender</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_character_with_subtype">create_character_with_subtype</a></dd>
 <dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEcreate_character_from_template">create_character_from_template</a></dd>
+<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEchange_base_threat_score_for_a_faction">change_base_threat_score_for_a_faction</a></dd>
+<dd><a href="#MODIFY_FACTION_SCRIPT_INTERFACEmake_confederation_with">make_confederation_with</a></dd>
 <br><dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -7530,18 +7670,13 @@
 <dd>Return: </dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_force">create_force</a></dd>
-<dd>Description: Create a navy or army at a position</dd>
-<dd>Parameters: create_force(  "unit_list", "region_key", x_position, y_position, "id", exclude_named_characters_bool )</dd>
+<dd>Description: Create a navy or army at a position. Starting_health_percentage_override greater than 0 cancels mustering and applies an initial strength override</dd>
+<dd>Parameters: create_force(  "unit_list", "region_key", x_position, y_position, "id", exclude_named_characters_bool,  "starting_health_percentage_override")</dd>
 <dd>Return: </dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_force_with_general">create_force_with_general</a></dd>
-<dd>Description: create a navy or army at a position.  Final parameter specified whether the command goes via the command queue</dd>
-<dd>Parameters: create_force_with_general("unit_list", "region_key", x_position, y_position, "general_agent_type_key", "general_agent_subtype_key", "character_template_key", "id", "make_faction_leader")</dd>
-<dd>Return: </dd>
-<br>
-<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_force_with_existing_general">create_force_with_existing_general</a></dd>
-<dd>Description: create a navy or army at a position.  Final parameter specified whether the command goes via the command queue</dd>
-<dd>Parameters: create_force_with_existing_general("faction:chosokabe,forename:2147274846", "unit_list", "region_key", "x_position", "y_position", "id")</dd>
+<dd>Description: create a navy or army at a position.  Final parameter specified whether the command goes via the command queue. Starting_health_percentage_override greater than 0 cancels mustering and applies an initial strength override</dd>
+<dd>Parameters: create_force_with_general("unit_list", "region_key", x_position, y_position, "general_agent_type_key", "general_agent_subtype_key", "character_template_key", "id", "make_faction_leader", "starting_health_percentage_override")</dd>
 <dd>Return: </dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_agent">create_agent</a></dd>
@@ -7565,8 +7700,28 @@
 <dd>Return: </dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcancel_custom_mission">cancel_custom_mission</a></dd>
-<dd>Description: Cancel a player mission</dd>
-<dd>Parameters: cancel_custom_mission("mission_definition")</dd>
+<dd>Description: Cancel mission</dd>
+<dd>Parameters: (String mission)</dd>
+<dd>Return: (void)</dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcomplete_custom_mission">complete_custom_mission</a></dd>
+<dd>Description: Complete mission</dd>
+<dd>Parameters: (String mission)</dd>
+<dd>Return: (void)</dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcomplete_scripted_mission_objective">complete_scripted_mission_objective</a></dd>
+<dd>Description: Complete a scripted mission objective</dd>
+<dd>Parameters: complete_scripted_mission_objective(string mission_key, string script_key, bool success)</dd>
+<dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEset_scripted_mission_text">set_scripted_mission_text</a></dd>
+<dd>Description: Set the text of a scripted mission objective</dd>
+<dd>Parameters: set_scripted_mission_text(string mission_key, string script_key, string override_text_key)</dd>
+<dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEset_scripted_mission_position">set_scripted_mission_position</a></dd>
+<dd>Description: Set the position of a scripted mission objective</dd>
+<dd>Parameters: set_scripted_mission_position(string mission_key, string script_key, card16 pos_x, card16 pos_y)</dd>
 <dd>Return: </dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEincrease_treasury">increase_treasury</a></dd>
@@ -7696,7 +7851,7 @@
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_recruitable_character_with_subtype">create_recruitable_character_with_subtype</a></dd>
 <dd>Description: Creates a new recruitable character with the specified agent type, agent subtype and gender</dd>
-<dd>Parameters: (String agent_type_key, String agent_subtype_key, bool male)</dd>
+<dd>Parameters: (String agent_type_key, String agent_subtype_key, bool male, bool non_deployable)</dd>
 <dd>Return: ()</dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_recruitable_character_from_template">create_recruitable_character_from_template</a></dd>
@@ -7716,13 +7871,23 @@
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_character_with_subtype">create_character_with_subtype</a></dd>
 <dd>Description: Creates a new character with the specified agent type, agent subtype and gender</dd>
-<dd>Parameters: (String agent_type_key, String agent_subtype_key, bool male)</dd>
+<dd>Parameters: (String agent_type_key, String agent_subtype_key, bool male, bool non_deployable)</dd>
 <dd>Return: (RETURN_OPTIONAL_<a href="#MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEcreate_character_from_template">create_character_from_template</a></dd>
 <dd>Description: Creates a new character from the specified generation template</dd>
-<dd>Parameters: (String agent_type_key, String agent_subtype_key, String generation_template_key)</dd>
+<dd>Parameters: (String agent_type_key, String agent_subtype_key, String generation_template_key, bool must_be_an_adult)</dd>
 <dd>Return: (RETURN_OPTIONAL_<a href="#MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEchange_base_threat_score_for_a_faction">change_base_threat_score_for_a_faction</a></dd>
+<dd>Description: Changes the base threat score of a faction</dd>
+<dd>Parameters: (card32 value)</dd>
+<dd>Return: (void)</dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_SCRIPT_INTERFACEmake_confederation_with">make_confederation_with</a></dd>
+<dd>Description: Confederate the given faction, if possible</dd>
+<dd>Parameters: (<a href="#QUERY_FACTION_SCRIPT_INTERFACE">QUERY_FACTION_SCRIPT_INTERFACE</a> * other_faction_interface)</dd>
+<dd>Return: (bool)</dd>
 <br>
 <h4><a name="MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a></h4>
 <dd>Description: DESCRIPTION - TODO</dd>
@@ -7746,8 +7911,13 @@
 <dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEset_character_unique">set_character_unique</a></dd>
 <dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEadd_loyalty_effect">add_loyalty_effect</a></dd>
 <dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEreset_skills">reset_skills</a></dd>
+<dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEcreate_force">create_force</a></dd>
 <dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEset_undercover_character_enabler">set_undercover_character_enabler</a></dd>
 <dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEapply_relationship_trigger_set">apply_relationship_trigger_set</a></dd>
+<dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEset_is_deployable">set_is_deployable</a></dd>
+<dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEmove_to_faction">move_to_faction</a></dd>
+<dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEassign_to_post">assign_to_post</a></dd>
+<dd><a href="#MODIFY_CHARACTER_SCRIPT_INTERFACEmake_child_of">make_child_of</a></dd>
 <br><dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -7843,6 +8013,11 @@
 <dd>Parameters: reset_skills</dd>
 <dd>Return: </dd>
 <br>
+<dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEcreate_force">create_force</a></dd>
+<dd>Description: Create an army at a position. Starting_health_percentage_override greater than 0 cancels mustering and applies an initial strength override</dd>
+<dd>Parameters: create_force("region_key", "unit_list", "x_position", "y_position", "id", "starting_health_percentage_override")</dd>
+<dd>Return: </dd>
+<br>
 <dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEset_undercover_character_enabler">set_undercover_character_enabler</a></dd>
 <dd>Description: Set if character has the enabler to be an undercover character</dd>
 <dd>Parameters: (bool enabled)</dd>
@@ -7852,6 +8027,26 @@
 <dd>Description: Apply the specified relationship trigger set from this character to the receiver</dd>
 <dd>Parameters: (<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>* receiver_root, String relationship_trigger_set_key)</dd>
 <dd>Return: ()</dd>
+<br>
+<dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEset_is_deployable">set_is_deployable</a></dd>
+<dd>Description: Set if the character can be deployed as a general</dd>
+<dd>Parameters: (bool value)</dd>
+<dd>Return: ()</dd>
+<br>
+<dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEmove_to_faction">move_to_faction</a></dd>
+<dd>Description: Moves character to another faction</dd>
+<dd>Parameters: (String faction_key)</dd>
+<dd>Return: ()</dd>
+<br>
+<dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEassign_to_post">assign_to_post</a></dd>
+<dd>Description: Assigns character to ministerial position</dd>
+<dd>Parameters: (String ministerial_postion_key)</dd>
+<dd>Return: ()</dd>
+<br>
+<dd>Function: <a name="MODIFY_CHARACTER_SCRIPT_INTERFACEmake_child_of">make_child_of</a></dd>
+<dd>Description: Sets character parent (father or mother depending on parent gender)</dd>
+<dd>Parameters: (<a href="#MODIFY_CHARACTER_SCRIPT_INTERFACE">MODIFY_CHARACTER_SCRIPT_INTERFACE</a>* parent)</dd>
+<dd>Return: (void)</dd>
 <br>
 <h4><a name="MODIFY_REGION_MANAGER_SCRIPT_INTERFACE">MODIFY_REGION_MANAGER_SCRIPT_INTERFACE</a></h4>
 <dd>Description: DESCRIPTION - TODO</dd>
@@ -7936,6 +8131,8 @@
 <dd><a href="#MODIFY_REGION_SCRIPT_INTERFACEquery_region">query_region</a></dd>
 <dd><a href="#MODIFY_REGION_SCRIPT_INTERFACEapply_effect_bundle">apply_effect_bundle</a></dd>
 <dd><a href="#MODIFY_REGION_SCRIPT_INTERFACEremove_effect_bundle">remove_effect_bundle</a></dd>
+<dd><a href="#MODIFY_REGION_SCRIPT_INTERFACEraze_and_abandon_settlement_without_attacking">raze_and_abandon_settlement_without_attacking</a></dd>
+<dd><a href="#MODIFY_REGION_SCRIPT_INTERFACEsettlement_gifted_as_if_by_payload">settlement_gifted_as_if_by_payload</a></dd>
 <br><dd>Function: <a name="MODIFY_REGION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -7960,6 +8157,16 @@
 <dd>Description: Remove a previously applied effect bundle from a region</dd>
 <dd>Parameters: remove_effect_bundle_from_region("effect_bundle_key")</dd>
 <dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_REGION_SCRIPT_INTERFACEraze_and_abandon_settlement_without_attacking">raze_and_abandon_settlement_without_attacking</a></dd>
+<dd>Description: Set this region to be razed and abandoned</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
+<br>
+<dd>Function: <a name="MODIFY_REGION_SCRIPT_INTERFACEsettlement_gifted_as_if_by_payload">settlement_gifted_as_if_by_payload</a></dd>
+<dd>Description: Transfer this region to another faction. Uses the same path as regions gifted by payload.</dd>
+<dd>Parameters: (<a href="#MODIFY_FACTION_SCRIPT_INTERFACE">MODIFY_FACTION_SCRIPT_INTERFACE</a> * to_faction)</dd>
+<dd>Return: (void)</dd>
 <br>
 <h4><a name="MODIFY_GARRISON_RESIDENCE_SCRIPT_INTERFACE">MODIFY_GARRISON_RESIDENCE_SCRIPT_INTERFACE</a></h4>
 <dd>Description: DESCRIPTION - TODO</dd>
@@ -8106,6 +8313,10 @@
 <dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEmodel">model</a></dd>
 <dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEquery_military_force">query_military_force</a></dd>
 <dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEchange_stance">change_stance</a></dd>
+<dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEstart_mustering">start_mustering</a></dd>
+<dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEapply_effect_bundle">apply_effect_bundle</a></dd>
+<dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEremove_effect_bundle">remove_effect_bundle</a></dd>
+<dd><a href="#MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEset_retreated">set_retreated</a></dd>
 <br><dd>Function: <a name="MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -8124,6 +8335,26 @@
 <dd>Function: <a name="MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEchange_stance">change_stance</a></dd>
 <dd>Description: Activate a military force stance</dd>
 <dd>Parameters: change_stance( "stance " )</dd>
+<dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEstart_mustering">start_mustering</a></dd>
+<dd>Description: Start or restart mustering for all military force retinues</dd>
+<dd>Parameters: update_mustering()</dd>
+<dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEapply_effect_bundle">apply_effect_bundle</a></dd>
+<dd>Description: Apply an effect bundle to military force for number of turns (-1 turns means indefinitely).</dd>
+<dd>Parameters: apply_effect_bundle("effect_bundle_key", turns)</dd>
+<dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEremove_effect_bundle">remove_effect_bundle</a></dd>
+<dd>Description: Remove a previously applied effect bundle from military force</dd>
+<dd>Parameters: remove_effect_bundle("effect_bundle_key")</dd>
+<dd>Return: </dd>
+<br>
+<dd>Function: <a name="MODIFY_MILITARY_FORCE_SCRIPT_INTERFACEset_retreated">set_retreated</a></dd>
+<dd>Description: Sets the force as having retreated this turn. Meaning they'll be destroyed the next time they lose a battle.</dd>
+<dd>Parameters: set_retreated()</dd>
 <dd>Return: </dd>
 <br>
 <h4><a name="MODIFY_MILITARY_FORCE_HORDE_DETAILS_SCRIPT_INTERFACE">MODIFY_MILITARY_FORCE_HORDE_DETAILS_SCRIPT_INTERFACE</a></h4>
@@ -8383,6 +8614,8 @@
 <dd><a href="#MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEremove_ceos">remove_ceos</a></dd>
 <dd><a href="#MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEchange_points_of_ceos">change_points_of_ceos</a></dd>
 <dd><a href="#MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEapply_trigger">apply_trigger</a></dd>
+<dd><a href="#MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEunequip_slot">unequip_slot</a></dd>
+<dd><a href="#MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEequip_ceo_in_slot">equip_ceo_in_slot</a></dd>
 <br><dd>Function: <a name="MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -8423,12 +8656,24 @@
 <dd>Parameters: (String trigger_key)</dd>
 <dd>Return: (void)</dd>
 <br>
+<dd>Function: <a name="MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEunequip_slot">unequip_slot</a></dd>
+<dd>Description: Unequip current ceo in ceo equipment slot</dd>
+<dd>Parameters: (<a href="#QUERY_CEO_EQUIPMENT_SLOT_SCRIPT_INTERFACE">QUERY_CEO_EQUIPMENT_SLOT_SCRIPT_INTERFACE</a> * ceo_equipment_slot_interface)</dd>
+<dd>Return: (void)</dd>
+<br>
+<dd>Function: <a name="MODIFY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEequip_ceo_in_slot">equip_ceo_in_slot</a></dd>
+<dd>Description: Equip ceo in ceo equipment slot</dd>
+<dd>Parameters: (<a href="#QUERY_CEO_EQUIPMENT_SLOT_SCRIPT_INTERFACE">QUERY_CEO_EQUIPMENT_SLOT_SCRIPT_INTERFACE</a> * ceo_equipment_slot_interface, <a href="#QUERY_CEO_SCRIPT_INTERFACE">QUERY_CEO_SCRIPT_INTERFACE</a> * ceo_interface)</dd>
+<dd>Return: (void)</dd>
+<br>
 <h4><a name="MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACE">MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Pooled Resource</dd>
 <br>
 <dd><a href="#MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd><a href="#MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEquery_pooled_resource">query_pooled_resource</a></dd>
 <dd><a href="#MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEapply_transaction_to_factor">apply_transaction_to_factor</a></dd>
+<dd><a href="#MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEenable">enable</a></dd>
+<dd><a href="#MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEdisable">disable</a></dd>
 <br><dd>Function: <a name="MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -8443,6 +8688,16 @@
 <dd>Description: Apply a transaction to the specified factor. Returns amount actually applied</dd>
 <dd>Parameters: (String resource_factor_key, int32 amount)</dd>
 <dd>Return: (int32)</dd>
+<br>
+<dd>Function: <a name="MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEenable">enable</a></dd>
+<dd>Description: Enable pooled resource effects</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (void)</dd>
+<br>
+<dd>Function: <a name="MODIFY_POOLED_RESOURCE_SCRIPT_INTERFACEdisable">disable</a></dd>
+<dd>Description: Disable pooled resource effects</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (void)</dd>
 <br>
 <h4><a name="MODIFY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE">MODIFY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Pooled Resource Manager</dd>
@@ -8627,6 +8882,7 @@
 <dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEmodel">model</a></dd>
 <dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEworld_power_tokens">world_power_tokens</a></dd>
+<dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEpooled_resources">pooled_resources</a></dd>
 <dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEfaction_list">faction_list</a></dd>
 <dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEregion_manager">region_manager</a></dd>
 <dd><a href="#QUERY_WORLD_SCRIPT_INTERFACEfaction_by_key">faction_by_key</a></dd>
@@ -8648,6 +8904,11 @@
 <dd>Description: Returns world power tokens manager</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (RETURN_<a href="#QUERY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE">QUERY_WORLD_POWER_TOKENS_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="QUERY_WORLD_SCRIPT_INTERFACEpooled_resources">pooled_resources</a></dd>
+<dd>Description: Returns pooled resources manager</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE">QUERY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="QUERY_WORLD_SCRIPT_INTERFACEfaction_list">faction_list</a></dd>
 <dd>Description: Returns a list interface of all factions</dd>
@@ -8707,6 +8968,8 @@
 <dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEis_advisor_sound_playing">is_advisor_sound_playing</a></dd>
 <dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEcharacter_for_command_queue_index">character_for_command_queue_index</a></dd>
 <dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEcharacter_for_startpos_id">character_for_startpos_id</a></dd>
+<dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEcharacter_for_template">character_for_template</a></dd>
+<dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEall_characters_for_template">all_characters_for_template</a></dd>
 <dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEregion_slot_for_command_queue_index">region_slot_for_command_queue_index</a></dd>
 <dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEmilitary_force_for_command_queue_index">military_force_for_command_queue_index</a></dd>
 <dd><a href="#QUERY_MODEL_SCRIPT_INTERFACEfaction_for_command_queue_index">faction_for_command_queue_index</a></dd>
@@ -8817,6 +9080,16 @@
 <dd>Parameters: (String startpos_id)</dd>
 <dd>Return: (RETURN_OPTIONAL_<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
 <br>
+<dd>Function: <a name="QUERY_MODEL_SCRIPT_INTERFACEcharacter_for_template">character_for_template</a></dd>
+<dd>Description: Lookup a character by character generation template</dd>
+<dd>Parameters: (String character_template)</dd>
+<dd>Return: (RETURN_OPTIONAL_<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="QUERY_MODEL_SCRIPT_INTERFACEall_characters_for_template">all_characters_for_template</a></dd>
+<dd>Description: Receive all characters with specific character generation template</dd>
+<dd>Parameters: (String character_template)</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CHARACTER_LIST_SCRIPT_INTERFACE">QUERY_CHARACTER_LIST_SCRIPT_INTERFACE</a>)</dd>
+<br>
 <dd>Function: <a name="QUERY_MODEL_SCRIPT_INTERFACEregion_slot_for_command_queue_index">region_slot_for_command_queue_index</a></dd>
 <dd>Description: Lookup a region slot by command queue index</dd>
 <dd>Parameters: (card32 region_slot_command_queue_index)</dd>
@@ -8888,13 +9161,12 @@
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEallied_with">allied_with</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEis_ally_vassal_or_client_state_of">is_ally_vassal_or_client_state_of</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEat_war_with">at_war_with</a></dd>
-<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtrade_resource_exists">trade_resource_exists</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtrade_value">trade_value</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtrade_value_percent">trade_value_percent</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEnumber_of_trade_routes">number_of_trade_routes</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEunused_international_trade_route">unused_international_trade_route</a></dd>
-<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtrade_route_limit_reached">trade_route_limit_reached</a></dd>
-<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtrade_ship_not_in_trade_node">trade_ship_not_in_trade_node</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtreasury">treasury</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEprojected_net_income">projected_net_income</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtreasury_percent">treasury_percent</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACElosing_money">losing_money</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEtax_level">tax_level</a></dd>
@@ -8913,10 +9185,14 @@
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEholds_entire_province">holds_entire_province</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEis_vassal">is_vassal</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEis_dead">is_dead</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEis_rebel">is_rebel</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEpooled_resources">pooled_resources</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEnumber_of_world_leader_regions">number_of_world_leader_regions</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEis_world_leader">is_world_leader</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEis_at_civil_war">is_at_civil_war</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEnon_deployable_characters_count">non_deployable_characters_count</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEget_valid_spawn_location_in_region">get_valid_spawn_location_in_region</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEget_valid_spawn_location_near">get_valid_spawn_location_near</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEfactions_trading_with">factions_trading_with</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEfactions_at_war_with">factions_at_war_with</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEfactions_met">factions_met</a></dd>
@@ -8936,6 +9212,7 @@
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEnumber_of_factions_we_have_specified_diplomatic_deal_with">number_of_factions_we_have_specified_diplomatic_deal_with</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEfactions_we_have_specified_diplomatic_deal_with">factions_we_have_specified_diplomatic_deal_with</a></dd>
 <dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEcan_apply_automatic_diplomatic_deal">can_apply_automatic_diplomatic_deal</a></dd>
+<dd><a href="#QUERY_FACTION_SCRIPT_INTERFACEcan_make_confederation_with">can_make_confederation_with</a></dd>
 <br><dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -9026,40 +9303,35 @@
 <dd>Parameters: at_war_with(context:character():faction())</dd>
 <dd>Return: bool</dd>
 <br>
-<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtrade_resource_exists">trade_resource_exists</a></dd>
-<dd>Description: Returns whether the faction has access to the trade resource</dd>
-<dd>Parameters: trade_resource_exists("res_gold")</dd>
-<dd>Return: bool</dd>
-<br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtrade_value">trade_value</a></dd>
 <dd>Description: Returns the absolute value of the factions global trade</dd>
-<dd>Parameters: trade_value()</dd>
-<dd>Return: int</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (card32)</dd>
 <br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtrade_value_percent">trade_value_percent</a></dd>
 <dd>Description: Returns the percentage value of global trade owned by the faction</dd>
-<dd>Parameters: trade_value_percent()</dd>
-<dd>Return: int</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (card32)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEnumber_of_trade_routes">number_of_trade_routes</a></dd>
+<dd>Description: Returns the absolute value of the factions global trade</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (card32)</dd>
 <br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEunused_international_trade_route">unused_international_trade_route</a></dd>
 <dd>Description: Could the faction establish a new international trade route?</dd>
 <dd>Parameters: unused_international_trade_route()</dd>
 <dd>Return: bool</dd>
 <br>
-<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtrade_route_limit_reached">trade_route_limit_reached</a></dd>
-<dd>Description: Has the faction reached its limit of trade routes?</dd>
-<dd>Parameters: trade_route_limit_reached()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtrade_ship_not_in_trade_node">trade_ship_not_in_trade_node</a></dd>
-<dd>Description: Does the faction have a trade ship that is not in a trade node</dd>
-<dd>Parameters: trade_ship_not_in_trade_node()</dd>
-<dd>Return: bool</dd>
-<br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtreasury">treasury</a></dd>
 <dd>Description: Returns the factions treasury value</dd>
 <dd>Parameters: treasury()</dd>
 <dd>Return: int</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEprojected_net_income">projected_net_income</a></dd>
+<dd>Description: The projected change in income</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (int32)</dd>
 <br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEtreasury_percent">treasury_percent</a></dd>
 <dd>Description: Returns the factions treasury value as a percentage of the sum of all factions treasury values</dd>
@@ -9151,6 +9423,11 @@
 <dd>Parameters: is_dead()</dd>
 <dd>Return: bool</dd>
 <br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEis_rebel">is_rebel</a></dd>
+<dd>Description: Returns true if the faction is rebel one</dd>
+<dd>Parameters: is_rebel()</dd>
+<dd>Return: bool</dd>
+<br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEpooled_resources">pooled_resources</a></dd>
 <dd>Description: Pooled resource manager for this faction</dd>
 <dd>Parameters: pooled_resources()</dd>
@@ -9170,6 +9447,21 @@
 <dd>Description: Returns if this faction is at civil war or not</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (bool)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEnon_deployable_characters_count">non_deployable_characters_count</a></dd>
+<dd>Description: Returns the number of non-deployable characters</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (int32)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEget_valid_spawn_location_in_region">get_valid_spawn_location_in_region</a></dd>
+<dd>Description: Get a valid spawn location for characters of this faction in region specified by region_key,ignore_zoc == true means that the position can be inside zoc, the bool in the tuple is true if a position was found and false otherwise</dd>
+<dd>Parameters: (String region_key, bool ignore_zoc)</dd>
+<dd>Return: (std::tuple<bool, card32, card32>)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEget_valid_spawn_location_near">get_valid_spawn_location_near</a></dd>
+<dd>Description: Get a valid spawn location for characters of this faction near specified position (x, y) at a preferred distance,ignore_zoc == true means that the position can be inside zoc, the bool in the tuple is true if a position was found and false otherwise</dd>
+<dd>Parameters: (card32 x, card32 y, card32 preferred_distance, bool ignore_zoc)</dd>
+<dd>Return: (std::tuple<bool, card32, card32>)</dd>
 <br>
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEfactions_trading_with">factions_trading_with</a></dd>
 <dd>Description: DEPRECATED - Please use factions_we_have_specified_diplomatic_deal_with(treaty_component_key) instead. return the factions this faction is trading with</dd>
@@ -9264,6 +9556,11 @@
 <dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEcan_apply_automatic_diplomatic_deal">can_apply_automatic_diplomatic_deal</a></dd>
 <dd>Description: Check if an automatic diplomatic deal can be applied. automatic_deal_key is a campaign_diplomacy_automatic_deal key. other_faction_interface is an interface to another faction. parameters is a comma separated list of parameters where each parameter can be of the form 'alliance_cqi:xxx', 'alliance_oath_key:xxx', 'ceo_cqi:xxx', 'deal_cqi:xxx', 'faction_cqi:xxx', 'faction_key:xxx', 'character_cqi:xxx', 'region_cqi:xxx' or 'region_key:xxx'.</dd>
 <dd>Parameters: (String automatic_deal_key, <a href="#QUERY_FACTION_SCRIPT_INTERFACE">QUERY_FACTION_SCRIPT_INTERFACE</a> * other_faction_interface, String parameters)</dd>
+<dd>Return: (bool)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_SCRIPT_INTERFACEcan_make_confederation_with">can_make_confederation_with</a></dd>
+<dd>Description: Can we confederate this faction</dd>
+<dd>Parameters: (<a href="#QUERY_FACTION_SCRIPT_INTERFACE">QUERY_FACTION_SCRIPT_INTERFACE</a> * other_faction_interface)</dd>
 <dd>Return: (bool)</dd>
 <br>
 <h4><a name="QUERY_FACTION_LIST_SCRIPT_INTERFACE">QUERY_FACTION_LIST_SCRIPT_INTERFACE</a></h4>
@@ -9527,6 +9824,7 @@
 <dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACEcharacter_subtype_key">character_subtype_key</a></dd>
 <dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACEstartpos_key">startpos_key</a></dd>
 <dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACElatest_wound_death_type">latest_wound_death_type</a></dd>
+<dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACEget_is_deployable">get_is_deployable</a></dd>
 <dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACEgeneration_template_key">generation_template_key</a></dd>
 <dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACEis_character_is_faction_recruitment_pool">is_character_is_faction_recruitment_pool</a></dd>
 <dd><a href="#QUERY_CHARACTER_SCRIPT_INTERFACEhas_undercover_character_enabler">has_undercover_character_enabler</a></dd>
@@ -9972,6 +10270,11 @@
 <dd>Parameters: ()</dd>
 <dd>Return: (String)</dd>
 <br>
+<dd>Function: <a name="QUERY_CHARACTER_SCRIPT_INTERFACEget_is_deployable">get_is_deployable</a></dd>
+<dd>Description: See if the character can be deployed as a general</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
+<br>
 <dd>Function: <a name="QUERY_CHARACTER_SCRIPT_INTERFACEgeneration_template_key">generation_template_key</a></dd>
 <dd>Description: Character Generation Template Key</dd>
 <dd>Parameters: ()</dd>
@@ -10054,6 +10357,8 @@
 <dd><a href="#QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEmother">mother</a></dd>
 <dd><a href="#QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEspouse">spouse</a></dd>
 <dd><a href="#QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEcome_of_age">come_of_age</a></dd>
+<dd><a href="#QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEis_pregnant">is_pregnant</a></dd>
+<dd><a href="#QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEcharacter">character</a></dd>
 <br><dd>Function: <a name="QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -10093,6 +10398,16 @@
 <dd>Description: return if the character has come of age</dd>
 <dd>Parameters: come_of_age()</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEis_pregnant">is_pregnant</a></dd>
+<dd>Description: Is this character pregnant?</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
+<br>
+<dd>Function: <a name="QUERY_FAMILY_MEMBER_SCRIPT_INTERFACEcharacter">character</a></dd>
+<dd>Description: Access to the character object of this family member</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CHARACTER_SCRIPT_INTERFACE">QUERY_CHARACTER_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <h4><a name="QUERY_REGION_MANAGER_SCRIPT_INTERFACE">QUERY_REGION_MANAGER_SCRIPT_INTERFACE</a></h4>
 <dd>Description: The interface that stores and manages all regions in the game. Useful for looking up region and slot//settlement keys.</dd>
@@ -10272,6 +10587,7 @@
 <dd><a href="#QUERY_REGION_SCRIPT_INTERFACEis_province_capital">is_province_capital</a></dd>
 <dd><a href="#QUERY_REGION_SCRIPT_INTERFACEhas_development_points_to_upgrade">has_development_points_to_upgrade</a></dd>
 <dd><a href="#QUERY_REGION_SCRIPT_INTERFACEpooled_resources">pooled_resources</a></dd>
+<dd><a href="#QUERY_REGION_SCRIPT_INTERFACEcan_raze_and_abandon_settlement_without_attacking">can_raze_and_abandon_settlement_without_attacking</a></dd>
 <br><dd>Function: <a name="QUERY_REGION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -10411,6 +10727,11 @@
 <dd>Description: Pooled resource manager attached to this region</dd>
 <dd>Parameters: pooled_resources()</dd>
 <dd>Return: <a href="#QUERY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE">QUERY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="QUERY_REGION_SCRIPT_INTERFACEcan_raze_and_abandon_settlement_without_attacking">can_raze_and_abandon_settlement_without_attacking</a></dd>
+<dd>Description: Can script raze and abandon this region?</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
 <br>
 <h4><a name="QUERY_REGION_LIST_SCRIPT_INTERFACE">QUERY_REGION_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of region interfaces</dd>
@@ -10553,6 +10874,7 @@
 <dd><a href="#QUERY_SETTLEMENT_SCRIPT_INTERFACEregion">region</a></dd>
 <dd><a href="#QUERY_SETTLEMENT_SCRIPT_INTERFACEslot_list">slot_list</a></dd>
 <dd><a href="#QUERY_SETTLEMENT_SCRIPT_INTERFACEis_port">is_port</a></dd>
+<dd><a href="#QUERY_SETTLEMENT_SCRIPT_INTERFACEhas_walls">has_walls</a></dd>
 <br><dd>Function: <a name="QUERY_SETTLEMENT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -10612,6 +10934,11 @@
 <dd>Description: Is this settlement a port</dd>
 <dd>Parameters: is_port()</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="QUERY_SETTLEMENT_SCRIPT_INTERFACEhas_walls">has_walls</a></dd>
+<dd>Description: Does settlement have walls?</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
 <br>
 <h4><a name="QUERY_SLOT_SCRIPT_INTERFACE">QUERY_SLOT_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Slot script interface</dd>
@@ -11876,6 +12203,11 @@
 <dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceos_for_category">all_ceos_for_category</a></dd>
 <dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEchanging_points_for_ceo_data_will_have_no_impact">changing_points_for_ceo_data_will_have_no_impact</a></dd>
 <dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEcan_create_ceo">can_create_ceo</a></dd>
+<dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEhas_ceo_equipped">has_ceo_equipped</a></dd>
+<dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEnumber_of_ceos_equipped_for_category">number_of_ceos_equipped_for_category</a></dd>
+<dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceos_equipped_on_faction">all_ceos_equipped_on_faction</a></dd>
+<dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceo_equipment_slots">all_ceo_equipment_slots</a></dd>
+<dd><a href="#QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceo_equipment_slots_for_category">all_ceo_equipment_slots_for_category</a></dd>
 <br><dd>Function: <a name="QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -11906,6 +12238,31 @@
 <dd>Parameters: (String ceo_data_key)</dd>
 <dd>Return: (bool)</dd>
 <br>
+<dd>Function: <a name="QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEhas_ceo_equipped">has_ceo_equipped</a></dd>
+<dd>Description: Does the faction have a ceo equipped with this key?</dd>
+<dd>Parameters: (String ceo_data_key)</dd>
+<dd>Return: (bool)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEnumber_of_ceos_equipped_for_category">number_of_ceos_equipped_for_category</a></dd>
+<dd>Description: How many ceos are equipped in this ceo category?</dd>
+<dd>Parameters: (String category_key)</dd>
+<dd>Return: (card32)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceos_equipped_on_faction">all_ceos_equipped_on_faction</a></dd>
+<dd>Description: List of all the ceos active on the faction.</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CEO_LIST_SCRIPT_INTERFACE">QUERY_CEO_LIST_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceo_equipment_slots">all_ceo_equipment_slots</a></dd>
+<dd>Description: List of all the ceo equipment slots on the faction.</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CEO_EQUIPMENT_SLOT_LIST_SCRIPT_INTERFACE">QUERY_CEO_EQUIPMENT_SLOT_LIST_SCRIPT_INTERFACE</a>)</dd>
+<br>
+<dd>Function: <a name="QUERY_FACTION_CEO_MANAGEMENT_SCRIPT_INTERFACEall_ceo_equipment_slots_for_category">all_ceo_equipment_slots_for_category</a></dd>
+<dd>Description: List of all the category's ceo equipment slots on the faction.</dd>
+<dd>Parameters: (String category_key)</dd>
+<dd>Return: (RETURN_<a href="#QUERY_CEO_EQUIPMENT_SLOT_LIST_SCRIPT_INTERFACE">QUERY_CEO_EQUIPMENT_SLOT_LIST_SCRIPT_INTERFACE</a>)</dd>
+<br>
 <h4><a name="QUERY_CEO_SCRIPT_INTERFACE">QUERY_CEO_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Ceo Interface</dd>
 <br>
@@ -11915,6 +12272,8 @@
 <dd><a href="#QUERY_CEO_SCRIPT_INTERFACEcategory_key">category_key</a></dd>
 <dd><a href="#QUERY_CEO_SCRIPT_INTERFACEcurrent_node_key">current_node_key</a></dd>
 <dd><a href="#QUERY_CEO_SCRIPT_INTERFACEnum_points_in_ceo">num_points_in_ceo</a></dd>
+<dd><a href="#QUERY_CEO_SCRIPT_INTERFACEmax_points_in_ceo">max_points_in_ceo</a></dd>
+<dd><a href="#QUERY_CEO_SCRIPT_INTERFACEpoint_change_enabled">point_change_enabled</a></dd>
 <dd><a href="#QUERY_CEO_SCRIPT_INTERFACEis_equipped_in_slot">is_equipped_in_slot</a></dd>
 <dd><a href="#QUERY_CEO_SCRIPT_INTERFACEequipped_in_slot">equipped_in_slot</a></dd>
 <br><dd>Function: <a name="QUERY_CEO_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
@@ -11946,6 +12305,16 @@
 <dd>Description: number of points in ceo</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (card32)</dd>
+<br>
+<dd>Function: <a name="QUERY_CEO_SCRIPT_INTERFACEmax_points_in_ceo">max_points_in_ceo</a></dd>
+<dd>Description: maximum number of points in ceo</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (card32)</dd>
+<br>
+<dd>Function: <a name="QUERY_CEO_SCRIPT_INTERFACEpoint_change_enabled">point_change_enabled</a></dd>
+<dd>Description: ceo can change points</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
 <br>
 <dd>Function: <a name="QUERY_CEO_SCRIPT_INTERFACEis_equipped_in_slot">is_equipped_in_slot</a></dd>
 <dd>Description: is ceo equipped in a slot</dd>
@@ -12110,6 +12479,7 @@
 <dd><a href="#QUERY_POOLED_RESOURCE_SCRIPT_INTERFACEpercentage_of_capacity">percentage_of_capacity</a></dd>
 <dd><a href="#QUERY_POOLED_RESOURCE_SCRIPT_INTERFACErecord_key">record_key</a></dd>
 <dd><a href="#QUERY_POOLED_RESOURCE_SCRIPT_INTERFACEvalue">value</a></dd>
+<dd><a href="#QUERY_POOLED_RESOURCE_SCRIPT_INTERFACEenabled">enabled</a></dd>
 <br><dd>Function: <a name="QUERY_POOLED_RESOURCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the Null Interface?</dd>
 <dd>Parameters: ()</dd>
@@ -12154,6 +12524,11 @@
 <dd>Description: Total resource value of pool</dd>
 <dd>Parameters: ()</dd>
 <dd>Return: (int32)</dd>
+<br>
+<dd>Function: <a name="QUERY_POOLED_RESOURCE_SCRIPT_INTERFACEenabled">enabled</a></dd>
+<dd>Description: Is pooled resource enabled</dd>
+<dd>Parameters: ()</dd>
+<dd>Return: (bool)</dd>
 <br>
 <h4><a name="QUERY_POOLED_RESOURCE_LIST_SCRIPT_INTERFACE">QUERY_POOLED_RESOURCE_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of pooled resources</dd>
@@ -12221,7 +12596,7 @@
 <dd>Function: <a name="QUERY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACEowning_faction">owning_faction</a></dd>
 <dd>Description: Faction that owns this manager</dd>
 <dd>Parameters: ()</dd>
-<dd>Return: (RETURN_<a href="#QUERY_FACTION_SCRIPT_INTERFACE">QUERY_FACTION_SCRIPT_INTERFACE</a>)</dd>
+<dd>Return: (RETURN_OPTIONAL_<a href="#QUERY_FACTION_SCRIPT_INTERFACE">QUERY_FACTION_SCRIPT_INTERFACE</a>)</dd>
 <br>
 <dd>Function: <a name="QUERY_POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACEresources">resources</a></dd>
 <dd>Description: All of the resource pools managed by this object</dd>
