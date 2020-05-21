@@ -66,9 +66,11 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:unregister_battle_phase_handler">unregister_battle_phase_handler</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:end_current_battle_phase">end_current_battle_phase</a></li>
 						<li>&emsp;&emsp;<a href="#section:battle:Time and Timers">Time and Timers</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:timer_exists">timer_exists</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:register_singleshot_timer">register_singleshot_timer</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:register_repeating_timer">register_repeating_timer</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:unregister_timer">unregister_timer</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:time_elapsed_ms">time_elapsed_ms</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:model_tick_time_ms">model_tick_time_ms</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:remaining_conflict_time">remaining_conflict_time</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:modify_battle_speed">modify_battle_speed</a></li>
@@ -134,7 +136,6 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:is_benchmarking_mode">is_benchmarking_mode</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:end_benchmark">end_benchmark</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:quit_to_windows_from_script">quit_to_windows_from_script</a></li>
-							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:take_screenshot">take_screenshot</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:appdata_screenshots">appdata_screenshots</a></li>
 						<li>&emsp;&emsp;<a href="#section:battle:Miscellaneous">Miscellaneous</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:trigger_projectile_launch">trigger_projectile_launch</a></li>
@@ -186,7 +187,6 @@
 					<li><a href="advice_manager.html">Advice Manager</a></li>
 					<li><a href="battle_ui_manager.html">Battle UI Manager</a></li>
 					<li><a href="convex_area.html">Convex Areas</a></li>
-					<li><a href="core_object.html">Custom Context</a></li>
 					<li><a href="cutscene.html">Battle Cutscenes</a></li>
 					<li><a href="generated_battle.html">Generated Battle</a></li>
 					<li><a href="global.html">Global</a></li>
@@ -285,7 +285,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6371</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -319,7 +318,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6410</p>
 						</dd>
 					</dl>
 				</div>
@@ -342,7 +340,6 @@
 							<ol>
 								<li><code><code><a href="battle_alliances.html#class:battle_alliances">battle_alliances</a></code></code> alliances list</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6426</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -363,7 +360,6 @@
 								 alliances = bm:alliances()<br />
 								 player_alliance = alliances:item(bm:local_alliance())<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6439</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -385,7 +381,6 @@
 								 player_alliance = alliances:item(bm:local_alliance())<br />
 								 player_army = player_alliance:armies():item(bm:local_army())<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6450</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -401,7 +396,6 @@
 							<ol>
 								<li><code><code><a href="battle_buildings.html#class:battle_buildings">battle_buildings</a></code></code> buildings list</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6462</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -416,7 +410,6 @@
 							<ol>
 								<li><code><code><a href="battle_assault_equipment.html#class:battle_assault_equipment">battle_assault_equipment</a></code></code> assault equipment list</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6476</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -431,7 +424,6 @@
 							<ol>
 								<li><code><code><a href="battle_debug_drawing.html#class:battle_debug_drawing">battle_debug_drawing</a></code></code> debug drawing object</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6489</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -446,7 +438,6 @@
 							<ol>
 								<li><code><code><a href="battle_camera.html#class:battle_camera">battle_camera</a></code></code> battle camera</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6502</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -461,7 +452,6 @@
 							<ol>
 								<li><code><code><a href="battle_subtitles.html#class:battle_subtitles">battle_subtitles</a></code></code> subtitles</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6530</p>
 						</dd>
 					</dl>
 				</div>
@@ -532,7 +522,6 @@
 								 end<br />
 								 bm:register_input_handler("my_input_handler")<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6546</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -547,7 +536,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6580</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -593,7 +581,6 @@
 								 end<br />
 								 bm:register_unit_selection_handler("my_unit_selection_handler")<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6588</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -608,7 +595,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6605</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -723,7 +709,6 @@
 								 end<br />
 								 bm:register_command_handler("my_command_handler")<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6613</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -738,7 +723,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6670</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -801,7 +785,6 @@
 								 end<br />
 								 bm:register_phase_change_handler("my_phase_change_handler")<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6678</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -816,7 +799,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6705</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -831,7 +813,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6713</p>
 						</dd>
 					</dl>
 				</div>
@@ -844,10 +825,44 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
+							<a name="function:battle:timer_exists"><h3 class="function_name"><strong><code>battle:timer_exists(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">function name</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether a timer exists for the specified function name. If a timer does exist, the amount of model time remaining before it triggers in ms is also returned as a second return parameter.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>function name</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> timer exists</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> model time before timer triggers</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:battle:register_singleshot_timer"><h3 class="function_name"><strong><code>battle:register_singleshot_timer(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">function name</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">interval</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Registers a singleshot timer. A function name must be specified as a <code><a href="lua.html#class:string">string</a></code>, along with an interval. The battle model then calls the function with the given name after the specified interval. Only one timer instance can be registered for a given function.<br />
+							Registers a singleshot timer. A function name must be specified as a <code><a href="lua.html#class:string">string</a></code>, along with an interval. The battle model then calls the function with the given name after the specified interval. No arguments may be specified for the function. Only one timer instance can be registered for a given function - repeated calls to <code><a href="#function:battle:register_singleshot_timer">battle:register_singleshot_timer</a></code> or <code><a href="#function:battle:register_repeating_timer">battle:register_repeating_timer</a></code> will overwrite any previous timers.<br />
 							It is strongly recommended that client scripts do not call this directly but instead use the <code><a href="battle_manager.html#function:battle_manager:callback">battle_manager:callback</a></code> function, which allows arguments to be passed, multiple instances of timers for the same callback, and more flexible cancellation of the callback.
 
 							<h4>Parameters:</h4>
@@ -885,7 +900,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6724</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -893,7 +907,7 @@
 							<a name="function:battle:register_repeating_timer"><h3 class="function_name"><strong><code>battle:register_repeating_timer(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">function name</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">interval</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Registers a repeating timer. A function name must be specified as a <code><a href="lua.html#class:string">string</a></code>, along with an interval. The battle model then calls the function with the given name each time the specified interval elapses. Only one timer instance can be registered for a given function.<br />
+							Registers a repeating timer. A function name must be specified as a <code><a href="lua.html#class:string">string</a></code>, along with an interval. The battle model then calls the function with the given name each time the specified interval elapses. No arguments may be specified for the function. Only one timer instance can be registered for a given function. Only one timer instance can be registered for a given function - repeated calls to <code><a href="#function:battle:register_singleshot_timer">battle:register_singleshot_timer</a></code> or <code><a href="#function:battle:register_repeating_timer">battle:register_repeating_timer</a></code> will overwrite any previous timers.<br />
 							It is strongly recommended that client scripts do not call this directly but instead use the <code><a href="battle_manager.html#function:battle_manager:repeat_callback">battle_manager:repeat_callback</a></code> function, which allows arguments to be passed, multiple instances of timers for the same callback, and more flexible cancellation of the callback.
 
 							<h4>Parameters:</h4>
@@ -931,7 +945,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6735</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -966,7 +979,20 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6746</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle:time_elapsed_ms"><h3 class="function_name"><strong><code>battle:time_elapsed_ms()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the amount of model time that's elapsed since the start of the battle, in milliseconds.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> time elapsed</li>
+							</ol>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -981,7 +1007,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> tick time</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6756</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -996,7 +1021,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> remaining time</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6765</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1036,7 +1060,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6774</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1051,7 +1074,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6789</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1066,7 +1088,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6797</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1101,7 +1122,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6805</p>
 						</dd>
 					</dl>
 				</div>
@@ -1143,7 +1163,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6818</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1201,7 +1220,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6827</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1258,7 +1276,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6838</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1293,7 +1310,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6849</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1328,7 +1344,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6858</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1367,7 +1382,6 @@
 							<div id="example_code"><code>
 								 bm:start_terrain_composite_scene("composite_scene/seamonster/merwyrm_roar_02.csc")<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6867</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1406,7 +1420,6 @@
 							<div id="example_code"><code>
 								 bm:stop_terrain_composite_scene("composite_scene/seamonster/merwyrm_roar_02.csc")<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6877</p>
 						</dd>
 					</dl>
 				</div>
@@ -1492,7 +1505,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6900</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1526,7 +1538,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6913</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1541,7 +1552,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6922</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1556,7 +1566,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> advice finished</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6930</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1571,7 +1580,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> vo finished</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6939</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1605,7 +1613,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6949</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1639,7 +1646,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6965</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1673,7 +1679,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6974</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1707,7 +1712,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6983</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1741,7 +1745,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 6992</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1786,7 +1789,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7001</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1801,7 +1803,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7011</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1835,7 +1836,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7019</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1869,7 +1869,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> volume level</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7035</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1914,7 +1913,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7045</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1970,7 +1968,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7055</p>
 						</dd>
 					</dl>
 				</div>
@@ -2019,6 +2016,10 @@
 							<tr><td>13</td><td>MPT_SCRIPT_MOVE_TO_VFX</td></tr>
 
 							<tr><td>14</td><td>MPT_SCRIPT_SELECT_VFX</td></tr></table>
+
+							<tr><td>15</td><td>MPT_SCRIPT_OBJECTIVE</td></tr></table>
+
+							<tr><td>16</td><td>MPT_SCRIPT_BATTLE_TRAP</td></tr></table>
 
 							The waypoint flag can be used to link models together. The rotation flag can be used to specify a rotation for the model - the default is to just fade the camera.
 
@@ -2104,7 +2105,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7069</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2160,7 +2160,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7101</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2221,7 +2220,6 @@
 							<div id="example_code"><code>
 								 bm:show_objective("my_objective_key", 5000, 2000)<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7112</p>
 						</dd>
 					</dl>
 				</div>
@@ -2279,7 +2277,6 @@
 							<div id="example_code"><code>
 								 bm:play_movie("startup_movie_01", true)<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7128</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2294,7 +2291,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is movie playing</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7139</p>
 						</dd>
 					</dl>
 				</div>
@@ -2336,7 +2332,6 @@
 							<ol>
 								<li><code><code><a href="uicomponent.html#class:uicomponent">uicomponent</a></code></code> uicomponent, or <code><a href="lua.html#class:nil">nil</a></code> if no component found</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7151</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2406,7 +2401,6 @@
 							<div id="example_code"><code>
 								 bm:enable_cinematic_ui(false, true, false)<br />
 							</code></div>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7161</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2441,7 +2435,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7178</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2476,7 +2469,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7188</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2510,7 +2502,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7198</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2544,7 +2535,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7207</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2578,7 +2568,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7216</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2612,7 +2601,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7225</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2646,7 +2634,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7234</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2662,7 +2649,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7243</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2677,7 +2663,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7252</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2692,7 +2677,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7260</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2707,7 +2691,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7268</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2752,7 +2735,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7276</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2787,7 +2769,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7286</p>
 						</dd>
 					</dl>
 				</div>
@@ -2810,7 +2791,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is_tutorial flag</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7299</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2825,7 +2805,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> prepare_for_fade_in flag</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7308</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2840,7 +2819,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> battle is over</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7317</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2855,7 +2833,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is siege battle</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7326</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2900,7 +2877,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> height in m.</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7335</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2915,7 +2891,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> random number</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7346</p>
 						</dd>
 					</dl>
 				</div>
@@ -2938,7 +2913,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is benchmarking mode</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7358</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2953,7 +2927,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7367</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2968,42 +2941,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7375</p>
-						</dd>
-					</dl>
-					<dl class="function">
-						<dt>
-							<a name="function:battle:take_screenshot"><h3 class="function_name"><strong><code>battle:take_screenshot([<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">filepath</i><code><strong>])</code></strong></h3></a>
-						</dt>
-						<dd>
-							Takes a screenshot of the battle. This is used by the autotest system.
-
-							<h4>Parameters:</h4>
-							<table class="parameter_list">
-								<colgroup>
-									<col style="width: 3%;">
-									<col style="width: 12%;">
-									<col style="width: 85%;">
-								</colgroup>
-								<tr>
-									<td>
-										<p><strong>1</strong></p>
-									</td>
-									<td>
-										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
-									</td>
-									<td>
-										<p><i>optional, default value=nil</i></p>
-										<p>Path of the screenshot file. If none is specified the system will generate a default.</p>
-									</td>
-								</tr>
-							</table>
-
-							<h4>Returns:</h4>
-							<ol>
-								<li><code>nil</code></li>
-							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7383</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3018,7 +2955,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:string">string</a></code></code> screenshot directory</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7392</p>
 						</dd>
 					</dl>
 				</div>
@@ -3082,7 +3018,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7411</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3116,7 +3051,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7422</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3150,7 +3084,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> operation succeeded</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 7431</p>
 						</dd>
 					</dl>
 				</div>
@@ -3160,7 +3093,7 @@
 
 		</div>
 
-		<div id="about">Last updated 12/10/19 15:46:48</div>
+		<div id="about">Last updated 05/14/20 01:10:14</div>
 
 	</div>
 

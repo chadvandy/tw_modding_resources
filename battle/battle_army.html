@@ -45,6 +45,10 @@
 						<li>&emsp;&emsp;<a href="#section:battle_army:Usage">Usage</a></li>
 						<li>&emsp;&emsp;<a href="#section:battle_army:Methods">Methods</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:units">units</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:faction_key">faction_key</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:subculture_key">subculture_key</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:flag_path">flag_path</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:is_rebel">is_rebel</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:create_unit_controller">create_unit_controller</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:is_commander_alive">is_commander_alive</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_army:is_commander_invincible">is_commander_invincible</a></li>
@@ -105,7 +109,6 @@
 					<li><a href="advice_manager.html">Advice Manager</a></li>
 					<li><a href="battle_ui_manager.html">Battle UI Manager</a></li>
 					<li><a href="convex_area.html">Convex Areas</a></li>
-					<li><a href="core_object.html">Custom Context</a></li>
 					<li><a href="cutscene.html">Battle Cutscenes</a></li>
 					<li><a href="generated_battle.html">Generated Battle</a></li>
 					<li><a href="global.html">Global</a></li>
@@ -181,7 +184,62 @@
 							<ol>
 								<li><code><code><a href="battle_units.html#class:battle_units">battle_units</a></code></code> units list</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5620</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_army:faction_key"><h3 class="function_name"><strong><code>army:faction_key()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the key of the army's faction, from the <code>factions</code> database table.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> faction key</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_army:subculture_key"><h3 class="function_name"><strong><code>army:subculture_key()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the subculture key of the army's faction, from the <code>cultures_subcultures</code> database table.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> subculture key</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_army:flag_path"><h3 class="function_name"><strong><code>army:flag_path()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the folder path of the flag icons used for the army's faction, from the <code>flags_path</code> field of the <code>factions</code> database table.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> faction flags folder path</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_army:is_rebel"><h3 class="function_name"><strong><code>army:is_rebel()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether the army's faction is a rebel faction.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is rebel</li>
+							</ol>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -196,7 +254,6 @@
 							<ol>
 								<li><code><code><a href="battle_unitcontroller.html#class:battle_unitcontroller">battle_unitcontroller</a></code></code> unitcontroller</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5720</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -211,7 +268,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is commander alive</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5737</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -226,7 +282,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is commander invincible</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5752</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -241,7 +296,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> handicap value</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5766</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -256,7 +310,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> recharge rate</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5781</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -290,7 +343,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5805</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -325,7 +377,6 @@
 							<ol>
 								<li><code><code><a href="battle_units.html#class:battle_units">battle_units</a></code></code> reinforcements units</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5824</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -340,7 +391,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> number of reinforcement units collections</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5866</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -355,7 +405,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5892</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -389,7 +438,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5903</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -423,7 +471,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5925</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -438,7 +485,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5941</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -473,7 +519,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5954</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -522,7 +567,7 @@
 									</td>
 									<td>
 										<p><i>optional, default value=0</i></p>
-										<p>Bearing of special ability, if applicable.</p>
+										<p>Bearing in radians of special ability, if applicable.</p>
 									</td>
 								</tr>
 								<tr>
@@ -543,7 +588,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireBattle/Source/BattleScript/BattleEditorScriptInterface.cpp, line 5974</p>
 						</dd>
 					</dl>
 				</div>
@@ -553,7 +597,7 @@
 
 		</div>
 
-		<div id="about">Last updated 12/10/19 15:46:48</div>
+		<div id="about">Last updated 05/14/20 01:10:14</div>
 
 	</div>
 

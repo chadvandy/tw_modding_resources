@@ -49,6 +49,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:scriptedvalueregistry:LoadBool">LoadBool</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:scriptedvalueregistry:SaveString">SaveString</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:scriptedvalueregistry:LoadString">LoadString</a></li>
+						<li>&emsp;&emsp;<a href="#section:scriptedvalueregistry:Persistent Registry">Persistent Registry</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:scriptedvalueregistry:SavePersistentBool">SavePersistentBool</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:scriptedvalueregistry:LoadPersistentBool">LoadPersistentBool</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:scriptedvalueregistry:SavePersistentString">SavePersistentString</a></li>
@@ -81,7 +82,6 @@
 				<h2 style="background-color:#ffc8a8">Script Pages</h2>
 				<ul>
 					<li><a href="core.html">Core</a></li>
-					<li><a href="core_object.html">Custom Context</a></li>
 					<li><a href="global.html">Global</a></li>
 					<li><a href="script_messager.html">Script Messager</a></li>
 					<li><a href="text_pointer.html">Text Pointers</a></li>
@@ -92,8 +92,9 @@
 
 			<div id="content">
 				<a name="class:scriptedvalueregistry"><h1 class="content_header">ScriptedValueRegistry</h1></a>
-				<p>The scriped value registry is an object that may be used by scripts to store persistent values across game environments. Using the scripted value registry, campaign and battle scripts can pass simple messages between one another which is otherwise difficult to achieve. The values stored in the scripted value registry are cleared whenever loading into the frontend, however, unless they've been saved as persistent.</p>
-				<p>The scriped value registry also provides functions that allow script to save boolean values into the operating system registry, which can be queried later to determine if a particular event has ever occurred, for example.</p>
+				<p>The scriped value registry is an object that may be used by scripts to store persistent values across game environments. It may be used by campaign and battle scripts to pass simple messages between one another, which is otherwise difficult to achieve.</p>
+				<p>The scripted value registry provides three methods of storing values. Values saved using game session functions are cleared when loading into a new campaign, or when loading back into the frontend. Values saved using persistent functions are not cleared until the game shuts down. Finally, values saved into the operating system registry are never cleared.</p>
+				<p>The internal mapping for each set of values is different, so a value saved using <code><a href="#function:scriptedvalueregistry:SaveBool">ScriptedValueRegistry:SaveBool</a></code> cannot be loaded using <code><a href="#function:scriptedvalueregistry:LoadPersistentBool">ScriptedValueRegistry:LoadPersistentBool</a></code>, for example.</p>
 							<table class="loaded_in" style="margin-top: 1em;">
 								<tr>
 									<td>
@@ -138,7 +139,6 @@
 							<ol>
 								<li><code><code><a href="#class:scriptedvalueregistry">scriptedvalueregistry</a></code></code> svr</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1123</p>
 						</dd>
 					</dl>
 				</div>
@@ -168,9 +168,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:scriptedvalueregistry:Game Session Registry"><h2 class="section_header">Game Session Registry</h2></a>
 				</div>
-				<p>The functions in this section can be used to save values into the scripted value registry that may be read by scripts in other environments. The values are not saved into the operating system registry, however, so will be cleared when the game is shut down and restarted.</p>
-				<p>Values saved with <code><a href="#function:scriptedvalueregistry:SaveBool">ScriptedValueRegistry:SaveBool</a></code> or <code><a href="#function:scriptedvalueregistry:SaveString">ScriptedValueRegistry:SaveString</a></code> will be cleared if the game loads back into the frontend. Values may be saved as persistent to avoid them being cleared in this way with the functions <code><a href="#function:scriptedvalueregistry:SavePersistentBool">ScriptedValueRegistry:SavePersistentBool</a></code> and <code><a href="#function:scriptedvalueregistry:SavePersistentString">ScriptedValueRegistry:SavePersistentString</a></code>. These values may be read later with <code><a href="#function:scriptedvalueregistry:LoadPersistentBool">ScriptedValueRegistry:LoadPersistentBool</a></code> and <code><a href="#function:scriptedvalueregistry:LoadPersistentString">ScriptedValueRegistry:LoadPersistentString</a></code>.</p>
-				<p>The internal mapping used for persistent and non-persistent values are different, so a value saved with <code><a href="#function:scriptedvalueregistry:SavePersistentString">ScriptedValueRegistry:SavePersistentString</a></code> cannot be loaded with <code><a href="#function:scriptedvalueregistry:LoadString">ScriptedValueRegistry:LoadString</a></code>, for example.</p>
+				<p>Values saved using these functions will be cleared whenever loading into a new campaign, or whenever the frontend is loaded.</p>
 				<div class="section_body">
 					<dl class="function">
 						<dt>
@@ -214,7 +212,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1163</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -222,7 +219,7 @@
 							<a name="function:scriptedvalueregistry:LoadBool"><h3 class="function_name"><strong><code>ScriptedValueRegistry:LoadBool(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a boolean value corresponding to a supplied string name from the scripted value registry. If no value with the supplied name is found then <code>false</code> is returned.
+							Returns a boolean value that was previously stored with <code><a href="#function:scriptedvalueregistry:SaveBool">ScriptedValueRegistry:SaveBool</a></code>, by name. If no value with the supplied name is found then <code>false</code> is returned.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -248,7 +245,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1206</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -293,7 +289,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1246</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -301,7 +296,7 @@
 							<a name="function:scriptedvalueregistry:LoadString"><h3 class="function_name"><strong><code>ScriptedValueRegistry:LoadString(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a string value corresponding to a supplied string name from the scripted value registry. If no value with the supplied name is found then an empty string is returned.
+							Returns a string value previously stored with <code><a href="#function:scriptedvalueregistry:SaveString">ScriptedValueRegistry:SaveString</a></code>, by name. If no value with the supplied name is found then an empty string is returned.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -327,15 +322,23 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:string">string</a></code></code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1286</p>
 						</dd>
 					</dl>
+				</div>
+
+
+				<div>
+					<a style="float:right;" href="#top">Back to top</a>
+					<a name="section:scriptedvalueregistry:Persistent Registry"><h2 class="section_header">Persistent Registry</h2></a>
+				</div>
+				<p>Values saved using these functions will only be cleared when the game is shut down and reloaded.</p>
+				<div class="section_body">
 					<dl class="function">
 						<dt>
 							<a name="function:scriptedvalueregistry:SavePersistentBool"><h3 class="function_name"><strong><code>ScriptedValueRegistry:SavePersistentBool(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">value</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Saves a persistent boolean value with a string name into the scripted value registry. Persistent values are not cleared between game environments.
+							Saves a boolean value with a string name into the persistent registry.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -372,7 +375,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1326</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -380,7 +382,7 @@
 							<a name="function:scriptedvalueregistry:LoadPersistentBool"><h3 class="function_name"><strong><code>ScriptedValueRegistry:LoadPersistentBool(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a persistent boolean value corresponding to a supplied string name from the scripted value registry. If no persistent value with the supplied name is found then <code>false</code> is returned.
+							Returns a persistent boolean value previously stored with <code><a href="#function:scriptedvalueregistry:SavePersistentBool">ScriptedValueRegistry:SavePersistentBool</a></code>, by name. If no persistent value with the supplied name is found then <code>false</code> is returned.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -406,7 +408,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1369</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -414,7 +415,7 @@
 							<a name="function:scriptedvalueregistry:SavePersistentString"><h3 class="function_name"><strong><code>ScriptedValueRegistry:SavePersistentString(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Saves a persistent string value with a string name into the scripted value registry. Persistent values are not cleared between game environments.
+							Saves a string value with a string name into the persistent registry.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -451,7 +452,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1409</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -459,7 +459,7 @@
 							<a name="function:scriptedvalueregistry:LoadPersistentString"><h3 class="function_name"><strong><code>ScriptedValueRegistry:LoadPersistentString(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a persistent string value corresponding to a supplied string name from the scripted value registry. If no persistent value with the supplied name is found then an empty string is returned.
+							Returns a persistent string value previously stored with <code><a href="#function:scriptedvalueregistry:SavePersistentString">ScriptedValueRegistry:SavePersistentString</a></code>, by name. If no persistent value with the supplied name is found then an empty string is returned.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -485,7 +485,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:string">string</a></code></code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1449</p>
 						</dd>
 					</dl>
 				</div>
@@ -495,7 +494,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:scriptedvalueregistry:Operating System Registry"><h2 class="section_header">Operating System Registry</h2></a>
 				</div>
-				<p>The functions in this section can be used to store and retrieve values from the operating system registry, which is persistent between game loads. No path within the registry may be specified.</p>
+				<p>The functions in this section can be used to store and retrieve values from the operating system registry. Values saved here remain persistent between reloads of the game. No path within the registry may be specified.</p>
 				<div class="section_body">
 					<dl class="function">
 						<dt>
@@ -539,7 +538,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1502</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -547,7 +545,7 @@
 							<a name="function:scriptedvalueregistry:LoadRegistryBool"><h3 class="function_name"><strong><code>ScriptedValueRegistry:LoadRegistryBool(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">value name</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a boolean value corresponding to a supplied string name from the operating system registry. If no value with the supplied name is found then <code>false</code> is returned.
+							Returns a boolean value previously stored with <code><a href="#function:scriptedvalueregistry:SaveRegistryBool">ScriptedValueRegistry:SaveRegistryBool</a></code>, by name. If no persistent value with the supplied name is found then <code>false</code> is returned.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -573,7 +571,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../../common/EmpireUtility/Source/EmpireLuaEnv.cpp, line 1538</p>
 						</dd>
 					</dl>
 				</div>
@@ -583,7 +580,7 @@
 
 		</div>
 
-		<div id="about">Last updated 12/10/19 15:46:49</div>
+		<div id="about">Last updated 05/14/20 01:10:14</div>
 
 	</div>
 

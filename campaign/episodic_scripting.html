@@ -133,6 +133,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:find_valid_spawn_location_for_character_from_settlement"><div class="tooltip_container">find_valid_spawn_location_for_character_from_set...<span style="background-color:#fff7cc"  class="tooltip_text">find_valid_spawn_location_for_character_from_settlement</span></div></a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:find_valid_spawn_location_for_character_from_position"><div class="tooltip_container">find_valid_spawn_location_for_character_from_pos...<span style="background-color:#fff7cc"  class="tooltip_text">find_valid_spawn_location_for_character_from_position</span></div></a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:find_valid_spawn_location_for_character_from_character"><div class="tooltip_container">find_valid_spawn_location_for_character_from_cha...<span style="background-color:#fff7cc"  class="tooltip_text">find_valid_spawn_location_for_character_from_character</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:appoint_character_to_force">appoint_character_to_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:appoint_character_to_most_expensive_force">appoint_character_to_most_expensive_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:lock_starting_general_recruitment">lock_starting_general_recruitment</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_starting_general_recruitment">unlock_starting_general_recruitment</a></li>
@@ -335,6 +336,20 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:spawn_plague_at_settlement">spawn_plague_at_settlement</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:spawn_plague_at_region">spawn_plague_at_region</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:spawn_plague_at_military_force">spawn_plague_at_military_force</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_set_unit_purchasable_effect_availability">faction_set_unit_purchasable_effect_availability</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_purchase_unit_effect">faction_purchase_unit_effect</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_set_unit_purchasable_effect_lock_state">faction_set_unit_purchasable_effect_lock_state</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_imprison_character">faction_imprison_character</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_perform_action_on_prisoner">faction_perform_action_on_prisoner</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cook_recipe">cook_recipe</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cook_recipe_with_ingredients">cook_recipe_with_ingredients</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_cook_recipe">force_cook_recipe</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_cook_recipe_with_ingredients">force_cook_recipe_with_ingredients</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_cooking_ingredient">unlock_cooking_ingredient</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_cooking_recipe">unlock_cooking_recipe</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:clear_active_cooking_recipe">clear_active_cooking_recipe</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_faction_max_primary_cooking_ingredients">set_faction_max_primary_cooking_ingredients</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_faction_max_secondary_cooking_ingredients">set_faction_max_secondary_cooking_ingredients</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Next Battle & Campaign">Next Battle & Campaign</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_custom_battlefield">add_custom_battlefield</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_custom_battlefield">remove_custom_battlefield</a></li>
@@ -361,6 +376,8 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cai_enable_movement_for_faction">cai_enable_movement_for_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cai_disable_command_assignment_for_character">cai_disable_command_assignment_for_character</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cai_enable_command_assignment_for_character">cai_enable_command_assignment_for_character</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cai_disable_targeting_against_settlement">cai_disable_targeting_against_settlement</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cai_enable_targeting_against_settlement">cai_enable_targeting_against_settlement</a></li>
 					</ul>
 
 				</ul>
@@ -394,7 +411,6 @@
 					<li><a href="campaign_ui_manager.html">Campaign UI Manager</a></li>
 					<li><a href="chapter_mission.html">Chapter Missions</a></li>
 					<li><a href="convex_area.html">Convex Areas</a></li>
-					<li><a href="core_object.html">Custom Context</a></li>
 					<li><a href="global.html">Global</a></li>
 					<li><a href="infotext_manager.html">Infotext Manager</a></li>
 					<li><a href="intervention.html">Interventions</a></li>
@@ -413,7 +429,6 @@
 			<div id="content">
 				<a name="class:episodic_scripting"><h1 class="content_header">Episodic Scripting</h1></a>
 				<p>The episodic scripting interface is one of the two main interface provided by the campaign model to script. Unlike the <a href="../../scripting_doc.html">campaign model hierarchy</a>, which is used to query the state of the model, the episodic scripting interface is primarily used to make changes to the model.</p>
-				<p>The original documentation for the episodic scripting interface can be found here: <a href="../../../../warhammer/binaries.x64/scripting.txt">Episodic Scripting interface</a>. Note that a campaign must be loaded to generate this documentation.</p>
 							<table class="loaded_in" style="margin-top: 1em;">
 								<tr>
 									<td>
@@ -496,7 +511,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is new game</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 53</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -511,7 +525,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is benchmark mode</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 58</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -526,7 +539,6 @@
 							<ol>
 								<li><code>userdata</code> campaign model</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 63</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -560,7 +572,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:string">string</a></code></code> file list</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 68</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -605,7 +616,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> localisation matches</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 74</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -639,7 +649,6 @@
 							<ol>
 								<li><code>dlc</code> flag enabled</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 81</p>
 						</dd>
 					</dl>
 				</div>
@@ -704,7 +713,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 99</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -761,7 +769,6 @@
 							<ol>
 								<li><code>data</code> saved value, either a <code><a href="lua.html#class:boolean">boolean</a></code>, <code><a href="lua.html#class:number">number</a></code> or <code><a href="lua.html#class:string">string</a></code>.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 107</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -795,7 +802,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 116</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -810,7 +816,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 121</p>
 						</dd>
 					</dl>
 				</div>
@@ -876,7 +881,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 135</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -910,7 +914,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 142</p>
 						</dd>
 					</dl>
 				</div>
@@ -952,7 +955,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 155</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -987,7 +989,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 160</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1021,7 +1022,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 165</p>
 						</dd>
 					</dl>
 				</div>
@@ -1044,7 +1044,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 180</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1078,7 +1077,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 184</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1143,7 +1141,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 189</p>
 						</dd>
 					</dl>
 				</div>
@@ -1241,7 +1238,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 216</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1260,7 +1256,6 @@
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> b, Horizontal bearing in radians of target from camera.</li>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> h, Height of camera.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 225</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1316,7 +1311,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 234</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1331,7 +1325,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 241</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1376,7 +1369,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 245</p>
 						</dd>
 					</dl>
 				</div>
@@ -1418,7 +1410,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 259</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1452,7 +1443,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 264</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1486,7 +1476,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 269</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1501,7 +1490,6 @@
 							<ol>
 								<li><code><code><a href="cinematics.html#class:cinematics">cinematics</a></code></code> cinematic interface</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 274</p>
 						</dd>
 					</dl>
 				</div>
@@ -1554,7 +1542,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 289</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1588,7 +1575,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 295</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1622,7 +1608,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 300</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1656,7 +1641,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 305</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1690,7 +1674,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 310</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1746,7 +1729,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 315</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1791,7 +1773,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 322</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1825,7 +1806,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 328</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1859,7 +1839,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 333</p>
 						</dd>
 					</dl>
 				</div>
@@ -1945,7 +1924,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 347</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1979,7 +1957,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 356</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2081,7 +2058,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 361</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2115,7 +2091,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 374</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2193,7 +2168,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 379</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2227,7 +2201,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 388</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2283,7 +2256,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 393</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2328,7 +2300,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 400</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2384,7 +2355,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 406</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2429,7 +2399,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 413</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2551,7 +2520,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> action successful</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 419</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2662,7 +2630,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> action successful</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 433</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2773,7 +2740,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> action successful</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 446</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2807,7 +2773,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 459</p>
 						</dd>
 					</dl>
 				</div>
@@ -2854,7 +2819,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 479</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2869,7 +2833,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 484</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2884,7 +2847,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 488</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2899,7 +2861,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 492</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2914,7 +2875,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 496</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2959,7 +2919,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 500</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3004,7 +2963,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 506</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3038,7 +2996,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 512</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3072,7 +3029,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 517</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3117,7 +3073,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 522</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3151,7 +3106,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 528</p>
 						</dd>
 					</dl>
 				</div>
@@ -3270,7 +3224,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 541</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3436,7 +3389,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 553</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3536,7 +3488,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 570</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3648,7 +3599,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 581</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3748,7 +3698,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 594</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3828,7 +3777,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 605</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3897,7 +3845,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 615</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3966,7 +3913,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 624</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4011,7 +3957,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 633</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4067,7 +4012,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 639</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4134,7 +4078,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 646</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4201,7 +4144,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 654</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4247,7 +4189,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 662</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4391,7 +4332,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 669</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4546,7 +4486,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 684</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4626,7 +4565,6 @@
 								<li><code>logical</code> x co-ordinate</li>
 								<li><code>logical</code> y co-ordinate</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 700</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4706,7 +4644,6 @@
 								<li><code>logical</code> x co-ordinate</li>
 								<li><code>logical</code> y co-ordinate</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 711</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4775,7 +4712,50 @@
 								<li><code>logical</code> x co-ordinate</li>
 								<li><code>logical</code> y co-ordinate</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 722</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:appoint_character_to_force"><h3 class="function_name"><strong><code>cm:appoint_character_to_force(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">mf cqi</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Appoints the specified character to the command of the specified military force. The character must be available (e.g. not dead or wounded, and not commanding another military force) for the appointment to work.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Character lookup string of subject character. For more information see the documentation on <code><a href="#section:episodic_scripting:Character Lookups">Character Lookups</a></code>.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Command-queue index of the military force to appoint the character to.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4809,7 +4789,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 732</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4854,7 +4833,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 737</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4899,7 +4877,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 743</p>
 						</dd>
 					</dl>
 				</div>
@@ -4953,7 +4930,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 760</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4998,7 +4974,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 766</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5043,7 +5018,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 772</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5077,7 +5051,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 778</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5122,7 +5095,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 783</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5190,7 +5162,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 789</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5246,7 +5217,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 798</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5280,7 +5250,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 805</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5347,7 +5316,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 810</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5392,7 +5360,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 818</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5437,7 +5404,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 824</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5493,7 +5459,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 830</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5549,7 +5514,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 837</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5605,7 +5569,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 844</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5662,7 +5625,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 851</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5729,7 +5691,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 859</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5763,7 +5724,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 867</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5797,7 +5757,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 872</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5853,7 +5812,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 877</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5909,7 +5867,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 884</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5965,7 +5922,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 891</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5999,7 +5955,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 898</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6044,7 +5999,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 903</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6078,7 +6032,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 909</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6123,7 +6076,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 914</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6168,7 +6120,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 920</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6213,7 +6164,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 926</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6247,7 +6197,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 932</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6292,7 +6241,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 937</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6337,7 +6285,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 943</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6371,7 +6318,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 949</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6416,7 +6362,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 954</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6461,7 +6406,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 960</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6495,7 +6439,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 966</p>
 						</dd>
 					</dl>
 				</div>
@@ -6614,7 +6557,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 979</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6719,7 +6661,6 @@
 								 &emsp;&emsp;&emsp;&emsp;{100, 0}<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 991</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6753,7 +6694,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1013</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6844,7 +6784,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1018</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6878,7 +6817,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1028</p>
 						</dd>
 					</dl>
 				</div>
@@ -6955,7 +6893,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1044</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7000,7 +6937,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1052</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7067,7 +7003,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1058</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7134,7 +7069,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1066</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7190,7 +7124,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1074</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7235,7 +7168,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1081</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7280,7 +7212,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1087</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7325,7 +7256,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> skill point was removed</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1093</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7359,7 +7289,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1100</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7393,7 +7322,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1105</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7427,7 +7355,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1110</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7461,7 +7388,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1115</p>
 						</dd>
 					</dl>
 				</div>
@@ -7514,7 +7440,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1133</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7559,7 +7484,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1139</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7604,7 +7528,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1145</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7649,7 +7572,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1151</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7694,7 +7616,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1157</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7739,7 +7660,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1163</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7784,7 +7704,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1169</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7829,7 +7748,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1175</p>
 						</dd>
 					</dl>
 				</div>
@@ -7892,7 +7810,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1195</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7937,7 +7854,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1207</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7982,7 +7898,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1213</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8016,7 +7931,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1219</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8094,7 +8008,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1224</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8139,7 +8052,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1233</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8184,7 +8096,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1239</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8229,7 +8140,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1245</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8274,7 +8184,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1251</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8319,7 +8228,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1257</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8353,7 +8261,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1263</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8387,7 +8294,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1268</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8432,7 +8338,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1273</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8500,7 +8405,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1279</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8534,7 +8438,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1287</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8568,7 +8471,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1292</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8642,7 +8544,6 @@
 							<div id="example_code"><code>
 								 cm:force_religion_factors("wh_main_reikland_altdorf", "wh_main_religion_untainted", 0.6, "wh_main_religion_undeath", 0.40);<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1297</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8786,7 +8687,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1309</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8842,7 +8742,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1324</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8975,7 +8874,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1331</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9031,7 +8929,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1345</p>
 						</dd>
 					</dl>
 				</div>
@@ -9107,7 +9004,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> mission triggered successfully</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1360</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9164,7 +9060,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1369</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9221,7 +9116,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1376</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9278,7 +9172,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1383</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9390,7 +9283,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1390</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9424,7 +9316,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1403</p>
 						</dd>
 					</dl>
 				</div>
@@ -9489,7 +9380,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1418</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9556,7 +9446,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1425</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9612,7 +9501,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1433</p>
 						</dd>
 					</dl>
 				</div>
@@ -9676,7 +9564,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> incident was triggered</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1449</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9748,7 +9635,6 @@
 							<div id="example_code"><code>
 								 cm:trigger_custom_incident("wh_main_emp_empire", "wh_main_test_incident", true, "payload{money 1000;}");<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1457</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9860,7 +9746,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1466</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9894,7 +9779,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1479</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9950,7 +9834,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> dilemma was triggered</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1484</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10017,7 +9900,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1492</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10084,7 +9966,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1500</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10196,7 +10077,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1508</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10230,7 +10110,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1521</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10308,7 +10187,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1526</p>
 						</dd>
 					</dl>
 				</div>
@@ -10350,7 +10228,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1545</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10439,7 +10316,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1550</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10550,7 +10426,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1560</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10586,7 +10461,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1572</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10621,7 +10495,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1579</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10655,7 +10528,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> event is currently pending</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1585</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10723,7 +10595,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1591</p>
 						</dd>
 					</dl>
 				</div>
@@ -10736,32 +10607,79 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:region_slot_instantly_dismantle_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_dismantle_building()</code></strong></h3></a>
+							<a name="function:episodic_scripting:region_slot_instantly_dismantle_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_dismantle_building(SLOT_SCRIPT_INTERFACE </strong></code><i class="parameter">slot</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Instantly dismantle the building in the supplied region slot. The slot is specified by <code>SLOT_SCRIPT_INTERFACE</code> - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.
 
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>SLOT_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>slot</p>
+									</td>
+								</tr>
+							</table>
 
 							<h4>Returns:</h4>
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1609</p>
 						</dd>
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:region_slot_instantly_upgrade_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_upgrade_building()</code></strong></h3></a>
+							<a name="function:episodic_scripting:region_slot_instantly_upgrade_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_upgrade_building(SLOT_SCRIPT_INTERFACE </strong></code><i class="parameter">slot</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">building key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Instantly upgrade the building in the supplied region slot to the supplied building. The slot is specified by <code>SLOT_SCRIPT_INTERFACE</code> - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information. The building specified must be a valid upgrade for the building chain present in the slot.
 
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>SLOT_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Slot script interface.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Building key, from the <code>building_levels</code> database table.</p>
+									</td>
+								</tr>
+							</table>
 
 							<h4>Returns:</h4>
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1614</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10795,7 +10713,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1620</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10829,7 +10746,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1625</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10874,7 +10790,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1630</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10919,7 +10834,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1636</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10975,7 +10889,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1642</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11032,7 +10945,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1649</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11088,7 +11000,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1656</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11144,7 +11055,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1663</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11200,7 +11110,6 @@
 							<ol>
 								<li><code>FOREIGN_SLOT_MANAGER_SCRIPT_INTERFACE</code> foreign slot manager</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1670</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11216,7 +11125,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1678</p>
 						</dd>
 					</dl>
 				</div>
@@ -11281,7 +11189,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1693</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11326,7 +11233,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1700</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11382,7 +11288,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1706</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11427,7 +11332,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1713</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11494,7 +11398,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1719</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11539,7 +11442,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1727</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11595,7 +11497,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1733</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11640,7 +11541,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1740</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11696,7 +11596,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1746</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11741,7 +11640,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1753</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11797,7 +11695,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1759</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11842,7 +11739,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1766</p>
 						</dd>
 					</dl>
 				</div>
@@ -11885,7 +11781,6 @@
 							<ol>
 								<li><code>CUSTOM_EFFECT_BUNDLE_SCRIPT_INTERFACE</code> custom effect bundle</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1785</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11931,7 +11826,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1791</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11977,7 +11871,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1798</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12023,7 +11916,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1805</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12069,7 +11961,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1812</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12115,7 +12006,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1819</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12161,7 +12051,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1826</p>
 						</dd>
 					</dl>
 				</div>
@@ -12306,7 +12195,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1841</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12385,7 +12273,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1881</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12430,7 +12317,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1890</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12486,7 +12372,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1896</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12542,7 +12427,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1903</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12587,7 +12471,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1910</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12632,7 +12515,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1916</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12677,7 +12559,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1922</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12722,7 +12603,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1928</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12767,7 +12647,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1934</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12823,7 +12702,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1940</p>
 						</dd>
 					</dl>
 				</div>
@@ -12878,7 +12756,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1957</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12912,7 +12789,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1964</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12970,7 +12846,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1969</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13015,7 +12890,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1977</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13062,7 +12936,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1983</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13096,7 +12969,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1990</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13154,7 +13026,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 1995</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13199,7 +13070,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2003</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13245,7 +13115,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2009</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13290,7 +13159,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2016</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13325,7 +13193,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2022</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13360,7 +13227,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2028</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13394,7 +13260,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2034</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13428,7 +13293,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2039</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13462,7 +13326,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2044</p>
 						</dd>
 					</dl>
 				</div>
@@ -13516,7 +13379,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2060</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13561,7 +13423,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2066</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13617,7 +13478,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2072</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13673,7 +13533,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2079</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13730,7 +13589,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2086</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13797,7 +13655,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2094</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13853,7 +13710,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2102</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13898,7 +13754,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2109</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13932,7 +13787,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2115</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -13977,7 +13831,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2120</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14022,7 +13875,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2126</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14078,7 +13930,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2132</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14123,7 +13974,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2139</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14179,7 +14029,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2145</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14224,7 +14073,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2152</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14280,7 +14128,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2158</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14326,7 +14173,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2165</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14361,7 +14207,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2172</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14406,7 +14251,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2178</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14451,7 +14295,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2184</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14496,7 +14339,732 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2190</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:faction_set_unit_purchasable_effect_availability"><h3 class="function_name"><strong><code>cm:faction_set_unit_purchasable_effect_availability(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">purchasable effect key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">available</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets a unit purchasable effect to be available or unavailable for a specified faction. Unit purchasable effects are upgrades for units, which is supported for some factions/races.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the target faction, from the <code>factions</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the purchasable effect, from the <code>unit_purchasable_effects</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Sets whether the purchasable effect should be available or not.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:faction_purchase_unit_effect"><h3 class="function_name"><strong><code>cm:faction_purchase_unit_effect(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <br />&emsp;&emsp;UNIT_SCRIPT_INTERFACE </strong></code><i class="parameter">unit</i><code><strong>, <br />&emsp;&emsp;UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE </strong></code><i class="parameter">purchasable effect</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Makes the supplied faction purchase a supplied effect for a supplied unit. All arguments are specified by model hierarchy objects - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>faction</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>UNIT_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>unit</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code>UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>purchasable effect</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:faction_set_unit_purchasable_effect_lock_state"><h3 class="function_name"><strong><code>cm:faction_set_unit_purchasable_effect_lock_state(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">purchasable effect</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">lock reason</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">should lock</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Locks or unlocks the purchasable unit effect faction-wide, with an optional lock reason record. The purchasable effect is specified by string key. The faction is specified by <code>FACTION_SCRIPT_INTERFACE</code> - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Unit purchasable effect. This should be a key from the <code>unit_purchasable_effects</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Lock reason. This should be a key from the <code>unit_purchasable_effect_lock_reasons</code> database table. A blank string may be supplied to not provide a lock reason.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Should lock - supply <code>true</code> to lock the effect, and <code>false</code> to unlock it.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:faction_imprison_character"><h3 class="function_name"><strong><code>cm:faction_imprison_character(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">imprisoning faction</i><code><strong>, <br />&emsp;&emsp;CHARACTER_SCRIPT_INTERFACE </strong></code><i class="parameter">imprisoned character</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Puts the supplied character into the supplied faction's prison. The faction and character are specified by model hierarchy objects - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>imprisoning faction</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>CHARACTER_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>imprisoned character</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:faction_perform_action_on_prisoner"><h3 class="function_name"><strong><code>cm:faction_perform_action_on_prisoner(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <br />&emsp;&emsp;FAMILY_MEMBER_SCRIPT_INTERFACE </strong></code><i class="parameter">character</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">action</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Performs an action on a character within the faction's prison. The faction and character (family member) are specified by model hierarchy objects - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Imprisoning faction.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>FAMILY_MEMBER_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Imprisoned character - this is specified as a family member.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Action to perform. This should be a key from the <code>campaign_prison_actions</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:cook_recipe"><h3 class="function_name"><strong><code>cm:cook_recipe(FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipe</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Attempt to cook a recipe for a faction. The default ingredients will be used.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Recipe to cook. This should be a key from the <code>cooking_recipes</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> attempt was successful</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:cook_recipe_with_ingredients"><h3 class="function_name"><strong><code>cm:cook_recipe_with_ingredients(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipe</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:table">table</a></code> </strong></code><i class="parameter">primary ingredients</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:table">table</a></code> </strong></code><i class="parameter">secondary ingredients</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Attempt to cook a recipe for a faction with the specified ingredients. The ingredients lists should be specified as tables of strings.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Recipe to cook. This should be a key from the <code>cooking_recipes</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:table">table</a></code></code></p>
+									</td>
+									<td>
+										<p>Table containing a list of <code><a href="lua.html#class:string">string</a></code> values. Each should be a key from the <code>cooking_ingredients</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:table">table</a></code></code></p>
+									</td>
+									<td>
+										<p>Table containing a list of <code><a href="lua.html#class:string">string</a></code> values. Each should be a key from the <code>cooking_ingredients</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> attempt was successful</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_cook_recipe"><h3 class="function_name"><strong><code>cm:force_cook_recipe(FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipe</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">apply cost</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force a recipe to be cooked for a faction. The default ingredients will be used.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Recipe to cook. This should be a key from the <code>cooking_recipes</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Apply the recipe cost.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> attempt was successful</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_cook_recipe_with_ingredients"><h3 class="function_name"><strong><code>cm:force_cook_recipe_with_ingredients(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipe</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:table">table</a></code> </strong></code><i class="parameter">primary ingredients</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:table">table</a></code> </strong></code><i class="parameter">secondary ingredients</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">apply cost</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force a recipe to be cooked for a faction with the specified ingredients. The ingredients lists should be specified as tables of strings.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Recipe to cook. This should be a key from the <code>cooking_recipes</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:table">table</a></code></code></p>
+									</td>
+									<td>
+										<p>Table containing a list of <code><a href="lua.html#class:string">string</a></code> values. Each should be a key from the <code>cooking_ingredients</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:table">table</a></code></code></p>
+									</td>
+									<td>
+										<p>Table containing a list of <code><a href="lua.html#class:string">string</a></code> values. Each should be a key from the <code>cooking_ingredients</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>5</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Apply the recipe cost.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> attempt was successful</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:unlock_cooking_ingredient"><h3 class="function_name"><strong><code>cm:unlock_cooking_ingredient(FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">ingredient</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Unlock an ingredient for a faction. The ingredient must be permitted for the faction.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Ingredient key, from the <code>cooking_ingredients</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:unlock_cooking_recipe"><h3 class="function_name"><strong><code>cm:unlock_cooking_recipe(FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipe</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Unlock a cooking recipe for a faction. The recipe must be permitted for the faction.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Recipe key, from the <code>cooking_recipes</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:clear_active_cooking_recipe"><h3 class="function_name"><strong><code>cm:clear_active_cooking_recipe(FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Clears the active recipe for the specified faction.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> recipe was cleared</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:set_faction_max_primary_cooking_ingredients"><h3 class="function_name"><strong><code>cm:set_faction_max_primary_cooking_ingredients(FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">max ingredients</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the maximum number of primary ingredients that the specified faction may cook with. This value is clamped between 0 and 10.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Maximum number of ingredients.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:set_faction_max_secondary_cooking_ingredients"><h3 class="function_name"><strong><code>cm:set_faction_max_secondary_cooking_ingredients(<br />&emsp;&emsp;FACTION_SCRIPT_INTERFACE </strong></code><i class="parameter">faction</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">max ingredients</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the maximum number of secondary ingredients that the specified faction may cook with. This value is clamped between 0 and 10.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>FACTION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Faction object - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Maximum number of ingredients.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
 						</dd>
 					</dl>
 				</div>
@@ -14659,7 +15227,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2205</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14693,7 +15260,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2221</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14727,7 +15293,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2226</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14805,7 +15370,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2231</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14839,7 +15403,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2240</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14874,7 +15437,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2245</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14909,7 +15471,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> upgrade was successful</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2251</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -14943,7 +15504,6 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> upgrade was successful</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2258</p>
 						</dd>
 					</dl>
 				</div>
@@ -15007,7 +15567,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2285</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15063,7 +15622,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2291</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15119,7 +15677,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2298</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15153,7 +15710,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2305</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15198,7 +15754,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2310</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15243,7 +15798,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2316</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15343,7 +15897,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2322</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15388,7 +15941,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2333</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15455,7 +16007,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2339</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15500,7 +16051,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2347</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15534,7 +16084,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2353</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15568,7 +16117,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2358</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15602,7 +16150,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2363</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15636,7 +16183,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2368</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15670,7 +16216,6 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2373</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -15704,7 +16249,72 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/docgen/docgen_campaign_episodic_scripting.lua, line 2378</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:cai_disable_targeting_against_settlement"><h3 class="function_name"><strong><code>cm:cai_disable_targeting_against_settlement(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">settlement key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Prevents any AI faction from targeting a specified settlement for capture for the rest of the campaign. This setting can be later cleared with <code><a href="#function:episodic_scripting:cai_enable_targeting_against_settlement">cm:cai_enable_targeting_against_settlement</a></code>.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Settlement key, from the <code>campaign_map_settlements</code> database table. This will be <code>settlement:</code> followed by the region key.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:cai_enable_targeting_against_settlement"><h3 class="function_name"><strong><code>cm:cai_enable_targeting_against_settlement(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">settlement key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Clears any restriction previously set with <code><a href="#function:episodic_scripting:cai_disable_targeting_against_settlement">cm:cai_disable_targeting_against_settlement</a></code>, allowing AI factions to target a specified settlement for capture again.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Settlement key, from the <code>campaign_map_settlements</code> database table. This will be <code>settlement:</code> followed by the region key.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
 						</dd>
 					</dl>
 				</div>
@@ -15714,7 +16324,7 @@
 
 		</div>
 
-		<div id="about">Last updated 12/10/19 15:46:48</div>
+		<div id="about">Last updated 05/14/20 01:10:13</div>
 
 	</div>
 

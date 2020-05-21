@@ -43,6 +43,7 @@
 					<ul>
 						<li>&emsp;&emsp;<a href="#function:custom_context:new">new</a></li>
 						<li>&emsp;&emsp;<a href="#function:custom_context:add_data">add_data</a></li>
+						<li>&emsp;&emsp;<a href="#function:custom_context:add_data_with_key">add_data_with_key</a></li>
 						<li>&emsp;&emsp;<a href="#function:custom_context:table_data">table_data</a></li>
 						<li>&emsp;&emsp;<a href="#function:custom_context:region">region</a></li>
 						<li>&emsp;&emsp;<a href="#function:custom_context:character">character</a></li>
@@ -105,9 +106,10 @@
 
 			<div id="content">
 				<a name="class:custom_context"><h1 class="content_header">Custom Context</h1></a>
-				<p>A custom context is created when the core object is compelled to trigger an event with <code>trigger_event</code>. Data items supplied to <code>trigger_event</code> are added to the custom context, which is then sent to any script listening for the event being triggered.</p>
+				<p>A custom context is created when the core object is compelled to trigger an event with <code>trigger_event</code>. Data items supplied to <code><a href="core.html#function:core:trigger_event">core:trigger_event</a></code> or <code><a href="core.html#function:core:trigger_custom_event">core:trigger_custom_event</a></code> are added to the custom context, which is then sent to any script listening for the event being triggered.</p>
 				<p>The receiving script should then be able to interrogate the custom context it receives as if it were a context issued from the game code.</p>
-				<p>No script outside of <code>trigger_event</code> should need to create a custom context, but it's documented here in order to list the data types it supports.</p>
+				<p>No script outside of the <code><a href="core.html#function:core:trigger_event">core:trigger_event</a></code> function should need to create a custom context, but it's documented here in order to list the data types it supports.</p>
+				<p>The <code><a href="core.html#function:core:trigger_custom_event">core:trigger_custom_event</a></code> function allows triggering script to customise the function names on the custom context by which the receiving script may query the context data.</p>
 							<table class="loaded_in" style="margin-top: 1em;">
 								<tr>
 									<td>
@@ -152,7 +154,7 @@
 							<ol>
 								<li><code>custom_context</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2077</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2293</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -160,7 +162,7 @@
 							<a name="function:custom_context:add_data"><h3 class="function_name"><strong><code>custom_context:add_data(object </strong></code><i class="parameter">context data</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							adds data to the custom context object. Supported data types:<br />
+							Adds data to the custom context object. Supported data types:<br />
 							<ul><li>string: will be accessible to the receiving script as <code>context.string</code>.</li><br />
 							<ul><li>number: will be accessible to the receiving script as <code>context.number</code>.</li><br />
 							<li>table: will be accessible to the receiving script using <code><a href="#function:custom_context:table_data">custom_context:table_data</a></code>.</li><br />
@@ -199,7 +201,52 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2089</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2305</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:custom_context:add_data_with_key"><h3 class="function_name"><strong><code>custom_context:add_data_with_key(value </strong></code><i class="parameter">value</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">function name</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds data to the custom context which will be made accessible at the supplied function name. The function name is supplied by string key.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>value</code></p>
+									</td>
+									<td>
+										<p>Value to add to custom context. Any value may be supplied.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Name of function at which the value may be retrieved, if called on the custom context.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2357</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -214,7 +261,7 @@
 							<ol>
 								<li><code>table</code> of user defined values</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2143</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2374</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -229,7 +276,7 @@
 							<ol>
 								<li><code>region</code> region object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2151</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2382</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -244,7 +291,7 @@
 							<ol>
 								<li><code>character</code> character object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2159</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2390</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -259,7 +306,7 @@
 							<ol>
 								<li><code>character</code> target character object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2167</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2398</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -274,7 +321,7 @@
 							<ol>
 								<li><code>faction</code> faction object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2175</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2406</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -289,7 +336,7 @@
 							<ol>
 								<li><code>component</code> component object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2183</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2414</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -304,7 +351,7 @@
 							<ol>
 								<li><code>military_force</code> military force object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2191</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2422</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -319,7 +366,7 @@
 							<ol>
 								<li><code>pending_battle</code> pending battle object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2199</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2430</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -334,7 +381,7 @@
 							<ol>
 								<li><code>garrison_residence</code> garrison residence object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2207</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2438</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -349,7 +396,7 @@
 							<ol>
 								<li><code>building</code> building object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2215</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2446</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -364,7 +411,7 @@
 							<ol>
 								<li><code>vector</code> vector object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2223</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_core.lua, line 2454</p>
 						</dd>
 					</dl>
 				</div>
@@ -374,7 +421,7 @@
 
 		</div>
 
-		<div id="about">Last updated 12/10/19 15:46:48</div>
+		<div id="about">Last updated 04/29/20 13:51:23</div>
 
 	</div>
 
