@@ -12,24 +12,30 @@
 
 	<div id="container">
 
-		<div id="main">
+		<div style="background-color:#f0f0f0" id="main">
 
-			<div id="navigation_left">
+			<div style="background-color:#f0f0f0" id="navigation_left">
 				<br/>
 				<h1 class="navigation_header"><i>Script Documentation</i></h1>
-				<h2>Game Areas</h2>
+				<strong> > Scripting Homepage</strong>
+				<h2 style="background-color:#e7e7e7">Search</h2>
+				<ul>
+				<form id="search" class="search_form" onsubmit="return false">
+					<input class="search_input" type="text" placeholder="Search.."/><br />
+					<div id="search_dropdown" class="search_dropdown"></div>
+				</form>				<h2 style="background-color:#e7e7e7">Game Areas</h2>
 				<ul>
 					<li><a href="campaign/campaign_index.html">Campaign Index</a></li>
 					<li><a href="battle/battle_index.html">Battle Index</a></li>
 					<li><a href="frontend/frontend_index.html">Frontend Index</a></li>
-				<h2>Script Topics</h2>
+				<h2 style="background-color:#e7e7e7">Script Topics</h2>
 				<ul>
 					<li><strong> > Main Index</strong></li>
 					<li><a href="scripted_events.html">Scripted Events</a></li>
 					<li><a href="ui_scripting.html">UI Scripting</a></li>
 				</ul>
 
-				<h2>On this page</h2>
+				<h2 style="background-color:#e7e7e7">On this page</h2>
 				<ul>
 									<li><a href="#class:index">Main Index</a></li>
 					<ul>
@@ -47,7 +53,7 @@
 				</ul>
 			</div>
 
-			<div id="navigation_right">
+			<div style="background-color:#f0f0f0" id="navigation_right">
 				</ul>
 			</div>
 
@@ -162,9 +168,13 @@
 
 		</div>
 
-		<div id="about">Last updated 05/14/20 01:10:14</div>
+		<div id="about">Last updated 05/25/20 01:02:56</div>
 
 	</div>
+
+	<script src="searchdata.js"></script>
+	<script src="search.js"></script>
+	<script>const page_env = "Script"; const path_to_document_root = "";</script>
 
 </body>
 </html>

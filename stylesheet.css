@@ -21,6 +21,84 @@ fieldset,img {
     border: 0;
 }
 
+
+.search_form {
+	text-align:left;
+	background: transparent;
+	user-select: none;
+	background: white;
+	cursor: pointer;
+	width: calc(100% - 1.5em);
+	display: inline-block;
+	position: relative;
+	background: white;
+	border: 1px solid #aaa;
+	margin-top: 0.3em;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.search_input {
+	width:calc(100% - 1em);
+	border:none;
+	padding: 0.5em;
+}
+
+.search_dropdown {
+	position: absolute;
+	background: transparent;
+	font-size: 95%;
+	/* width: calc(100% + 11px);
+	left: -1px;*/
+	width: 760px;
+	z-index: 9999;
+	height: 503px;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.dropdown_items {
+	position: absolute;
+	pointer-events: all;
+	z-index: 9999;
+	top: 0px;
+	/*width: calc(100% - 11px);*/
+	width: 750px;
+	max-height: 470px;
+	background: white;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: 3px 3px 3px #999;
+	transform: translate(0px, -200px);
+	transition: 0.3s all ease-out;
+	overflow-y: auto;
+	border: 1px solid #aaa;
+}
+
+.dropdown_item {
+}
+
+.dropdown_item_term {
+	padding: 5px;
+	float: left;
+	width: calc(100% - 100px);
+}
+
+.dropdown_item_env {
+	padding: 5px;
+	float: right;
+	width: 80px;
+	/* background: #fff7cc;*/
+}
+
+.search_env_checkbox {
+	width: calc(100% - 1.5em);
+	text-align: right;
+	vertical-align: baseline;
+	font-size: 90%;
+	margin-left: 0.5em;
+}
+
 img.centered {
 	display: block;
 	margin-left: auto;
@@ -224,13 +302,13 @@ table.index td { text-align: left; vertical-align: top; }
     float: left;
     width: 28em;
     vertical-align: top;
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0;*/
 	/* padding-right: 1em; */
     /* overflow: scroll; */
 }
 
 #navigation_left h2 {
-    background-color:#e7e7e7;
+    /*background-color:#e7e7e7;*/
     font-size:1.1em;
     color:#000000;
     text-align: left;

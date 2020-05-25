@@ -17,7 +17,21 @@
 			<div style="background-color:#fff7cc" id="navigation_left">
 				<br/>
 				<h1 class="navigation_header"><i>Campaign Documentation</i></h1>
-				<a href="..\index.html">Scripting Homepage</a>
+				<a href="../index.html">Scripting Homepage</a>
+				<h2 style="background-color:#ffed8c">Search</h2>
+				<ul>
+				<form id="search_env_checkbox" class="search_env_checkbox">
+					<label for="search_current_env_only">Search campaign only</label>
+					<input type="checkbox" name="search_current_env_only" checked /><br />
+				</form>
+				<form id="search" class="search_form" onsubmit="return false">
+					<input class="search_input" type="text" placeholder="Search.."/><br />
+					<div id="search_dropdown" class="search_dropdown"></div>
+				</form>				<h2 style="background-color:#ffed8c">Game Areas</h2>
+				<ul>
+					<li><strong> > Campaign Index</strong></li>
+					<li><a href="../battle/battle_index.html">Battle Index</a></li>
+					<li><a href="../frontend/frontend_index.html">Frontend Index</a></li>
 				</ul>
 
 				<h2 style="background-color:#ffed8c">On this page</h2>
@@ -12701,7 +12715,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9902</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9903</p>
 						</dd>
 					</dl>
 				</div>
@@ -12779,7 +12793,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10545</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10546</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12813,7 +12827,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10590</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10591</p>
 						</dd>
 					</dl>
 				</div>
@@ -12856,7 +12870,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10818</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10819</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12891,7 +12905,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10864</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10865</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12927,7 +12941,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10898</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10899</p>
 						</dd>
 					</dl>
 				</div>
@@ -12992,7 +13006,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10951</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10952</p>
 						</dd>
 					</dl>
 				</div>
@@ -13133,7 +13147,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10968</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10969</p>
 						</dd>
 					</dl>
 				</div>
@@ -13143,9 +13157,13 @@
 
 		</div>
 
-		<div id="about">Last updated 05/14/20 01:10:13</div>
+		<div id="about">Last updated 05/25/20 01:02:54</div>
 
 	</div>
+
+	<script src="../searchdata.js"></script>
+	<script src="../search.js"></script>
+	<script>const page_env = "Campaign"; const path_to_document_root = "../";</script>
 
 </body>
 </html>

@@ -17,7 +17,21 @@
 			<div style="background-color:#fff7cc" id="navigation_left">
 				<br/>
 				<h1 class="navigation_header"><i>Campaign Documentation</i></h1>
-				<a href="..\index.html">Scripting Homepage</a>
+				<a href="../index.html">Scripting Homepage</a>
+				<h2 style="background-color:#ffed8c">Search</h2>
+				<ul>
+				<form id="search_env_checkbox" class="search_env_checkbox">
+					<label for="search_current_env_only">Search campaign only</label>
+					<input type="checkbox" name="search_current_env_only" checked /><br />
+				</form>
+				<form id="search" class="search_form" onsubmit="return false">
+					<input class="search_input" type="text" placeholder="Search.."/><br />
+					<div id="search_dropdown" class="search_dropdown"></div>
+				</form>				<h2 style="background-color:#ffed8c">Game Areas</h2>
+				<ul>
+					<li><strong> > Campaign Index</strong></li>
+					<li><a href="../battle/battle_index.html">Battle Index</a></li>
+					<li><a href="../frontend/frontend_index.html">Frontend Index</a></li>
 				</ul>
 
 				<h2 style="background-color:#ffed8c">On this page</h2>
@@ -10607,30 +10621,11 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:region_slot_instantly_dismantle_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_dismantle_building(SLOT_SCRIPT_INTERFACE </strong></code><i class="parameter">slot</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:region_slot_instantly_dismantle_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_dismantle_building()</code></strong></h3></a>
 						</dt>
 						<dd>
 							Instantly dismantle the building in the supplied region slot. The slot is specified by <code>SLOT_SCRIPT_INTERFACE</code> - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information.
 
-							<h4>Parameters:</h4>
-							<table class="parameter_list">
-								<colgroup>
-									<col style="width: 3%;">
-									<col style="width: 12%;">
-									<col style="width: 85%;">
-								</colgroup>
-								<tr>
-									<td>
-										<p><strong>1</strong></p>
-									</td>
-									<td>
-										<p><code>SLOT_SCRIPT_INTERFACE</code></p>
-									</td>
-									<td>
-										<p>slot</p>
-									</td>
-								</tr>
-							</table>
 
 							<h4>Returns:</h4>
 							<ol>
@@ -10640,41 +10635,11 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:region_slot_instantly_upgrade_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_upgrade_building(SLOT_SCRIPT_INTERFACE </strong></code><i class="parameter">slot</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">building key</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:region_slot_instantly_upgrade_building"><h3 class="function_name"><strong><code>cm:region_slot_instantly_upgrade_building()</code></strong></h3></a>
 						</dt>
 						<dd>
 							Instantly upgrade the building in the supplied region slot to the supplied building. The slot is specified by <code>SLOT_SCRIPT_INTERFACE</code> - see the <a href="../../scripting_doc.html">campaign model hierarchy</a> documentation for more information. The building specified must be a valid upgrade for the building chain present in the slot.
 
-							<h4>Parameters:</h4>
-							<table class="parameter_list">
-								<colgroup>
-									<col style="width: 3%;">
-									<col style="width: 12%;">
-									<col style="width: 85%;">
-								</colgroup>
-								<tr>
-									<td>
-										<p><strong>1</strong></p>
-									</td>
-									<td>
-										<p><code>SLOT_SCRIPT_INTERFACE</code></p>
-									</td>
-									<td>
-										<p>Slot script interface.</p>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<p><strong>2</strong></p>
-									</td>
-									<td>
-										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
-									</td>
-									<td>
-										<p>Building key, from the <code>building_levels</code> database table.</p>
-									</td>
-								</tr>
-							</table>
 
 							<h4>Returns:</h4>
 							<ol>
@@ -16324,9 +16289,13 @@
 
 		</div>
 
-		<div id="about">Last updated 05/14/20 01:10:13</div>
+		<div id="about">Last updated 05/25/20 01:02:55</div>
 
 	</div>
+
+	<script src="../searchdata.js"></script>
+	<script src="../search.js"></script>
+	<script>const page_env = "Campaign"; const path_to_document_root = "../";</script>
 
 </body>
 </html>
