@@ -430,7 +430,7 @@
 			<div id="content">
 				<a name="class:campaign_manager"><h1 class="content_header">Campaign Manager</h1></a>
 				<p>The campaign manager is the main interface object in the campaign scripting environment. It wraps the primary <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> game interface that the campaign model provides to script, as well as providing a myriad of features and quality-of-life improvements in its own right. Any calls made to the <code>campaign manager</code> that it doesn't provide itself are passed through to the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface. The is the intended route for calls to the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface to be made.</p>
-				<p>Asides from the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface provided through the campaign manager, and the campaign manager interface itself (documented below), the main campaign interfaces provided by code are collectively called the model hierarchy. These allow scripts to query the state of the model at any time, and are documented <a href="../../scripting_doc.html">here</a>.</p>
+				<p>Asides from the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface provided through the campaign manager, and the campaign manager interface itself (documented below), the main campaign interfaces provided by code are collectively called the model hierarchy. These allow scripts to query the state of the model at any time, and are documented <a href="../scripting_doc.html">here</a>.</p>
 				<p>A campaign manager object, called <code>cm</code> in script, is automatically created when the scripts load in campaign configuration.</p>
 							<table class="loaded_in" style="margin-top: 1em;">
 								<tr>
@@ -1862,7 +1862,7 @@
 							<a name="function:campaign_manager:model"><h3 class="function_name"><strong><code>campaign_manager:model()</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a handle to the game model at any time (after the game has been created). The game model is currently documented <a href="../../scripting_doc.html#MODEL_SCRIPT_INTERFACE">here</a>
+							Returns a handle to the game model at any time (after the game has been created). The game model is currently documented <a href="../scripting_doc.html#MODEL_SCRIPT_INTERFACE">here</a>
 
 
 							<h4>Returns:</h4>
@@ -4811,7 +4811,7 @@
 							<a name="function:campaign_manager:create_storm_for_region"><h3 class="function_name"><strong><code>campaign_manager:create_storm_for_region(<br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">storm strength</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">duration</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">storm type</i><code><strong><br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Creates a storm of a given type in a given region. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output.
+							Creates a storm of a given type in a given region. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -4958,7 +4958,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:campaign_manager:Pending Battle Cache"><h2 class="section_header">Pending Battle Cache</h2></a>
 				</div>
-				<p>Using the standard <a href="../../scripting_doc.html">game interface</a> it can be difficult to get information about a battle after it has been fought. The only method of querying the forces that fought in a battle is through the character interface (of the respective army commanders), and if they died in battle this will no longer be available.</p>
+				<p>Using the standard <a href="../scripting_doc.html">game interface</a> it can be difficult to get information about a battle after it has been fought. The only method of querying the forces that fought in a battle is through the character interface (of the respective army commanders), and if they died in battle this will no longer be available.</p>
 				<p>The pending battle cache system stores information about a battle prior to it being fought, which can be queried after the battle. This allows the factions, characters, and military forces involved to be queried even if they died in the battle. The information will remain available for querying until the next battle occurs.</p>
 				<p>The data in the cache may also be queried prior to battle. The script triggers a <code>ScriptEventPendingBattle</code> event after a <code>PendingBattle</code> event is received and the pending battle cache has been populated. Scripts that want to query the pending battle cache prior to battle can listen for this.</p>
 				<div class="section_body">
@@ -6939,7 +6939,7 @@
 							<a name="function:campaign_manager:steal_escape_key"><h3 class="function_name"><strong><code>campaign_manager:steal_escape_key(boolean </strong></code><i class="parameter">steal</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Steals or releases the escape key. This wraps a function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>. While the ESC key is stolen by script, presses of the key will cause <code>OnKeyPressed()</code> to be called which goes on to call <code><a href="#function:campaign_manager:on_key_press_up">campaign_manager:on_key_press_up</a></code>.<br />
+							Steals or releases the escape key. This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>. While the ESC key is stolen by script, presses of the key will cause <code>OnKeyPressed()</code> to be called which goes on to call <code><a href="#function:campaign_manager:on_key_press_up">campaign_manager:on_key_press_up</a></code>.<br />
 							To register a function to call when the escape key is pressed use <code><a href="#function:campaign_manager:steal_escape_key_with_callback">campaign_manager:steal_escape_key_with_callback</a></code> or <code><a href="#function:campaign_manager:steal_escape_key_and_space_bar_with_callback">campaign_manager:steal_escape_key_and_space_bar_with_callback</a></code> instead of this function.
 
 							<h4>Parameters:</h4>
@@ -6974,7 +6974,7 @@
 							<a name="function:campaign_manager:steal_user_input"><h3 class="function_name"><strong><code>campaign_manager:steal_user_input(boolean </strong></code><i class="parameter">steal</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Steals or releases user input. This wraps a function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>. Stealing user input prevents any player interaction with the game (asides from pressing the ESC key).
+							Steals or releases user input. This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>. Stealing user input prevents any player interaction with the game (asides from pressing the ESC key).
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8296,7 +8296,7 @@
 							<a name="function:campaign_manager:create_force"><h3 class="function_name"><strong><code>campaign_manager:create_force(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">exclude named characters</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_force function on the underlying <a href="../../scripting_doc.html">game interface</a>, which instantly spawns an army with a general on the campaign map. This wrapper function adds debug output and success callback functionality.<br />
+							Wrapper for create_force function on the underlying <a href="../scripting_doc.html">game interface</a>, which instantly spawns an army with a general on the campaign map. This wrapper function adds debug output and success callback functionality.<br />
 							Note that the underlying create_force function supports the call not going through the command queue, but this wrapper forces it to do so as doing otherwise seems to break in multiplayer.
 
 							<h4>Parameters:</h4>
@@ -8414,7 +8414,7 @@
 							<a name="function:campaign_manager:create_force_with_general"><h3 class="function_name"><strong><code>campaign_manager:create_force_with_general(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">agent type</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">agent subtype</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">forename</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">clan name</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">family name</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">other name</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">make faction leader</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_force_with_general function on the underlying <a href="../../scripting_doc.html">game interface</a>, which instantly spawn an army with a specific general on the campaign map. This wrapper function adds debug output and success callback functionality.
+							Wrapper for create_force_with_general function on the underlying <a href="../scripting_doc.html">game interface</a>, which instantly spawn an army with a specific general on the campaign map. This wrapper function adds debug output and success callback functionality.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8603,7 +8603,7 @@
 							<a name="function:campaign_manager:create_force_with_existing_general"><h3 class="function_name"><strong><code>campaign_manager:create_force_with_existing_general(<br />&emsp;&emsp;string </strong></code><i class="parameter">character lookup</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_force_with_existing_general function on the underlying <a href="../../scripting_doc.html">game interface</a>, which instantly spawn an army with a specific existing general on the campaign map. The general is specified by character string lookup. This wrapper function adds debug output and success callback functionality.
+							Wrapper for create_force_with_existing_general function on the underlying <a href="../scripting_doc.html">game interface</a>, which instantly spawn an army with a specific existing general on the campaign map. The general is specified by character string lookup. This wrapper function adds debug output and success callback functionality.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8822,7 +8822,7 @@
 							<a name="function:campaign_manager:create_agent"><h3 class="function_name"><strong><code>campaign_manager:create_agent(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">character type</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">character subtype</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">id</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">use command queue</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_agent function on the underlying <a href="../../scripting_doc.html">game interface</a> which adds input validation and debug output. This function creates an agent of a specified type on the campaign map.
+							Wrapper for create_agent function on the underlying <a href="../scripting_doc.html">game interface</a> which adds input validation and debug output. This function creates an agent of a specified type on the campaign map.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9561,7 +9561,7 @@
 							<a name="function:campaign_manager:attack"><h3 class="function_name"><strong><code>campaign_manager:attack(string </strong></code><i class="parameter">attacker</i><code><strong>, string </strong></code><i class="parameter">defender</i><code><strong>, boolean </strong></code><i class="parameter">command queue</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Instruct a character at the head of a military force to attack another. This function is a wrapper for attack function on the underlying <a href="../../scripting_doc.html">game interface</a>, which also enables movement for the character and prints debug output.
+							Instruct a character at the head of a military force to attack another. This function is a wrapper for attack function on the underlying <a href="../scripting_doc.html">game interface</a>, which also enables movement for the character and prints debug output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9617,7 +9617,7 @@
 							<a name="function:campaign_manager:teleport_to"><h3 class="function_name"><strong><code>campaign_manager:teleport_to(string </strong></code><i class="parameter">character string</i><code><strong>, number </strong></code><i class="parameter">x</i><code><strong>, number </strong></code><i class="parameter">y</i><code><strong>, [boolean </strong></code><i class="parameter">command queue</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
-							Teleports a character to a logical position on the campaign map. This is a validation/output wrapper for a function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>.<br />
+							Teleports a character to a logical position on the campaign map. This is a validation/output wrapper for a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>.<br />
 							This function can also reposition the camera, so it's best used on game creation to move characters around at the start of the campaign, rather than on the first tick or later.
 
 							<h4>Parameters:</h4>
@@ -9686,7 +9686,7 @@
 							<a name="function:campaign_manager:enable_movement_for_character"><h3 class="function_name"><strong><code>campaign_manager:enable_movement_for_character(string </strong></code><i class="parameter">char lookup string</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Enables movement for the supplied character. Characters are specified by lookup string. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output.
+							Enables movement for the supplied character. Characters are specified by lookup string. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9720,7 +9720,7 @@
 							<a name="function:campaign_manager:disable_movement_for_character"><h3 class="function_name"><strong><code>campaign_manager:disable_movement_for_character(string </strong></code><i class="parameter">char lookup string</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Disables movement for the supplied character. Characters are specified by lookup string. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output.
+							Disables movement for the supplied character. Characters are specified by lookup string. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9754,7 +9754,7 @@
 							<a name="function:campaign_manager:enable_movement_for_faction"><h3 class="function_name"><strong><code>campaign_manager:enable_movement_for_faction(string </strong></code><i class="parameter">faction key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Enables movement for the supplied faction. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output.
+							Enables movement for the supplied faction. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9788,7 +9788,7 @@
 							<a name="function:campaign_manager:disable_movement_for_faction"><h3 class="function_name"><strong><code>campaign_manager:disable_movement_for_faction(string </strong></code><i class="parameter">faction key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Disables movement for the supplied faction. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output.
+							Disables movement for the supplied faction. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9822,7 +9822,7 @@
 							<a name="function:campaign_manager:force_add_trait"><h3 class="function_name"><strong><code>campaign_manager:force_add_trait(<br />&emsp;&emsp;string </strong></code><i class="parameter">character string</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">trait key</i><code><strong>, <br />&emsp;&emsp;[boolean </strong></code><i class="parameter">show message</i><code><strong>], <br />&emsp;&emsp;[number </strong></code><i class="parameter">points</i><code><strong>], <br />&emsp;&emsp;[command_queue, </strong></code><i class="parameter">if this command goes to the queue</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forceably adds an trait to a character. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
+							Forceably adds an trait to a character. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9903,7 +9903,7 @@
 							<a name="function:campaign_manager:force_add_skill"><h3 class="function_name"><strong><code>campaign_manager:force_add_skill(string </strong></code><i class="parameter">character string</i><code><strong>, string </strong></code><i class="parameter">skill key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forceably adds a skill to a character. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
+							Forceably adds a skill to a character. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9948,7 +9948,7 @@
 							<a name="function:campaign_manager:add_agent_experience"><h3 class="function_name"><strong><code>campaign_manager:add_agent_experience(string </strong></code><i class="parameter">character string</i><code><strong>, number </strong></code><i class="parameter">experience</i><code><strong>, [boolean </strong></code><i class="parameter">by_level</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forceably adds experience to a character. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds output.
+							Forceably adds experience to a character. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -10308,7 +10308,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:campaign_manager:Effect Bundles"><h2 class="section_header">Effect Bundles</h2></a>
 				</div>
-				<p>These this section contains functions that add and remove effect bundles from factions, military forces and regions. In each case they wrap a function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>, providing input validation and debug output.</p>
+				<p>These this section contains functions that add and remove effect bundles from factions, military forces and regions. In each case they wrap a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>, providing input validation and debug output.</p>
 				<div class="section_body">
 					<dl class="function">
 						<dt>
@@ -10781,7 +10781,7 @@
 						</dt>
 						<dd>
 							Restricts or unrestricts certain types of diplomacy between factions or groups of factions. Groups of factions may be specified with the strings <code>"all"</code>, <code>"faction:faction_key"</code>, <code>"subculture:subculture_key"</code> or <code>"culture:culture_key"</code>. A source and target faction/group of factions must be specified.<br />
-							Note that the <a href="../../scripting_doc.html">game interface</a> function that this function calls is <code>force_diplomacy_new</code>, not </code>force_diplomacy</code>.
+							Note that the <a href="../scripting_doc.html">game interface</a> function that this function calls is <code>force_diplomacy_new</code>, not </code>force_diplomacy</code>.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -10917,7 +10917,7 @@
 							<a name="function:campaign_manager:force_declare_war"><h3 class="function_name"><strong><code>campaign_manager:force_declare_war(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">invite faction a allies</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">invite faction b allies</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">command queue or not</i><code><strong><br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forces war between two factions. This calls the function of the same name on the <a href="../../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Design</code> console spool.
+							Forces war between two factions. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Design</code> console spool.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -11556,7 +11556,7 @@
 						</dt>
 						<dd>
 							Triggers a custom mission from a string passed into the function. The mission string must be supplied in a custom format - see the missions.txt that commonly accompanies a campaign for examples. Alternatively, use a <code><a href="mission_manager.html#class:mission_manager">mission_manager</a></code> which is able to construct such strings internally.<br />
-							This wraps a function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>.
+							This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -12237,7 +12237,7 @@
 							<a name="function:campaign_manager:disable_event_feed_events"><h3 class="function_name"><strong><code>campaign_manager:disable_event_feed_events(<br />&emsp;&emsp;boolean </strong></code><i class="parameter">should disable</i><code><strong>, <br />&emsp;&emsp;[string </strong></code><i class="parameter">event categories</i><code><strong>], <br />&emsp;&emsp;[string </strong></code><i class="parameter">event subcategories</i><code><strong>], <br />&emsp;&emsp;[string </strong></code><i class="parameter">event</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for the function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>. Disables event feed events by category, subcategory or individual event type. Unlike <code><a href="#function:campaign_manager:suppress_all_event_feed_messages">campaign_manager:suppress_all_event_feed_messages</a></code> the events this call blocks are discarded. Use this function to prevent certain events from appearing.
+							Wrapper for the function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>. Disables event feed events by category, subcategory or individual event type. Unlike <code><a href="#function:campaign_manager:suppress_all_event_feed_messages">campaign_manager:suppress_all_event_feed_messages</a></code> the events this call blocks are discarded. Use this function to prevent certain events from appearing.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -12432,7 +12432,7 @@
 							<a name="function:campaign_manager:show_message_event_located"><h3 class="function_name"><strong><code>campaign_manager:show_message_event_located(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">title loc key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">primary loc key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">secondary loc key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">persistent</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">index</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">end callback</i><code><strong>], <br />&emsp;&emsp;[number </strong></code><i class="parameter">callback delay</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Constructs and displays a located event. This wraps a function of the same name on the underlying <a href="../../scripting_doc.html">game interface</a>, although it provides input validation, output, whitelisting and a progression callback.
+							Constructs and displays a located event. This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>, although it provides input validation, output, whitelisting and a progression callback.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
