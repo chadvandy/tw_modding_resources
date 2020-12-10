@@ -57,8 +57,6 @@
 					<ul>
 						<li>&emsp;&emsp;<a href="#function:battle_buildings:count">count</a></li>
 						<li>&emsp;&emsp;<a href="#function:battle_buildings:item">item</a></li>
-						<li>&emsp;&emsp;<a href="#function:battle_buildings:garrisonable_count">garrisonable_count</a></li>
-						<li>&emsp;&emsp;<a href="#function:battle_buildings:garrisonable_item">garrisonable_item</a></li>
 					</ul>
 
 				</ul>
@@ -122,7 +120,6 @@
 			<div id="content">
 				<a name="class:battle_buildings"><h1 class="content_header">Buildings</h1></a>
 				<p>The <code>buildings</code> container object is a list of individual <code><a href="battle_building.html#class:battle_building">battle_building</a></code> objects. It can be retrieved by calling <code><a href="battle.html#function:battle:buildings">battle:buildings</a></code>.</p>
-				<p>***** WARNING: at time of writing this list object is broken and, if used, will cause crashes. *****</p>
 							<table class="loaded_in" style="margin-top: 1em;">
 								<tr>
 									<td>
@@ -186,53 +183,6 @@
 							</ol>
 						</dd>
 					</dl>
-					<dl class="function">
-						<dt>
-							<a name="function:battle_buildings:garrisonable_count"><h3 class="function_name"><strong><code>buildings:garrisonable_count()</code></strong></h3></a>
-						</dt>
-						<dd>
-							Returns the number of buildings in the list that are garrisonable.
-
-
-							<h4>Returns:</h4>
-							<ol>
-								<li><code><code><a href="lua.html#class:number">number</a></code></code> count</li>
-							</ol>
-						</dd>
-					</dl>
-					<dl class="function">
-						<dt>
-							<a name="function:battle_buildings:garrisonable_item"><h3 class="function_name"><strong><code>buildings:garrisonable_item(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">index</i><code><strong>)</code></strong></h3></a>
-						</dt>
-						<dd>
-							Returns a garrisonable building from the list by its numeric index. This numeric index is based on the position of the building in the garrisonable list, not the list of all buildings.
-
-							<h4>Parameters:</h4>
-							<table class="parameter_list">
-								<colgroup>
-									<col style="width: 3%;">
-									<col style="width: 12%;">
-									<col style="width: 85%;">
-								</colgroup>
-								<tr>
-									<td>
-										<p><strong>1</strong></p>
-									</td>
-									<td>
-										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
-									</td>
-									<td>
-										<p>index</p>
-									</td>
-								</tr>
-							</table>
-
-							<h4>Returns:</h4>
-							<ol>
-								<li><code><code><a href="battle_building.html#class:battle_building">battle_building</a></code></code> building</li>
-							</ol>
-						</dd>
-					</dl>
 				</div>
 
 
@@ -240,7 +190,7 @@
 
 		</div>
 
-		<div id="about">Last updated 05/25/20 01:02:55</div>
+		<div id="about">Last updated 12/04/20 12:18:27</div>
 
 	</div>
 

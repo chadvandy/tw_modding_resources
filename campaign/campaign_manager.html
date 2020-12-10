@@ -89,6 +89,13 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:add_first_tick_callback_mp_new">add_first_tick_callback_mp_new</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:add_first_tick_callback_mp_each">add_first_tick_callback_mp_each</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:add_first_tick_callback_new">add_first_tick_callback_new</a></li>
+						<li>&emsp;&emsp;<a href="#section:campaign_manager:FactionTurnStart Lookup Listeners">FactionTurnStart Lookup Listeners</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:add_faction_turn_start_listener_by_name">add_faction_turn_start_listener_by_name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:remove_faction_turn_start_listener_by_name">remove_faction_turn_start_listener_by_name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:add_faction_turn_start_listener_by_culture">add_faction_turn_start_listener_by_culture</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:remove_faction_turn_start_listener_by_culture">remove_faction_turn_start_listener_by_culture</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:add_faction_turn_start_listener_by_subculture">add_faction_turn_start_listener_by_subculture</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:remove_faction_turn_start_listener_by_subculture">remove_faction_turn_start_listener_by_subculture</a></li>
 						<li>&emsp;&emsp;<a href="#section:campaign_manager:Output">Output</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:output_campaign_obj">output_campaign_obj</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:campaign_obj_to_string">campaign_obj_to_string</a></li>
@@ -98,6 +105,10 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:os_clock_callback">os_clock_callback</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:remove_callback">remove_callback</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:dump_timers">dump_timers</a></li>
+						<li>&emsp;&emsp;<a href="#section:campaign_manager:Local Player Faction">Local Player Faction</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:get_local_faction_name">get_local_faction_name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:get_local_faction">get_local_faction</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:is_local_players_turn">is_local_players_turn</a></li>
 						<li>&emsp;&emsp;<a href="#section:campaign_manager:General Querying">General Querying</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:is_multiplayer">is_multiplayer</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:is_new_game">is_new_game</a></li>
@@ -105,11 +116,9 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:model">model</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:get_game_interface">get_game_interface</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:get_difficulty">get_difficulty</a></li>
-							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:get_local_faction">get_local_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:get_human_factions">get_human_factions</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:are_any_factions_human">are_any_factions_human</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:whose_turn_is_it">whose_turn_is_it</a></li>
-							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:is_local_players_turn">is_local_players_turn</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:is_processing_battle">is_processing_battle</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:turn_number">turn_number</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:set_turn_number_modifier">set_turn_number_modifier</a></li>
@@ -193,9 +202,11 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_num_attackers">pending_battle_cache_num_attackers</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_get_attacker">pending_battle_cache_get_attacker</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_get_attacker_faction_name">pending_battle_cache_get_attacker_faction_name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_get_attacker_subtype">pending_battle_cache_get_attacker_subtype</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_num_defenders">pending_battle_cache_num_defenders</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_get_defender">pending_battle_cache_get_defender</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_get_defender_faction_name">pending_battle_cache_get_defender_faction_name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_get_defender_subtype">pending_battle_cache_get_defender_subtype</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_faction_is_attacker">pending_battle_cache_faction_is_attacker</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_faction_is_defender">pending_battle_cache_faction_is_defender</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:campaign_manager:pending_battle_cache_faction_is_involved">pending_battle_cache_faction_is_involved</a></li>
@@ -430,7 +441,7 @@
 			<div id="content">
 				<a name="class:campaign_manager"><h1 class="content_header">Campaign Manager</h1></a>
 				<p>The campaign manager is the main interface object in the campaign scripting environment. It wraps the primary <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> game interface that the campaign model provides to script, as well as providing a myriad of features and quality-of-life improvements in its own right. Any calls made to the <code>campaign manager</code> that it doesn't provide itself are passed through to the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface. The is the intended route for calls to the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface to be made.</p>
-				<p>Asides from the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface provided through the campaign manager, and the campaign manager interface itself (documented below), the main campaign interfaces provided by code are collectively called the model hierarchy. These allow scripts to query the state of the model at any time, and are documented <a href="../scripting_doc.html">here</a>.</p>
+				<p>Asides from the <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface provided through the campaign manager, and the campaign manager interface itself (documented below), the main campaign interfaces provided by code are collectively called the model hierarchy. These allow scripts to query the state of the model at any time. See the <code><a href="campaign_index.html#section:campaign_index:Model Hierarchy">Model Hierarchy</a></code> documentation for more information.</p>
 				<p>A campaign manager object, called <code>cm</code> in script, is automatically created when the scripts load in campaign configuration.</p>
 							<table class="loaded_in" style="margin-top: 1em;">
 								<tr>
@@ -546,7 +557,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 499</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 526</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -561,7 +572,7 @@
 							<ol>
 								<li><code>string</code> campaign name</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 513</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 540</p>
 						</dd>
 					</dl>
 				</div>
@@ -587,7 +598,7 @@
 							<ol>
 								<li><code>string</code> campaign folder path</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 536</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 563</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -602,7 +613,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 544</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 571</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -617,7 +628,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 558</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 585</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -671,7 +682,7 @@
 							<div id="example_code"><code>
 								 cm:add_pre_first_tick_callback(<br />
 								 &emsp;&emsp;&emsp;&emsp;function()&emsp;&emsp;&emsp;&emsp;<br />
-								 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if cm:get_local_faction(true) then<br />
+								 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if cm:get_local_faction_name(true) then<br />
 								 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;cm:require_path_to_campaign_faction_folder();<br />
 								 <br />
 								 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if cm:load_global_script("faction_script_loader") then<br />
@@ -684,7 +695,7 @@
 							<div id="example_result"><code>
 								Faction scripts loaded <br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 583</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 610</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -728,7 +739,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 644</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 671</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -783,7 +794,7 @@
 							<div id="example_code"><code>
 								 cm:load_exported_files("export_triggers")<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 691</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 718</p>
 						</dd>
 					</dl>
 				</div>
@@ -840,7 +851,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 798</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 825</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -896,7 +907,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 883</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 910</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -931,7 +942,7 @@
 							<ol>
 								<li><code>object</code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 929</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 956</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -976,7 +987,7 @@
 							<ol>
 								<li><code>object</code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 939</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 966</p>
 						</dd>
 					</dl>
 				</div>
@@ -1019,7 +1030,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1065</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1092</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1053,7 +1064,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1078</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1105</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1109,7 +1120,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1153</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1180</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1155,7 +1166,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1225</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1252</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1202,7 +1213,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1262</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1289</p>
 						</dd>
 					</dl>
 				</div>
@@ -1244,7 +1255,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1303</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1330</p>
 						</dd>
 					</dl>
 				</div>
@@ -1289,7 +1300,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1360</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1387</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1323,7 +1334,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1373</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1400</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1357,7 +1368,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1386</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1413</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1391,7 +1402,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1399</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1426</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1425,7 +1436,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1412</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1439</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1459,7 +1470,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1425</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1452</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1493,7 +1504,320 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1438</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1465</p>
+						</dd>
+					</dl>
+				</div>
+
+
+				<div>
+					<a style="float:right;" href="#top">Back to top</a>
+					<a name="section:campaign_manager:FactionTurnStart Lookup Listeners"><h2 class="section_header">FactionTurnStart Lookup Listeners</h2></a>
+				</div>
+				<p>It's common for campaign scripts to want to execute some code when a faction starts its turn. Client scripts will typically use <code><a href="core.html#function:core:add_listener">core:add_listener</a></code> to listen for the <code>FactionTurnStart</code> event and then query the event context to determine if it's the correct faction, usually by comparing the faction's name with a known string. This straightforward approach becomes more problematic as more listeners are added, and with a game full of content several dozen listeners can all be responding each time a faction starts its turn, all querying the faction name.</p>
+				<p>To circumvent this problem, client scripts can instead register listeners with <code><a href="#function:campaign_manager:add_faction_turn_start_listener_by_name">campaign_manager:add_faction_turn_start_listener_by_name</a></code>. The campaign manager stores these in a lookup table internally, which a lot more computationally efficient than having several dozen client scripts all query the faction name every time a faction starts a turn.</p>
+				<div class="section_body">
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:add_faction_turn_start_listener_by_name"><h3 class="function_name"><strong><code>campaign_manager:add_faction_turn_start_listener_by_name(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">listener name</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction name</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:function">function</a></code> </strong></code><i class="parameter">callback</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">persistent</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a listener for the <code>FactionTurnStart</code> event which triggers if a faction with the supplied faction name starts a turn.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Name by which this listener can be later cancelled using <code><a href="#function:campaign_manager:remove_faction_turn_start_listener_by_name">campaign_manager:remove_faction_turn_start_listener_by_name</a></code> if necessary. It is valid to have multiple listeners with the same name.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction name to watch for, from the <code>factions</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:function">function</a></code></code></p>
+									</td>
+									<td>
+										<p>Callback to call if a faction with the specified name starts a turn.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Is this a persistent listener. If this value is <code>false</code> the listener will stop the first time the callback is triggered. If <code>true</code>, the listener will continue until cancelled with <code><a href="#function:campaign_manager:remove_faction_turn_start_listener_by_name">campaign_manager:remove_faction_turn_start_listener_by_name</a></code>.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1648</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:remove_faction_turn_start_listener_by_name"><h3 class="function_name"><strong><code>campaign_manager:remove_faction_turn_start_listener_by_name(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">listener name</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a listener that was previously added with <code><a href="#function:campaign_manager:add_faction_turn_start_listener_by_name">campaign_manager:add_faction_turn_start_listener_by_name</a></code>. Calling this won't affect other faction turn start listeners.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>listener name</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1659</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:add_faction_turn_start_listener_by_culture"><h3 class="function_name"><strong><code>campaign_manager:add_faction_turn_start_listener_by_culture(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">listener name</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">culture key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:function">function</a></code> </strong></code><i class="parameter">callback</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">persistent</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a listener for the <code>FactionTurnStart</code> event which triggers if a faction with the supplied culture key starts a turn.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Name by which this listener can be later cancelled using <code><a href="#function:campaign_manager:remove_faction_turn_start_listener_by_culture">campaign_manager:remove_faction_turn_start_listener_by_culture</a></code> if necessary. It is valid to have multiple listeners with the same name.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Culture key to watch for, from the <code>cultures</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:function">function</a></code></code></p>
+									</td>
+									<td>
+										<p>Callback to call if a faction of the specified culture starts a turn.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Is this a persistent listener. If this value is <code>false</code> the listener will stop the first time the callback is triggered. If <code>true</code>, the listener will continue until cancelled with <code><a href="#function:campaign_manager:remove_faction_turn_start_listener_by_culture">campaign_manager:remove_faction_turn_start_listener_by_culture</a></code>.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1667</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:remove_faction_turn_start_listener_by_culture"><h3 class="function_name"><strong><code>campaign_manager:remove_faction_turn_start_listener_by_culture(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">listener name</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a listener that was previously added with <code><a href="#function:campaign_manager:add_faction_turn_start_listener_by_culture">campaign_manager:add_faction_turn_start_listener_by_culture</a></code>. Calling this won't affect other faction turn start listeners.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>listener name</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1678</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:add_faction_turn_start_listener_by_subculture"><h3 class="function_name"><strong><code>campaign_manager:add_faction_turn_start_listener_by_subculture(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">listener name</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">subculture key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:function">function</a></code> </strong></code><i class="parameter">callback</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">persistent</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a listener for the <code>FactionTurnStart</code> event which triggers if a faction with the supplied subculture key starts a turn.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Name by which this listener can be later cancelled using <code><a href="#function:campaign_manager:remove_faction_turn_start_listener_by_subculture">campaign_manager:remove_faction_turn_start_listener_by_subculture</a></code> if necessary. It is valid to have multiple listeners with the same name.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Subculture key to watch for, from the <code>subcultures</code> database table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:function">function</a></code></code></p>
+									</td>
+									<td>
+										<p>Callback to call if a faction of the specified subculture starts a turn.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Is this a persistent listener. If this value is <code>false</code> the listener will stop the first time the callback is triggered. If <code>true</code>, the listener will continue until cancelled with <code><a href="#function:campaign_manager:remove_faction_turn_start_listener_by_culture">campaign_manager:remove_faction_turn_start_listener_by_culture</a></code>.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1686</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:remove_faction_turn_start_listener_by_subculture"><h3 class="function_name"><strong><code>campaign_manager:remove_faction_turn_start_listener_by_subculture(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">listener name</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a listener that was previously added with <code><a href="#function:campaign_manager:add_faction_turn_start_listener_by_subculture">campaign_manager:add_faction_turn_start_listener_by_subculture</a></code>. Calling this won't affect other faction turn start listeners.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>listener name</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1697</p>
 						</dd>
 					</dl>
 				</div>
@@ -1535,7 +1859,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1604</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1717</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1569,7 +1893,7 @@
 							<ol>
 								<li><code>string</code> summary of object</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1893</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2006</p>
 						</dd>
 					</dl>
 				</div>
@@ -1636,7 +1960,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1943</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2056</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1693,7 +2017,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1954</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2067</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1750,7 +2074,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 1996</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2109</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1785,7 +2109,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2016</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2129</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1800,7 +2124,102 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2051</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2164</p>
+						</dd>
+					</dl>
+				</div>
+
+
+				<div>
+					<a style="float:right;" href="#top">Back to top</a>
+					<a name="section:campaign_manager:Local Player Faction"><h2 class="section_header">Local Player Faction</h2></a>
+				</div>
+				<p>The functions in this section report information about the local player faction. Beware of using them in in multiplayer, for making changes to the model based on the identity of the local faction is likely to cause a desync because changes will happen on one machine and not the other. Each function listed here, if called in multiplayer, will throw a script error and fail, unless <code>true</code> is passed in as an argument to force the result. In doing so, the calling script acknowledges the risks described here.</p>
+				<p>Each function here can only be called on or after the first model tick.</p>
+				<div class="section_body">
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:get_local_faction_name"><h3 class="function_name"><strong><code>campaign_manager:get_local_faction_name([boolean </strong></code><i class="parameter">force result</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the local player faction name.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>boolean</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Force the result to be returned instead of erroring in multiplayer.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> local faction name</li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2196</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:get_local_faction"><h3 class="function_name"><strong><code>campaign_manager:get_local_faction([<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">force result</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the local player faction object.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Force the result to be returned instead of erroring in multiplayer.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>FACTION_SCRIPT_INTERFACE</code> faction</li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2215</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:is_local_players_turn"><h3 class="function_name"><strong><code>campaign_manager:is_local_players_turn()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns <code>true</code> if it's the local player's turn.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is local player's turn</li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2234</p>
 						</dd>
 					</dl>
 				</div>
@@ -1823,7 +2242,7 @@
 							<ol>
 								<li><code>boolean</code> is multiplayer campaign</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2083</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2256</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1839,7 +2258,7 @@
 							<ol>
 								<li><code>boolean</code> is new game</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2096</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2269</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1854,7 +2273,7 @@
 							<ol>
 								<li><code>boolean</code> is game started</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2110</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2283</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1862,14 +2281,14 @@
 							<a name="function:campaign_manager:model"><h3 class="function_name"><strong><code>campaign_manager:model()</code></strong></h3></a>
 						</dt>
 						<dd>
-							Returns a handle to the game model at any time (after the game has been created). The game model is currently documented <a href="../scripting_doc.html#MODEL_SCRIPT_INTERFACE">here</a>
+							Returns a handle to the game model at any time (after the game has been created). See the <code><a href="campaign_index.html#section:campaign_index:Model Hierarchy">Model Hierarchy</a></code> pages for more information about the game model interface.
 
 
 							<h4>Returns:</h4>
 							<ol>
 								<li><code>object</code> model</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2118</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2291</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1884,7 +2303,7 @@
 							<ol>
 								<li><code>object</code> game_interface</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2131</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2304</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1922,42 +2341,7 @@
 							<ol>
 								<li><code>object</code> difficulty integer or string</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2144</p>
-						</dd>
-					</dl>
-					<dl class="function">
-						<dt>
-							<a name="function:campaign_manager:get_local_faction"><h3 class="function_name"><strong><code>campaign_manager:get_local_faction([boolean </strong></code><i class="parameter">force result</i><code><strong>])</code></strong></h3></a>
-						</dt>
-						<dd>
-							Returns the local player faction name. This must be called after the game is created. Beware of using this in multiplayer - making changes to the model based on the identity of the local faction is a fast route to causing a desync. If called in multiplayer the function throws a script error and fails, unless <code>true</code> is passed in as an argument to force the result. In doing so, the calling script acknowledges the risk.
-
-							<h4>Parameters:</h4>
-							<table class="parameter_list">
-								<colgroup>
-									<col style="width: 3%;">
-									<col style="width: 12%;">
-									<col style="width: 85%;">
-								</colgroup>
-								<tr>
-									<td>
-										<p><strong>1</strong></p>
-									</td>
-									<td>
-										<p><code>boolean</code></p>
-									</td>
-									<td>
-										<p><i>optional, default value=false</i></p>
-										<p>force result</p>
-									</td>
-								</tr>
-							</table>
-
-							<h4>Returns:</h4>
-							<ol>
-								<li><code>string</code> local faction name</li>
-							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2200</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2317</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1972,7 +2356,7 @@
 							<ol>
 								<li><code>table</code> human factions</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2219</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2373</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2017,7 +2401,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2238</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2392</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2032,22 +2416,7 @@
 							<ol>
 								<li><code>string</code> faction key</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2275</p>
-						</dd>
-					</dl>
-					<dl class="function">
-						<dt>
-							<a name="function:campaign_manager:is_local_players_turn"><h3 class="function_name"><strong><code>campaign_manager:is_local_players_turn()</code></strong></h3></a>
-						</dt>
-						<dd>
-							Returns <code>true</code> if it's the local player's turn.
-
-
-							<h4>Returns:</h4>
-							<ol>
-								<li><code>boolean</code> is local player's turn</li>
-							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2283</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2429</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2062,7 +2431,7 @@
 							<ol>
 								<li><code>boolean</code> battle is happening</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2291</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2437</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2077,7 +2446,7 @@
 							<ol>
 								<li><code>number</code> turn number</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2299</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2445</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2111,7 +2480,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2307</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2453</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2126,7 +2495,7 @@
 							<ol>
 								<li><code>null_interface</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2320</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2466</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2160,7 +2529,7 @@
 							<ol>
 								<li><code>boolean</code> help page viewed </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2332</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2478</p>
 						</dd>
 					</dl>
 				</div>
@@ -2213,7 +2582,7 @@
 							<ol>
 								<li><code>boolean</code> building exist</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2354</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2500</p>
 						</dd>
 					</dl>
 				</div>
@@ -2255,7 +2624,7 @@
 							<ol>
 								<li><code>character</code> garrison commander</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2397</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2543</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2323,7 +2692,7 @@
 							<ol>
 								<li><code>character</code> closest character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2432</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2578</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2403,7 +2772,7 @@
 							<ol>
 								<li><code>character</code> closest character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2444</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2590</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2448,7 +2817,7 @@
 							<ol>
 								<li><code>character</code> general character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2508</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2654</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2482,7 +2851,7 @@
 							<ol>
 								<li><code>character</code> character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2538</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2684</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2516,7 +2885,7 @@
 							<ol>
 								<li><code>military_force</code> military force</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2561</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2707</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2550,7 +2919,7 @@
 							<ol>
 								<li><code>character</code> general character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2584</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2730</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2585,7 +2954,7 @@
 								<li><code>number</code> x display co-ordinate</li>
 								<li><code>number</code> y display co-ordinate</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2599</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2745</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2620,7 +2989,7 @@
 								<li><code>number</code> x logical co-ordinate</li>
 								<li><code>number</code> y logical co-ordinate</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2614</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2760</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2654,7 +3023,7 @@
 							<ol>
 								<li><code>boolean</code> is army commander</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2629</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2775</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2688,7 +3057,7 @@
 							<ol>
 								<li><code>string</code> lookup string</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2649</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2795</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2722,7 +3091,7 @@
 							<ol>
 								<li><code>boolean</code> stood in owned region</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2667</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2813</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2756,7 +3125,7 @@
 							<ol>
 								<li><code>boolean</code> has army</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2676</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2822</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2790,7 +3159,7 @@
 							<ol>
 								<li><code>boolean</code> has navy</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2685</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2831</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2824,7 +3193,7 @@
 							<ol>
 								<li><code>boolean</code> is agent</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2694</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2840</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2858,7 +3227,7 @@
 							<ol>
 								<li><code>boolean</code> is general</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2703</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2849</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2892,7 +3261,7 @@
 							<ol>
 								<li><code>boolean</code> is victorious general</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2712</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2858</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2926,7 +3295,7 @@
 							<ol>
 								<li><code>boolean</code> is defeated general</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2721</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2867</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2960,7 +3329,7 @@
 							<ol>
 								<li><code>boolean</code> is general with army</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2730</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2876</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2994,7 +3363,7 @@
 							<ol>
 								<li><code>boolean</code> is general with army</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2739</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2885</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3028,7 +3397,7 @@
 							<ol>
 								<li><code>boolean</code> is general with navy</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2748</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2894</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3062,7 +3431,7 @@
 							<ol>
 								<li><code>boolean</code> is governor</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2757</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2903</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3107,7 +3476,7 @@
 							<ol>
 								<li><code>boolean</code> is in region list</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2766</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2912</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3153,7 +3522,7 @@
 							<ol>
 								<li><code>character</code> closest visible character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2776</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2922</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3209,7 +3578,7 @@
 							<ol>
 								<li><code>character</code> closest character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2827</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2973</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3254,7 +3623,7 @@
 							<ol>
 								<li><code>boolean</code> can reach</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2853</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2999</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3299,7 +3668,7 @@
 							<ol>
 								<li><code>boolean</code> can reach</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2873</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3019</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3344,7 +3713,7 @@
 							<ol>
 								<li><code>boolean</code> general exists</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2893</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3039</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3378,7 +3747,7 @@
 							<ol>
 								<li><code>character</code> highest ranked character</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2919</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3065</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3412,7 +3781,7 @@
 							<ol>
 								<li><code>number</code> number of units removed</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 2961</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3107</p>
 						</dd>
 					</dl>
 				</div>
@@ -3454,7 +3823,7 @@
 							<ol>
 								<li><code>faction</code> faction</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3003</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3149</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3499,7 +3868,7 @@
 							<ol>
 								<li><code>faction</code> contains building</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3023</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3169</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3544,7 +3913,7 @@
 							<ol>
 								<li><code>number</code> number of characters</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3048</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3194</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3578,7 +3947,7 @@
 							<ol>
 								<li><code>number</code> number of armies killed</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3076</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3222</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3612,7 +3981,7 @@
 							<ol>
 								<li><code>table</code> of character command queue indexes</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3109</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3255</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3658,7 +4027,7 @@
 							<ol>
 								<li><code>number</code> number of units</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3151</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3297</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3692,7 +4061,7 @@
 							<ol>
 								<li><code>boolean</code> faction is alive</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3177</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3323</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3726,7 +4095,7 @@
 							<ol>
 								<li><code>boolean</code> any faction is alive</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3191</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3337</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3760,7 +4129,7 @@
 							<ol>
 								<li><code>boolean</code> any faction is alive</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3217</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3363</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3794,7 +4163,7 @@
 							<ol>
 								<li><code>boolean</code> has armies in enemy territory</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3243</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3389</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3839,7 +4208,7 @@
 							<ol>
 								<li><code>boolean</code> armies in region</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3275</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3421</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3884,7 +4253,7 @@
 							<ol>
 								<li><code>boolean</code> armies in region</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3297</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3443</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3929,7 +4298,7 @@
 							<ol>
 								<li><code>boolean</code> armies in region</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3323</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3469</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3986,7 +4355,7 @@
 							<ol>
 								<li><code>table</code> Table of regions</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3349</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3495</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4032,7 +4401,7 @@
 							<ol>
 								<li><code>table</code> Table of factions</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3384</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3530</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4100,7 +4469,7 @@
 							<ol>
 								<li><code>table</code> Table of regions</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3413</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3559</p>
 						</dd>
 					</dl>
 				</div>
@@ -4153,7 +4522,7 @@
 							<ol>
 								<li><code>boolean</code> garrison contains building</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3462</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3608</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4198,7 +4567,7 @@
 							<ol>
 								<li><code>boolean</code> garrison contains building</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3490</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3636</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4243,7 +4612,7 @@
 							<ol>
 								<li><code>boolean</code> garrison contains building</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3518</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3664</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4289,7 +4658,7 @@
 							<ol>
 								<li><code>boolean</code> armed citizenry army</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3546</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3692</p>
 						</dd>
 					</dl>
 				</div>
@@ -4331,7 +4700,7 @@
 							<ol>
 								<li><code>number</code> average strength percentage</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3587</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3733</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4365,7 +4734,7 @@
 							<ol>
 								<li><code>number</code> number of mobile forces</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3614</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3760</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4410,7 +4779,7 @@
 							<ol>
 								<li><code>proportion</code> units of unit class</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3636</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3782</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4455,7 +4824,7 @@
 							<ol>
 								<li><code>force</code> contains unit from type list</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3671</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3817</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4500,7 +4869,7 @@
 							<ol>
 								<li><code>force</code> contains unit from class list</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3697</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3843</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4534,7 +4903,7 @@
 							<ol>
 								<li><code>military</code> force force</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3722</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3868</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4568,7 +4937,7 @@
 							<ol>
 								<li><code>number</code> value</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3738</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3884</p>
 						</dd>
 					</dl>
 				</div>
@@ -4610,7 +4979,7 @@
 							<ol>
 								<li><code>region</code> region</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3774</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3920</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4644,7 +5013,7 @@
 							<ol>
 								<li><code>region</code> region</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3794</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3940</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4678,7 +5047,7 @@
 							<ol>
 								<li><code>boolean</code> region has neighbour of different religion</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3820</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3966</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4723,7 +5092,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3842</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3988</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4757,7 +5126,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3856</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4002</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4803,7 +5172,7 @@
 								<li><code>region</code> most pious region</li>
 								<li><code>number</code> religion proportion</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3864</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4010</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4811,7 +5180,7 @@
 							<a name="function:campaign_manager:create_storm_for_region"><h3 class="function_name"><strong><code>campaign_manager:create_storm_for_region(<br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">storm strength</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">duration</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">storm type</i><code><strong><br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Creates a storm of a given type in a given region. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
+							Creates a storm of a given type in a given region. This calls the <code><a href="episodic_scripting.html#function:episodic_scripting:create_storm_for_region">cm:create_storm_for_region</a></code> function of the same name on the underlying episodic scripting interface, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -4870,7 +5239,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3890</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4036</p>
 						</dd>
 					</dl>
 				</div>
@@ -4913,7 +5282,7 @@
 								<li><code>number</code> x display position</li>
 								<li><code>number</code> y display position</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3961</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4107</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4948,7 +5317,7 @@
 								<li><code>number</code> x logical position</li>
 								<li><code>number</code> y logical position</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 3971</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4117</p>
 						</dd>
 					</dl>
 				</div>
@@ -4958,7 +5327,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:campaign_manager:Pending Battle Cache"><h2 class="section_header">Pending Battle Cache</h2></a>
 				</div>
-				<p>Using the standard <a href="../scripting_doc.html">game interface</a> it can be difficult to get information about a battle after it has been fought. The only method of querying the forces that fought in a battle is through the character interface (of the respective army commanders), and if they died in battle this will no longer be available.</p>
+				<p>Using the standard <code><a href="campaign_index.html#section:campaign_index:Model Hierarchy">Model Hierarchy</a></code> interfaces it can be difficult to get information about a battle after it has been fought. The only method of querying the forces that fought in a battle is through the character interface (of the respective army commanders), and if they died in battle this will no longer be available.</p>
 				<p>The pending battle cache system stores information about a battle prior to it being fought, which can be queried after the battle. This allows the factions, characters, and military forces involved to be queried even if they died in the battle. The information will remain available for querying until the next battle occurs.</p>
 				<p>The data in the cache may also be queried prior to battle. The script triggers a <code>ScriptEventPendingBattle</code> event after a <code>PendingBattle</code> event is received and the pending battle cache has been populated. Scripts that want to query the pending battle cache prior to battle can listen for this.</p>
 				<div class="section_body">
@@ -4974,7 +5343,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> number of attacking armies</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4263</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4435</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5020,7 +5389,7 @@
 								&emsp;&emsp;&emsp;&emsp;out("\tmilitary force cqi: " .. mf_cqi);<br />
 								 end<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4271</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4443</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5054,7 +5423,41 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:string">string</a></code></code> faction name</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4294</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4466</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:pending_battle_cache_get_attacker_subtype"><h3 class="function_name"><strong><code>campaign_manager:pending_battle_cache_get_attacker_subtype(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">index of attacker</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns just the subtype of a particular attacker in the cached pending battle. The attacker is specified by numerical index, with the first being accessible at record 1.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>index of attacker</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> subtype</li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4480</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5069,7 +5472,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> number of defending armies</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4308</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4494</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5115,7 +5518,7 @@
 								&emsp;&emsp;&emsp;&emsp;out("\tmilitary force cqi: " .. mf_cqi);<br />
 								 end<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4316</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4502</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5149,7 +5552,41 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:string">string</a></code></code> faction name</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4339</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4525</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:campaign_manager:pending_battle_cache_get_defender_subtype"><h3 class="function_name"><strong><code>campaign_manager:pending_battle_cache_get_defender_subtype(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">index of defender</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns just the subtype of a particular defender in the cached pending battle. The defender is specified by numerical index, with the first being accessible at record 1.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>index of defender</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> subtype</li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4539</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5183,7 +5620,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> faction was attacker</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4353</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4553</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5217,7 +5654,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> faction was defender</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4375</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4575</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5251,7 +5688,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> faction was involved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4397</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4597</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5266,7 +5703,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> human was attacking</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4406</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4606</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5281,7 +5718,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> human was defending</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4424</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4624</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5296,7 +5733,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> human was involved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4442</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4642</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5330,7 +5767,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> any attacker was culture</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4450</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4650</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5364,7 +5801,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> any defender was culture</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4474</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4674</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5398,7 +5835,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> culture was involved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4498</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4698</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5432,7 +5869,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> any attacker was subculture</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4507</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4707</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5466,7 +5903,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> any defender was subculture</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4531</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4731</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5500,7 +5937,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> subculture was involved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4555</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4755</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5534,7 +5971,7 @@
 							<ol>
 								<li><code>boolean</code> character was attacker</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4564</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4764</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5568,7 +6005,7 @@
 							<ol>
 								<li><code>boolean</code> character was defender</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4590</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4790</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5602,7 +6039,7 @@
 							<ol>
 								<li><code>boolean</code> character was involved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4616</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4816</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5636,7 +6073,7 @@
 							<ol>
 								<li><code>boolean</code> force was attacker</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4634</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4834</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5670,7 +6107,7 @@
 							<ol>
 								<li><code>boolean</code> force was defender</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4662</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4862</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5704,7 +6141,7 @@
 							<ol>
 								<li><code>boolean</code> force was involved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4690</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4890</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5738,7 +6175,7 @@
 							<ol>
 								<li><code>table</code> table of enemy characters</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4708</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4908</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5753,7 +6190,7 @@
 							<ol>
 								<li><code>boolean</code> is quest battle</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4735</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4935</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5768,7 +6205,7 @@
 							<ol>
 								<li><code>boolean</code> attacker has won</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4757</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4957</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5783,7 +6220,7 @@
 							<ol>
 								<li><code>boolean</code> defender has won</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4765</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4965</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5798,7 +6235,7 @@
 							<ol>
 								<li><code>number</code> gold value of attacking forces</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4773</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4973</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5813,7 +6250,7 @@
 							<ol>
 								<li><code>number</code> gold value of defending forces</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4784</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4984</p>
 						</dd>
 					</dl>
 				</div>
@@ -5868,7 +6305,7 @@
 							<ol>
 								<li><code>number</code> random number</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4806</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5006</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5904,7 +6341,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:table">table</a></code></code> randomly-sorted table</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4877</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5077</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5939,7 +6376,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:table">table</a></code></code> randomly-sorted table</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4906</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5106</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -5974,7 +6411,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4929</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5129</p>
 						</dd>
 					</dl>
 				</div>
@@ -5997,7 +6434,7 @@
 							<ol>
 								<li><code>campaign_ui_manager</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4957</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5157</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6032,7 +6469,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 4968</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5168</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6047,7 +6484,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5000</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5200</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6082,7 +6519,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5017</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5217</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6097,7 +6534,7 @@
 							<ol>
 								<li><code>boolean</code> is ui hiding enabled</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5032</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5232</p>
 						</dd>
 					</dl>
 				</div>
@@ -6178,7 +6615,7 @@
 								 &emsp;&emsp;&emsp;&emsp;{132.9, 504.8, 16, 0, 12}<br />
 								 )<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5104</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5304</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6243,7 +6680,7 @@
 								 &emsp;&emsp;&emsp;&emsp;{251.3, 312.0, 12, 0, 8}<br />
 								 )<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5134</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5334</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6300,7 +6737,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5171</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5371</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6357,7 +6794,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5208</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5408</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6414,7 +6851,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5271</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5471</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6471,7 +6908,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5305</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5505</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6506,7 +6943,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5337</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5537</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6540,7 +6977,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5450</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5650</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6598,7 +7035,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5495</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5695</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6632,7 +7069,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5527</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5727</p>
 						</dd>
 					</dl>
 				</div>
@@ -6676,7 +7113,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5551</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5751</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6711,7 +7148,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> camera position is cached</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5571</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5771</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6750,7 +7187,7 @@
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> b</li>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> h</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5589</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5789</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6785,7 +7222,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5615</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5815</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6820,7 +7257,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5654</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5854</p>
 						</dd>
 					</dl>
 				</div>
@@ -6886,7 +7323,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5685</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5885</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6901,7 +7338,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5749</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5949</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6916,7 +7353,7 @@
 							<ol>
 								<li><code>boolean</code> is any cutscene running</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5790</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5990</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6931,7 +7368,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5809</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6009</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6939,7 +7376,7 @@
 							<a name="function:campaign_manager:steal_escape_key"><h3 class="function_name"><strong><code>campaign_manager:steal_escape_key(boolean </strong></code><i class="parameter">steal</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Steals or releases the escape key. This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>. While the ESC key is stolen by script, presses of the key will cause <code>OnKeyPressed()</code> to be called which goes on to call <code><a href="#function:campaign_manager:on_key_press_up">campaign_manager:on_key_press_up</a></code>.<br />
+							Steals or releases the escape key. This wraps the function <code><a href="episodic_scripting.html#function:episodic_scripting:steal_escape_key">cm:steal_escape_key</a></code> function of the same name on the underlying episodic scripting interface. While the ESC key is stolen by script, presses of the key will cause <code>OnKeyPressed()</code> to be called which goes on to call <code><a href="#function:campaign_manager:on_key_press_up">campaign_manager:on_key_press_up</a></code>.<br />
 							To register a function to call when the escape key is pressed use <code><a href="#function:campaign_manager:steal_escape_key_with_callback">campaign_manager:steal_escape_key_with_callback</a></code> or <code><a href="#function:campaign_manager:steal_escape_key_and_space_bar_with_callback">campaign_manager:steal_escape_key_and_space_bar_with_callback</a></code> instead of this function.
 
 							<h4>Parameters:</h4>
@@ -6966,7 +7403,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5818</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6018</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -6974,7 +7411,7 @@
 							<a name="function:campaign_manager:steal_user_input"><h3 class="function_name"><strong><code>campaign_manager:steal_user_input(boolean </strong></code><i class="parameter">steal</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Steals or releases user input. This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>. Stealing user input prevents any player interaction with the game (asides from pressing the ESC key).
+							Steals or releases user input. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:steal_user_input">cm:steal_user_input</a></code> function of the same name on the underlying episodic scripting interface. Stealing user input prevents any player interaction with the game (asides from pressing the ESC key).
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -7000,7 +7437,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5835</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6035</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7034,7 +7471,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5860</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6060</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7049,7 +7486,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5874</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6074</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7105,7 +7542,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5892</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6092</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7150,7 +7587,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5936</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6136</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7195,7 +7632,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5964</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6164</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7229,7 +7666,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5976</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6176</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7274,7 +7711,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 5990</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6190</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7319,7 +7756,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6001</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6201</p>
 						</dd>
 					</dl>
 				</div>
@@ -7421,7 +7858,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6026</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6226</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7456,7 +7893,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6074</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6274</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7471,7 +7908,7 @@
 							<ol>
 								<li><code>boolean</code> advice is enabled</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6094</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6294</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7518,7 +7955,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6102</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6302</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7552,7 +7989,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6138</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6338</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7567,7 +8004,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6151</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6351</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7625,7 +8062,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6175</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6375</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7640,7 +8077,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6273</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6473</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7711,7 +8148,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6281</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6481</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7726,7 +8163,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6408</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6608</p>
 						</dd>
 					</dl>
 				</div>
@@ -7802,7 +8239,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6431</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6631</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7836,7 +8273,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6487</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6687</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7893,7 +8330,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6498</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6698</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7927,7 +8364,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6508</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6708</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -7973,7 +8410,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6516</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6716</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8019,7 +8456,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6541</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6741</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8065,7 +8502,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6550</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6750</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8122,7 +8559,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6633</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6833</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8156,7 +8593,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6671</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6871</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8203,7 +8640,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6685</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6885</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8218,7 +8655,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6737</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6937</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8265,7 +8702,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6744</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6944</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8280,7 +8717,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6772</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6972</p>
 						</dd>
 					</dl>
 				</div>
@@ -8293,11 +8730,10 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
-							<a name="function:campaign_manager:create_force"><h3 class="function_name"><strong><code>campaign_manager:create_force(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">exclude named characters</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
+							<a name="function:campaign_manager:create_force"><h3 class="function_name"><strong><code>campaign_manager:create_force(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">exclude named characters</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:function">function</a></code> </strong></code><i class="parameter">success callback</i><code><strong>], <br />&emsp;&emsp;[<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">command queue</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_force function on the underlying <a href="../scripting_doc.html">game interface</a>, which instantly spawns an army with a general on the campaign map. This wrapper function adds debug output and success callback functionality.<br />
-							Note that the underlying create_force function supports the call not going through the command queue, but this wrapper forces it to do so as doing otherwise seems to break in multiplayer.
+							Instantly spawn an army with a general on the campaign map. This function is a wrapper for the <code><a href="episodic_scripting.html#function:episodic_scripting:create_force">cm:create_force</a></code> function provided by the episodic scripting interface, adding debug output and success callback functionality.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8311,7 +8747,7 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
-										<p><code>string</code></p>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
 										<p>Faction key of the faction to which the force is to belong.</p>
@@ -8322,7 +8758,7 @@
 										<p><strong>2</strong></p>
 									</td>
 									<td>
-										<p><code>string</code></p>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
 										<p>Comma-separated list of keys from the <code>land_units</code> table. The force will be created with these units.</p>
@@ -8333,7 +8769,7 @@
 										<p><strong>3</strong></p>
 									</td>
 									<td>
-										<p><code>string</code></p>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
 										<p>Region key of home region for this force.</p>
@@ -8344,7 +8780,7 @@
 										<p><strong>4</strong></p>
 									</td>
 									<td>
-										<p><code>number</code></p>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
 									</td>
 									<td>
 										<p>x logical co-ordinate of force.</p>
@@ -8355,7 +8791,7 @@
 										<p><strong>5</strong></p>
 									</td>
 									<td>
-										<p><code>number</code></p>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
 									</td>
 									<td>
 										<p>y logical co-ordinate of force.</p>
@@ -8366,7 +8802,7 @@
 										<p><strong>6</strong></p>
 									</td>
 									<td>
-										<p><code>boolean</code></p>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
 									</td>
 									<td>
 										<p>Don't spawn a named character at the head of this force.</p>
@@ -8377,11 +8813,23 @@
 										<p><strong>7</strong></p>
 									</td>
 									<td>
-										<p><code>function</code></p>
+										<p><code><code><a href="lua.html#class:function">function</a></code></code></p>
 									</td>
 									<td>
 										<p><i>optional, default value=nil</i></p>
 										<p>Callback to call once the force is created. The callback will be passed the created military force leader's cqi as a single argument.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>8</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Use command queue.</p>
 									</td>
 								</tr>
 							</table>
@@ -8406,7 +8854,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6797</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6997</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8414,7 +8862,7 @@
 							<a name="function:campaign_manager:create_force_with_general"><h3 class="function_name"><strong><code>campaign_manager:create_force_with_general(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">agent type</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">agent subtype</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">forename</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">clan name</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">family name</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">other name</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">make faction leader</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_force_with_general function on the underlying <a href="../scripting_doc.html">game interface</a>, which instantly spawn an army with a specific general on the campaign map. This wrapper function adds debug output and success callback functionality.
+							Instantly spawns an army with a specific general on the campaign map. This function is a wrapper for the <code><a href="episodic_scripting.html#function:episodic_scripting:create_force_with_general">cm:create_force_with_general</a></code> function provided by the underlying episodic scripting interface, adding debug output and success callback functionality.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8595,7 +9043,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 6893</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7093</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8603,7 +9051,7 @@
 							<a name="function:campaign_manager:create_force_with_existing_general"><h3 class="function_name"><strong><code>campaign_manager:create_force_with_existing_general(<br />&emsp;&emsp;string </strong></code><i class="parameter">character lookup</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_force_with_existing_general function on the underlying <a href="../scripting_doc.html">game interface</a>, which instantly spawn an army with a specific existing general on the campaign map. The general is specified by character string lookup. This wrapper function adds debug output and success callback functionality.
+							Instantly spawn an army with a specific existing general on the campaign map. This function is a wrapper for the <code><a href="episodic_scripting.html#function:episodic_scripting:create_force_with_existing_general">cm:create_force_with_existing_general</a></code> function provided by the underlying episodic scripting interface, adding debug output and success callback functionality. The general character is specified by character string lookup.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8711,7 +9159,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7044</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7244</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8769,7 +9217,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7173</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7373</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8814,7 +9262,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7209</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7409</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -8822,7 +9270,7 @@
 							<a name="function:campaign_manager:create_agent"><h3 class="function_name"><strong><code>campaign_manager:create_agent(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">character type</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">character subtype</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">id</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">use command queue</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">success callback</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for create_agent function on the underlying <a href="../scripting_doc.html">game interface</a> which adds input validation and debug output. This function creates an agent of a specified type on the campaign map.
+							Creates an agent of a specified type on the campaign map. This function is a wrapper for the <code><a href="episodic_scripting.html#function:episodic_scripting:create_agent">cm:create_agent</a></code> function provided by the underlying episodic scripting interface. This wrapper function adds validation and success callback functionality.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -8939,7 +9387,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7247</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7447</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9033,7 +9481,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 )<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7381</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7581</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9162,7 +9610,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 )<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7466</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7666</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9266,7 +9714,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7564</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7764</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9281,7 +9729,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7723</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7923</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9337,7 +9785,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7734</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7934</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9371,7 +9819,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7788</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7988</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9428,7 +9876,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7798</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7998</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9462,7 +9910,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7846</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8046</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9519,7 +9967,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7854</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8054</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9553,15 +10001,15 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7916</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8116</p>
 						</dd>
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:campaign_manager:attack"><h3 class="function_name"><strong><code>campaign_manager:attack(string </strong></code><i class="parameter">attacker</i><code><strong>, string </strong></code><i class="parameter">defender</i><code><strong>, boolean </strong></code><i class="parameter">command queue</i><code><strong>)</code></strong></h3></a>
+							<a name="function:campaign_manager:attack"><h3 class="function_name"><strong><code>campaign_manager:attack(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">attacker</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">defender</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">command queue</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Instruct a character at the head of a military force to attack another. This function is a wrapper for attack function on the underlying <a href="../scripting_doc.html">game interface</a>, which also enables movement for the character and prints debug output.
+							Instruct a character at the head of a military force to attack another. This function is a wrapper for the <code><a href="episodic_scripting.html#function:episodic_scripting:attack">cm:attack</a></code> function on the underlying episodic scripting interface. The wrapper also enables movement for the character and prints debug output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9575,7 +10023,7 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
-										<p><code>string</code></p>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
 										<p>Attacker character string, uses standard character lookup string system.</p>
@@ -9586,7 +10034,7 @@
 										<p><strong>2</strong></p>
 									</td>
 									<td>
-										<p><code>string</code></p>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
 										<p>Defender character string, uses standard character lookup string system.</p>
@@ -9597,7 +10045,7 @@
 										<p><strong>3</strong></p>
 									</td>
 									<td>
-										<p><code>boolean</code></p>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
 									</td>
 									<td>
 										<p>Order goes via command queue.</p>
@@ -9609,7 +10057,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7924</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8124</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9617,7 +10065,7 @@
 							<a name="function:campaign_manager:teleport_to"><h3 class="function_name"><strong><code>campaign_manager:teleport_to(string </strong></code><i class="parameter">character string</i><code><strong>, number </strong></code><i class="parameter">x</i><code><strong>, number </strong></code><i class="parameter">y</i><code><strong>, [boolean </strong></code><i class="parameter">command queue</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
-							Teleports a character to a logical position on the campaign map. This is a validation/output wrapper for a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>.<br />
+							Teleports a character to a logical position on the campaign map. This function is a wrapper for the <code><a href="episodic_scripting.html#function:episodic_scripting:teleport_to">cm:teleport_to</a></code> function on the underlying episodic scripting interface. This wrapper adds debug output and argument validation.<br />
 							This function can also reposition the camera, so it's best used on game creation to move characters around at the start of the campaign, rather than on the first tick or later.
 
 							<h4>Parameters:</h4>
@@ -9678,7 +10126,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7936</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8136</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9686,7 +10134,7 @@
 							<a name="function:campaign_manager:enable_movement_for_character"><h3 class="function_name"><strong><code>campaign_manager:enable_movement_for_character(string </strong></code><i class="parameter">char lookup string</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Enables movement for the supplied character. Characters are specified by lookup string. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
+							Enables movement for the supplied character. Characters are specified by lookup string. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:enable_movement_for_character">cm:enable_movement_for_character</a></code> function on the underlying episodic scripting interface, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9712,7 +10160,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7967</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8167</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9720,7 +10168,7 @@
 							<a name="function:campaign_manager:disable_movement_for_character"><h3 class="function_name"><strong><code>campaign_manager:disable_movement_for_character(string </strong></code><i class="parameter">char lookup string</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Disables movement for the supplied character. Characters are specified by lookup string. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
+							Disables movement for the supplied character. Characters are specified by lookup string. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:disable_movement_for_character">cm:disable_movement_for_character</a></code> function on the underlying episodic scripting interface, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9746,7 +10194,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7982</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8182</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9754,7 +10202,7 @@
 							<a name="function:campaign_manager:enable_movement_for_faction"><h3 class="function_name"><strong><code>campaign_manager:enable_movement_for_faction(string </strong></code><i class="parameter">faction key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Enables movement for the supplied faction. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
+							Enables movement for the supplied faction. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:enable_movement_for_faction">cm:enable_movement_for_faction</a></code> function on the underlying episodic scripting interface, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9780,7 +10228,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 7997</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8197</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9788,7 +10236,7 @@
 							<a name="function:campaign_manager:disable_movement_for_faction"><h3 class="function_name"><strong><code>campaign_manager:disable_movement_for_faction(string </strong></code><i class="parameter">faction key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Disables movement for the supplied faction. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output.
+							Disables movement for the supplied faction. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:disable_movement_for_faction">cm:disable_movement_for_faction</a></code> function on the underlying episodic scripting interface, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9814,7 +10262,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8012</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8212</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9822,7 +10270,7 @@
 							<a name="function:campaign_manager:force_add_trait"><h3 class="function_name"><strong><code>campaign_manager:force_add_trait(<br />&emsp;&emsp;string </strong></code><i class="parameter">character string</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">trait key</i><code><strong>, <br />&emsp;&emsp;[boolean </strong></code><i class="parameter">show message</i><code><strong>], <br />&emsp;&emsp;[number </strong></code><i class="parameter">points</i><code><strong>], <br />&emsp;&emsp;[command_queue, </strong></code><i class="parameter">if this command goes to the queue</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forceably adds an trait to a character. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
+							Forceably adds an trait to a character. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:force_add_trait">cm:force_add_trait</a></code> function on the underlying episodic scripting interface, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9895,7 +10343,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8027</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8227</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9903,7 +10351,7 @@
 							<a name="function:campaign_manager:force_add_skill"><h3 class="function_name"><strong><code>campaign_manager:force_add_skill(string </strong></code><i class="parameter">character string</i><code><strong>, string </strong></code><i class="parameter">skill key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forceably adds a skill to a character. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
+							Forceably adds a skill to a character. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:force_add_skill">cm:force_add_skill</a></code> function on the underlying episodic scripting interface, but adds validation and output. This output will be shown in the <code>Lua - Traits</code> debug console spool.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9940,7 +10388,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8062</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8262</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -9948,7 +10396,7 @@
 							<a name="function:campaign_manager:add_agent_experience"><h3 class="function_name"><strong><code>campaign_manager:add_agent_experience(string </strong></code><i class="parameter">character string</i><code><strong>, number </strong></code><i class="parameter">experience</i><code><strong>, [boolean </strong></code><i class="parameter">by_level</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forceably adds experience to a character. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds output.
+							Forceably adds experience to a character. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:add_agent_experience">cm:add_agent_experience</a></code> function on the underlying episodic scripting interface, but adds validation and output.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -9997,7 +10445,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8082</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8282</p>
 						</dd>
 					</dl>
 				</div>
@@ -10051,7 +10499,7 @@
 								<li><code>number</code> Display x co-ordinate.</li>
 								<li><code>number</code> Display y co-ordinate.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8123</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8323</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10118,7 +10566,7 @@
 							<ol>
 								<li><code>number</code> distance between positions squared.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8147</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8347</p>
 						</dd>
 					</dl>
 				</div>
@@ -10184,7 +10632,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8173</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8373</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10241,7 +10689,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8211</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8411</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10298,7 +10746,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8251</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8451</p>
 						</dd>
 					</dl>
 				</div>
@@ -10308,7 +10756,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:campaign_manager:Effect Bundles"><h2 class="section_header">Effect Bundles</h2></a>
 				</div>
-				<p>These this section contains functions that add and remove effect bundles from factions, military forces and regions. In each case they wrap a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>, providing input validation and debug output.</p>
+				<p>These this section contains functions that add and remove effect bundles from factions, military forces and regions. In each case they wrap a function of the same name on the underlying <code><a href="episodic_scripting.html#class:episodic_scripting">episodic_scripting</a></code> interface, providing input validation and debug output.</p>
 				<div class="section_body">
 					<dl class="function">
 						<dt>
@@ -10363,7 +10811,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8306</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8506</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10408,7 +10856,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8338</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8538</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10464,7 +10912,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8359</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8559</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10509,7 +10957,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8391</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8591</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10565,7 +11013,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8412</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8612</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10610,7 +11058,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8446</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8646</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10666,7 +11114,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8467</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8667</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10711,7 +11159,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8499</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8699</p>
 						</dd>
 					</dl>
 				</div>
@@ -10734,7 +11182,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8532</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8732</p>
 						</dd>
 					</dl>
 				</div>
@@ -10781,7 +11229,7 @@
 						</dt>
 						<dd>
 							Restricts or unrestricts certain types of diplomacy between factions or groups of factions. Groups of factions may be specified with the strings <code>"all"</code>, <code>"faction:faction_key"</code>, <code>"subculture:subculture_key"</code> or <code>"culture:culture_key"</code>. A source and target faction/group of factions must be specified.<br />
-							Note that the <a href="../scripting_doc.html">game interface</a> function that this function calls is <code>force_diplomacy_new</code>, not </code>force_diplomacy</code>.
+							Note that this wraps the function <code><a href="episodic_scripting.html#function:episodic_scripting:force_diplomacy_new">cm:force_diplomacy_new</a></code> on the underlying episodic scripting interface.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -10875,7 +11323,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8594</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8794</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10909,7 +11357,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8692</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8892</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -10917,7 +11365,7 @@
 							<a name="function:campaign_manager:force_declare_war"><h3 class="function_name"><strong><code>campaign_manager:force_declare_war(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">invite faction a allies</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">invite faction b allies</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">command queue or not</i><code><strong><br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Forces war between two factions. This calls the function of the same name on the <a href="../scripting_doc.html">game interface</a>, but adds validation and output. This output will be shown in the <code>Lua - Design</code> console spool.
+							Forces war between two factions. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:force_declare_war">cm:force_declare_war</a></code> function of the same name on the underlying episodic scripting interface, but adds validation and output. This output will be shown in the <code>Lua - Design</code> console spool.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -10987,7 +11435,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8706</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8906</p>
 						</dd>
 					</dl>
 				</div>
@@ -11055,7 +11503,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8929</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9129</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11090,7 +11538,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8940</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9140</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11124,7 +11572,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8949</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9149</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11158,7 +11606,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8957</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9157</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11227,7 +11675,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8965</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9165</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11296,7 +11744,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8976</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9176</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11330,7 +11778,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8987</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9187</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11364,7 +11812,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 8995</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9195</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11409,7 +11857,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9003</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9203</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11443,7 +11891,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9012</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9212</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11458,7 +11906,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9020</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9220</p>
 						</dd>
 					</dl>
 				</div>
@@ -11547,7 +11995,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9040</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9240</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11556,7 +12004,7 @@
 						</dt>
 						<dd>
 							Triggers a custom mission from a string passed into the function. The mission string must be supplied in a custom format - see the missions.txt that commonly accompanies a campaign for examples. Alternatively, use a <code><a href="mission_manager.html#class:mission_manager">mission_manager</a></code> which is able to construct such strings internally.<br />
-							This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>.
+							This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:trigger_custom_mission_from_string">cm:trigger_custom_mission_from_string</a></code> function on the underlying episodic scripting interface, adding output and the optional whitelisting functionality.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -11617,7 +12065,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9071</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9271</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11699,7 +12147,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> mission triggered successfully</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9093</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9293</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11756,7 +12204,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> Dilemma triggered successfully. <code>true</code> is always returned if an intervention is generated.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9119</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9319</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11825,7 +12273,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> Dilemma triggered successfully.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9199</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9403</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -11954,7 +12402,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> Dilemma triggered successfully. <code>true</code> is always returned if an intervention is generated.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9230</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9434</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12083,7 +12531,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> Dilemma triggered successfully.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9307</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9511</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12153,7 +12601,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> incident was triggered</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9468</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9672</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12189,7 +12637,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9591</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9795</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12229,7 +12677,7 @@
 							<div id="example_code"><code>
 								 cm:whitelist_event_feed_event_type("character_dies_battleevent_feed_target_opponent")<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9624</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9828</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12237,7 +12685,8 @@
 							<a name="function:campaign_manager:disable_event_feed_events"><h3 class="function_name"><strong><code>campaign_manager:disable_event_feed_events(<br />&emsp;&emsp;boolean </strong></code><i class="parameter">should disable</i><code><strong>, <br />&emsp;&emsp;[string </strong></code><i class="parameter">event categories</i><code><strong>], <br />&emsp;&emsp;[string </strong></code><i class="parameter">event subcategories</i><code><strong>], <br />&emsp;&emsp;[string </strong></code><i class="parameter">event</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Wrapper for the function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>. Disables event feed events by category, subcategory or individual event type. Unlike <code><a href="#function:campaign_manager:suppress_all_event_feed_messages">campaign_manager:suppress_all_event_feed_messages</a></code> the events this call blocks are discarded. Use this function to prevent certain events from appearing.
+							Disables event feed events by category, subcategory or individual event type. Unlike <code><a href="#function:campaign_manager:suppress_all_event_feed_messages">campaign_manager:suppress_all_event_feed_messages</a></code> the events this call blocks are discarded. Use this function to prevent certain events from appearing.<br />
+							The function wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:disable_event_feed_events">cm:disable_event_feed_events</a></code> function on the underlying episodic scripting interface.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -12299,7 +12748,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9637</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9841</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12424,7 +12873,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9659</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9864</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12432,7 +12881,7 @@
 							<a name="function:campaign_manager:show_message_event_located"><h3 class="function_name"><strong><code>campaign_manager:show_message_event_located(<br />&emsp;&emsp;string </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">title loc key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">primary loc key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">secondary loc key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;boolean </strong></code><i class="parameter">persistent</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">index</i><code><strong>, <br />&emsp;&emsp;[function </strong></code><i class="parameter">end callback</i><code><strong>], <br />&emsp;&emsp;[number </strong></code><i class="parameter">callback delay</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Constructs and displays a located event. This wraps a function of the same name on the underlying <a href="../scripting_doc.html">game interface</a>, although it provides input validation, output, whitelisting and a progression callback.
+							Constructs and displays a located event. This wraps the <code><a href="episodic_scripting.html#function:episodic_scripting:show_message_event_located">cm:show_message_event_located</a></code> function of the same name on the underlying episodic scripting interface, although it also provides input validation, output, whitelisting and a progression callback.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -12559,7 +13008,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9744</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9949</p>
 						</dd>
 					</dl>
 				</div>
@@ -12638,7 +13087,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9843</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10048</p>
 						</dd>
 					</dl>
 				</div>
@@ -12715,7 +13164,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 9903</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10108</p>
 						</dd>
 					</dl>
 				</div>
@@ -12793,7 +13242,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10546</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10752</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12827,7 +13276,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10591</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10796</p>
 						</dd>
 					</dl>
 				</div>
@@ -12870,7 +13319,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10819</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 11025</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12905,7 +13354,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10865</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 11071</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -12941,7 +13390,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10899</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 11105</p>
 						</dd>
 					</dl>
 				</div>
@@ -13006,7 +13455,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10952</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 11158</p>
 						</dd>
 					</dl>
 				</div>
@@ -13147,7 +13596,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 10969</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_manager.lua, line 11175</p>
 						</dd>
 					</dl>
 				</div>
@@ -13157,7 +13606,7 @@
 
 		</div>
 
-		<div id="about">Last updated 05/25/20 01:02:54</div>
+		<div id="about">Last updated 12/04/20 12:18:26</div>
 
 	</div>
 

@@ -64,6 +64,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:type">type</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:alliance_index">alliance_index</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:army_index">army_index</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:set_stat_attributes">set_stat_attributes</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:unit_class">unit_class</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:is_cavalry">is_cavalry</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_unit:is_infantry">is_infantry</a></li>
@@ -314,6 +315,50 @@
 							<h4>Returns:</h4>
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> army index</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_unit:set_stat_attributes"><h3 class="function_name"><strong><code>unit:set_stat_attributes(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">attribute key</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">enable/disable</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Activates a external flag on the ability.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>attribute key</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>enable/disable</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
 							</ol>
 						</dd>
 					</dl>
@@ -1414,7 +1459,7 @@
 
 		</div>
 
-		<div id="about">Last updated 05/25/20 01:02:55</div>
+		<div id="about">Last updated 12/04/20 12:18:27</div>
 
 	</div>
 

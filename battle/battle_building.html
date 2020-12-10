@@ -59,9 +59,17 @@
 						<li>&emsp;&emsp;<a href="#section:battle_building:Querying">Querying</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:position">position</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:central_position">central_position</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:orientation">orientation</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:alliance_owner_id">alliance_owner_id</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:name">name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:category">category</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:health">health</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:has_gate">has_gate</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:is_fort_wall">is_fort_wall</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:is_fort_tower">is_fort_tower</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:is_selectable">is_selectable</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:next">next</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:previous">previous</a></li>
 						<li>&emsp;&emsp;<a href="#section:battle_building:Showing and Hiding">Showing and Hiding</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:hide">hide</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle_building:show">show</a></li>
@@ -150,7 +158,6 @@
 					<a name="section:battle_building:Creation"><h2 class="section_header">Creation</h2></a>
 				</div>
 				<p>A building script object may be sourced from the <code><a href="battle_buildings.html#class:battle_buildings">battle_buildings</a></code> list object.</p>
-				<p>***** WARNING: at time of writing this list object is broken and, if used, will cause crashes. *****</p>
 				<div class="section_body">
 				</div>
 
@@ -190,6 +197,20 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:battle_building:orientation"><h3 class="function_name"><strong><code>building:orientation()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the orientation of the building in degrees.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> orientation</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:battle_building:alliance_owner_id"><h3 class="function_name"><strong><code>building:alliance_owner_id()</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -218,6 +239,20 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:battle_building:category"><h3 class="function_name"><strong><code>building:category()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the category of this building, from the <code>battlefield_building_categories</code> database table.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> building category</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:battle_building:health"><h3 class="function_name"><strong><code>building:health()</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -227,6 +262,90 @@
 							<h4>Returns:</h4>
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> health</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_building:has_gate"><h3 class="function_name"><strong><code>building:has_gate()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether this building contains a gate or not.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> contains gate</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_building:is_fort_wall"><h3 class="function_name"><strong><code>building:is_fort_wall()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether this building is a fort wall or not.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is fort wall</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_building:is_fort_tower"><h3 class="function_name"><strong><code>building:is_fort_tower()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether this building is a fort tower or not.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is fort tower</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_building:is_selectable"><h3 class="function_name"><strong><code>building:is_selectable()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether this building is selectable or not. Qualifying buildings can be selected and issued orders, such as certain towers.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is selectable</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_building:next"><h3 class="function_name"><strong><code>building:next()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the next fort wall building, if this building is part of a wall. If this building is not part of a wall then nil is returned.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="#class:battle_building">battle_building</a></code></code> next building</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:battle_building:previous"><h3 class="function_name"><strong><code>building:previous()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the previous fort wall building, if this building is part of a wall. If this building is not part of a wall then nil is returned.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="#class:battle_building">battle_building</a></code></code> previous building</li>
 							</ol>
 						</dd>
 					</dl>
@@ -427,7 +546,7 @@
 
 		</div>
 
-		<div id="about">Last updated 05/25/20 01:02:55</div>
+		<div id="about">Last updated 12/04/20 12:18:27</div>
 
 	</div>
 

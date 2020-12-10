@@ -100,6 +100,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:change_behaviour_active">change_behaviour_active</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:withdraw">withdraw</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:set_melee_mode">set_melee_mode</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:set_global_attribute">set_global_attribute</a></li>
 						<li>&emsp;&emsp;<a href="#section:script_unit:Enabling and Visibility">Enabling and Visibility</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:set_enabled">set_enabled</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:set_always_visible">set_always_visible</a></li>
@@ -130,6 +131,8 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:morale_behavior_fearless">morale_behavior_fearless</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:morale_behavior_rout">morale_behavior_rout</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:morale_behavior_default">morale_behavior_default</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:morale_behavior_fearless_if_standing">morale_behavior_fearless_if_standing</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:morale_behavior_default_if_standing">morale_behavior_default_if_standing</a></li>
 						<li>&emsp;&emsp;<a href="#section:script_unit:Killing">Killing</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:kill">kill</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_unit:kill_proportion">kill_proportion</a></li>
@@ -155,6 +158,9 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:remove_sunit">remove_sunit</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:remove_sunits">remove_sunits</a></li>
 						<li>&emsp;&emsp;<a href="#section:script_units:Querying">Querying</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:get_sunit_by_name">get_sunit_by_name</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:get_sunit_for_unit">get_sunit_for_unit</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:get_sunit_by_type">get_sunit_by_type</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:contains_sunit">contains_sunit</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:contains_type">contains_type</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:script_units:count">count</a></li>
@@ -1631,6 +1637,51 @@
 							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 826</p>
 						</dd>
 					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:script_unit:set_global_attribute"><h3 class="function_name"><strong><code>script_unit:set_global_attribute(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">attribute key</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">enable/disable</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Enables or disables a unit attribute for the unit. Valid attribute keys are listed in the @"battle_unit:Unit Attributes" section of this documentation.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>attribute key</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>enable/disable</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 838</p>
+						</dd>
+					</dl>
 				</div>
 
 
@@ -1671,7 +1722,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 846</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 865</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1706,7 +1757,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 860</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 879</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1740,7 +1791,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 872</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 891</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1755,7 +1806,7 @@
 							<ol>
 								<li><code>boolean</code> is hidden</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 880</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 899</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1789,7 +1840,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 888</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 907</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1823,7 +1874,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 896</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 915</p>
 						</dd>
 					</dl>
 				</div>
@@ -1847,7 +1898,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 916</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 935</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1862,7 +1913,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 923</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 942</p>
 						</dd>
 					</dl>
 				</div>
@@ -1904,7 +1955,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 943</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 962</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1938,7 +1989,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 956</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 975</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1953,7 +2004,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 973</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 992</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1988,7 +2039,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 990</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1009</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2003,7 +2054,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1003</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1022</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2018,7 +2069,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1010</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1029</p>
 						</dd>
 					</dl>
 				</div>
@@ -2041,7 +2092,7 @@
 							<ol>
 								<li><code>number</code> unary hitpoints</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1040</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1059</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2113,7 +2164,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1048</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1067</p>
 						</dd>
 					</dl>
 				</div>
@@ -2167,7 +2218,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1143</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1162</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2201,7 +2252,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1187</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1206</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2236,7 +2287,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1225</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1244</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2270,7 +2321,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1240</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1259</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2306,7 +2357,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1248</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1267</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2321,7 +2372,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1278</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1297</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2336,7 +2387,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1285</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1304</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2351,7 +2402,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1292</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1311</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2366,7 +2417,77 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1299</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1318</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:script_unit:morale_behavior_fearless_if_standing"><h3 class="function_name"><strong><code>script_unit:morale_behavior_fearless_if_standing([boolean </strong></code><i class="parameter">should release</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Makes the subject unit fearless if it's not already routing.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>boolean</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Set to true to release script control of this unit after <code>morale_behavior_fearless_if_standing</code> makes a change. Set this primarily if the unit is under player control.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1325</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:script_unit:morale_behavior_default_if_standing"><h3 class="function_name"><strong><code>script_unit:morale_behavior_default_if_standing([boolean </strong></code><i class="parameter">should release</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Makes the subject unit fearless if it's not already routing.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>boolean</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Set to true to release script control of this unit after <code>morale_behavior_default_if_standing</code> makes a change. Set this primarily if the unit is under player control.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1339</p>
 						</dd>
 					</dl>
 				</div>
@@ -2409,7 +2530,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1320</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1367</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2467,7 +2588,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1331</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1378</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2524,7 +2645,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1358</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1405</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2539,7 +2660,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1411</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1458</p>
 						</dd>
 					</dl>
 				</div>
@@ -2562,7 +2683,7 @@
 							<ol>
 								<li><code><code><a href="lua.html#class:number">number</a></code></code> enemy alliance number</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1430</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1477</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2577,7 +2698,7 @@
 							<ol>
 								<li><code><code><a href="battle_alliance.html#class:battle_alliance">battle_alliance</a></code></code> enemy alliance</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1438</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1485</p>
 						</dd>
 					</dl>
 				</div>
@@ -2643,7 +2764,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1458</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1505</p>
 						</dd>
 					</dl>
 				</div>
@@ -2698,7 +2819,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1525</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1572</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2713,7 +2834,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1565</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1612</p>
 						</dd>
 					</dl>
 				</div>
@@ -2840,7 +2961,7 @@
 							<ol>
 								<li><code>script_units</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1712</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1759</p>
 						</dd>
 					</dl>
 				</div>
@@ -2883,7 +3004,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1756</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1803</p>
 						</dd>
 					</dl>
 				</div>
@@ -2925,7 +3046,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1779</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1826</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2959,7 +3080,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1823</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1870</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -2993,7 +3114,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1843</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1890</p>
 						</dd>
 					</dl>
 				</div>
@@ -3004,6 +3125,108 @@
 					<a name="section:script_units:Querying"><h2 class="section_header">Querying</h2></a>
 				</div>
 				<div class="section_body">
+					<dl class="function">
+						<dt>
+							<a name="function:script_units:get_sunit_by_name"><h3 class="function_name"><strong><code>script_units:get_sunit_by_name(value </strong></code><i class="parameter">reference</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns a <code><a href="#class:script_unit">script_unit</a></code> from this script_units collection that matches the supplied reference <code><a href="lua.html#class:number">number</a></code> or <code><a href="lua.html#class:string">string</a></code>. <code><a href="lua.html#class:nil">nil</a></code> is returned if no matching script_unit is found.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>value</code></p>
+									</td>
+									<td>
+										<p>Reference <code><a href="lua.html#class:number">number</a></code> or <code><a href="lua.html#class:string">string</a></code>.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="#class:script_unit">script_unit</a></code></code> matching name, or <code><a href="lua.html#class:nil">nil</a></code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1939</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:script_units:get_sunit_for_unit"><h3 class="function_name"><strong><code>script_units:get_sunit_for_unit(<code><a href="battle_unit.html#class:battle_unit">battle_unit</a></code> </strong></code><i class="parameter">unit</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns a <code><a href="#class:script_unit">script_unit</a></code> from this script_units collection that contains the supplied <code><a href="battle_unit.html#class:battle_unit">battle_unit</a></code>. <code><a href="lua.html#class:nil">nil</a></code> is returned if no matching script_unit is found.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="battle_unit.html#class:battle_unit">battle_unit</a></code></code></p>
+									</td>
+									<td>
+										<p>unit</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="#class:script_unit">script_unit</a></code></code> matching unit, or <code><a href="lua.html#class:nil">nil</a></code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1953</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:script_units:get_sunit_by_type"><h3 class="function_name"><strong><code>script_units:get_sunit_by_type(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">unit type</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the <code><a href="#class:script_unit">script_unit</a></code> in this script_units collection that contains a <code><a href="battle_unit.html#class:battle_unit">battle_unit</a></code> of the supplied type. <code><a href="lua.html#class:nil">nil</a></code> is returned if no matching script_unit is found.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Unit type, from the <code>main_units</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="#class:script_unit">script_unit</a></code></code> matching unit, or <code><a href="lua.html#class:nil">nil</a></code></li>
+							</ol>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1967</p>
+						</dd>
+					</dl>
 					<dl class="function">
 						<dt>
 							<a name="function:script_units:contains_sunit"><h3 class="function_name"><strong><code>script_units:contains_sunit(script_unit </strong></code><i class="parameter">to test</i><code><strong>)</code></strong></h3></a>
@@ -3035,7 +3258,7 @@
 							<ol>
 								<li><code>boolean</code> collection contains sunit</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1892</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1981</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3069,7 +3292,7 @@
 							<ol>
 								<li><code>boolean</code> collection contains type</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1907</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1996</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3084,7 +3307,7 @@
 							<ol>
 								<li><code>number</code> number of units</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1922</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2011</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3118,7 +3341,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1930</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2019</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3133,7 +3356,7 @@
 							<ol>
 								<li><code>table</code> of script_unit objects</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1946</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2035</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3190,7 +3413,7 @@
 							<ol>
 								<li><code>script_units</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1954</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2043</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3205,7 +3428,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 1991</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2080</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3239,7 +3462,7 @@
 							<ol>
 								<li><code>script_units</code> duplicate collection</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2006</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2095</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3275,7 +3498,7 @@
 							<ol>
 								<li><code>unitcontroller</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2030</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2119</p>
 						</dd>
 					</dl>
 				</div>
@@ -3298,7 +3521,7 @@
 							<ol>
 								<li><code>vector</code> centre position</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2078</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2167</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3313,7 +3536,7 @@
 							<ol>
 								<li><code>number</code> radius</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2086</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2175</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3328,7 +3551,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2106</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2195</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3343,7 +3566,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2125</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2214</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3358,7 +3581,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2144</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2233</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3373,7 +3596,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2163</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2252</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3421,7 +3644,7 @@
 								<li><code>distance</code> distance of closest scriptunit in m</li>
 								<li><code>object</code> closest foreign object from the supplied object - either a <code><a href="battle_vector.html#class:battle_vector">battle_vector</a></code>, a <code><a href="battle_unit.html#class:battle_unit">battle_unit</a></code> or a <code><a href="#class:script_unit">script_unit</a></code>, depending upon the container type.</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2182</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2271</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3436,7 +3659,7 @@
 							<ol>
 								<li><code>script_unit</code> </li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2278</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2367</p>
 						</dd>
 					</dl>
 				</div>
@@ -3478,7 +3701,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2333</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2422</p>
 						</dd>
 					</dl>
 				</div>
@@ -3501,7 +3724,7 @@
 							<ol>
 								<li><code>boolean</code> any deployed</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2388</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2477</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3516,7 +3739,7 @@
 							<ol>
 								<li><code>boolean</code> all deployed</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2404</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2493</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3531,7 +3754,7 @@
 							<ol>
 								<li><code>boolean</code> any active</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2420</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2509</p>
 						</dd>
 					</dl>
 				</div>
@@ -3586,7 +3809,7 @@
 							<ol>
 								<li><code>boolean</code> have any moved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2450</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2539</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3633,7 +3856,7 @@
 							<ol>
 								<li><code>boolean</code> have all moved</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2468</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2557</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3648,7 +3871,7 @@
 							<ol>
 								<li><code>boolean</code> any running</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2486</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2575</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3663,7 +3886,7 @@
 							<ol>
 								<li><code>boolean</code> any running</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2502</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2591</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3678,7 +3901,7 @@
 							<ol>
 								<li><code>boolean</code> any under attack</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2518</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2607</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3693,7 +3916,7 @@
 							<ol>
 								<li><code>boolean</code> any in melee</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2534</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2623</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3708,7 +3931,7 @@
 							<ol>
 								<li><code>number</code> average hitpoints</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2550</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2639</p>
 						</dd>
 					</dl>
 				</div>
@@ -3774,7 +3997,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2583</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2672</p>
 						</dd>
 					</dl>
 				</div>
@@ -3817,7 +4040,7 @@
 							<ol>
 								<li><code>boolean</code> is hidden</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2631</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2720</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3832,7 +4055,7 @@
 							<ol>
 								<li><code>boolean</code> is visible</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2660</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2749</p>
 						</dd>
 					</dl>
 				</div>
@@ -3931,7 +4154,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2684</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2773</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -3946,7 +4169,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2819</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2908</p>
 						</dd>
 					</dl>
 				</div>
@@ -4011,7 +4234,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2838</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2927</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4026,7 +4249,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2883</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2972</p>
 						</dd>
 					</dl>
 				</div>
@@ -4080,7 +4303,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2902</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 2991</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -4095,7 +4318,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 3056</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 3145</p>
 						</dd>
 					</dl>
 				</div>
@@ -4161,7 +4384,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 3078</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_battle_script_unit.lua, line 3167</p>
 						</dd>
 					</dl>
 				</div>
@@ -4171,7 +4394,7 @@
 
 		</div>
 
-		<div id="about">Last updated 05/25/20 01:02:55</div>
+		<div id="about">Last updated 12/04/20 12:18:27</div>
 
 	</div>
 

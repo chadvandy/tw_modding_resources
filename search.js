@@ -179,7 +179,7 @@ function rescan(context)
 		all_terms.forEach(
 			function(current_term)
 			{
-				if (current_term.term.indexOf(search_term) != -1)
+				if (current_term.term.toLowerCase().indexOf(search_term) != -1)
 				{
 					// If we get here then the search term has been found in the current term
 					if (match_page_env_only)

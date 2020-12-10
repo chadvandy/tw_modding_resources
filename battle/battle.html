@@ -151,6 +151,8 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:end_benchmark">end_benchmark</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:quit_to_windows_from_script">quit_to_windows_from_script</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:appdata_screenshots">appdata_screenshots</a></li>
+						<li>&emsp;&emsp;<a href="#section:battle:Unit Attributes">Unit Attributes</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:set_stat_attributes">set_stat_attributes</a></li>
 						<li>&emsp;&emsp;<a href="#section:battle:Miscellaneous">Miscellaneous</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:trigger_projectile_launch">trigger_projectile_launch</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:battle:unlock_achievement">unlock_achievement</a></li>
@@ -836,6 +838,7 @@
 					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:battle:Time and Timers"><h2 class="section_header">Time and Timers</h2></a>
 				</div>
+				<p>The functions in this section describe the raw interface to the model timer system provided in battle to script. It's strongly recommended that client scripts make use of the functionality provided by the <code><a href="timer_manager.html#class:timer_manager">timer_manager</a></code> (and exposed through the <code><a href="battle_manager.html#class:battle_manager">battle_manager</a></code> - see the <code><a href="battle_manager.html#section:battle_manager:Timer Manager">Timer Manager</a></code> section of this documentation), rather than calling <code><a href="#function:battle:register_singleshot_timer">battle:register_singleshot_timer</a></code>, <code><a href="#function:battle:register_repeating_timer">battle:register_repeating_timer</a></code> or <code><a href="#function:battle:unregister_timer">battle:unregister_timer</a></code> functions directly.</p>
 				<div class="section_body">
 					<dl class="function">
 						<dt>
@@ -2976,6 +2979,105 @@
 
 				<div>
 					<a style="float:right;" href="#top">Back to top</a>
+					<a name="section:battle:Unit Attributes"><h2 class="section_header">Unit Attributes</h2></a>
+				</div>
+				<p>Unit attributes define certain intrinsic properties of a unit in battle. Attributes are generally assigned to a unit type in the game database, but may be enabled or disabled per-unit in script using the <code><a href="battle_unit.html#function:battle_unit:set_stat_attributes">unit:set_stat_attributes</a></code> function. Valid attribute keys are shown in the following list:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+				<p><table class="simple"><tr><th>Attribute Key</th><th>Description</th></tr></p>
+				<p><tr><td><code>all_ranks_fire</code></td><td>All ranks can fire if using a weapon that only allows one rank.</td></tr></p>
+				<p><tr><td><code>berserk</code></td><td>This unit will occasionally go berserk.</td></tr></p>
+				<p><tr><td><code>cant_run</code></td><td>This unit cannot run - generally for limbered artillery.</td></tr></p>
+				<p><tr><td><code>campaign_stealth</code></td><td>This unit is able to move around the campaign map without being seen.</td></tr></p>
+				<p><tr><td><code>charge_reflector</code></td><td>Charge reflection vs all.</td></tr></p>
+				<p><tr><td><code>charge_reflector_vs_large</code></td><td>Charge reflection vs large units only.</td></tr></p>
+				<p><tr><td><code>causes_fear</code></td><td>This unit frightens all enemy units, reducing their morale when nearby. It is also immune to fear.</td></tr></p>
+				<p><tr><td><code>causes_terror</code></td><td>The unit can cause terror, making enemies rout for a short time but without morale penalties. It is also immune to terror and fear.</td></tr></p>
+				<p><tr><td><code>commander_hunter</code></td><td>This unit is changed in various ways to make them better at killing commanders.</td></tr></p>
+				<p><tr><td><code>disciplined</code></td><td>This unit doesn't suffer morale penalty from general's death.</td></tr></p>
+				<p><tr><td><code>encourages</code></td><td>This unit provides a morale bonus to nearby allies.</td></tr></p>
+				<p><tr><td><code>fatigue_res</code></td><td>Fatigue doesn't have as much of an effect.</td></tr></p>
+				<p><tr><td><code>fatigue_immune</code></td><td>Fatigue doesn't an effect.</td></tr></p>
+				<p><tr><td><code>fire_while_moving</code></td><td>This infantry unit can fire while moving.</td></tr></p>
+				<p><tr><td><code>formed_attack</code></td><td>This unit will try to stay in formation when in melee.</td></tr></p>
+				<p><tr><td><code>guerrilla_deploy</code></td><td>Can deploy outside deployment zone (vanguard deployment).</td></tr></p>
+				<p><tr><td><code>hide_forest</code></td><td>Can hide in forest.</td></tr></p>
+				<p><tr><td><code>hide_grass</code></td><td>Can hide in grass.</td></tr></p>
+				<p><tr><td><code>hide_scrub_and_forest</code></td><td>Can hide in scrubland.</td></tr></p>
+				<p><tr><td><code>hide_building</code></td><td>Can hide in buildings.</td></tr></p>
+				<p><tr><td><code>ignore_ground_move_mod</code></td><td>Doesn't get slowed down by terrain.</td></tr></p>
+				<p><tr><td><code>strider</code></td><td>Strider attribute.</td></tr></p>
+				<p><tr><td><code>immune_to_psychology</code></td><td>The unit is immune to psychological attacks (fear and terror).</td></tr></p>
+				<p><tr><td><code>immune_to_psychology</code></td><td>The unit gains an extra morale bonus when eager.</td></tr></p>
+				<p><tr><td><code>mighty_knockback</code></td><td>This unit causes extra damage when they knock back the enemy.</td></tr></p>
+				<p><tr><td><code>mounted_fire</code></td><td>The unit can fire while on a mount.</td></tr></p>
+				<p><tr><td><code>mounted_fire_move</code></td><td>The unit can fire while on a moving mount.</td></tr></p>
+				<p><tr><td><code>mounted_fire_parthian</code></td><td>The unit can fire while on a moving mount in a Parthian fashion.</td></tr></p>
+				<p><tr><td><code>rampage</code></td><td>This unit may rampage if put under pressure.</td></tr></p>
+				<p><tr><td><code>resist_cold</code></td><td>This unit doesn't take extra casualties from cold climates in campaign.</td></tr></p>
+				<p><tr><td><code>resist_heat</code></td><td>This unit doesn't take extra casualties from hot climates in campaign.</td></tr></p>
+				<p><tr><td><code>run_amok</code></td><td>This unit may run amok if put under pressure.</td></tr></p>
+				<p><tr><td><code>scare_horse</code></td><td>This unit scares horses.</td></tr></p>
+				<p><tr><td><code>scare_immune</code></td><td>This unit is immune to fear effects.</td></tr></p>
+				<p><tr><td><code>snipe</code></td><td>The unit remains hidden while firing.</td></tr></p>
+				<p><tr><td><code>stalk</code></td><td>This unit can remain hidden while moving.</td></tr></p>
+				<p><tr><td><code>unbreakable</code></td><td>This unit's morale cannot be broken.</td></tr></p>
+				<p><tr><td><code>undead</code></td><td>The unit is undead (does not rout, immune to terror, receives crumble damage when morale is low).</td></tr></p>
+				<p><tr><td><code>unspottable</code></td><td>If this unit is able to hide in its current location, it will not be spotted by enemies until they are very close.</td></tr></p>
+				<p><tr><td><code>expendable</code></td><td>A normal (non-expendable) unit's morale does not suffer from witnessing an expendable unit routing.</td></tr></p>
+				<p><tr><td><code>construct</code></td><td>The unit is a statue.</td></tr></p>
+				<p><tr><td><code>wallbreaker</code></td><td>The unit can attack walls physically.</td></tr></p>
+				<p><tr><td><code>ignore_trees</code></td><td>The unit ignores trees.</td></tr></p>
+				<p></table></p>
+				<p>Not all attributes will be supported by each game.</p>
+				<div class="section_body">
+					<dl class="function">
+						<dt>
+							<a name="function:battle:set_stat_attributes"><h3 class="function_name"><strong><code>battle:set_stat_attributes(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">attribute key</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">enable/disable</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Enables or disables a global attribute on the unit. Attribute keys are listed above, in the @"battle_unit:Unit Attributes" section of this documentation.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>attribute key</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>enable/disable</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+				</div>
+
+
+				<div>
+					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:battle:Miscellaneous"><h2 class="section_header">Miscellaneous</h2></a>
 				</div>
 				<div class="section_body">
@@ -3107,7 +3209,7 @@
 
 		</div>
 
-		<div id="about">Last updated 05/25/20 01:02:56</div>
+		<div id="about">Last updated 12/04/20 12:18:27</div>
 
 	</div>
 

@@ -9,6 +9,7 @@
 <dt><a href="#RegionTurnEnd">RegionTurnEnd</a></dt>
 <dt><a href="#AreaExitedEvent">AreaExitedEvent</a></dt>
 <dt><a href="#DebugFactionEvent">DebugFactionEvent</a></dt>
+<dt><a href="#UnitEffectUnpurchased">UnitEffectUnpurchased</a></dt>
 <dt><a href="#PooledResourceEvent">PooledResourceEvent</a></dt>
 <dt><a href="#ScriptedCharacterUnhidden">ScriptedCharacterUnhidden</a></dt>
 <dt><a href="#UnitCreated">UnitCreated</a></dt>
@@ -21,7 +22,6 @@
 <dt><a href="#ImprisonmenRejectiontEvent">ImprisonmenRejectiontEvent</a></dt>
 <dt><a href="#RegionPlagueStateChanged">RegionPlagueStateChanged</a></dt>
 <dt><a href="#CharacterCanLiberate">CharacterCanLiberate</a></dt>
-<dt><a href="#UITriggerScriptEvent">UITriggerScriptEvent</a></dt>
 <dt><a href="#RegionSelected">RegionSelected</a></dt>
 <dt><a href="#ClanBecomesVassal">ClanBecomesVassal</a></dt>
 <dt><a href="#CharacterEmbarksNavy">CharacterEmbarksNavy</a></dt>
@@ -58,6 +58,7 @@
 <dt><a href="#CharacterRankUpNeedsAncillary">CharacterRankUpNeedsAncillary</a></dt>
 <dt><a href="#CharacterPerformsSettlementOccupationDecision">CharacterPerformsSettlementOccupationDecision</a></dt>
 <dt><a href="#SlotTurnStart">SlotTurnStart</a></dt>
+<dt><a href="#UITrigger">UITrigger</a></dt>
 <dt><a href="#NewCampaignStarted">NewCampaignStarted</a></dt>
 <dt><a href="#FactionCivilWarOccured">FactionCivilWarOccured</a></dt>
 <dt><a href="#MissionStatusEvent">MissionStatusEvent</a></dt>
@@ -99,6 +100,7 @@
 <dt><a href="#MissionGenerationFailed">MissionGenerationFailed</a></dt>
 <dt><a href="#FactionEvent">FactionEvent</a></dt>
 <dt><a href="#CharacterCompletedBattle">CharacterCompletedBattle</a></dt>
+<dt><a href="#SharedStateChangedScriptEvent">SharedStateChangedScriptEvent</a></dt>
 <dt><a href="#ForeignSlotBuildingCompleteEvent">ForeignSlotBuildingCompleteEvent</a></dt>
 <dt><a href="#MultiTurnMove">MultiTurnMove</a></dt>
 <dt><a href="#HaveCharacterWithinRangeOfPositionMissionEvaluationResultEvent">HaveCharacterWithinRangeOfPositionMissionEvaluationResultEvent</a></dt>
@@ -111,6 +113,7 @@
 <dt><a href="#CharacterBlockadedPort">CharacterBlockadedPort</a></dt>
 <dt><a href="#DebugCharacterEvent">DebugCharacterEvent</a></dt>
 <dt><a href="#CharacterBecomesFactionLeader">CharacterBecomesFactionLeader</a></dt>
+<dt><a href="#SharedStateCreatedScriptEvent">SharedStateCreatedScriptEvent</a></dt>
 <dt><a href="#MilitaryForceCreated">MilitaryForceCreated</a></dt>
 <dt><a href="#CharacterRazedSettlement">CharacterRazedSettlement</a></dt>
 <dt><a href="#CharacterComesOfAge">CharacterComesOfAge</a></dt>
@@ -246,6 +249,7 @@
 <dt><a href="#FOREIGN_SLOT_LIST_SCRIPT_INTERFACE">FOREIGN_SLOT_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FOREIGN_SLOT_MANAGER_SCRIPT_INTERFACE">FOREIGN_SLOT_MANAGER_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FOREIGN_SLOT_MANAGER_LIST_SCRIPT_INTERFACE">FOREIGN_SLOT_MANAGER_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#SHARED_STATES_MANAGER_SCRIPT_INTERFACE">SHARED_STATES_MANAGER_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE</a></dt>
 </dl><br><h2>Event Functions</h2>
@@ -338,6 +342,12 @@
 <dl><dd>Function Name: id</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
 <dd>Description: Access event id</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="UnitEffectUnpurchased">UnitEffectUnpurchased</a></h4>
+<dl><dd>Function Name: effect</dd>
+<dd>Interface: <a href="#UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Access the new unit which the effect was unpurchased for</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="PooledResourceEvent">PooledResourceEvent</a></h4>
@@ -482,16 +492,6 @@
 <dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
-</dl>
-<br></dd>
-<dd><h4><a name="UITriggerScriptEvent">UITriggerScriptEvent</a></h4>
-<dl><dd>Function Name: faction_cqi</dd>
-<dd>Interface: <a href="#NONE">NONE</a></dd>
-<dd>Description: Access the faction that owns the resource</dd>
-</dl>
-<br><dl><dd>Function Name: trigger</dd>
-<dd>Interface: <a href="#NONE">NONE</a></dd>
-<dd>Description: Access the faction that owns the resource</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="RegionSelected">RegionSelected</a></h4>
@@ -784,6 +784,16 @@
 <dl><dd>Function Name: region_slot</dd>
 <dd>Interface: <a href="#SLOT_SCRIPT_INTERFACE">SLOT_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the region slot in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="UITrigger">UITrigger</a></h4>
+<dl><dd>Function Name: faction_cqi</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access the faction that owns the resource</dd>
+</dl>
+<br><dl><dd>Function Name: trigger</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access the faction that owns the resource</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="NewCampaignStarted">NewCampaignStarted</a></h4>
@@ -1148,6 +1158,28 @@
 <dd>Description: Access the character in the event</dd>
 </dl>
 <br></dd>
+<dd><h4><a name="SharedStateChangedScriptEvent">SharedStateChangedScriptEvent</a></h4>
+<dl><dd>Function Name: get_key</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access key of changed state</dd>
+</dl>
+<br><dl><dd>Function Name: get_state_as_bool</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access bool state</dd>
+</dl>
+<br><dl><dd>Function Name: get_state_as_float</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access float state</dd>
+</dl>
+<br><dl><dd>Function Name: is_bool</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Checks if the state is bool</dd>
+</dl>
+<br><dl><dd>Function Name: is_float</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Checks if the state is float</dd>
+</dl>
+<br></dd>
 <dd><h4><a name="ForeignSlotBuildingCompleteEvent">ForeignSlotBuildingCompleteEvent</a></h4>
 <dl><dd>Function Name: building</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
@@ -1298,6 +1330,28 @@
 <dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="SharedStateCreatedScriptEvent">SharedStateCreatedScriptEvent</a></h4>
+<dl><dd>Function Name: get_key</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access key of created state</dd>
+</dl>
+<br><dl><dd>Function Name: get_state_as_bool</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access bool state</dd>
+</dl>
+<br><dl><dd>Function Name: get_state_as_float</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access float state</dd>
+</dl>
+<br><dl><dd>Function Name: is_bool</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Checks if the state is bool</dd>
+</dl>
+<br><dl><dd>Function Name: is_float</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Checks if the state is float</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="MilitaryForceCreated">MilitaryForceCreated</a></h4>
@@ -3231,6 +3285,7 @@
 <dd><a href="#WORLD_SCRIPT_INTERFACEland_region_data">land_region_data</a></dd>
 <dd><a href="#WORLD_SCRIPT_INTERFACEsea_region_data">sea_region_data</a></dd>
 <dd><a href="#WORLD_SCRIPT_INTERFACEcooking_system">cooking_system</a></dd>
+<dd><a href="#WORLD_SCRIPT_INTERFACEcharacters_owning_ancillary">characters_owning_ancillary</a></dd>
 <br><dd>Function: <a name="WORLD_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -3301,6 +3356,11 @@
 <dd>Parameters: cooking_system()</dd>
 <dd>Return: <a href="#COOKING_SYSTEM_SCRIPT_INTERFACE">COOKING_SYSTEM_SCRIPT_INTERFACE</a></dd>
 <br>
+<dd>Function: <a name="WORLD_SCRIPT_INTERFACEcharacters_owning_ancillary">characters_owning_ancillary</a></dd>
+<dd>Description: Returns characters list interface for characters owning ancillary</dd>
+<dd>Parameters: characters_owning_ancillaries("ancillary_name")</dd>
+<dd>Return: <a href="#CHARACTER_LIST_SCRIPT_INTERFACE">CHARACTER_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
 <h4><a name="MODEL_SCRIPT_INTERFACE">MODEL_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Model is the central access point of the campaign. Everything should be reachable from this interface</dd>
 <br>
@@ -3330,6 +3390,7 @@
 <dd><a href="#MODEL_SCRIPT_INTERFACEhas_character_command_queue_index">has_character_command_queue_index</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEhas_military_force_command_queue_index">has_military_force_command_queue_index</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEhas_faction_command_queue_index">has_faction_command_queue_index</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACEshared_states_manager">shared_states_manager</a></dd>
 <br><dd>Function: <a name="MODEL_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -3459,6 +3520,11 @@
 <dd>Description: Returns true if the cqi exists</dd>
 <dd>Parameters: An integer CQI > 0, has_faction_command_queue_index(CQI)</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACEshared_states_manager">shared_states_manager</a></dd>
+<dd>Description: Returns shared states manager interface</dd>
+<dd>Parameters: shared_states_manager()</dd>
+<dd>Return: <a href="#SHARED_STATES_MANAGER_SCRIPT_INTERFACE">SHARED_STATES_MANAGER_SCRIPT_INTERFACE</a></dd>
 <br>
 <h4><a name="FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Faction interface</dd>
@@ -5876,6 +5942,7 @@
 <dd>Description: Unit script interface. Land units and Naval units are derived from Unit.</dd>
 <br>
 <dd><a href="#UNIT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#UNIT_SCRIPT_INTERFACEcommand_queue_index">command_queue_index</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEhas_force_commander">has_force_commander</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEhas_unit_commander">has_unit_commander</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEis_land_unit">is_land_unit</a></dd>
@@ -5895,11 +5962,18 @@
 <dd><a href="#UNIT_SCRIPT_INTERFACEcan_upgrade_unit">can_upgrade_unit</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEget_unit_custom_battle_cost">get_unit_custom_battle_cost</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEcan_purchase_effect">can_purchase_effect</a></dd>
+<dd><a href="#UNIT_SCRIPT_INTERFACEcan_unpurchase_effect">can_unpurchase_effect</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEget_unit_purchasable_effects">get_unit_purchasable_effects</a></dd>
+<dd><a href="#UNIT_SCRIPT_INTERFACEget_unit_purchased_effects">get_unit_purchased_effects</a></dd>
 <br><dd>Function: <a name="UNIT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="UNIT_SCRIPT_INTERFACEcommand_queue_index">command_queue_index</a></dd>
+<dd>Description: Command queue index of the unit</dd>
+<dd>Parameters: command_queue_index()</dd>
+<dd>Return: int</dd>
 <br>
 <dd>Function: <a name="UNIT_SCRIPT_INTERFACEhas_force_commander">has_force_commander</a></dd>
 <dd>Description: Is the unit in a force with a commander?</dd>
@@ -5996,9 +6070,19 @@
 <dd>Parameters: can_purchase_effect(faction, effect)</dd>
 <dd>Return: bool</dd>
 <br>
+<dd>Function: <a name="UNIT_SCRIPT_INTERFACEcan_unpurchase_effect">can_unpurchase_effect</a></dd>
+<dd>Description: Can the specified unpurchase happen</dd>
+<dd>Parameters: can_unpurchase_effect(effect)</dd>
+<dd>Return: bool</dd>
+<br>
 <dd>Function: <a name="UNIT_SCRIPT_INTERFACEget_unit_purchasable_effects">get_unit_purchasable_effects</a></dd>
 <dd>Description: Get the list of unit purchasable effects linked to this unit</dd>
 <dd>Parameters: get_unit_purchasable_effects()</dd>
+<dd>Return: <a href="#UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="UNIT_SCRIPT_INTERFACEget_unit_purchased_effects">get_unit_purchased_effects</a></dd>
+<dd>Description: Get the list of purchased effects purchased for the unit</dd>
+<dd>Parameters: get_unit_purchased_effects()</dd>
 <dd>Return: <a href="#UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE</a></dd>
 <br>
 <h4><a name="UNIT_LIST_SCRIPT_INTERFACE">UNIT_LIST_SCRIPT_INTERFACE</a></h4>
@@ -6741,6 +6825,27 @@
 <dd>Description: Returns a true if there are 0 items in the list</dd>
 <dd>Parameters: is_empty()</dd>
 <dd>Return: bool</dd>
+<br>
+<h4><a name="SHARED_STATES_MANAGER_SCRIPT_INTERFACE">SHARED_STATES_MANAGER_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Shared States Manager Script Interfaces</dd>
+<br>
+<dd><a href="#SHARED_STATES_MANAGER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#SHARED_STATES_MANAGER_SCRIPT_INTERFACEget_state_as_bool_value">get_state_as_bool_value</a></dd>
+<dd><a href="#SHARED_STATES_MANAGER_SCRIPT_INTERFACEget_state_as_float_value">get_state_as_float_value</a></dd>
+<br><dd>Function: <a name="SHARED_STATES_MANAGER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="SHARED_STATES_MANAGER_SCRIPT_INTERFACEget_state_as_bool_value">get_state_as_bool_value</a></dd>
+<dd>Description: returns state as bool by key</dd>
+<dd>Parameters: get_state_as_bool_value(String key)</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="SHARED_STATES_MANAGER_SCRIPT_INTERFACEget_state_as_float_value">get_state_as_float_value</a></dd>
+<dd>Description: returns state as bool by key</dd>
+<dd>Parameters: get_state_as_float_value(String key)</dd>
+<dd>Return: float32</dd>
 <br>
 <h4><a name="UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Unit purchasable effect script interface.</dd>
