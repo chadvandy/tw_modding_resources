@@ -57,6 +57,7 @@
 					<ul>
 						<li>&emsp;&emsp;<a href="#section:uicomponent:Usage">Usage</a></li>
 						<li>&emsp;&emsp;<a href="#section:uicomponent:General Queries">General Queries</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:IsValid">IsValid</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Id">Id</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:CallbackId">CallbackId</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Address">Address</a></li>
@@ -85,6 +86,14 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:TextDimensions">TextDimensions</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:TextDimensionsForText">TextDimensionsForText</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:WidthOfTextLine">WidthOfTextLine</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:TextXOffset">TextXOffset</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:TextYOffset">TextYOffset</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetTextXOffset">SetTextXOffset</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetTextYOffset">SetTextYOffset</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetTextHAlign">SetTextHAlign</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetTextHAlign">GetTextHAlign</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetTextVAlign">SetTextVAlign</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetTextVAlign">GetTextVAlign</a></li>
 						<li>&emsp;&emsp;<a href="#section:uicomponent:Docking">Docking</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:DockingPoint">DockingPoint</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetDockingPoint">SetDockingPoint</a></li>
@@ -95,6 +104,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SequentialFind">SequentialFind</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:ChildCount">ChildCount</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Parent">Parent</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Destroy">Destroy</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:DestroyChildren">DestroyChildren</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Adopt">Adopt</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Divorce">Divorce</a></li>
@@ -125,6 +135,17 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:CanResizeCurrentStateImageHeight">CanResizeCurrentStateImageHeight</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCanResizeCurrentStateImageWidth">SetCanResizeCurrentStateImageWidth</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCanResizeCurrentStateImageHeight">SetCanResizeCurrentStateImageHeight</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCurrentStateImageDockingPoint">SetCurrentStateImageDockingPoint</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetCurrentStateImageDockingPoint">GetCurrentStateImageDockingPoint</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCurrentStateImageDockOffset">SetCurrentStateImageDockOffset</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetCurrentStateImageDockOffset">GetCurrentStateImageDockOffset</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCurrentStateImageTiled">SetCurrentStateImageTiled</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetCurrentStateImageTiled">GetCurrentStateImageTiled</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCurrentStateImageMargins">SetCurrentStateImageMargins</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetCurrentStateImageMargins">GetCurrentStateImageMargins</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCurrentStateImageXFlip">SetCurrentStateImageXFlip</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetCurrentStateImageYFlip">SetCurrentStateImageYFlip</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:GetCurrentStateImageFlip">GetCurrentStateImageFlip</a></li>
 						<li>&emsp;&emsp;<a href="#section:uicomponent:Visibility and Interactivity">Visibility and Interactivity</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:Visible">Visible</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:uicomponent:SetVisible">SetVisible</a></li>
@@ -272,6 +293,20 @@
 					<a name="section:uicomponent:General Queries"><h2 class="section_header">General Queries</h2></a>
 				</div>
 				<div class="section_body">
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:IsValid"><h3 class="function_name"><strong><code>uicomponent:IsValid()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns true if this UIComponent handle is valid (internal component ptr has NOT been deleted)
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is_valid</li>
+							</ol>
+						</dd>
+					</dl>
 					<dl class="function">
 						<dt>
 							<a name="function:uicomponent:Id"><h3 class="function_name"><strong><code>uicomponent:Id()</code></strong></h3></a>
@@ -917,6 +952,218 @@
 							</ol>
 						</dd>
 					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:TextXOffset"><h3 class="function_name"><strong><code>uicomponent:TextXOffset()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the text x offset values of the current state. This is the padding around the left and right side of any text displayed on the current state of the uicomponent. Offset values greater than 0 enforce a border around the edge of the text so that it does not run right up to the edge of the displayed component.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> left offset</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> right offset</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:TextYOffset"><h3 class="function_name"><strong><code>uicomponent:TextYOffset()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the text y offset values of the current state. This is the padding around the top and bottom of any text displayed on the current state of the uicomponent. Offset values greater than 0 enforce a border around the edge of the text so that it does not run right up to the edge of the displayed component.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> top offset</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> bottom offset</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetTextXOffset"><h3 class="function_name"><strong><code>uicomponent:SetTextXOffset(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">left offset</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">right offset</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the text x offset values of the current state. This is the padding around the left and right side of any text displayed on the current state of the uicomponent. Offset values greater than 0 enforce a border around the edge of the text so that it does not run right up to the edge of the displayed component.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>left offset</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>right offset</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetTextYOffset"><h3 class="function_name"><strong><code>uicomponent:SetTextYOffset(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">top offset</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">bottom offset</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the text y offset values of the current state. This is the padding around the top and bottom of any text displayed on the current state of the uicomponent. Offset values greater than 0 enforce a border around the edge of the text so that it does not run right up to the edge of the displayed component.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>top offset</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>bottom offset</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetTextHAlign"><h3 class="function_name"><strong><code>uicomponent:SetTextHAlign(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">horizontal text alignment</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the horizontal text alignment setting of the current state to the supplied alignment. Valid string alignment values are <code>"left"</code>, <code>"centre"</code> and <code>"right"</code>.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>horizontal text alignment</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetTextHAlign"><h3 class="function_name"><strong><code>uicomponent:GetTextHAlign()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the horizontal text alignment setting of the current state as a string. Valid alignment values are <code>"left"</code>, <code>"centre"</code> and <code>"right"</code>.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> horizontal text alignment</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetTextVAlign"><h3 class="function_name"><strong><code>uicomponent:SetTextVAlign(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">vertical text alignment</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the vertical text alignment setting of the current state to the supplied alignment. Valid string alignment values are <code>"top"</code>, <code>"centre"</code> and <code>"bottom"</code>.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>vertical text alignment</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetTextVAlign"><h3 class="function_name"><strong><code>uicomponent:GetTextVAlign()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the vertical text alignment setting of the current state as a string. Valid alignment values are <code>"top"</code>, <code>"centre"</code> and <code>"bottom"</code>.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:string">string</a></code></code> vertical text alignment</li>
+							</ol>
+						</dd>
+					</dl>
 				</div>
 
 
@@ -1181,6 +1428,20 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:uicomponent:Destroy"><h3 class="function_name"><strong><code>uicomponent:Destroy()</code></strong></h3></a>
+						</dt>
+						<dd>
+							Destroys this uicomponent.
+
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:uicomponent:DestroyChildren"><h3 class="function_name"><strong><code>uicomponent:DestroyChildren()</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -1195,10 +1456,11 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:uicomponent:Adopt"><h3 class="function_name"><strong><code>uicomponent:Adopt(address </strong></code><i class="parameter">child</i><code><strong>)</code></strong></h3></a>
+							<a name="function:uicomponent:Adopt"><h3 class="function_name"><strong><code>uicomponent:Adopt(address </strong></code><i class="parameter">uicomponent address</i><code><strong>, [<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">insertion index</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
-							Compels this uicomponent to adopt a supplied uicomponent, which will then become a child of this uicomponent. The supplied uicomponent is removed from its previous parent. The target uicomponent must be supplied by its address, which may be retrieved with <code><a href="#function:uicomponent:Address">uicomponent:Address</a></code>.
+							Compels this uicomponent to adopt a supplied uicomponent, which will then become a child of this uicomponent. The supplied uicomponent is removed from its previous parent. The target uicomponent must be supplied by its address, which may be retrieved with <code><a href="#function:uicomponent:Address">uicomponent:Address</a></code>.<br />
+							An insertion index may optionally be supplied, which determines where in this uicomponent's list of children this new child will be inserted. This can determine the display order in certain circumstances. By default, the new child is added to the end of the list.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -1215,7 +1477,19 @@
 										<p><code>address</code></p>
 									</td>
 									<td>
-										<p>child</p>
+										<p>uicomponent address</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=-1</i></p>
+										<p>insertion index</p>
 									</td>
 								</tr>
 							</table>
@@ -2147,6 +2421,483 @@
 							<h4>Returns:</h4>
 							<ol>
 								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetCurrentStateImageDockingPoint"><h3 class="function_name"><strong><code>uicomponent:SetCurrentStateImageDockingPoint(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">dock point</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the docking point of the specified image associated with the current state of the uicomponent. Valid values are given in the table in the <code><a href="#section:uicomponent:Docking">Docking</a></code> section of this documentation.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Dock point.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetCurrentStateImageDockingPoint"><h3 class="function_name"><strong><code>uicomponent:GetCurrentStateImageDockingPoint(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Gets the docking point of the specified image associated with the current state of the uicomponent. The value is returned as a number. Valid number values are given in the table in the <code><a href="#section:uicomponent:Docking">Docking</a></code> section of this documentation.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> dock point, Dock point.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetCurrentStateImageDockOffset"><h3 class="function_name"><strong><code>uicomponent:SetCurrentStateImageDockOffset(<br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">x offset in pixels.</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">y offset in pixels.</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the docking offset of the specified image associated with the current state of the uicomponent.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>x offset in pixels.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>y offset in pixels.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetCurrentStateImageDockOffset"><h3 class="function_name"><strong><code>uicomponent:GetCurrentStateImageDockOffset(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the docking offset set for the specified image associated with the current state of the uicomponent.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> x offset in pixels.</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> y offset in pixels.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetCurrentStateImageTiled"><h3 class="function_name"><strong><code>uicomponent:SetCurrentStateImageTiled(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">is tiled</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets whether the specified image associated with the current state of the uicomponent is tiled or not.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>is tiled</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetCurrentStateImageTiled"><h3 class="function_name"><strong><code>uicomponent:GetCurrentStateImageTiled(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns whether the specified image associated with the current state of the uicomponent is tiled or not.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is image tiled.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetCurrentStateImageMargins"><h3 class="function_name"><strong><code>uicomponent:SetCurrentStateImageMargins(<br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">top margin</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">right margin</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">bottom margin</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">left margin</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the margin values for the specified image associated with the current state of the uicomponent. This affects how the image resizes, allowing a border around the image to stay a static size while the centre portion of the image scales.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The size of the top margin in pixels.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The size of the right margin in pixels.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The size of the bottom margin in pixels.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>5</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The size of the left margin in pixels.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetCurrentStateImageMargins"><h3 class="function_name"><strong><code>uicomponent:GetCurrentStateImageMargins(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the margin values for the specified image associated with the current state of the uicomponent. The margins affect how the image resizes, allowing a border around the image to stay a static size while the centre portion of the image scales.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> top margin value in pixels</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> right margin value in pixels</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> bottom margin value in pixels</li>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> left margin value in pixels</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetCurrentStateImageXFlip"><h3 class="function_name"><strong><code>uicomponent:SetCurrentStateImageXFlip(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">flip</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the x-flipped value for the specified image associated with the current state of the uicomponent. If set, this flips the image horizontally.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Image should be horizontally flipped.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:SetCurrentStateImageYFlip"><h3 class="function_name"><strong><code>uicomponent:SetCurrentStateImageYFlip(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">flip</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sets the y-flipped value for the specified image associated with the current state of the uicomponent. If set, this flips the image vertically.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Image should be vertically flipped.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:uicomponent:GetCurrentStateImageFlip"><h3 class="function_name"><strong><code>uicomponent:GetCurrentStateImageFlip(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">state image index</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the x-flipped value for the specified image associated with the current state of the uicomponent. If set, this flips the image horizontally.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The index of the image's association with the current uicomponent state.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> is flipped horizontally.</li>
 							</ol>
 						</dd>
 					</dl>
@@ -3967,7 +4718,7 @@
 
 		</div>
 
-		<div id="about">Last updated 02/16/21 07:19:47</div>
+		<div id="about">Last updated 07/02/21 06:39:15</div>
 
 	</div>
 

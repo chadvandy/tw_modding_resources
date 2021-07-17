@@ -68,6 +68,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:v">v</a><img alt="loaded in battle" style="float:right; margin-right:1em;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:v_to_s">v_to_s</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:v_offset">v_offset</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:v_offset_by_bearing">v_offset_by_bearing</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:v_add">v_add</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:v_subtract">v_subtract</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:centre_point_table">centre_point_table</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
@@ -80,6 +81,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:normal">normal</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:distance_to_line">distance_to_line</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:has_crossed_line">has_crossed_line</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:get_bearing">get_bearing</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:distance_along_line">distance_along_line</a><img alt="loaded in campaign" style="float:right; margin-right:1em;" src="../images/loaded_in_campaign.png" height="10" width="10"><img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
 						<li>&emsp;&emsp;<a href="#section:global:Sound">Sound</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:global:new_sfx">new_sfx</a><img alt="loaded in battle" style="float:right; margin-right:1em;" src="../images/loaded_in_battle.png" height="10" width="10"></li>
@@ -736,6 +738,92 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:global:v_offset_by_bearing"><h3 class="function_name"><strong><code>v_offset_by_bearing(<code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code> </strong></code><i class="parameter">source vector</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">bearing</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">dist</i><code><strong>, [<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">v bearing</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Takes a source vector, a bearing, a distance, and an optional vertical bearing, and returns a vector at the computed position from the source vector. The horizontal bearing rotates in a horizontal plane (i.e. looking top-down), the vertical bearing rotates in a vertical plane (i.e. looking from side).
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code></code></p>
+									</td>
+									<td>
+										<p>source vector</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>horizontal bearing in radians.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>distance in metres.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=0</i></p>
+										<p>Vertical bearing in radians.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code></code> target vector</li>
+							</ol>
+							<table class="loaded_in">
+								<tr>
+									<td>
+										Loaded in Battle
+									</td>
+									<td>
+										<img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="18" width="18" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Loaded in Campaign
+									</td>
+									<td>
+										<img alt="loaded in campaign" style="float:right;" src="../images/loaded_in_campaign.png" height="18" width="18" />
+									</td>
+								</tr>
+							</table>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 53</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:global:v_add"><h3 class="function_name"><strong><code>v_add(vector </strong></code><i class="parameter">vector a</i><code><strong>, vector </strong></code><i class="parameter">vector b</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -794,7 +882,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 53</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 80</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -857,7 +945,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 74</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 101</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -909,7 +997,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 95</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 122</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1009,7 +1097,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 143</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 170</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1072,7 +1160,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 274</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 301</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1135,7 +1223,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 284</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 311</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1209,7 +1297,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 294</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 321</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1272,7 +1360,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 318</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 345</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1335,7 +1423,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 328</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 355</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1398,7 +1486,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 338</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 365</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1472,7 +1560,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 348</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 375</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1559,7 +1647,82 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 376</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 403</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:global:get_bearing"><h3 class="function_name"><strong><code>get_bearing(<code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code> </strong></code><i class="parameter">source vector</i><code><strong>, <code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code> </strong></code><i class="parameter">target vector</i><code><strong>, [<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">vertical bearing</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns the bearing in radians from one vector to another. If the vertical bearing flag is supplied then the vertical bearing is returned (i.e. looking from the side), otherwise the horizontal bearing (i.e. looking from above) is returned.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code></code></p>
+									</td>
+									<td>
+										<p>source vector</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="../battle/battle_vector.html#class:battle_vector">battle_vector</a></code></code></p>
+									</td>
+									<td>
+										<p>target vector</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>vertical bearing</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> bearing in radians</li>
+							</ol>
+							<table class="loaded_in">
+								<tr>
+									<td>
+										Loaded in Battle
+									</td>
+									<td>
+										<img alt="loaded in battle" style="float:right;" src="../images/loaded_in_battle.png" height="18" width="18" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Loaded in Campaign
+									</td>
+									<td>
+										<img alt="loaded in campaign" style="float:right;" src="../images/loaded_in_campaign.png" height="18" width="18" />
+									</td>
+								</tr>
+							</table>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 497</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1633,7 +1796,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 470</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_convex_area.lua, line 511</p>
 						</dd>
 					</dl>
 				</div>
@@ -8553,7 +8716,7 @@
 									</td>
 								</tr>
 							</table>
-							<p class="file_comment">defined in ../../common/UiComponentLib/Source/LuaComponentInterface.cpp, line 481</p>
+							<p class="file_comment">defined in ../../common/UiComponentLib/Source/LuaComponentInterface.cpp, line 493</p>
 						</dd>
 					</dl>
 
@@ -8655,7 +8818,7 @@
 
 		</div>
 
-		<div id="about">Last updated 02/16/21 07:19:43</div>
+		<div id="about">Last updated 07/02/21 06:39:14</div>
 
 	</div>
 

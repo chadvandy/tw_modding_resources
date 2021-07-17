@@ -70,6 +70,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:add_new_objective">add_new_objective</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:add_condition">add_condition</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:add_payload">add_payload</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:add_failure_payload">add_failure_payload</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:add_heading">add_heading</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:add_description">add_description</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:mission_manager:set_turn_limit">set_turn_limit</a></li>
@@ -546,7 +547,7 @@
 								 mm:add_condition("total 1")<br />
 								 mm:add_condition("building_level wh_main_emp_port_2")<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 306</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 307</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -600,7 +601,61 @@
 							<div id="example_code"><code>
 								 mm:add_payload("effect_bundle{bundle_key wh_dlc06_bundle_eight_peaks_recapture;turns 0;}")<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 326</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 327</p>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:mission_manager:add_failure_payload"><h3 class="function_name"><strong><code>mission_manager:add_failure_payload(string </strong></code><i class="parameter">payload</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a payload (on mission faiure) to the objective last added with <code><a href="#function:mission_manager:add_new_objective">mission_manager:add_new_objective</a></code>. Many different payload types exists - the following list is pulled from code: <code>faction_pooled_resource_transaction, add_mercenary_to_faction_pool, adjust_loyalty_for_faction, province_slaves_change, faction_slaves_change, money, influence, honour, grant_unit, grant_agent, effect_bundle, rebellion, demolish_chain, damage_buildings, damage_character, building_restriction, unit_restriction, issue_mission,</code> and <code>game_victory</code>. Each has a different parameter requirement - see existing examples or a programmer for more information.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>payload</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+
+							<h4>Example - Taking away money as a mission failure:</h4>
+							<div id="example_code"><code>
+								 mm:add_failure_payload("money -1000")<br />
+							</code></div>
+
+							<h4>Example - Taking away a pooled resource as a mission failure:</h4>
+							<div id="example_code"><code>
+								 mm:add_failure_payload("faction_pooled_resource_transaction{resource dwf_oathgold;factor wh2_main_resource_factor_missions;amount -10;}")<br />
+							</code></div>
+
+							<h4>Example - Decreasing influence as a mission failure:</h4>
+							<div id="example_code"><code>
+								 mm:add_failure_payload("influence -5")<br />
+							</code></div>
+
+							<h4>Example - Adding effect bundle as a mission failure:</h4>
+							<div id="example_code"><code>
+								 mm:add_failure_payload("effect_bundle{bundle_key wh_dlc06_bundle_eight_peaks_recapture;turns 0;}")<br />
+							</code></div>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 352</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -634,7 +689,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 352</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 377</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -668,7 +723,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 370</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 395</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -707,7 +762,7 @@
 							<div id="example_code"><code>
 								 mm:set_turn_limit(5)<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 388</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 413</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -746,7 +801,7 @@
 							<div id="example_code"><code>
 								 mm:set_chapter(1)<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 403</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 428</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -780,7 +835,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 418</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 443</p>
 						</dd>
 					</dl>
 				</div>
@@ -874,7 +929,7 @@
 								 &emsp;&emsp;&emsp;&emsp;end;<br />
 								 );<br />
 							</code></div>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 449</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 474</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -932,7 +987,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 504</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 529</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -990,7 +1045,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 515</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 540</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1026,7 +1081,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 595</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 620</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1062,7 +1117,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 604</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 629</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1109,7 +1164,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 639</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 664</p>
 						</dd>
 					</dl>
 				</div>
@@ -1133,7 +1188,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 679</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 704</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1148,7 +1203,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 690</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 715</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1183,7 +1238,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 701</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 726</p>
 						</dd>
 					</dl>
 				</div>
@@ -1206,7 +1261,7 @@
 							<ol>
 								<li><code>boolean</code> is started</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 732</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 757</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1221,7 +1276,7 @@
 							<ol>
 								<li><code>boolean</code> is completed</li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 740</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 765</p>
 						</dd>
 					</dl>
 				</div>
@@ -1276,7 +1331,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 766</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 791</p>
 						</dd>
 					</dl>
 					<dl class="function">
@@ -1291,7 +1346,7 @@
 							<ol>
 								<li><code>nil</code></li>
 							</ol>
-							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 891</p>
+							<p class="file_comment">defined in ../working_data/script/_lib/lib_campaign_mission_manager.lua, line 916</p>
 						</dd>
 					</dl>
 				</div>
@@ -1301,7 +1356,7 @@
 
 		</div>
 
-		<div id="about">Last updated 02/16/21 07:19:44</div>
+		<div id="about">Last updated 07/02/21 06:39:14</div>
 
 	</div>
 

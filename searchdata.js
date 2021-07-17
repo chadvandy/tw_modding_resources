@@ -1072,6 +1072,13 @@ var all_terms = [
 		}
 	},
 	{
+		term:"v_offset_by_bearing()",
+		envs:{
+			Campaign:"campaign/global.html#function:global:v_offset_by_bearing",
+			Battle:"battle/global.html#function:global:v_offset_by_bearing"
+		}
+	},
+	{
 		term:"v_add()",
 		envs:{
 			Campaign:"campaign/global.html#function:global:v_add",
@@ -1153,6 +1160,13 @@ var all_terms = [
 		envs:{
 			Campaign:"campaign/global.html#function:global:has_crossed_line",
 			Battle:"battle/global.html#function:global:has_crossed_line"
+		}
+	},
+	{
+		term:"get_bearing()",
+		envs:{
+			Campaign:"campaign/global.html#function:global:get_bearing",
+			Battle:"battle/global.html#function:global:get_bearing"
 		}
 	},
 	{
@@ -1970,6 +1984,12 @@ var all_terms = [
 		}
 	},
 	{
+		term:"battle_manager:set_locatable_objective_callback()",
+		envs:{
+			Battle:"battle/battle_manager.html#function:battle_manager:set_locatable_objective_callback"
+		}
+	},
+	{
 		term:"battle_manager:add_infotext()",
 		envs:{
 			Battle:"battle/battle_manager.html#function:battle_manager:add_infotext"
@@ -2552,9 +2572,9 @@ var all_terms = [
 		}
 	},
 	{
-		term:"script_unit:set_global_attribute()",
+		term:"script_unit:set_stat_attribute()",
 		envs:{
-			Battle:"battle/script_unit.html#function:script_unit:set_global_attribute"
+			Battle:"battle/script_unit.html#function:script_unit:set_stat_attribute"
 		}
 	},
 	{
@@ -2876,6 +2896,18 @@ var all_terms = [
 		}
 	},
 	{
+		term:"script_units:num_generals()",
+		envs:{
+			Battle:"battle/script_unit.html#function:script_units:num_generals"
+		}
+	},
+	{
+		term:"script_units:get_general_sunit()",
+		envs:{
+			Battle:"battle/script_unit.html#function:script_units:get_general_sunit"
+		}
+	},
+	{
 		term:"script_units:centre_point()",
 		envs:{
 			Battle:"battle/script_unit.html#function:script_units:centre_point"
@@ -2987,6 +3019,12 @@ var all_terms = [
 		term:"script_units:unary_hitpoints()",
 		envs:{
 			Battle:"battle/script_unit.html#function:script_units:unary_hitpoints"
+		}
+	},
+	{
+		term:"script_units:number_of_enemies_killed()",
+		envs:{
+			Battle:"battle/script_unit.html#function:script_units:number_of_enemies_killed"
 		}
 	},
 	{
@@ -4310,6 +4348,12 @@ var all_terms = [
 		}
 	},
 	{
+		term:"campaign_manager:get_regions_within_distance_of_character()",
+		envs:{
+			Campaign:"campaign/campaign_manager.html#function:campaign_manager:get_regions_within_distance_of_character"
+		}
+	},
+	{
 		term:"campaign_manager:get_faction()",
 		envs:{
 			Campaign:"campaign/campaign_manager.html#function:campaign_manager:get_faction"
@@ -4400,9 +4444,9 @@ var all_terms = [
 		}
 	},
 	{
-		term:"campaign_manager:get_regions_within_distance_of_character()",
+		term:"campaign_manager:heal_all_units_for_faction()",
 		envs:{
-			Campaign:"campaign/campaign_manager.html#function:campaign_manager:get_regions_within_distance_of_character"
+			Campaign:"campaign/campaign_manager.html#function:campaign_manager:heal_all_units_for_faction"
 		}
 	},
 	{
@@ -5579,6 +5623,12 @@ var all_terms = [
 		term:"mission_manager:add_payload()",
 		envs:{
 			Campaign:"campaign/mission_manager.html#function:mission_manager:add_payload"
+		}
+	},
+	{
+		term:"mission_manager:add_failure_payload()",
+		envs:{
+			Campaign:"campaign/mission_manager.html#function:mission_manager:add_failure_payload"
 		}
 	},
 	{
@@ -8155,6 +8205,12 @@ var all_terms = [
 		}
 	},
 	{
+		term:"generated_battle:set_locatable_objective_callback_on_message()",
+		envs:{
+			Battle:"battle/generated_battle.html#function:generated_battle:set_locatable_objective_callback_on_message"
+		}
+	},
+	{
 		term:"generated_battle:add_ping_icon_on_message()",
 		envs:{
 			Battle:"battle/generated_battle.html#function:generated_battle:add_ping_icon_on_message"
@@ -9797,12 +9853,6 @@ var all_terms = [
 		}
 	},
 	{
-		term:"battle_unit:set_stat_attributes()",
-		envs:{
-			Battle:"battle/battle_unit.html#function:battle_unit:set_stat_attributes"
-		}
-	},
-	{
 		term:"battle_unit:unit_class()",
 		envs:{
 			Battle:"battle/battle_unit.html#function:battle_unit:unit_class"
@@ -10097,9 +10147,21 @@ var all_terms = [
 		}
 	},
 	{
+		term:"battle_unit:can_use_behaviour()",
+		envs:{
+			Battle:"battle/battle_unit.html#function:battle_unit:can_use_behaviour"
+		}
+	},
+	{
 		term:"battle_unit:is_behaviour_active()",
 		envs:{
 			Battle:"battle/battle_unit.html#function:battle_unit:is_behaviour_active"
+		}
+	},
+	{
+		term:"battle_unit:set_stat_attribute()",
+		envs:{
+			Battle:"battle/battle_unit.html#function:battle_unit:set_stat_attribute"
 		}
 	},
 	{
@@ -11189,6 +11251,18 @@ var all_terms = [
 		}
 	},
 	{
+		term:"battle:unit_scale_factor()",
+		envs:{
+			Battle:"battle/battle.html#function:battle:unit_scale_factor"
+		}
+	},
+	{
+		term:"battle:unit_scale_factor_index()",
+		envs:{
+			Battle:"battle/battle.html#function:battle:unit_scale_factor_index"
+		}
+	},
+	{
 		term:"battle:get_terrain_height()",
 		envs:{
 			Battle:"battle/battle.html#function:battle:get_terrain_height"
@@ -11225,9 +11299,9 @@ var all_terms = [
 		}
 	},
 	{
-		term:"battle:set_stat_attributes()",
+		term:"battle:set_stat_attribute()",
 		envs:{
-			Battle:"battle/battle.html#function:battle:set_stat_attributes"
+			Battle:"battle/battle.html#function:battle:set_stat_attribute"
 		}
 	},
 	{
@@ -11489,6 +11563,14 @@ var all_terms = [
 		}
 	},
 	{
+		term:"uicomponent:IsValid()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:IsValid",
+			Battle:"battle/uicomponent.html#function:uicomponent:IsValid",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:IsValid"
+		}
+	},
+	{
 		term:"uicomponent:Id()",
 		envs:{
 			Campaign:"campaign/uicomponent.html#function:uicomponent:Id",
@@ -11697,6 +11779,70 @@ var all_terms = [
 		}
 	},
 	{
+		term:"uicomponent:TextXOffset()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:TextXOffset",
+			Battle:"battle/uicomponent.html#function:uicomponent:TextXOffset",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:TextXOffset"
+		}
+	},
+	{
+		term:"uicomponent:TextYOffset()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:TextYOffset",
+			Battle:"battle/uicomponent.html#function:uicomponent:TextYOffset",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:TextYOffset"
+		}
+	},
+	{
+		term:"uicomponent:SetTextXOffset()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetTextXOffset",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetTextXOffset",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetTextXOffset"
+		}
+	},
+	{
+		term:"uicomponent:SetTextYOffset()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetTextYOffset",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetTextYOffset",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetTextYOffset"
+		}
+	},
+	{
+		term:"uicomponent:SetTextHAlign()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetTextHAlign",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetTextHAlign",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetTextHAlign"
+		}
+	},
+	{
+		term:"uicomponent:GetTextHAlign()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetTextHAlign",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetTextHAlign",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetTextHAlign"
+		}
+	},
+	{
+		term:"uicomponent:SetTextVAlign()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetTextVAlign",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetTextVAlign",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetTextVAlign"
+		}
+	},
+	{
+		term:"uicomponent:GetTextVAlign()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetTextVAlign",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetTextVAlign",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetTextVAlign"
+		}
+	},
+	{
 		term:"uicomponent:DockingPoint()",
 		envs:{
 			Campaign:"campaign/uicomponent.html#function:uicomponent:DockingPoint",
@@ -11758,6 +11904,14 @@ var all_terms = [
 			Campaign:"campaign/uicomponent.html#function:uicomponent:Parent",
 			Battle:"battle/uicomponent.html#function:uicomponent:Parent",
 			Frontend:"frontend/uicomponent.html#function:uicomponent:Parent"
+		}
+	},
+	{
+		term:"uicomponent:Destroy()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:Destroy",
+			Battle:"battle/uicomponent.html#function:uicomponent:Destroy",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:Destroy"
 		}
 	},
 	{
@@ -11966,6 +12120,94 @@ var all_terms = [
 			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCanResizeCurrentStateImageHeight",
 			Battle:"battle/uicomponent.html#function:uicomponent:SetCanResizeCurrentStateImageHeight",
 			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCanResizeCurrentStateImageHeight"
+		}
+	},
+	{
+		term:"uicomponent:SetCurrentStateImageDockingPoint()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCurrentStateImageDockingPoint",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetCurrentStateImageDockingPoint",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCurrentStateImageDockingPoint"
+		}
+	},
+	{
+		term:"uicomponent:GetCurrentStateImageDockingPoint()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetCurrentStateImageDockingPoint",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetCurrentStateImageDockingPoint",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetCurrentStateImageDockingPoint"
+		}
+	},
+	{
+		term:"uicomponent:SetCurrentStateImageDockOffset()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCurrentStateImageDockOffset",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetCurrentStateImageDockOffset",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCurrentStateImageDockOffset"
+		}
+	},
+	{
+		term:"uicomponent:GetCurrentStateImageDockOffset()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetCurrentStateImageDockOffset",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetCurrentStateImageDockOffset",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetCurrentStateImageDockOffset"
+		}
+	},
+	{
+		term:"uicomponent:SetCurrentStateImageTiled()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCurrentStateImageTiled",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetCurrentStateImageTiled",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCurrentStateImageTiled"
+		}
+	},
+	{
+		term:"uicomponent:GetCurrentStateImageTiled()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetCurrentStateImageTiled",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetCurrentStateImageTiled",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetCurrentStateImageTiled"
+		}
+	},
+	{
+		term:"uicomponent:SetCurrentStateImageMargins()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCurrentStateImageMargins",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetCurrentStateImageMargins",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCurrentStateImageMargins"
+		}
+	},
+	{
+		term:"uicomponent:GetCurrentStateImageMargins()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetCurrentStateImageMargins",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetCurrentStateImageMargins",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetCurrentStateImageMargins"
+		}
+	},
+	{
+		term:"uicomponent:SetCurrentStateImageXFlip()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCurrentStateImageXFlip",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetCurrentStateImageXFlip",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCurrentStateImageXFlip"
+		}
+	},
+	{
+		term:"uicomponent:SetCurrentStateImageYFlip()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:SetCurrentStateImageYFlip",
+			Battle:"battle/uicomponent.html#function:uicomponent:SetCurrentStateImageYFlip",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:SetCurrentStateImageYFlip"
+		}
+	},
+	{
+		term:"uicomponent:GetCurrentStateImageFlip()",
+		envs:{
+			Campaign:"campaign/uicomponent.html#function:uicomponent:GetCurrentStateImageFlip",
+			Battle:"battle/uicomponent.html#function:uicomponent:GetCurrentStateImageFlip",
+			Frontend:"frontend/uicomponent.html#function:uicomponent:GetCurrentStateImageFlip"
 		}
 	},
 	{
