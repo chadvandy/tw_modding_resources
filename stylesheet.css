@@ -75,8 +75,10 @@ fieldset,img {
 	border: 1px solid #aaa;
 }
 
-.dropdown_item {
-}
+/* .listitems {
+    margin-left: 50px;
+    list-style-position: inside;
+} */
 
 .dropdown_item_term {
 	padding: 5px;
