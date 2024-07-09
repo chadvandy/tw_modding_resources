@@ -1,8 +1,9 @@
 <html>
 <body>
-    <h1>Warhammer 3 Events & Interfaces</h1>
 <h2>Events</h2>
 <dl>
+<dt><a href="#ActiveContractRefreshEvent">ActiveContractRefreshEvent</a></dt>
+<dt><a href="#AgentPlagueDataCreatedEvent">AgentPlagueDataCreatedEvent</a></dt>
 <dt><a href="#AreaEntered">AreaEntered</a></dt>
 <dt><a href="#AreaExited">AreaExited</a></dt>
 <dt><a href="#BattleBeingFought">BattleBeingFought</a></dt>
@@ -50,7 +51,6 @@
 <dt><a href="#CharacterEntersGarrison">CharacterEntersGarrison</a></dt>
 <dt><a href="#CharacterEvent">CharacterEvent</a></dt>
 <dt><a href="#CharacterFactionCompletesResearch">CharacterFactionCompletesResearch</a></dt>
-<dt><a href="#CharacterFamilyRelationDied">CharacterFamilyRelationDied</a></dt>
 <dt><a href="#CharacterFinishedMovingEvent">CharacterFinishedMovingEvent</a></dt>
 <dt><a href="#CharacterGarrisonTargetAction">CharacterGarrisonTargetAction</a></dt>
 <dt><a href="#CharacterGarrisonTargetEvent">CharacterGarrisonTargetEvent</a></dt>
@@ -60,6 +60,7 @@
 <dt><a href="#CharacterLeavesGarrison">CharacterLeavesGarrison</a></dt>
 <dt><a href="#CharacterLoanedEvent">CharacterLoanedEvent</a></dt>
 <dt><a href="#CharacterLootedSettlement">CharacterLootedSettlement</a></dt>
+<dt><a href="#CharacterLootsSettlement">CharacterLootsSettlement</a></dt>
 <dt><a href="#CharacterMarriage">CharacterMarriage</a></dt>
 <dt><a href="#CharacterMilitaryForceTraditionPointAllocated">CharacterMilitaryForceTraditionPointAllocated</a></dt>
 <dt><a href="#CharacterMilitaryForceTraditionPointAvailable">CharacterMilitaryForceTraditionPointAvailable</a></dt>
@@ -74,9 +75,11 @@
 <dt><a href="#CharacterRankUp">CharacterRankUp</a></dt>
 <dt><a href="#CharacterRankUpNeedsAncillary">CharacterRankUpNeedsAncillary</a></dt>
 <dt><a href="#CharacterRazedSettlement">CharacterRazedSettlement</a></dt>
+<dt><a href="#CharacterRazesSettlement">CharacterRazesSettlement</a></dt>
 <dt><a href="#CharacterRecruited">CharacterRecruited</a></dt>
 <dt><a href="#CharacterRelativeKilled">CharacterRelativeKilled</a></dt>
 <dt><a href="#CharacterSackedSettlement">CharacterSackedSettlement</a></dt>
+<dt><a href="#CharacterSacksSettlement">CharacterSacksSettlement</a></dt>
 <dt><a href="#CharacterSelected">CharacterSelected</a></dt>
 <dt><a href="#CharacterSkillPointAllocated">CharacterSkillPointAllocated</a></dt>
 <dt><a href="#CharacterSkillPointAvailable">CharacterSkillPointAvailable</a></dt>
@@ -102,6 +105,7 @@
 <dt><a href="#FactionBecomesActiveHuman">FactionBecomesActiveHuman</a></dt>
 <dt><a href="#FactionBecomesIdleHuman">FactionBecomesIdleHuman</a></dt>
 <dt><a href="#FactionBecomesLiberationVassal">FactionBecomesLiberationVassal</a></dt>
+<dt><a href="#FactionBecomesVassal">FactionBecomesVassal</a></dt>
 <dt><a href="#FactionBeginTurnPhaseNormal">FactionBeginTurnPhaseNormal</a></dt>
 <dt><a href="#FactionBribesUnit">FactionBribesUnit</a></dt>
 <dt><a href="#FactionCharacterTagAddedEvent">FactionCharacterTagAddedEvent</a></dt>
@@ -109,10 +113,13 @@
 <dt><a href="#FactionCharacterTagRemovedEvent">FactionCharacterTagRemovedEvent</a></dt>
 <dt><a href="#FactionCivilWarOccured">FactionCivilWarOccured</a></dt>
 <dt><a href="#FactionCookedDish">FactionCookedDish</a></dt>
+<dt><a href="#FactionDeath">FactionDeath</a></dt>
 <dt><a href="#FactionEncountersOtherFaction">FactionEncountersOtherFaction</a></dt>
 <dt><a href="#FactionEvent">FactionEvent</a></dt>
 <dt><a href="#FactionGainedAncillary">FactionGainedAncillary</a></dt>
 <dt><a href="#FactionGovernmentTypeChanged">FactionGovernmentTypeChanged</a></dt>
+<dt><a href="#FactionInitiativeActivationChangedEvent">FactionInitiativeActivationChangedEvent</a></dt>
+<dt><a href="#FactionInitiativeEvent">FactionInitiativeEvent</a></dt>
 <dt><a href="#FactionJoinsConfederation">FactionJoinsConfederation</a></dt>
 <dt><a href="#FactionLeaderDeclaresWar">FactionLeaderDeclaresWar</a></dt>
 <dt><a href="#FactionLeaderIssuesEdict">FactionLeaderIssuesEdict</a></dt>
@@ -155,6 +162,7 @@
 <dt><a href="#MissionIssued">MissionIssued</a></dt>
 <dt><a href="#MissionNearingExpiry">MissionNearingExpiry</a></dt>
 <dt><a href="#MissionStatusEvent">MissionStatusEvent</a></dt>
+<dt><a href="#MissionStringParseErrorEvent">MissionStringParseErrorEvent</a></dt>
 <dt><a href="#MissionSucceeded">MissionSucceeded</a></dt>
 <dt><a href="#MovementPointsExhausted">MovementPointsExhausted</a></dt>
 <dt><a href="#MultiTurnMove">MultiTurnMove</a></dt>
@@ -202,6 +210,7 @@
 <dt><a href="#ScriptedCharacterUnhidden">ScriptedCharacterUnhidden</a></dt>
 <dt><a href="#ScriptedCharacterUnhiddenFailed">ScriptedCharacterUnhiddenFailed</a></dt>
 <dt><a href="#SeaTradeRouteRaided">SeaTradeRouteRaided</a></dt>
+<dt><a href="#SetCutscenePlayingAllowed">SetCutscenePlayingAllowed</a></dt>
 <dt><a href="#SettlementSelected">SettlementSelected</a></dt>
 <dt><a href="#SharedStateChanged">SharedStateChanged</a></dt>
 <dt><a href="#SharedStateRemoved">SharedStateRemoved</a></dt>
@@ -233,9 +242,9 @@
 <dt><a href="#UnitEffectUnpurchased">UnitEffectUnpurchased</a></dt>
 <dt><a href="#UnitEvent">UnitEvent</a></dt>
 <dt><a href="#UnitMergedAndDestroyed">UnitMergedAndDestroyed</a></dt>
-<dt><a href="#UnitSelectedCampaign">UnitSelectedCampaign</a></dt>
 <dt><a href="#UnitTrained">UnitTrained</a></dt>
 <dt><a href="#UnitTurnEnd">UnitTurnEnd</a></dt>
+<dt><a href="#UnitUpgraded">UnitUpgraded</a></dt>
 <dt><a href="#WarCoordinationRequestIssued">WarCoordinationRequestIssued</a></dt>
 <dt><a href="#WoMCompassUserActionTriggeredEvent">WoMCompassUserActionTriggeredEvent</a></dt>
 <dt><a href="#WoMCompassUserDirectionSelectedEvent">WoMCompassUserDirectionSelectedEvent</a></dt>
@@ -247,10 +256,12 @@
 <dt><a href="#ACTIVE_RITUAL_SCRIPT_INTERFACE">ACTIVE_RITUAL_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#ARMORY_SCRIPT_INTERFACE">ARMORY_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#BONUS_VALUES_SCRIPT_INTERFACE">BONUS_VALUES_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#BUILDING_BASE_SCRIPT_INTERFACE">BUILDING_BASE_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#BUILDING_LIST_SCRIPT_INTERFACE">BUILDING_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#BUILDING_SCRIPT_INTERFACE">BUILDING_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CAMPAIGN_AI_SCRIPT_INTERFACE">CAMPAIGN_AI_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACE">CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACE">CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CAMPAIGN_MISSION_SCRIPT_INTERFACE">CAMPAIGN_MISSION_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACE">CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CARAVANS_SYSTEM_SCRIPT_INTERFACE">CARAVANS_SYSTEM_SCRIPT_INTERFACE</a></dt>
@@ -261,11 +272,6 @@
 <dt><a href="#CHARACTER_DETAILS_LIST_SCRIPT_INTERFACE">CHARACTER_DETAILS_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACE">CHARACTER_DETAILS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CHARACTER_IMPRISONMENT_REJECTION_REASON_MASK_SCRIPTING_INTERFACE">CHARACTER_IMPRISONMENT_REJECTION_REASON_MASK_SCRIPTING_INTERFACE</a></dt>
-<dt><a href="#CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE</a></dt>
-<dt><a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SCRIPT_INTERFACE</a></dt>
-<dt><a href="#CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></dt>
-<dt><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE</a></dt>
-<dt><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CHARACTER_LIST_SCRIPT_INTERFACE">CHARACTER_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CHARACTER_OBSERVATION_OPTIONS_SCRIPT_INTERFACE">CHARACTER_OBSERVATION_OPTIONS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dt>
@@ -273,16 +279,20 @@
 <dt><a href="#COOKING_SYSTEM_SCRIPT_INTERFACE">COOKING_SYSTEM_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#CUSTOM_EFFECT_BUNDLE_SCRIPT_INTERFACE">CUSTOM_EFFECT_BUNDLE_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#DEBUG_DRAWING_SCRIPT_INTERFACE">DEBUG_DRAWING_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#DISPLAY_POSITION_SCRIPT_INTERFACE">DISPLAY_POSITION_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#EFFECT_BUNDLE_LIST_SCRIPT_INTERFACE">EFFECT_BUNDLE_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#EFFECT_BUNDLE_SCRIPT_INTERFACE">EFFECT_BUNDLE_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#EFFECT_LIST_SCRIPT_INTERFACE">EFFECT_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#EFFECT_SCRIPT_INTERFACE">EFFECT_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#ENTITY_LIST_SCRIPT_INTERFACE">ENTITY_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#ENTITY_SCRIPT_INTERFACE">ENTITY_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_CARAVANS_SCRIPT_INTERFACE">FACTION_CARAVANS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_CHARACTER_TAGGING_SYSTEM_SCRIPT_INTERFACE">FACTION_CHARACTER_TAGGING_SYSTEM_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_CHARACTER_TAG_ENTRY_LIST_SCRIPT_INTERFACE">FACTION_CHARACTER_TAG_ENTRY_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_CHARACTER_TAG_ENTRY_SCRIPT_INTERFACE">FACTION_CHARACTER_TAG_ENTRY_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_COOKING_INFO_SCRIPT_INTERFACE">FACTION_COOKING_INFO_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_LIST_SCRIPT_INTERFACE">FACTION_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#FACTION_PLAGUE_SCRIPT_INTERFACE">FACTION_PLAGUE_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_PROVINCE_MANAGER_LIST_SCRIPT_INTERFACE">FACTION_PROVINCE_MANAGER_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACE">FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FACTION_RITUALS_SCRIPT_INTERFACE">FACTION_RITUALS_SCRIPT_INTERFACE</a></dt>
@@ -294,8 +304,19 @@
 <dt><a href="#FOREIGN_SLOT_MANAGER_SCRIPT_INTERFACE">FOREIGN_SLOT_MANAGER_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#FOREIGN_SLOT_SCRIPT_INTERFACE">FOREIGN_SLOT_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACE">GARRISON_RESIDENCE_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#HORDE_DETAILS_SCRIPT_INTERFACE">HORDE_DETAILS_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#INITIATIVE_LIST_SCRIPT_INTERFACE">INITIATIVE_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#INITIATIVE_SET_LIST_SCRIPT_INTERFACE">INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACE">INITIATIVE_STATUS_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#MAIN_UNIT_RECORD_SCRIPT_INTERFACE">MAIN_UNIT_RECORD_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#MERCENARY_POOL_SCRIPT_INTERFACE">MERCENARY_POOL_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACE">MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACE">MERCENARY_POOL_UNIT_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#MILITARY_FORCE_LIST_SCRIPT_INTERFACE">MILITARY_FORCE_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#MILITARY_FORCE_SCRIPT_INTERFACE">MILITARY_FORCE_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACE">MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#MILITARY_FORCE_SLOT_SCRIPT_INTERFACE">MILITARY_FORCE_SLOT_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#MILITARY_FORCE_TYPE_SCRIPT_INTERFACE">MILITARY_FORCE_TYPE_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#MODEL_SCRIPT_INTERFACE">MODEL_SCRIPT_INTERFACE</a></dt>
@@ -306,6 +327,8 @@
 <dt><a href="#NULL_SCRIPT_INTERFACE">NULL_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#OBSERVATION_OPTIONS_SCRIPT_INTERFACE">OBSERVATION_OPTIONS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#PENDING_BATTLE_SCRIPT_INTERFACE">PENDING_BATTLE_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE">PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACE">PLAGUE_COMPONENT_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#POOLED_RESOURCE_FACTOR_LIST_SCRIPT_INTERFACE">POOLED_RESOURCE_FACTOR_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#POOLED_RESOURCE_FACTOR_SCRIPT_INTERFACE">POOLED_RESOURCE_FACTOR_SCRIPT_INTERFACE</a></dt>
@@ -357,11 +380,33 @@
 <dt><a href="#UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#UNIT_SCRIPT_INTERFACE">UNIT_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACE">UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#UNIT_UPGRADE_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#UNIT_UPGRADE_SCRIPT_INTERFACE">UNIT_UPGRADE_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACE</a></dt>
+<dt><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACE">UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#WAR_COORDINATION_SCRIPT_INTERFACE">WAR_COORDINATION_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#WOM_COMPASS_SCRIPT_INTERFACE">WOM_COMPASS_SCRIPT_INTERFACE</a></dt>
 <dt><a href="#WORLD_SCRIPT_INTERFACE">WORLD_SCRIPT_INTERFACE</a></dt>
 </dl><br><h2>Event Functions</h2>
 <dl>
+<dd><h4><a name="ActiveContractRefreshEvent">ActiveContractRefreshEvent</a></h4>
+<dl><dd>Function Name: position</dd>
+<dd>Interface: <a href="#ROUTE_POSITION_SCRIPT_INTERFACE">ROUTE_POSITION_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Route position of the node that has new active contracts</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="AgentPlagueDataCreatedEvent">AgentPlagueDataCreatedEvent</a></h4>
+<dl><dd>Function Name: agent</dd>
+<dd>Interface: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
+<dd>Description: The family member of the created plague agent</dd>
+</dl>
+<br><dl><dd>Function Name: faction</dd>
+<dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Access the faction in the event</dd>
+</dl>
+<br></dd>
 <dd><h4><a name="AreaEntered">AreaEntered</a></h4>
 <dl><dd>Function Name: area_key</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
@@ -495,12 +540,8 @@
 <dd>Interface: <a href="#NONE">NONE</a></dd>
 <dd>Description: Amount of cargo the caravan was completed with</dd>
 </dl>
-<br><dl><dd>Function Name: cargo_value</dd>
-<dd>Interface: <a href="#NONE">NONE</a></dd>
-<dd>Description: Total value the caravan cargo was sold for</dd>
-</dl>
 <br><dl><dd>Function Name: complete_position</dd>
-<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Interface: <a href="#ROUTE_POSITION_SCRIPT_INTERFACE">ROUTE_POSITION_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Route position that the journey was completed at</dd>
 </dl>
 <br><dl><dd>Function Name: faction</dd>
@@ -787,6 +828,10 @@
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
 </dl>
+<br><dl><dd>Function Name: has_respawned</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Has the character respawned</dd>
+</dl>
 <br></dd>
 <dd><h4><a name="CharacterDestroyed">CharacterDestroyed</a></h4>
 <dl><dd>Function Name: family_member</dd>
@@ -838,12 +883,6 @@
 <dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
-</dl>
-<br></dd>
-<dd><h4><a name="CharacterFamilyRelationDied">CharacterFamilyRelationDied</a></h4>
-<dl><dd>Function Name: relationship</dd>
-<dd>Interface: <a href="#NONE">NONE</a></dd>
-<dd>Description: Access the relationship to the dead character</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="CharacterFinishedMovingEvent">CharacterFinishedMovingEvent</a></h4>
@@ -916,21 +955,21 @@
 <dd>Description: Whether the initiative is now active or not</dd>
 </dl>
 <br><dl><dd>Function Name: initiative</dd>
-<dd>Interface: <a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SCRIPT_INTERFACE</a></dd>
+<dd>Interface: <a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Initiative interface</dd>
 </dl>
 <br><dl><dd>Function Name: initiative_set</dd>
-<dd>Interface: <a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<dd>Interface: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Initiative set interface</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="CharacterInitiativeEvent">CharacterInitiativeEvent</a></h4>
 <dl><dd>Function Name: initiative</dd>
-<dd>Interface: <a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SCRIPT_INTERFACE</a></dd>
+<dd>Interface: <a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Initiative interface</dd>
 </dl>
 <br><dl><dd>Function Name: initiative_set</dd>
-<dd>Interface: <a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<dd>Interface: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Initiative set interface</dd>
 </dl>
 <br></dd>
@@ -958,6 +997,12 @@
 <br><dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="CharacterLootsSettlement">CharacterLootsSettlement</a></h4>
+<dl><dd>Function Name: loot</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Returns the amount of loot</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="CharacterMarriage">CharacterMarriage</a></h4>
@@ -1002,6 +1047,10 @@
 <br><dl><dd>Function Name: settlement_option</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
 <dd>Description: Access the settlement option key for the culture_settlement_occupation_option record in the event</dd>
+</dl>
+<br><dl><dd>Function Name: loot</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Returns the amount of loot</dd>
 </dl>
 <br><dl><dd>Function Name: occupation_decision_type</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
@@ -1063,7 +1112,11 @@
 </dl>
 <br></dd>
 <dd><h4><a name="CharacterRankUp">CharacterRankUp</a></h4>
-<dl><dd>Function Name: character</dd>
+<dl><dd>Function Name: ranks_gained</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Returns the number of ranks gained.</dd>
+</dl>
+<br><dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
 </dl>
@@ -1082,6 +1135,12 @@
 <br><dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="CharacterRazesSettlement">CharacterRazesSettlement</a></h4>
+<dl><dd>Function Name: loot</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Returns the amount of loot</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="CharacterRecruited">CharacterRecruited</a></h4>
@@ -1104,6 +1163,12 @@
 <br><dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="CharacterSacksSettlement">CharacterSacksSettlement</a></h4>
+<dl><dd>Function Name: loot</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Returns the amount of loot</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="CharacterSelected">CharacterSelected</a></h4>
@@ -1328,6 +1393,12 @@
 <dd>Description: Access the faction in the event</dd>
 </dl>
 <br></dd>
+<dd><h4><a name="FactionBecomesVassal">FactionBecomesVassal</a></h4>
+<dl><dd>Function Name: vassal</dd>
+<dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Access the vassal faction</dd>
+</dl>
+<br></dd>
 <dd><h4><a name="FactionBeginTurnPhaseNormal">FactionBeginTurnPhaseNormal</a></h4>
 <dl><dd>Function Name: faction</dd>
 <dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
@@ -1390,6 +1461,16 @@
 <dd>Description: Access the faction in the event</dd>
 </dl>
 <br></dd>
+<dd><h4><a name="FactionDeath">FactionDeath</a></h4>
+<dl><dd>Function Name: is_game_over</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Is the game over as a result of this faction death?</dd>
+</dl>
+<br><dl><dd>Function Name: killer</dd>
+<dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Returns the killer faction, may be nil</dd>
+</dl>
+<br></dd>
 <dd><h4><a name="FactionEncountersOtherFaction">FactionEncountersOtherFaction</a></h4>
 <dl><dd>Function Name: other_faction</dd>
 <dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
@@ -1412,6 +1493,34 @@
 <dl><dd>Function Name: faction</dd>
 <dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the faction in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="FactionInitiativeActivationChangedEvent">FactionInitiativeActivationChangedEvent</a></h4>
+<dl><dd>Function Name: active</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Whether the initiative is now active or not</dd>
+</dl>
+<br><dl><dd>Function Name: automated</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Whether the initiative activation was automated or not</dd>
+</dl>
+<br><dl><dd>Function Name: initiative</dd>
+<dd>Interface: <a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Initiative interface</dd>
+</dl>
+<br><dl><dd>Function Name: initiative_set</dd>
+<dd>Interface: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Initiative set interface</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="FactionInitiativeEvent">FactionInitiativeEvent</a></h4>
+<dl><dd>Function Name: initiative</dd>
+<dd>Interface: <a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Initiative interface</dd>
+</dl>
+<br><dl><dd>Function Name: initiative_set</dd>
+<dd>Interface: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Initiative set interface</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="FactionJoinsConfederation">FactionJoinsConfederation</a></h4>
@@ -1757,11 +1866,19 @@
 </dl>
 <br><dl><dd>Function Name: is_creation</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
-<dd>Description: Has the infection been created or has it expired</dd>
+<dd>Description: Has the infection been newly created or from spreading</dd>
+</dl>
+<br><dl><dd>Function Name: is_removed</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Is it a new infection or has it been removed</dd>
 </dl>
 <br><dl><dd>Function Name: plague</dd>
 <dd>Interface: <a href="#PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></dd>
 <dd>Description: The plague interface</dd>
+</dl>
+<br><dl><dd>Function Name: spreading_agent</dd>
+<dd>Interface: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
+<dd>Description: The spreading agent family member interface if plague was spread by an agent</dd>
 </dl>
 <br><dl><dd>Function Name: faction</dd>
 <dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
@@ -1852,6 +1969,12 @@
 <br><dl><dd>Function Name: campaign_model</dd>
 <dd>Interface: <a href="#MODEL_SCRIPT_INTERFACE">MODEL_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the model in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="MissionStringParseErrorEvent">MissionStringParseErrorEvent</a></h4>
+<dl><dd>Function Name: error_string</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Access the error string</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="MissionSucceeded">MissionSucceeded</a></h4>
@@ -2189,6 +2312,10 @@
 <dd>Interface: <a href="#NONE">NONE</a></dd>
 <dd>Description: Access unit record</dd>
 </dl>
+<br><dl><dd>Function Name: faction</dd>
+<dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Access the faction in the event</dd>
+</dl>
 <br></dd>
 <dd><h4><a name="RecruitmentItemIssuedByPlayer">RecruitmentItemIssuedByPlayer</a></h4>
 <dl><dd>Function Name: main_unit_record</dd>
@@ -2259,11 +2386,19 @@
 </dl>
 <br><dl><dd>Function Name: is_creation</dd>
 <dd>Interface: <a href="#NONE">NONE</a></dd>
-<dd>Description: Has the infection been created or has it expired</dd>
+<dd>Description: Has the infection been newly created or from spreading</dd>
+</dl>
+<br><dl><dd>Function Name: is_removed</dd>
+<dd>Interface: <a href="#NONE">NONE</a></dd>
+<dd>Description: Is it a new infection or has it been removed</dd>
 </dl>
 <br><dl><dd>Function Name: plague</dd>
 <dd>Interface: <a href="#PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></dd>
 <dd>Description: The plague interface</dd>
+</dl>
+<br><dl><dd>Function Name: spreading_agent</dd>
+<dd>Interface: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
+<dd>Description: The spreading agent family member interface if plague was spread by an agent</dd>
 </dl>
 <br><dl><dd>Function Name: faction</dd>
 <dd>Interface: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
@@ -2426,6 +2561,12 @@
 <dl><dd>Function Name: character</dd>
 <dd>Interface: <a href="#CHARACTER_SCRIPT_INTERFACE">CHARACTER_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the character in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="SetCutscenePlayingAllowed">SetCutscenePlayingAllowed</a></h4>
+<dl><dd>Function Name: cutscene_playing_allowed</dd>
+<dd>Interface: <a href="#none">none</a></dd>
+<dd>Description: Is the playing of cutscenes allowed</dd>
 </dl>
 <br></dd>
 <dd><h4><a name="SettlementSelected">SettlementSelected</a></h4>
@@ -2754,12 +2895,6 @@
 <dd>Description: Access the unit in the event</dd>
 </dl>
 <br></dd>
-<dd><h4><a name="UnitSelectedCampaign">UnitSelectedCampaign</a></h4>
-<dl><dd>Function Name: unit</dd>
-<dd>Interface: <a href="#UNIT_SCRIPT_INTERFACE">UNIT_SCRIPT_INTERFACE</a></dd>
-<dd>Description: Access the unit in the event</dd>
-</dl>
-<br></dd>
 <dd><h4><a name="UnitTrained">UnitTrained</a></h4>
 <dl><dd>Function Name: unit</dd>
 <dd>Interface: <a href="#UNIT_SCRIPT_INTERFACE">UNIT_SCRIPT_INTERFACE</a></dd>
@@ -2768,6 +2903,16 @@
 <br></dd>
 <dd><h4><a name="UnitTurnEnd">UnitTurnEnd</a></h4>
 <dl><dd>Function Name: unit</dd>
+<dd>Interface: <a href="#UNIT_SCRIPT_INTERFACE">UNIT_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Access the unit in the event</dd>
+</dl>
+<br></dd>
+<dd><h4><a name="UnitUpgraded">UnitUpgraded</a></h4>
+<dl><dd>Function Name: upgrade_group</dd>
+<dd>Interface: <a href="#UNIT_UPGRADE_SCRIPT_INTERFACE">UNIT_UPGRADE_SCRIPT_INTERFACE</a></dd>
+<dd>Description: Access to the upgrade group the upgraded unit is a part of</dd>
+</dl>
+<br><dl><dd>Function Name: unit</dd>
 <dd>Interface: <a href="#UNIT_SCRIPT_INTERFACE">UNIT_SCRIPT_INTERFACE</a></dd>
 <dd>Description: Access the unit in the event</dd>
 </dl>
@@ -2935,7 +3080,7 @@
 <dd>Function: <a name="ACTIVE_RITUAL_SCRIPT_INTERFACEexpended_resources">expended_resources</a></dd>
 <dd>Description: Resource cost of this ritual at the time of commencement (not including slaves)</dd>
 <dd>Parameters: expended_resources()</dd>
-<dd>Return: card32</dd>
+<dd>Return: <a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACE">RESOURCE_TRANSACTION_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="ACTIVE_RITUAL_SCRIPT_INTERFACEslave_cost">slave_cost</a></dd>
 <dd>Description: Slave cost of this ritual at the time of commencement</dd>
@@ -3238,6 +3383,21 @@
 <dd>Parameters: scripted_value(String record_key, String bonus_value_id)</dd>
 <dd>Return: float32</dd>
 <br>
+<h4><a name="BUILDING_BASE_SCRIPT_INTERFACE">BUILDING_BASE_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Building base script interface</dd>
+<br>
+<dd><a href="#BUILDING_BASE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#BUILDING_BASE_SCRIPT_INTERFACEeffects">effects</a></dd>
+<br><dd>Function: <a name="BUILDING_BASE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="BUILDING_BASE_SCRIPT_INTERFACEeffects">effects</a></dd>
+<dd>Description: Get the list of effects this building provides</dd>
+<dd>Parameters: effects()</dd>
+<dd>Return: <a href="#EFFECT_LIST_SCRIPT_INTERFACE">EFFECT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
 <h4><a name="BUILDING_LIST_SCRIPT_INTERFACE">BUILDING_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of building interfaces</dd>
 <br>
@@ -3441,6 +3601,7 @@
 <dd><a href="#CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACEadd_choice_payload">add_choice_payload</a></dd>
 <dd><a href="#CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACEremove_choice_payload">remove_choice_payload</a></dd>
 <dd><a href="#CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACEadd_target">add_target</a></dd>
+<dd><a href="#CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACEremove_target">remove_target</a></dd>
 <br><dd>Function: <a name="CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -3465,6 +3626,38 @@
 <dd>Description: Set an event target. Not required for payloads but can still provide information to the UI.</dd>
 <dd>Parameters: String cdir_events_target_key, (FACTION/REGION/FAMILY_MEMBER/MILITARY_FORCE) SCRIPT_INTERFACE</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CAMPAIGN_DILEMMA_BUILDER_SCRIPT_INTERFACEremove_target">remove_target</a></dd>
+<dd>Description: Remove an event target</dd>
+<dd>Parameters: String cdir_events_target_key</dd>
+<dd>Return: void</dd>
+<br>
+<h4><a name="CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACE">CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Provides an interface for building a campaign incident</dd>
+<br>
+<dd><a href="#CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEset_payload">set_payload</a></dd>
+<dd><a href="#CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEadd_target">add_target</a></dd>
+<dd><a href="#CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEremove_target">remove_target</a></dd>
+<br><dd>Function: <a name="CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEset_payload">set_payload</a></dd>
+<dd>Description: Set the payload for this incident. This will clear the payload if no payload builder is given</dd>
+<dd>Parameters: set_payload((optional) <a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACE">CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACE</a> payload)</dd>
+<dd>Return: void</dd>
+<br>
+<dd>Function: <a name="CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEadd_target">add_target</a></dd>
+<dd>Description: Set an event target. Not required for payloads but can still provide information to the UI.</dd>
+<dd>Parameters: String cdir_events_target_key, (FACTION/REGION/FAMILY_MEMBER/MILITARY_FORCE) SCRIPT_INTERFACE</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CAMPAIGN_INCIDENT_BUILDER_SCRIPT_INTERFACEremove_target">remove_target</a></dd>
+<dd>Description: Remove an event target</dd>
+<dd>Parameters: String cdir_events_target_key</dd>
+<dd>Return: void</dd>
 <br>
 <h4><a name="CAMPAIGN_MISSION_SCRIPT_INTERFACE">CAMPAIGN_MISSION_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Mission script interface.</dd>
@@ -3550,6 +3743,7 @@
 <dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEprovince_slaves_adjustment">province_slaves_adjustment</a></dd>
 <dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEfaction_slaves_adjustment">faction_slaves_adjustment</a></dd>
 <dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEadd_mercenary_to_faction_pool">add_mercenary_to_faction_pool</a></dd>
+<dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEadd_mercenary_to_province_pool">add_mercenary_to_province_pool</a></dd>
 <dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEfaction_pooled_resource_transaction">faction_pooled_resource_transaction</a></dd>
 <dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEfaction_pooled_resource_transaction_percentage">faction_pooled_resource_transaction_percentage</a></dd>
 <dd><a href="#CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEfaction_pooled_resource_transaction_from_record">faction_pooled_resource_transaction_from_record</a></dd>
@@ -3827,6 +4021,11 @@
 <dd>Function: <a name="CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEadd_mercenary_to_faction_pool">add_mercenary_to_faction_pool</a></dd>
 <dd>Description: Add a mercenary unit to the faction pool</dd>
 <dd>Parameters: String unit_key, card32 amount</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEadd_mercenary_to_province_pool">add_mercenary_to_province_pool</a></dd>
+<dd>Description: Add a mercenary unit to the province pool</dd>
+<dd>Parameters: <a href="#PROVINCE_SCRIPT_INTERFACE">PROVINCE_SCRIPT_INTERFACE</a> target_province, String unit_key, card32 amount</dd>
 <dd>Return: bool</dd>
 <br>
 <dd>Function: <a name="CAMPAIGN_PAYLOAD_BUILDER_SCRIPT_INTERFACEfaction_pooled_resource_transaction">faction_pooled_resource_transaction</a></dd>
@@ -4231,21 +4430,20 @@
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEcharacter_subtype">character_subtype</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEcharacter_subtype_key">character_subtype_key</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEcharacter_subtype_has_female_name">character_subtype_has_female_name</a></dd>
+<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEis_part_of_subtype_set">is_part_of_subtype_set</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEis_immortal">is_immortal</a></dd>
+<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEis_unique">is_unique</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEhas_trait">has_trait</a></dd>
+<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEall_traits">all_traits</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEtrait_points">trait_points</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEhas_ancillary">has_ancillary</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEis_male">is_male</a></dd>
-<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEage">age</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEhas_skill">has_skill</a></dd>
+<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEbackground_skill">background_skill</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEnumber_of_traits">number_of_traits</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEtrait_level">trait_level</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEloyalty">loyalty</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEpersonal_loyalty_factor">personal_loyalty_factor</a></dd>
-<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEhas_father">has_father</a></dd>
-<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEhas_mother">has_mother</a></dd>
-<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEmother">mother</a></dd>
-<dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEfather">father</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEfamily_member">family_member</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACEcharacter_initiative_sets">character_initiative_sets</a></dd>
 <dd><a href="#CHARACTER_DETAILS_SCRIPT_INTERFACElookup_character_initiative_set_by_key">lookup_character_initiative_set_by_key</a></dd>
@@ -4311,8 +4509,18 @@
 <dd>Parameters: </dd>
 <dd>Return: bool</dd>
 <br>
+<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEis_part_of_subtype_set">is_part_of_subtype_set</a></dd>
+<dd>Description: Test if this character is part of the specified agent subtype set</dd>
+<dd>Parameters: is_part_of_subtype_set(String agent_subtype_set_key)</dd>
+<dd>Return: bool</dd>
+<br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEis_immortal">is_immortal</a></dd>
 <dd>Description: Returns whether this character is immortal</dd>
+<dd>Parameters: </dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEis_unique">is_unique</a></dd>
+<dd>Description: Returns whether this character is unique</dd>
 <dd>Parameters: </dd>
 <dd>Return: bool</dd>
 <br>
@@ -4320,6 +4528,11 @@
 <dd>Description: Returns if the character has the specified trait</dd>
 <dd>Parameters: Trait key, e.g. has_trait("drunkard")</dd>
 <dd>Return: int</dd>
+<br>
+<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEall_traits">all_traits</a></dd>
+<dd>Description: Returns a lua string table of all of the traits this character has</dd>
+<dd>Parameters: all_traits()</dd>
+<dd>Return: String Table</dd>
 <br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEtrait_points">trait_points</a></dd>
 <dd>Description: Returns the number of trait points for the specified trait (0 if not present)</dd>
@@ -4336,15 +4549,15 @@
 <dd>Parameters: is_male()</dd>
 <dd>Return: bool</dd>
 <br>
-<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEage">age</a></dd>
-<dd>Description: The character's age</dd>
-<dd>Parameters: age()</dd>
-<dd>Return: int</dd>
-<br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEhas_skill">has_skill</a></dd>
 <dd>Description: Has the skill passed</dd>
 <dd>Parameters: has_skill()</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEbackground_skill">background_skill</a></dd>
+<dd>Description: Get the key of the background skill selected for this character</dd>
+<dd>Parameters: background_skill()</dd>
+<dd>Return: String</dd>
 <br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEnumber_of_traits">number_of_traits</a></dd>
 <dd>Description: The number of traits the chracter has</dd>
@@ -4366,26 +4579,6 @@
 <dd>Parameters: personal_loyalty_factor()</dd>
 <dd>Return: int32</dd>
 <br>
-<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEhas_father">has_father</a></dd>
-<dd>Description: returns whether a character has a father or not</dd>
-<dd>Parameters: has_father()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEhas_mother">has_mother</a></dd>
-<dd>Description: returns whether a character has a mother or not</dd>
-<dd>Parameters: has_mother()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEmother">mother</a></dd>
-<dd>Description: returns a character mother's family member script interface</dd>
-<dd>Parameters: mother()</dd>
-<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEfather">father</a></dd>
-<dd>Description: returns a characters father's family member script interface</dd>
-<dd>Parameters: father()</dd>
-<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
-<br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEfamily_member">family_member</a></dd>
 <dd>Description: returns a characters family member script interface</dd>
 <dd>Parameters: family_member()</dd>
@@ -4394,12 +4587,12 @@
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEcharacter_initiative_sets">character_initiative_sets</a></dd>
 <dd>Description: Initiative sets that this character has access to</dd>
 <dd>Parameters: character_initiative_sets()</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></dd>
+<dd>Return: <a href="#INITIATIVE_SET_LIST_SCRIPT_INTERFACE">INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACElookup_character_initiative_set_by_key">lookup_character_initiative_set_by_key</a></dd>
 <dd>Description: Attempt to get a character initiative set (owned by this character), by key. *MAY BE NULL*</dd>
 <dd>Parameters: lookup_character_initiative_set_by_key(String record_key)</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<dd>Return: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="CHARACTER_DETAILS_SCRIPT_INTERFACEpooled_resource_manager">pooled_resource_manager</a></dd>
 <dd>Description: Pooled resource manager of this character</dd>
@@ -4454,165 +4647,6 @@
 <dd>Function: <a name="CHARACTER_IMPRISONMENT_REJECTION_REASON_MASK_SCRIPTING_INTERFACEany">any</a></dd>
 <dd>Description: Is it because of any reason?</dd>
 <dd>Parameters: any()</dd>
-<dd>Return: bool</dd>
-<br>
-<h4><a name="CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE</a></h4>
-<dd>Description: A list of character initiative interfaces</dd>
-<br>
-<dd><a href="#CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
-<br><dd>Function: <a name="CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
-<dd>Description: Returns the number of items in the list</dd>
-<dd>Parameters: num_items()</dd>
-<dd>Return: positive int</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
-<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
-<dd>Parameters: positive int</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
-<dd>Description: Returns a true if there are 0 items in the list</dd>
-<dd>Parameters: is_empty()</dd>
-<dd>Return: bool</dd>
-<br>
-<h4><a name="CHARACTER_INITIATIVE_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SCRIPT_INTERFACE</a></h4>
-<dd>Description: A character initiative. Provides effects over a duration, closer in behaviour to skills than effect bundles. Owned by a character</dd>
-<br>
-<dd><a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACErecord_key">record_key</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACEduration">duration</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACEhas_infinite_duration">has_infinite_duration</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
-<br><dd>Function: <a name="CHARACTER_INITIATIVE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd>Description: Is this the null script interface</dd>
-<dd>Parameters: is_null_interface()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SCRIPT_INTERFACErecord_key">record_key</a></dd>
-<dd>Description: Record key of this initiative</dd>
-<dd>Parameters: record_key()</dd>
-<dd>Return: String</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SCRIPT_INTERFACEduration">duration</a></dd>
-<dd>Description: Duration of this initiative</dd>
-<dd>Parameters: duration()</dd>
-<dd>Return: int32</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SCRIPT_INTERFACEhas_infinite_duration">has_infinite_duration</a></dd>
-<dd>Description: Does this initiative have an infinite duration?</dd>
-<dd>Parameters: has_infinite_duration()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
-<dd>Description: Is this initiative script locked?</dd>
-<dd>Parameters: is_script_locked()</dd>
-<dd>Return: bool</dd>
-<br>
-<h4><a name="CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></h4>
-<dd>Description: A list of character initiative set interfaces</dd>
-<br>
-<dd><a href="#CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
-<br><dd>Function: <a name="CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
-<dd>Description: Returns the number of items in the list</dd>
-<dd>Parameters: num_items()</dd>
-<dd>Return: positive int</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
-<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
-<dd>Parameters: positive int</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
-<dd>Description: Returns a true if there are 0 items in the list</dd>
-<dd>Parameters: is_empty()</dd>
-<dd>Return: bool</dd>
-<br>
-<h4><a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACE</a></h4>
-<dd>Description: A collection of related character initiatives. Owned by a character</dd>
-<br>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEall_initiatives">all_initiatives</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEactive_initiatives">active_initiatives</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACElookup_initiative_by_key">lookup_initiative_by_key</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status_by_key">initiative_status_by_key</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status">initiative_status</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEcooldown_remaining">cooldown_remaining</a></dd>
-<br><dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd>Description: Is this the null script interface</dd>
-<dd>Parameters: is_null_interface()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEall_initiatives">all_initiatives</a></dd>
-<dd>Description: Returns a list of every initiative in this set</dd>
-<dd>Parameters: all_initiatives()</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEactive_initiatives">active_initiatives</a></dd>
-<dd>Description: Returns a list of all active initiatives in this set</dd>
-<dd>Parameters: active_initiatives()</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_LIST_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACElookup_initiative_by_key">lookup_initiative_by_key</a></dd>
-<dd>Description: Attempts ot find the character initiative in this set with the specified record key. *MAY BE NULL*</dd>
-<dd>Parameters: lookup_initiative_by_key(String record_key)</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status_by_key">initiative_status_by_key</a></dd>
-<dd>Description: Attempts ot find the character initiative in this set with the specified record key and give you back a valid status interface</dd>
-<dd>Parameters: initiative_status_by_key(String record_key)</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status">initiative_status</a></dd>
-<dd>Description: Returns a status interface for the specified initiative</dd>
-<dd>Parameters: initiative_status(CHARACTER_INITIATIVE_SCRIPT_INTERFACE initiative)</dd>
-<dd>Return: <a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_SET_SCRIPT_INTERFACEcooldown_remaining">cooldown_remaining</a></dd>
-<dd>Description: Number of rounds that the initiative set is on cooldown for. Zero if it's not on cooldown</dd>
-<dd>Parameters: cooldown_remaining()</dd>
-<dd>Return: card32</dd>
-<br>
-<h4><a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE">CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACE</a></h4>
-<dd>Description: Status of a character initiative. Status is from the time this interface is returned</dd>
-<br>
-<dd><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_active">is_active</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_capacity_reached">is_set_capacity_reached</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_unavailable">is_unavailable</a></dd>
-<dd><a href="#CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_on_cooldown">is_set_on_cooldown</a></dd>
-<br><dd>Function: <a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd>Description: Is this the null script interface</dd>
-<dd>Parameters: is_null_interface()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_active">is_active</a></dd>
-<dd>Description: Is this initiative active?</dd>
-<dd>Parameters: is_active()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
-<dd>Description: Is this initiative script locked?</dd>
-<dd>Parameters: is_script_locked()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_capacity_reached">is_set_capacity_reached</a></dd>
-<dd>Description: Is this initiative in a set that has reached its capacity (and not active)?</dd>
-<dd>Parameters: is_set_capacity_reached()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_unavailable">is_unavailable</a></dd>
-<dd>Description: Is this initiative unavailable from the queried set?</dd>
-<dd>Parameters: is_unavailable()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_on_cooldown">is_set_on_cooldown</a></dd>
-<dd>Description: Is the set that this initiative is a part of, on cooldown?</dd>
-<dd>Parameters: is_set_on_cooldown()</dd>
 <dd>Return: bool</dd>
 <br>
 <h4><a name="CHARACTER_LIST_SCRIPT_INTERFACE">CHARACTER_LIST_SCRIPT_INTERFACE</a></h4>
@@ -4716,15 +4750,16 @@
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEcharacter_type_key">character_type_key</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEcharacter_subtype">character_subtype</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEcharacter_subtype_key">character_subtype_key</a></dd>
+<dd><a href="#CHARACTER_SCRIPT_INTERFACEis_part_of_subtype_set">is_part_of_subtype_set</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_governor">is_governor</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEhas_trait">has_trait</a></dd>
+<dd><a href="#CHARACTER_SCRIPT_INTERFACEall_traits">all_traits</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEtrait_points">trait_points</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEhas_ancillary">has_ancillary</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEbattles_fought">battles_fought</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEaction_points_remaining_percent">action_points_remaining_percent</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEaction_points_per_turn">action_points_per_turn</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_male">is_male</a></dd>
-<dd><a href="#CHARACTER_SCRIPT_INTERFACEage">age</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEperformed_action_this_turn">performed_action_this_turn</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_ambushing">is_ambushing</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEturns_at_sea">turns_at_sea</a></dd>
@@ -4740,6 +4775,7 @@
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEwon_battle">won_battle</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEpercentage_of_own_alliance_killed">percentage_of_own_alliance_killed</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEministerial_position">ministerial_position</a></dd>
+<dd><a href="#CHARACTER_SCRIPT_INTERFACEposition">position</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACElogical_position_x">logical_position_x</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACElogical_position_y">logical_position_y</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEdisplay_position_x">display_position_x</a></dd>
@@ -4761,6 +4797,7 @@
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_embedded_in_military_force">is_embedded_in_military_force</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEembedded_in_military_force">embedded_in_military_force</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEhas_skill">has_skill</a></dd>
+<dd><a href="#CHARACTER_SCRIPT_INTERFACEbackground_skill">background_skill</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_hidden">is_hidden</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACErouted_in_battle">routed_in_battle</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEbody_guard_casulties">body_guard_casulties</a></dd>
@@ -4771,13 +4808,10 @@
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEtrait_level">trait_level</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEloyalty">loyalty</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEpersonal_loyalty_factor">personal_loyalty_factor</a></dd>
-<dd><a href="#CHARACTER_SCRIPT_INTERFACEinterfaction_loyalty">interfaction_loyalty</a></dd>
-<dd><a href="#CHARACTER_SCRIPT_INTERFACEhas_father">has_father</a></dd>
-<dd><a href="#CHARACTER_SCRIPT_INTERFACEhas_mother">has_mother</a></dd>
-<dd><a href="#CHARACTER_SCRIPT_INTERFACEmother">mother</a></dd>
-<dd><a href="#CHARACTER_SCRIPT_INTERFACEfather">father</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEfamily_member">family_member</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_politician">is_politician</a></dd>
+<dd><a href="#CHARACTER_SCRIPT_INTERFACEis_loaned">is_loaned</a></dd>
+<dd><a href="#CHARACTER_SCRIPT_INTERFACEtry_get_agent_plague_components">try_get_agent_plague_components</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEpost_battle_ancilary_chance">post_battle_ancilary_chance</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_caster">is_caster</a></dd>
 <dd><a href="#CHARACTER_SCRIPT_INTERFACEis_visible_to_faction">is_visible_to_faction</a></dd>
@@ -4924,6 +4958,11 @@
 <dd>Parameters: character_subtype_key()</dd>
 <dd>Return: String</dd>
 <br>
+<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEis_part_of_subtype_set">is_part_of_subtype_set</a></dd>
+<dd>Description: Test if this character is part of the specified agent subtype set</dd>
+<dd>Parameters: is_part_of_subtype_set(String agent_subtype_set_key)</dd>
+<dd>Return: bool</dd>
+<br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEis_governor">is_governor</a></dd>
 <dd>Description: Returns whther or not the character is governor.</dd>
 <dd>Parameters: is_governor()</dd>
@@ -4933,6 +4972,11 @@
 <dd>Description: Returns if the character has the specified trait</dd>
 <dd>Parameters: Trait key, e.g. has_trait("drunkard")</dd>
 <dd>Return: int</dd>
+<br>
+<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEall_traits">all_traits</a></dd>
+<dd>Description: Returns a lua string table of all of the traits this character has</dd>
+<dd>Parameters: all_traits()</dd>
+<dd>Return: String Table</dd>
 <br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEtrait_points">trait_points</a></dd>
 <dd>Description: Returns the number of trait points for the specified trait (0 if not present)</dd>
@@ -4963,11 +5007,6 @@
 <dd>Description: Is the character male?</dd>
 <dd>Parameters: is_male()</dd>
 <dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEage">age</a></dd>
-<dd>Description: The character's age</dd>
-<dd>Parameters: age()</dd>
-<dd>Return: int</dd>
 <br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEperformed_action_this_turn">performed_action_this_turn</a></dd>
 <dd>Description: Has the character performed any action this turn?</dd>
@@ -5043,6 +5082,11 @@
 <dd>Description: Returns ministerial position of the character</dd>
 <dd>Parameters: ministerial_position()</dd>
 <dd>Return: string</dd>
+<br>
+<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEposition">position</a></dd>
+<dd>Description: Display and Logical position on the map</dd>
+<dd>Parameters: position()</dd>
+<dd>Return: <a href="#DISPLAY_POSITION_SCRIPT_INTERFACE">DISPLAY_POSITION_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACElogical_position_x">logical_position_x</a></dd>
 <dd>Description: Logical position on map, x coord</dd>
@@ -5149,9 +5193,14 @@
 <dd>Parameters: has_skill()</dd>
 <dd>Return: bool</dd>
 <br>
+<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEbackground_skill">background_skill</a></dd>
+<dd>Description: Get the key of the background skill selected for this character</dd>
+<dd>Parameters: background_skill()</dd>
+<dd>Return: String</dd>
+<br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEis_hidden">is_hidden</a></dd>
-<dd>Description: Is the charcter hidden from a faction</dd>
-<dd>Parameters: is_hidden(<faction_key>)</dd>
+<dd>Description: Is the charcter hidden (for a faction specific check use is_visible_to_faction)</dd>
+<dd>Parameters: is_hidden()</dd>
 <dd>Return: bool</dd>
 <br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACErouted_in_battle">routed_in_battle</a></dd>
@@ -5199,31 +5248,6 @@
 <dd>Parameters: personal_loyalty_factor()</dd>
 <dd>Return: int32</dd>
 <br>
-<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEinterfaction_loyalty">interfaction_loyalty</a></dd>
-<dd>Description: returns the characters interfaction loyalty</dd>
-<dd>Parameters: interfaction_loyalty()</dd>
-<dd>Return: int32</dd>
-<br>
-<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEhas_father">has_father</a></dd>
-<dd>Description: returns whether a character has a father or not</dd>
-<dd>Parameters: has_father()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEhas_mother">has_mother</a></dd>
-<dd>Description: returns whether a character has a mother or not</dd>
-<dd>Parameters: has_mother()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEmother">mother</a></dd>
-<dd>Description: returns a character mother's family member script interface</dd>
-<dd>Parameters: mother()</dd>
-<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEfather">father</a></dd>
-<dd>Description: returns a characters father's family member script interface</dd>
-<dd>Parameters: father()</dd>
-<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
-<br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEfamily_member">family_member</a></dd>
 <dd>Description: returns a characters family member script interface</dd>
 <dd>Parameters: family_member()</dd>
@@ -5233,6 +5257,16 @@
 <dd>Description: returns whether a character is a politian or not</dd>
 <dd>Parameters: is_politician()</dd>
 <dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEis_loaned">is_loaned</a></dd>
+<dd>Description: returns whether a character is a loan from another faction</dd>
+<dd>Parameters: is_loaned()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEtry_get_agent_plague_components">try_get_agent_plague_components</a></dd>
+<dd>Description: tries to get a plague component list interface from the agent plague data if it exists</dd>
+<dd>Parameters: try_get_agent_plague_components()</dd>
+<dd>Return: <a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE">PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="CHARACTER_SCRIPT_INTERFACEpost_battle_ancilary_chance">post_battle_ancilary_chance</a></dd>
 <dd>Description: returns a mod on the drop chance for post battle ancillaries</dd>
@@ -5500,6 +5534,39 @@
 <dd>Parameters: set_draw_duration(float32 duration_in_seconds)</dd>
 <dd>Return: NONE</dd>
 <br>
+<h4><a name="DISPLAY_POSITION_SCRIPT_INTERFACE">DISPLAY_POSITION_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Display Position Script Interface</dd>
+<br>
+<dd><a href="#DISPLAY_POSITION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#DISPLAY_POSITION_SCRIPT_INTERFACElogical_x">logical_x</a></dd>
+<dd><a href="#DISPLAY_POSITION_SCRIPT_INTERFACElogical_y">logical_y</a></dd>
+<dd><a href="#DISPLAY_POSITION_SCRIPT_INTERFACEdisplay_x">display_x</a></dd>
+<dd><a href="#DISPLAY_POSITION_SCRIPT_INTERFACEdisplay_y">display_y</a></dd>
+<br><dd>Function: <a name="DISPLAY_POSITION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="DISPLAY_POSITION_SCRIPT_INTERFACElogical_x">logical_x</a></dd>
+<dd>Description: Returns the x coordinate of the logical position</dd>
+<dd>Parameters: logical_x()</dd>
+<dd>Return: int</dd>
+<br>
+<dd>Function: <a name="DISPLAY_POSITION_SCRIPT_INTERFACElogical_y">logical_y</a></dd>
+<dd>Description: Returns the y coordinate of the logical position</dd>
+<dd>Parameters: logical_y()</dd>
+<dd>Return: int</dd>
+<br>
+<dd>Function: <a name="DISPLAY_POSITION_SCRIPT_INTERFACEdisplay_x">display_x</a></dd>
+<dd>Description: Returns the x coordinate of the display position</dd>
+<dd>Parameters: display_x()</dd>
+<dd>Return: float</dd>
+<br>
+<dd>Function: <a name="DISPLAY_POSITION_SCRIPT_INTERFACEdisplay_y">display_y</a></dd>
+<dd>Description: Returns the y coordinate of the display position</dd>
+<dd>Parameters: display_y()</dd>
+<dd>Return: float</dd>
+<br>
 <h4><a name="EFFECT_BUNDLE_LIST_SCRIPT_INTERFACE">EFFECT_BUNDLE_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of effects</dd>
 <br>
@@ -5602,6 +5669,42 @@
 <dd>Parameters: value()</dd>
 <dd>Return: float</dd>
 <br>
+<h4><a name="ENTITY_LIST_SCRIPT_INTERFACE">ENTITY_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of entity interfaces</dd>
+<br>
+<dd><a href="#ENTITY_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#ENTITY_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#ENTITY_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="ENTITY_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="ENTITY_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#ENTITY_LIST_SCRIPT_INTERFACE">ENTITY_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="ENTITY_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="ENTITY_SCRIPT_INTERFACE">ENTITY_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Interface for entity ids.</dd>
+<br>
+<dd><a href="#ENTITY_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#ENTITY_SCRIPT_INTERFACEtype_interface">type_interface</a></dd>
+<br><dd>Function: <a name="ENTITY_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="ENTITY_SCRIPT_INTERFACEtype_interface">type_interface</a></dd>
+<dd>Description: Type interface for the entity</dd>
+<dd>Parameters: type_interface()</dd>
+<dd>Return: Script Interface</dd>
+<br>
 <h4><a name="FACTION_CARAVANS_SCRIPT_INTERFACE">FACTION_CARAVANS_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Faction Caravans Script Interface</dd>
 <br>
@@ -5614,7 +5717,7 @@
 <dd><a href="#FACTION_CARAVANS_SCRIPT_INTERFACEvalid_caravan_start_points">valid_caravan_start_points</a></dd>
 <dd><a href="#FACTION_CARAVANS_SCRIPT_INTERFACEavailable_caravan_recruitment_items">available_caravan_recruitment_items</a></dd>
 <dd><a href="#FACTION_CARAVANS_SCRIPT_INTERFACEcan_recruit_caravan">can_recruit_caravan</a></dd>
-<dd><a href="#FACTION_CARAVANS_SCRIPT_INTERFACEcan_start_caravan">can_start_caravan</a></dd>
+<dd><a href="#FACTION_CARAVANS_SCRIPT_INTERFACEcan_spawn_caravan">can_spawn_caravan</a></dd>
 <dd><a href="#FACTION_CARAVANS_SCRIPT_INTERFACEroute_network">route_network</a></dd>
 <br><dd>Function: <a name="FACTION_CARAVANS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
@@ -5661,9 +5764,9 @@
 <dd>Parameters: can_recruit_caravan(FAMILY_MEMBER_SCRIPT_INTERFACE caravan_master)</dd>
 <dd>Return: bool</dd>
 <br>
-<dd>Function: <a name="FACTION_CARAVANS_SCRIPT_INTERFACEcan_start_caravan">can_start_caravan</a></dd>
+<dd>Function: <a name="FACTION_CARAVANS_SCRIPT_INTERFACEcan_spawn_caravan">can_spawn_caravan</a></dd>
 <dd>Description: Can the given caravan be started?</dd>
-<dd>Parameters: can_start_caravan(FAMILY_MEMBER_SCRIPT_INTERFACE caravan_master)</dd>
+<dd>Parameters: can_start_caravan(FAMILY_MEMBER_SCRIPT_INTERFACE caravan_master, int cargo, <a href="#ROUTE_NODE_SCRIPT_INTERFACE">ROUTE_NODE_SCRIPT_INTERFACE</a> start, <a href="#ROUTE_NODE_SCRIPT_INTERFACE">ROUTE_NODE_SCRIPT_INTERFACE</a> end,(optional) String contract)</dd>
 <dd>Return: bool</dd>
 <br>
 <dd>Function: <a name="FACTION_CARAVANS_SCRIPT_INTERFACEroute_network">route_network</a></dd>
@@ -5797,7 +5900,7 @@
 <dd>Function: <a name="FACTION_COOKING_INFO_SCRIPT_INTERFACEactive_dish">active_dish</a></dd>
 <dd>Description: Key of the currently active dish. Empty if none</dd>
 <dd>Parameters: active_dish()</dd>
-<dd>Return: String</dd>
+<dd>Return: <a href="#COOKING_DISH_SCRIPT_INTERFACE">COOKING_DISH_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="FACTION_COOKING_INFO_SCRIPT_INTERFACEmax_primary_ingredients">max_primary_ingredients</a></dd>
 <dd>Description: Maximum amount of primary ingredients this faction may cook with</dd>
@@ -5830,6 +5933,27 @@
 <dd>Parameters: is_empty()</dd>
 <dd>Return: bool</dd>
 <br>
+<h4><a name="FACTION_PLAGUE_SCRIPT_INTERFACE">FACTION_PLAGUE_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Faction Plagues Script Interface</dd>
+<br>
+<dd><a href="#FACTION_PLAGUE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#FACTION_PLAGUE_SCRIPT_INTERFACEplague_component_list">plague_component_list</a></dd>
+<dd><a href="#FACTION_PLAGUE_SCRIPT_INTERFACEplague_component">plague_component</a></dd>
+<br><dd>Function: <a name="FACTION_PLAGUE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="FACTION_PLAGUE_SCRIPT_INTERFACEplague_component_list">plague_component_list</a></dd>
+<dd>Description: Returns a list of plague components for the faction</dd>
+<dd>Parameters: plague_component_list()</dd>
+<dd>Return: <a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE">PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_PLAGUE_SCRIPT_INTERFACEplague_component">plague_component</a></dd>
+<dd>Description: Returns a plague component from a key. nil if the faction doesn't have it</dd>
+<dd>Parameters: plague_component(String key)</dd>
+<dd>Return: <a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACE">PLAGUE_COMPONENT_SCRIPT_INTERFACE</a></dd>
+<br>
 <h4><a name="FACTION_PROVINCE_MANAGER_LIST_SCRIPT_INTERFACE">FACTION_PROVINCE_MANAGER_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of faction province manager interfaces</dd>
 <br>
@@ -5861,6 +5985,7 @@
 <dd><a href="#FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACEpooled_resource_manager">pooled_resource_manager</a></dd>
 <dd><a href="#FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACEbonus_values">bonus_values</a></dd>
 <dd><a href="#FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACEgdp">gdp</a></dd>
+<dd><a href="#FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACEcan_distribute_resource">can_distribute_resource</a></dd>
 <br><dd>Function: <a name="FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -5895,6 +6020,11 @@
 <dd>Description: Returns the gross domestic produce of all regions in this faction province</dd>
 <dd>Parameters: gdp()</dd>
 <dd>Return: number</dd>
+<br>
+<dd>Function: <a name="FACTION_PROVINCE_MANAGER_SCRIPT_INTERFACEcan_distribute_resource">can_distribute_resource</a></dd>
+<dd>Description: Returns whether there are other provinces other than this one setup to receive the pooled resource</dd>
+<dd>Parameters: can_distribute_resource(String pooled_resource_key)</dd>
+<dd>Return: bool</dd>
 <br>
 <h4><a name="FACTION_RITUALS_SCRIPT_INTERFACE">FACTION_RITUALS_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Faction Rituals Script Interface</dd>
@@ -5942,6 +6072,7 @@
 <dd><a href="#FACTION_SCRIPT_INTERFACEat_war">at_war</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEallied_with">allied_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEnon_aggression_pact_with">non_aggression_pact_with</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEmilitary_access_pact_with">military_access_pact_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEtrade_agreement_with">trade_agreement_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEmilitary_allies_with">military_allies_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEdefensive_allies_with">defensive_allies_with</a></dd>
@@ -5977,6 +6108,7 @@
 <dd><a href="#FACTION_SCRIPT_INTERFACEdiplomatic_standing_with">diplomatic_standing_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEdiplomatic_attitude_towards">diplomatic_attitude_towards</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEfactions_non_aggression_pact_with">factions_non_aggression_pact_with</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEfactions_military_access_pact_with">factions_military_access_pact_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEfactions_trading_with">factions_trading_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEfactions_at_war_with">factions_at_war_with</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEfactions_met">factions_met</a></dd>
@@ -6030,6 +6162,16 @@
 <dd><a href="#FACTION_SCRIPT_INTERFACEnum_complete_provinces">num_complete_provinces</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEprovinces">provinces</a></dd>
 <dd><a href="#FACTION_SCRIPT_INTERFACEcomplete_provinces">complete_provinces</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEis_contained_in_faction_set">is_contained_in_faction_set</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEmaster">master</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEvassals">vassals</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEis_in_confederation">is_in_confederation</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEwas_confederated">was_confederated</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEfaction_initiative_sets">faction_initiative_sets</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACElookup_faction_initiative_set_by_key">lookup_faction_initiative_set_by_key</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEunits_recruited_in_set">units_recruited_in_set</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEmercenary_pool">mercenary_pool</a></dd>
+<dd><a href="#FACTION_SCRIPT_INTERFACEplagues">plagues</a></dd>
 <br><dd>Function: <a name="FACTION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -6138,6 +6280,11 @@
 <dd>Function: <a name="FACTION_SCRIPT_INTERFACEnon_aggression_pact_with">non_aggression_pact_with</a></dd>
 <dd>Description: Does this faction have a non-aggression pact with another faction?</dd>
 <dd>Parameters: non_aggression_pact_with(context:character():faction())</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEmilitary_access_pact_with">military_access_pact_with</a></dd>
+<dd>Description: Does this faction have a military access pact_with with another faction?</dd>
+<dd>Parameters: military_access_pact_with(FACTION_SCRIPT_INTERFACE)</dd>
 <dd>Return: bool</dd>
 <br>
 <dd>Function: <a name="FACTION_SCRIPT_INTERFACEtrade_agreement_with">trade_agreement_with</a></dd>
@@ -6313,6 +6460,11 @@
 <dd>Function: <a name="FACTION_SCRIPT_INTERFACEfactions_non_aggression_pact_with">factions_non_aggression_pact_with</a></dd>
 <dd>Description: return the factions this faction has a non-aggression pact with</dd>
 <dd>Parameters: factions_non_aggression_pact_with()</dd>
+<dd>Return: <a href="#FACTION_LIST_SCRIPT_INTERFACE">FACTION_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEfactions_military_access_pact_with">factions_military_access_pact_with</a></dd>
+<dd>Description: return the factions this faction has a military access pact with</dd>
+<dd>Parameters: factions_military_access_pact_with()</dd>
 <dd>Return: <a href="#FACTION_LIST_SCRIPT_INTERFACE">FACTION_LIST_SCRIPT_INTERFACE</a></dd>
 <br>
 <dd>Function: <a name="FACTION_SCRIPT_INTERFACEfactions_trading_with">factions_trading_with</a></dd>
@@ -6580,6 +6732,56 @@
 <dd>Parameters: complete_provinces()</dd>
 <dd>Return: <a href="#FACTION_PROVINCE_MANAGER_LIST_SCRIPT_INTERFACE">FACTION_PROVINCE_MANAGER_LIST_SCRIPT_INTERFACE</a></dd>
 <br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEis_contained_in_faction_set">is_contained_in_faction_set</a></dd>
+<dd>Description: Test if this faction is part of the given faction set</dd>
+<dd>Parameters: is_contained_in_faction_set(String faction_set_record_key)</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEmaster">master</a></dd>
+<dd>Description: Get the master of this faction, or null if they are not a vassal</dd>
+<dd>Parameters: master()</dd>
+<dd>Return: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEvassals">vassals</a></dd>
+<dd>Description: Get a list of all vassals of this faction</dd>
+<dd>Parameters: vassals()</dd>
+<dd>Return: <a href="#FACTION_LIST_SCRIPT_INTERFACE">FACTION_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEis_in_confederation">is_in_confederation</a></dd>
+<dd>Description: Returns if the faction is a confederation</dd>
+<dd>Parameters: is_in_confederation()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEwas_confederated">was_confederated</a></dd>
+<dd>Description: Returns if the faction was confederated (it's dead and all its assets were absorbed by the confederation faction)</dd>
+<dd>Parameters: was_confederated</dd>
+<dd>Return: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEfaction_initiative_sets">faction_initiative_sets</a></dd>
+<dd>Description: Returns all faction initiative sets</dd>
+<dd>Parameters: faction_initiative_sets()</dd>
+<dd>Return: <a href="#INITIATIVE_SET_LIST_SCRIPT_INTERFACE">INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACElookup_faction_initiative_set_by_key">lookup_faction_initiative_set_by_key</a></dd>
+<dd>Description: Returns a faction initiative by key, if found</dd>
+<dd>Parameters: lookup_faction_initiative_set_by_key()</dd>
+<dd>Return: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEunits_recruited_in_set">units_recruited_in_set</a></dd>
+<dd>Description: Returns a list of units that are contained in the given unit set recruited by the faction</dd>
+<dd>Parameters: units_recruited_in_set(String unit_set_key)</dd>
+<dd>Return: <a href="#UNIT_LIST_SCRIPT_INTERFACE">UNIT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEmercenary_pool">mercenary_pool</a></dd>
+<dd>Description: Returns the mercenary pool of the faction</dd>
+<dd>Parameters: mercenary_pool()</dd>
+<dd>Return: <a href="#MERCENARY_POOL_SCRIPT_INTERFACE">MERCENARY_POOL_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="FACTION_SCRIPT_INTERFACEplagues">plagues</a></dd>
+<dd>Description: Returns the plagues interface for the faction</dd>
+<dd>Parameters: plagues()</dd>
+<dd>Return: <a href="#FACTION_PLAGUE_SCRIPT_INTERFACE">FACTION_PLAGUE_SCRIPT_INTERFACE</a></dd>
+<br>
 <h4><a name="FAMILY_MEMBER_LIST_SCRIPT_INTERFACE">FAMILY_MEMBER_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of family member interfaces</dd>
 <br>
@@ -6605,12 +6807,7 @@
 <dd>Description: Family interface</dd>
 <br>
 <dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
-<dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEhas_father">has_father</a></dd>
-<dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEhas_mother">has_mother</a></dd>
-<dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEfather">father</a></dd>
-<dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEmother">mother</a></dd>
 <dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEhas_trait">has_trait</a></dd>
-<dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEcome_of_age">come_of_age</a></dd>
 <dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEcommand_queue_index">command_queue_index</a></dd>
 <dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEcharacter_details">character_details</a></dd>
 <dd><a href="#FAMILY_MEMBER_SCRIPT_INTERFACEarmory">armory</a></dd>
@@ -6620,34 +6817,9 @@
 <dd>Parameters: is_null_interface()</dd>
 <dd>Return: bool</dd>
 <br>
-<dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEhas_father">has_father</a></dd>
-<dd>Description: returns if this family member has a father</dd>
-<dd>Parameters: has_father()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEhas_mother">has_mother</a></dd>
-<dd>Description: returns if this family member has a mother</dd>
-<dd>Parameters: has_mother()</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEfather">father</a></dd>
-<dd>Description: returns if this family members father</dd>
-<dd>Parameters: father()</dd>
-<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
-<br>
-<dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEmother">mother</a></dd>
-<dd>Description: returns if this family member has a mother</dd>
-<dd>Parameters: mother()</dd>
-<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
-<br>
 <dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEhas_trait">has_trait</a></dd>
 <dd>Description: return true if the character has the trait</dd>
 <dd>Parameters: has_trait("trait")</dd>
-<dd>Return: bool</dd>
-<br>
-<dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEcome_of_age">come_of_age</a></dd>
-<dd>Description: return if the character has come of age</dd>
-<dd>Parameters: come_of_age()</dd>
 <dd>Return: bool</dd>
 <br>
 <dd>Function: <a name="FAMILY_MEMBER_SCRIPT_INTERFACEcommand_queue_index">command_queue_index</a></dd>
@@ -6845,9 +7017,7 @@
 <dd><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACEcan_assault">can_assault</a></dd>
 <dd><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACEcan_be_occupied_by_faction">can_be_occupied_by_faction</a></dd>
 <dd><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACEis_settlement">is_settlement</a></dd>
-<dd><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACEis_slot">is_slot</a></dd>
 <dd><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACEsettlement_interface">settlement_interface</a></dd>
-<dd><a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACEslot_interface">slot_interface</a></dd>
 <br><dd>Function: <a name="GARRISON_RESIDENCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -6928,20 +7098,298 @@
 <dd>Parameters: is_settlement()</dd>
 <dd>Return: bool</dd>
 <br>
-<dd>Function: <a name="GARRISON_RESIDENCE_SCRIPT_INTERFACEis_slot">is_slot</a></dd>
-<dd>Description: Is this garrison a slot type?</dd>
-<dd>Parameters: is_slot()</dd>
-<dd>Return: bool</dd>
-<br>
 <dd>Function: <a name="GARRISON_RESIDENCE_SCRIPT_INTERFACEsettlement_interface">settlement_interface</a></dd>
 <dd>Description: If this garrison is a settlement type, returns a settlement interface</dd>
 <dd>Parameters: settlement_interface()</dd>
 <dd>Return: <a href="#SETTLEMENT_SCRIPT_INTERFACE">SETTLEMENT_SCRIPT_INTERFACE</a> (or <a href="#NULL_SCRIPT_INTERFACE">NULL_SCRIPT_INTERFACE</a> if the garrison is not a settlement)</dd>
 <br>
-<dd>Function: <a name="GARRISON_RESIDENCE_SCRIPT_INTERFACEslot_interface">slot_interface</a></dd>
-<dd>Description: If this garrison is a slot type, returns a slot interface</dd>
-<dd>Parameters: slot_interface()</dd>
-<dd>Return: <a href="#SLOT_SCRIPT_INTERFACE">SLOT_SCRIPT_INTERFACE</a> (or <a href="#NULL_SCRIPT_INTERFACE">NULL_SCRIPT_INTERFACE</a> if the garrison is not a settlement)</dd>
+<h4><a name="HORDE_DETAILS_SCRIPT_INTERFACE">HORDE_DETAILS_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Horde Details Script Interface</dd>
+<br>
+<dd><a href="#HORDE_DETAILS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#HORDE_DETAILS_SCRIPT_INTERFACEmodel">model</a></dd>
+<dd><a href="#HORDE_DETAILS_SCRIPT_INTERFACEmilitary_force">military_force</a></dd>
+<dd><a href="#HORDE_DETAILS_SCRIPT_INTERFACEslot_list">slot_list</a></dd>
+<br><dd>Function: <a name="HORDE_DETAILS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="HORDE_DETAILS_SCRIPT_INTERFACEmodel">model</a></dd>
+<dd>Description: Campaign Model</dd>
+<dd>Parameters: model()</dd>
+<dd>Return: <a href="#MODEL_SCRIPT_INTERFACE">MODEL_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="HORDE_DETAILS_SCRIPT_INTERFACEmilitary_force">military_force</a></dd>
+<dd>Description: Military Force</dd>
+<dd>Parameters: military_force()</dd>
+<dd>Return: <a href="#MILITARY_FORCE_SCRIPT_INTERFACE">MILITARY_FORCE_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="HORDE_DETAILS_SCRIPT_INTERFACEslot_list">slot_list</a></dd>
+<dd>Description: Military Force Slot List</dd>
+<dd>Parameters: slot_list()</dd>
+<dd>Return: <a href="#MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACE">MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<h4><a name="INITIATIVE_LIST_SCRIPT_INTERFACE">INITIATIVE_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of initiative interfaces</dd>
+<br>
+<dd><a href="#INITIATIVE_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#INITIATIVE_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#INITIATIVE_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="INITIATIVE_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></h4>
+<dd>Description: An initiative. Provides effects over a duration, closer in behaviour to skills than effect bundles. Owned by a character or faction</dd>
+<br>
+<dd><a href="#INITIATIVE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#INITIATIVE_SCRIPT_INTERFACErecord_key">record_key</a></dd>
+<dd><a href="#INITIATIVE_SCRIPT_INTERFACEduration">duration</a></dd>
+<dd><a href="#INITIATIVE_SCRIPT_INTERFACEhas_infinite_duration">has_infinite_duration</a></dd>
+<dd><a href="#INITIATIVE_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
+<br><dd>Function: <a name="INITIATIVE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SCRIPT_INTERFACErecord_key">record_key</a></dd>
+<dd>Description: Record key of this initiative</dd>
+<dd>Parameters: record_key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SCRIPT_INTERFACEduration">duration</a></dd>
+<dd>Description: Duration of this initiative</dd>
+<dd>Parameters: duration()</dd>
+<dd>Return: int32</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SCRIPT_INTERFACEhas_infinite_duration">has_infinite_duration</a></dd>
+<dd>Description: Does this initiative have an infinite duration?</dd>
+<dd>Parameters: has_infinite_duration()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
+<dd>Description: Is this initiative script locked?</dd>
+<dd>Parameters: is_script_locked()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="INITIATIVE_SET_LIST_SCRIPT_INTERFACE">INITIATIVE_SET_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of initiative set interfaces</dd>
+<br>
+<dd><a href="#INITIATIVE_SET_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#INITIATIVE_SET_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#INITIATIVE_SET_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="INITIATIVE_SET_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="INITIATIVE_SET_SCRIPT_INTERFACE">INITIATIVE_SET_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A collection of related initiatives. Owned by a character or faction</dd>
+<br>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACEall_initiatives">all_initiatives</a></dd>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACEactive_initiatives">active_initiatives</a></dd>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACElookup_initiative_by_key">lookup_initiative_by_key</a></dd>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status_by_key">initiative_status_by_key</a></dd>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status">initiative_status</a></dd>
+<dd><a href="#INITIATIVE_SET_SCRIPT_INTERFACEcooldown_remaining">cooldown_remaining</a></dd>
+<br><dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACEall_initiatives">all_initiatives</a></dd>
+<dd>Description: Returns a list of every initiative in this set</dd>
+<dd>Parameters: all_initiatives()</dd>
+<dd>Return: <a href="#INITIATIVE_LIST_SCRIPT_INTERFACE">INITIATIVE_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACEactive_initiatives">active_initiatives</a></dd>
+<dd>Description: Returns a list of all active initiatives in this set</dd>
+<dd>Parameters: active_initiatives()</dd>
+<dd>Return: <a href="#INITIATIVE_LIST_SCRIPT_INTERFACE">INITIATIVE_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACElookup_initiative_by_key">lookup_initiative_by_key</a></dd>
+<dd>Description: Attempts to find the initiative in this set with the specified record key. *MAY BE NULL*</dd>
+<dd>Parameters: lookup_initiative_by_key(String record_key)</dd>
+<dd>Return: <a href="#INITIATIVE_SCRIPT_INTERFACE">INITIATIVE_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status_by_key">initiative_status_by_key</a></dd>
+<dd>Description: Attempts to find the initiative in this set with the specified record key and give you back a valid status interface</dd>
+<dd>Parameters: initiative_status_by_key(String record_key)</dd>
+<dd>Return: <a href="#INITIATIVE_STATUS_SCRIPT_INTERFACE">INITIATIVE_STATUS_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACEinitiative_status">initiative_status</a></dd>
+<dd>Description: Returns a status interface for the specified initiative</dd>
+<dd>Parameters: initiative_status(INITIATIVE_SCRIPT_INTERFACE initiative)</dd>
+<dd>Return: <a href="#INITIATIVE_STATUS_SCRIPT_INTERFACE">INITIATIVE_STATUS_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="INITIATIVE_SET_SCRIPT_INTERFACEcooldown_remaining">cooldown_remaining</a></dd>
+<dd>Description: Number of rounds that the initiative set is on cooldown for. Zero if it's not on cooldown</dd>
+<dd>Parameters: cooldown_remaining()</dd>
+<dd>Return: card32</dd>
+<br>
+<h4><a name="INITIATIVE_STATUS_SCRIPT_INTERFACE">INITIATIVE_STATUS_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Status of an initiative. Status is from the time this interface is returned</dd>
+<br>
+<dd><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACEis_active">is_active</a></dd>
+<dd><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
+<dd><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_capacity_reached">is_set_capacity_reached</a></dd>
+<dd><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACEis_unavailable">is_unavailable</a></dd>
+<dd><a href="#INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_on_cooldown">is_set_on_cooldown</a></dd>
+<br><dd>Function: <a name="INITIATIVE_STATUS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_STATUS_SCRIPT_INTERFACEis_active">is_active</a></dd>
+<dd>Description: Is this initiative active?</dd>
+<dd>Parameters: is_active()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_STATUS_SCRIPT_INTERFACEis_script_locked">is_script_locked</a></dd>
+<dd>Description: Is this initiative script locked?</dd>
+<dd>Parameters: is_script_locked()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_capacity_reached">is_set_capacity_reached</a></dd>
+<dd>Description: Is this initiative in a set that has reached its capacity (and not active)?</dd>
+<dd>Parameters: is_set_capacity_reached()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_STATUS_SCRIPT_INTERFACEis_unavailable">is_unavailable</a></dd>
+<dd>Description: Is this initiative unavailable from the queried set?</dd>
+<dd>Parameters: is_unavailable()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="INITIATIVE_STATUS_SCRIPT_INTERFACEis_set_on_cooldown">is_set_on_cooldown</a></dd>
+<dd>Description: Is the set that this initiative is a part of, on cooldown?</dd>
+<dd>Parameters: is_set_on_cooldown()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="MAIN_UNIT_RECORD_SCRIPT_INTERFACE">MAIN_UNIT_RECORD_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Main Unit Record Script Interface</dd>
+<br>
+<dd><a href="#MAIN_UNIT_RECORD_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#MAIN_UNIT_RECORD_SCRIPT_INTERFACEkey">key</a></dd>
+<dd><a href="#MAIN_UNIT_RECORD_SCRIPT_INTERFACEcaste">caste</a></dd>
+<dd><a href="#MAIN_UNIT_RECORD_SCRIPT_INTERFACEland_unit">land_unit</a></dd>
+<br><dd>Function: <a name="MAIN_UNIT_RECORD_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="MAIN_UNIT_RECORD_SCRIPT_INTERFACEkey">key</a></dd>
+<dd>Description: main unit record key</dd>
+<dd>Parameters: key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="MAIN_UNIT_RECORD_SCRIPT_INTERFACEcaste">caste</a></dd>
+<dd>Description: unit caste</dd>
+<dd>Parameters: caste()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="MAIN_UNIT_RECORD_SCRIPT_INTERFACEland_unit">land_unit</a></dd>
+<dd>Description: land unit key</dd>
+<dd>Parameters: land_unit()</dd>
+<dd>Return: String</dd>
+<br>
+<h4><a name="MERCENARY_POOL_SCRIPT_INTERFACE">MERCENARY_POOL_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Mercenary pool information</dd>
+<br>
+<dd><a href="#MERCENARY_POOL_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#MERCENARY_POOL_SCRIPT_INTERFACEmercenary_pool_units">mercenary_pool_units</a></dd>
+<br><dd>Function: <a name="MERCENARY_POOL_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_SCRIPT_INTERFACEmercenary_pool_units">mercenary_pool_units</a></dd>
+<dd>Description: Units in the mercenary pool</dd>
+<dd>Parameters: mercenary_pool_units()</dd>
+<dd>Return: Mercenary pool unit list script interface</dd>
+<br>
+<h4><a name="MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACE">MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of mercenary pool units</dd>
+<br>
+<dd><a href="#MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACE">MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACE">MERCENARY_POOL_UNIT_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Details on the mecenary pool unit</dd>
+<br>
+<dd><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACEid">id</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACEunit_count">unit_count</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACEbase_max_units">base_max_units</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACEcurrent_max_units">current_max_units</a></dd>
+<dd><a href="#MERCENARY_POOL_UNIT_SCRIPT_INTERFACEunit_record">unit_record</a></dd>
+<br><dd>Function: <a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACEid">id</a></dd>
+<dd>Description: ID of the pool unit</dd>
+<dd>Parameters: key()</dd>
+<dd>Return: card32</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACEunit_count">unit_count</a></dd>
+<dd>Description: Amount of units available</dd>
+<dd>Parameters: unit_count()</dd>
+<dd>Return: card32</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACEbase_max_units">base_max_units</a></dd>
+<dd>Description: Initial unchanged max amount of units can recruit from mercenary pool</dd>
+<dd>Parameters: base_max_units()</dd>
+<dd>Return: card32</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACEcurrent_max_units">current_max_units</a></dd>
+<dd>Description: Current max amount of units can recruit from mercenary pool</dd>
+<dd>Parameters: current_max_units()</dd>
+<dd>Return: card32</dd>
+<br>
+<dd>Function: <a name="MERCENARY_POOL_UNIT_SCRIPT_INTERFACEunit_record">unit_record</a></dd>
+<dd>Description: Mercenary pool unit record</dd>
+<dd>Parameters: unit_record()</dd>
+<dd>Return: <a href="#MAIN_UNIT_RECORD_SCRIPT_INTERFACE">MAIN_UNIT_RECORD_SCRIPT_INTERFACE</a></dd>
 <br>
 <h4><a name="MILITARY_FORCE_LIST_SCRIPT_INTERFACE">MILITARY_FORCE_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of military forces</dd>
@@ -6979,6 +7427,7 @@
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEfaction">faction</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEhas_garrison_residence">has_garrison_residence</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEgarrison_residence">garrison_residence</a></dd>
+<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEhorde_details">horde_details</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEcontains_mercenaries">contains_mercenaries</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEupkeep">upkeep</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEactive_stance">active_stance</a></dd>
@@ -6990,6 +7439,8 @@
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEcan_recruit_unit">can_recruit_unit</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEcan_recruit_unit_class">can_recruit_unit_class</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEcan_recruit_unit_category">can_recruit_unit_category</a></dd>
+<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACErecruitment_items">recruitment_items</a></dd>
+<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACErecruitment_item_count">recruitment_item_count</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEstrength">strength</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEhas_effect_bundle">has_effect_bundle</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEeffect_bundles">effect_bundles</a></dd>
@@ -6998,8 +7449,10 @@
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEbonus_values">bonus_values</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEis_set_piece_battle_army">is_set_piece_battle_army</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEset_piece_battle_army_key">set_piece_battle_army_key</a></dd>
-<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEhas_access_to_military_force_mercenary_pool_of_recruitment_source">has_access_to_military_force_mercenary_pool_of_recruitment_source</a></dd>
 <dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACElookup_streak_value">lookup_streak_value</a></dd>
+<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEmercenary_pool">mercenary_pool</a></dd>
+<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEget_plague_if_infected">get_plague_if_infected</a></dd>
+<dd><a href="#MILITARY_FORCE_SCRIPT_INTERFACEtry_get_military_force_plague">try_get_military_force_plague</a></dd>
 <br><dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -7060,6 +7513,11 @@
 <dd>Parameters: garrison_residence()</dd>
 <dd>Return: <a href="#GARRISON_RESIDENCE_SCRIPT_INTERFACE">GARRISON_RESIDENCE_SCRIPT_INTERFACE</a> (or <a href="#NULL_SCRIPT_INTERFACE">NULL_SCRIPT_INTERFACE</a> if the army isn't embedded)</dd>
 <br>
+<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEhorde_details">horde_details</a></dd>
+<dd>Description: Returns the horde details of the force.</dd>
+<dd>Parameters: horde_details()</dd>
+<dd>Return: <a href="#HORDE_DETAILS_SCRIPT_INTERFACE">HORDE_DETAILS_SCRIPT_INTERFACE</a> (or <a href="#NULL_SCRIPT_INTERFACE">NULL_SCRIPT_INTERFACE</a> if the army doesn't have one)</dd>
+<br>
 <dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEcontains_mercenaries">contains_mercenaries</a></dd>
 <dd>Description: Returns if the force contains mercenaries</dd>
 <dd>Parameters: contains_mercenaries()</dd>
@@ -7115,6 +7573,16 @@
 <dd>Parameters: can_recruit_unit_category(<unit_category_key>)</dd>
 <dd>Return: bool</dd>
 <br>
+<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACErecruitment_items">recruitment_items</a></dd>
+<dd>Description: Returns a list of unit keys for the recruitment items actively attributed to this military force. You may provide a recruitment source key to only retrieve items from that source</dd>
+<dd>Parameters: recruitment_items(<optional source key>)</dd>
+<dd>Return: List(String)</dd>
+<br>
+<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACErecruitment_item_count">recruitment_item_count</a></dd>
+<dd>Description: Returns the number of recruitment items actively attributed to this military force. You may provide a recruitment source key to filter for only items attributed to that source</dd>
+<dd>Parameters: recruitment_item_count(<optional source key>)</dd>
+<dd>Return: int32</dd>
+<br>
 <dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEstrength">strength</a></dd>
 <dd>Description: Returns the strength of the military force</dd>
 <dd>Parameters: strength()</dd>
@@ -7155,15 +7623,46 @@
 <dd>Parameters: set_piece_battle_army_key()</dd>
 <dd>Return: String</dd>
 <br>
-<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEhas_access_to_military_force_mercenary_pool_of_recruitment_source">has_access_to_military_force_mercenary_pool_of_recruitment_source</a></dd>
-<dd>Description: Test if this military force has access to a mercenary pool of a specific recruitment source type. (recruitment sources table)</dd>
-<dd>Parameters: has_access_to_military_force_mercenary_pool_of_recruitment_source(String recruitment_source_key)</dd>
-<dd>Return: bool</dd>
-<br>
 <dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACElookup_streak_value">lookup_streak_value</a></dd>
 <dd>Description: Get the current streak value of this military force. Will return -1 if no streak is present. This is a lookup, please cache the results.</dd>
 <dd>Parameters: lookup_streak_value(String streak_key)</dd>
 <dd>Return: int32</dd>
+<br>
+<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEmercenary_pool">mercenary_pool</a></dd>
+<dd>Description: Returns the mercenary pool of the military force</dd>
+<dd>Parameters: mercenary_pool</dd>
+<dd>Return: <a href="#MERCENARY_POOL_SCRIPT_INTERFACE">MERCENARY_POOL_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEget_plague_if_infected">get_plague_if_infected</a></dd>
+<dd>Description: Returns the plague script interface if the military force is infected in the plague system</dd>
+<dd>Parameters: get_plague_if_infected</dd>
+<dd>Return: <a href="#PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MILITARY_FORCE_SCRIPT_INTERFACEtry_get_military_force_plague">try_get_military_force_plague</a></dd>
+<dd>Description: Returns the plague script interface from the military force plague system if the force has one</dd>
+<dd>Parameters: try_get_military_force_plague</dd>
+<dd>Return: <a href="#PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></dd>
+<br>
+<h4><a name="MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACE">MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of military force slots</dd>
+<br>
+<dd><a href="#MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#MILITARY_FORCE_SLOT_SCRIPT_INTERFACE">MILITARY_FORCE_SLOT_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MILITARY_FORCE_SLOT_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
 <br>
 <h4><a name="MILITARY_FORCE_SLOT_SCRIPT_INTERFACE">MILITARY_FORCE_SLOT_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Military Force Slot Script Interface</dd>
@@ -7183,7 +7682,7 @@
 <dd>Return: bool</dd>
 <br>
 <dd>Function: <a name="MILITARY_FORCE_SLOT_SCRIPT_INTERFACEmodel">model</a></dd>
-<dd>Description: Campaign Modle</dd>
+<dd>Description: Campaign Model</dd>
 <dd>Parameters: model()</dd>
 <dd>Return: <a href="#MODEL_SCRIPT_INTERFACE">MODEL_SCRIPT_INTERFACE</a></dd>
 <br>
@@ -7264,8 +7763,10 @@
 <dd><a href="#MODEL_SCRIPT_INTERFACEdate_in_range">date_in_range</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEdate_and_week_in_range">date_and_week_in_range</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEturn_number">turn_number</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACEcampaign_type">campaign_type</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEcampaign_name">campaign_name</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEcampaign_name_key">campaign_name_key</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACEsession_id">session_id</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACErandom_percent">random_percent</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACErandom_int">random_int</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEis_multiplayer">is_multiplayer</a></dd>
@@ -7284,7 +7785,6 @@
 <dd><a href="#MODEL_SCRIPT_INTERFACEfaction_is_local">faction_is_local</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEplayer_steam_id_is_even">player_steam_id_is_even</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEcampaign_ai">campaign_ai</a></dd>
-<dd><a href="#MODEL_SCRIPT_INTERFACEcampaign_type">campaign_type</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEprison_system">prison_system</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEfamily_member_for_command_queue_index">family_member_for_command_queue_index</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEcharacter_for_command_queue_index">character_for_command_queue_index</a></dd>
@@ -7301,6 +7801,10 @@
 <dd><a href="#MODEL_SCRIPT_INTERFACElogical_position_for_display_position">logical_position_for_display_position</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEdisplay_position_for_logical_position">display_position_for_logical_position</a></dd>
 <dd><a href="#MODEL_SCRIPT_INTERFACEdebug_drawing">debug_drawing</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACElookup_family_member_by_startpos_id">lookup_family_member_by_startpos_id</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACElookup_character_by_startpos_id">lookup_character_by_startpos_id</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACEunit_caste">unit_caste</a></dd>
+<dd><a href="#MODEL_SCRIPT_INTERFACEmanual_saves_disabled">manual_saves_disabled</a></dd>
 <br><dd>Function: <a name="MODEL_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -7331,6 +7835,11 @@
 <dd>Parameters: turn_number()</dd>
 <dd>Return: int</dd>
 <br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACEcampaign_type">campaign_type</a></dd>
+<dd>Description: Returns the current campaign type</dd>
+<dd>Parameters: campaign_type()</dd>
+<dd>Return: String</dd>
+<br>
 <dd>Function: <a name="MODEL_SCRIPT_INTERFACEcampaign_name">campaign_name</a></dd>
 <dd>Description: Returns whether or not the current campaign name matches the supplied parameter</dd>
 <dd>Parameters: Name of the campaign to compare against, from the campaigns table, e.g. campaign_name('jap_shogun')</dd>
@@ -7339,6 +7848,11 @@
 <dd>Function: <a name="MODEL_SCRIPT_INTERFACEcampaign_name_key">campaign_name_key</a></dd>
 <dd>Description: Returns the key of the currenty campaign</dd>
 <dd>Parameters: campaign_name_key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACEsession_id">session_id</a></dd>
+<dd>Description: Returns the session id</dd>
+<dd>Parameters: session_id()</dd>
 <dd>Return: String</dd>
 <br>
 <dd>Function: <a name="MODEL_SCRIPT_INTERFACErandom_percent">random_percent</a></dd>
@@ -7431,11 +7945,6 @@
 <dd>Parameters: campaign_ai()</dd>
 <dd>Return: <a href="#CAMPAIGN_AI_SCRIPT_INTERFACE">CAMPAIGN_AI_SCRIPT_INTERFACE</a></dd>
 <br>
-<dd>Function: <a name="MODEL_SCRIPT_INTERFACEcampaign_type">campaign_type</a></dd>
-<dd>Description: Returns the type of the campaign</dd>
-<dd>Parameters: campaign_type()</dd>
-<dd>Return: int32</dd>
-<br>
 <dd>Function: <a name="MODEL_SCRIPT_INTERFACEprison_system">prison_system</a></dd>
 <dd>Description: Returns the prison system</dd>
 <dd>Parameters: prison_system()</dd>
@@ -7515,6 +8024,26 @@
 <dd>Description: Debug Drawing Interface. NOT AVAILABLE IN RETAIL</dd>
 <dd>Parameters: debug_drawing()</dd>
 <dd>Return: <a href="#DEBUG_DRAWING_SCRIPT_INTERFACE">DEBUG_DRAWING_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACElookup_family_member_by_startpos_id">lookup_family_member_by_startpos_id</a></dd>
+<dd>Description: Find a family member by their startpos record ID</dd>
+<dd>Parameters: lookup_family_member_by_startpos_id(String startpos_id)</dd>
+<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACElookup_character_by_startpos_id">lookup_character_by_startpos_id</a></dd>
+<dd>Description: Find a character by their startpos record ID</dd>
+<dd>Parameters: lookup_family_member_by_startpos_id(String startpos_id)</dd>
+<dd>Return: <a href="#FAMILY_MEMBER_SCRIPT_INTERFACE">FAMILY_MEMBER_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACEunit_caste">unit_caste</a></dd>
+<dd>Description: Unit caste for the specified unit.</dd>
+<dd>Parameters: unit_caste(String unit_record_key)</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="MODEL_SCRIPT_INTERFACEmanual_saves_disabled">manual_saves_disabled</a></dd>
+<dd>Description: Checks is ironman mode(manual saves) are disabled</dd>
+<dd>Parameters: manual_saves_disabled()</dd>
+<dd>Return: bool</dd>
 <br>
 <h4><a name="MODIFY_RITUAL_PERFORMING_CHARACTER_LIST_SCRIPT_INTERFACE">MODIFY_RITUAL_PERFORMING_CHARACTER_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of mutable ritual performing character script interfaces</dd>
@@ -8149,12 +8678,62 @@
 <dd>Parameters: ended_with_withdraw()</dd>
 <dd>Return: bool</dd>
 <br>
+<h4><a name="PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE">PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of plague components</dd>
+<br>
+<dd><a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACE">PLAGUE_COMPONENT_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="PLAGUE_COMPONENT_SCRIPT_INTERFACE">PLAGUE_COMPONENT_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Plague Component Script Interface</dd>
+<br>
+<dd><a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACEhas_state">has_state</a></dd>
+<dd><a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACEset_state">set_state</a></dd>
+<dd><a href="#PLAGUE_COMPONENT_SCRIPT_INTERFACEkey">key</a></dd>
+<br><dd>Function: <a name="PLAGUE_COMPONENT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="PLAGUE_COMPONENT_SCRIPT_INTERFACEhas_state">has_state</a></dd>
+<dd>Description: Returns whether the component has the state</dd>
+<dd>Parameters: has_state(String state)</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="PLAGUE_COMPONENT_SCRIPT_INTERFACEset_state">set_state</a></dd>
+<dd>Description: Sets specific state on a plague component</dd>
+<dd>Parameters: set_state(String state, bool state)</dd>
+<dd>Return: NONE</dd>
+<br>
+<dd>Function: <a name="PLAGUE_COMPONENT_SCRIPT_INTERFACEkey">key</a></dd>
+<dd>Description: Gets the database key of the component</dd>
+<dd>Parameters: key()</dd>
+<dd>Return: string</dd>
+<br>
 <h4><a name="PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Plague Script Interface</dd>
 <br>
 <dd><a href="#PLAGUE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd><a href="#PLAGUE_SCRIPT_INTERFACEplague_record">plague_record</a></dd>
 <dd><a href="#PLAGUE_SCRIPT_INTERFACEcomponent_records">component_records</a></dd>
+<dd><a href="#PLAGUE_SCRIPT_INTERFACEplague_components">plague_components</a></dd>
+<dd><a href="#PLAGUE_SCRIPT_INTERFACEcreator_faction">creator_faction</a></dd>
 <br><dd>Function: <a name="PLAGUE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -8169,6 +8748,16 @@
 <dd>Description: Returns the plague's components' records</dd>
 <dd>Parameters: component_records()</dd>
 <dd>Return: string</dd>
+<br>
+<dd>Function: <a name="PLAGUE_SCRIPT_INTERFACEplague_components">plague_components</a></dd>
+<dd>Description: Returns script interfaces to the plague components used</dd>
+<dd>Parameters: plague_components()</dd>
+<dd>Return: <a href="#PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE">PLAGUE_COMPONENT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="PLAGUE_SCRIPT_INTERFACEcreator_faction">creator_faction</a></dd>
+<dd>Description: Returns the plague's creator faction interface</dd>
+<dd>Parameters: creator_faction()</dd>
+<dd>Return: <a href="#FACTION_SCRIPT_INTERFACE">FACTION_SCRIPT_INTERFACE</a></dd>
 <br>
 <h4><a name="POOLED_RESOURCE_FACTOR_LIST_SCRIPT_INTERFACE">POOLED_RESOURCE_FACTOR_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of pooled resource factor script interfaces</dd>
@@ -8484,6 +9073,7 @@
 <dd><a href="#PROVINCE_SCRIPT_INTERFACEregions">regions</a></dd>
 <dd><a href="#PROVINCE_SCRIPT_INTERFACEadjacent_provinces">adjacent_provinces</a></dd>
 <dd><a href="#PROVINCE_SCRIPT_INTERFACEpooled_resource_manager">pooled_resource_manager</a></dd>
+<dd><a href="#PROVINCE_SCRIPT_INTERFACEmercenary_pool">mercenary_pool</a></dd>
 <br><dd>Function: <a name="PROVINCE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -8523,6 +9113,11 @@
 <dd>Description: Pooled resource manager of this province</dd>
 <dd>Parameters: pooled_resource_manager()</dd>
 <dd>Return: <a href="#POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE">POOLED_RESOURCE_MANAGER_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="PROVINCE_SCRIPT_INTERFACEmercenary_pool">mercenary_pool</a></dd>
+<dd>Description: Mercenary pool for the province</dd>
+<dd>Parameters: mercenary_pool()</dd>
+<dd>Return: <a href="#MERCENARY_POOL_SCRIPT_INTERFACE">MERCENARY_POOL_SCRIPT_INTERFACE</a></dd>
 <br>
 <h4><a name="REGION_DATA_LIST_SCRIPT_INTERFACE">REGION_DATA_LIST_SCRIPT_INTERFACE</a></h4>
 <dd>Description: A list of region datas</dd>
@@ -8713,6 +9308,9 @@
 <dd><a href="#REGION_SCRIPT_INTERFACEfaction_province">faction_province</a></dd>
 <dd><a href="#REGION_SCRIPT_INTERFACEpooled_resource_manager">pooled_resource_manager</a></dd>
 <dd><a href="#REGION_SCRIPT_INTERFACEbonus_values">bonus_values</a></dd>
+<dd><a href="#REGION_SCRIPT_INTERFACEis_contained_in_region_group">is_contained_in_region_group</a></dd>
+<dd><a href="#REGION_SCRIPT_INTERFACEget_plague_if_infected">get_plague_if_infected</a></dd>
+<dd><a href="#REGION_SCRIPT_INTERFACEcharacters_in_region">characters_in_region</a></dd>
 <br><dd>Function: <a name="REGION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -8923,13 +9521,28 @@
 <dd>Parameters: bonus_values()</dd>
 <dd>Return: <a href="#BONUS_VALUES_SCRIPT_INTERFACE">BONUS_VALUES_SCRIPT_INTERFACE</a></dd>
 <br>
+<dd>Function: <a name="REGION_SCRIPT_INTERFACEis_contained_in_region_group">is_contained_in_region_group</a></dd>
+<dd>Description: Test if this region is contained in the given region group</dd>
+<dd>Parameters: is_contained_in_region_group(String region_group_key)</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="REGION_SCRIPT_INTERFACEget_plague_if_infected">get_plague_if_infected</a></dd>
+<dd>Description: Returns the plague script interface if the region is infected</dd>
+<dd>Parameters: get_plague_if_infected</dd>
+<dd>Return: <a href="#PLAGUE_SCRIPT_INTERFACE">PLAGUE_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="REGION_SCRIPT_INTERFACEcharacters_in_region">characters_in_region</a></dd>
+<dd>Description: Returns all characters in the region</dd>
+<dd>Parameters: characters_in_region</dd>
+<dd>Return: <a href="#CHARACTER_LIST_SCRIPT_INTERFACE">CHARACTER_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
 <h4><a name="RESOURCE_TRANSACTION_SCRIPT_INTERFACE">RESOURCE_TRANSACTION_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Resource Transaction Script Interface</dd>
 <br>
 <dd><a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd><a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACEtotal_treasury_change">total_treasury_change</a></dd>
 <dd><a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACEabsolute_resource_change">absolute_resource_change</a></dd>
-<dd><a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACEprecentage_resource_change">precentage_resource_change</a></dd>
+<dd><a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACEpercentage_resource_change">percentage_resource_change</a></dd>
 <br><dd>Function: <a name="RESOURCE_TRANSACTION_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -8938,16 +9551,16 @@
 <dd>Function: <a name="RESOURCE_TRANSACTION_SCRIPT_INTERFACEtotal_treasury_change">total_treasury_change</a></dd>
 <dd>Description: Total net treasury change applied by this resource transaction</dd>
 <dd>Parameters: total_treasury_change()</dd>
-<dd>Return: <a href="#RESOURCE_TRANSACTION_SCRIPT_INTERFACE">RESOURCE_TRANSACTION_SCRIPT_INTERFACE</a></dd>
+<dd>Return: int32</dd>
 <br>
 <dd>Function: <a name="RESOURCE_TRANSACTION_SCRIPT_INTERFACEabsolute_resource_change">absolute_resource_change</a></dd>
 <dd>Description: Total absolute value change applied to the specified resource by this resource transaction</dd>
 <dd>Parameters: absolute_resource_change(String resource_key)</dd>
 <dd>Return: int32</dd>
 <br>
-<dd>Function: <a name="RESOURCE_TRANSACTION_SCRIPT_INTERFACEprecentage_resource_change">precentage_resource_change</a></dd>
+<dd>Function: <a name="RESOURCE_TRANSACTION_SCRIPT_INTERFACEpercentage_resource_change">percentage_resource_change</a></dd>
 <dd>Description: Total percentage value change applied to the specified resource by this resource transaction</dd>
-<dd>Parameters: precentage_resource_change(String resource_key)</dd>
+<dd>Parameters: percentage_resource_change(String resource_key)</dd>
 <dd>Return: int32</dd>
 <br>
 <h4><a name="RITUAL_PERFORMING_CHARACTER_LIST_SCRIPT_INTERFACE">RITUAL_PERFORMING_CHARACTER_LIST_SCRIPT_INTERFACE</a></h4>
@@ -10009,6 +10622,8 @@
 <dd><a href="#SETTLEMENT_SCRIPT_INTERFACEport_slot">port_slot</a></dd>
 <dd><a href="#SETTLEMENT_SCRIPT_INTERFACEactive_secondary_slots">active_secondary_slots</a></dd>
 <dd><a href="#SETTLEMENT_SCRIPT_INTERFACEfirst_empty_active_secondary_slot">first_empty_active_secondary_slot</a></dd>
+<dd><a href="#SETTLEMENT_SCRIPT_INTERFACEis_walled_settlement">is_walled_settlement</a></dd>
+<dd><a href="#SETTLEMENT_SCRIPT_INTERFACEnumber_of_wall_breaches">number_of_wall_breaches</a></dd>
 <br><dd>Function: <a name="SETTLEMENT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -10113,6 +10728,16 @@
 <dd>Description: Get the first empty active secondary slot from the settement. May be null if none are available</dd>
 <dd>Parameters: first_empty_active_secondary_slot()</dd>
 <dd>Return: <a href="#SLOT_SCRIPT_INTERFACE">SLOT_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="SETTLEMENT_SCRIPT_INTERFACEis_walled_settlement">is_walled_settlement</a></dd>
+<dd>Description: Does the settlement have walls</dd>
+<dd>Parameters: is_walled_settlement()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="SETTLEMENT_SCRIPT_INTERFACEnumber_of_wall_breaches">number_of_wall_breaches</a></dd>
+<dd>Description: Number of walls breached in the settlement</dd>
+<dd>Parameters: number_of_wall_breaches()</dd>
+<dd>Return: int</dd>
 <br>
 <h4><a name="SHARED_STATES_MANAGER_SCRIPT_INTERFACE">SHARED_STATES_MANAGER_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Shared States Manager Script Interfaces</dd>
@@ -10490,6 +11115,7 @@
 <dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEfaction">faction</a></dd>
 <dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEcharacter">character</a></dd>
 <dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEagent_key">agent_key</a></dd>
+<dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEagent_subtype_key">agent_subtype_key</a></dd>
 <dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEcharges">charges</a></dd>
 <dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEcharges_expended">charges_expended</a></dd>
 <dd><a href="#UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEvalid">valid</a></dd>
@@ -10511,6 +11137,11 @@
 <dd>Function: <a name="UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEagent_key">agent_key</a></dd>
 <dd>Description: Returns the database record key for this unique agent.</dd>
 <dd>Parameters: agent_key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEagent_subtype_key">agent_subtype_key</a></dd>
+<dd>Description: Returns the agent subtype record key for this unique agent.</dd>
+<dd>Parameters: agent_subtype_key()</dd>
 <dd>Return: String</dd>
 <br>
 <dd>Function: <a name="UNIQUE_AGENT_DETAILS_SCRIPT_INTERFACEcharges">charges</a></dd>
@@ -10608,6 +11239,7 @@
 <dd><a href="#UNIT_SCRIPT_INTERFACEunit_key">unit_key</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEunit_category">unit_category</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEunit_class">unit_class</a></dd>
+<dd><a href="#UNIT_SCRIPT_INTERFACEunit_caste">unit_caste</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEpercentage_proportion_of_full_strength">percentage_proportion_of_full_strength</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEhas_banner_ancillary">has_banner_ancillary</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEbanner_ancillary">banner_ancillary</a></dd>
@@ -10619,6 +11251,7 @@
 <dd><a href="#UNIT_SCRIPT_INTERFACEcan_unpurchase_effect">can_unpurchase_effect</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEget_unit_purchasable_effects">get_unit_purchasable_effects</a></dd>
 <dd><a href="#UNIT_SCRIPT_INTERFACEget_unit_purchased_effects">get_unit_purchased_effects</a></dd>
+<dd><a href="#UNIT_SCRIPT_INTERFACEget_upgrades">get_upgrades</a></dd>
 <br><dd>Function: <a name="UNIT_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -10689,6 +11322,11 @@
 <dd>Parameters: unit_class()</dd>
 <dd>Return: String</dd>
 <br>
+<dd>Function: <a name="UNIT_SCRIPT_INTERFACEunit_caste">unit_caste</a></dd>
+<dd>Description: The unit record caste</dd>
+<dd>Parameters: unit_caste()</dd>
+<dd>Return: String</dd>
+<br>
 <dd>Function: <a name="UNIT_SCRIPT_INTERFACEpercentage_proportion_of_full_strength">percentage_proportion_of_full_strength</a></dd>
 <dd>Description: The % of soldiers in the unit. Returns a value 0.0-100.0</dd>
 <dd>Parameters: percentage_proportion_of_full_strength()</dd>
@@ -10743,6 +11381,161 @@
 <dd>Description: Get the list of purchasable effects purchased for the unit</dd>
 <dd>Parameters: get_unit_purchased_effects()</dd>
 <dd>Return: <a href="#UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE">UNIT_PURCHASABLE_EFFECT_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="UNIT_SCRIPT_INTERFACEget_upgrades">get_upgrades</a></dd>
+<dd>Description: Get the list of upgrades for the unit</dd>
+<dd>Parameters: get_upgrades()</dd>
+<dd>Return: <a href="#UNIT_UPGRADE_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<h4><a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of upgrade requirements interfaces</dd>
+<br>
+<dd><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACE">UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Details on the requirements for an upgrade</dd>
+<br>
+<dd><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACEkey">key</a></dd>
+<dd><a href="#UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACErequirement_met">requirement_met</a></dd>
+<br><dd>Function: <a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACEkey">key</a></dd>
+<dd>Description: Record key expression requirement</dd>
+<dd>Parameters: key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_BUILDING_REQUIREMENTS_SCRIPT_INTERFACErequirement_met">requirement_met</a></dd>
+<dd>Description: Whether this requirement is met</dd>
+<dd>Parameters: requirement_met()</dd>
+<dd>Return: Bool</dd>
+<br>
+<h4><a name="UNIT_UPGRADE_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of unit upgrade interfaces</dd>
+<br>
+<dd><a href="#UNIT_UPGRADE_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#UNIT_UPGRADE_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#UNIT_UPGRADE_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="UNIT_UPGRADE_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#UNIT_UPGRADE_SCRIPT_INTERFACE">UNIT_UPGRADE_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="UNIT_UPGRADE_SCRIPT_INTERFACE">UNIT_UPGRADE_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A way to get upgrade information from a unit.</dd>
+<br>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEkey">key</a></dd>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEtarget_units">target_units</a></dd>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEresource_transaction">resource_transaction</a></dd>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEtech_requirements">tech_requirements</a></dd>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEbuilding_requirements">building_requirements</a></dd>
+<dd><a href="#UNIT_UPGRADE_SCRIPT_INTERFACEcan_upgrade">can_upgrade</a></dd>
+<br><dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEkey">key</a></dd>
+<dd>Description: Record key of the upgrade</dd>
+<dd>Parameters: key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEtarget_units">target_units</a></dd>
+<dd>Description: Possible unit record keys unit can upgrade to</dd>
+<dd>Parameters: upgrade_group_units()</dd>
+<dd>Return: String table</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEresource_transaction">resource_transaction</a></dd>
+<dd>Description: Resource needed to upgrade</dd>
+<dd>Parameters: resource_transaction()</dd>
+<dd>Return: Resource transaction script interface</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEtech_requirements">tech_requirements</a></dd>
+<dd>Description: Requirements needed to upgrade</dd>
+<dd>Parameters: requirements()</dd>
+<dd>Return: Upgrade requirments list script interface</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEbuilding_requirements">building_requirements</a></dd>
+<dd>Description: Requirements needed to upgrade</dd>
+<dd>Parameters: requirements()</dd>
+<dd>Return: Upgrade requirments list script interface</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_SCRIPT_INTERFACEcan_upgrade">can_upgrade</a></dd>
+<dd>Description: Does the unit have an available upgrade</dd>
+<dd>Parameters: can_upgrade()</dd>
+<dd>Return: Bool</dd>
+<br>
+<h4><a name="UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACE">UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACE</a></h4>
+<dd>Description: A list of upgrade requirements interfaces</dd>
+<br>
+<dd><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<br><dd>Function: <a name="UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACEnum_items">num_items</a></dd>
+<dd>Description: Returns the number of items in the list</dd>
+<dd>Parameters: num_items()</dd>
+<dd>Return: positive int</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACEitem_at">item_at</a></dd>
+<dd>Description: Returns the item at the index. Make sure the index is between 0 and (max items - 1)</dd>
+<dd>Parameters: positive int</dd>
+<dd>Return: <a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACE">UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_TECH_REQUIREMENTS_LIST_SCRIPT_INTERFACEis_empty">is_empty</a></dd>
+<dd>Description: Returns a true if there are 0 items in the list</dd>
+<dd>Parameters: is_empty()</dd>
+<dd>Return: bool</dd>
+<br>
+<h4><a name="UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACE">UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACE</a></h4>
+<dd>Description: Details on the requirements for an upgrade</dd>
+<br>
+<dd><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACEkey">key</a></dd>
+<dd><a href="#UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACErequirement_met">requirement_met</a></dd>
+<br><dd>Function: <a name="UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
+<dd>Description: Is this the null script interface</dd>
+<dd>Parameters: is_null_interface()</dd>
+<dd>Return: bool</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACEkey">key</a></dd>
+<dd>Description: Record key expression requirement</dd>
+<dd>Parameters: key()</dd>
+<dd>Return: String</dd>
+<br>
+<dd>Function: <a name="UNIT_UPGRADE_TECH_REQUIREMENTS_SCRIPT_INTERFACErequirement_met">requirement_met</a></dd>
+<dd>Description: Whether this requirement is met</dd>
+<dd>Parameters: requirement_met()</dd>
+<dd>Return: Bool</dd>
 <br>
 <h4><a name="WAR_COORDINATION_SCRIPT_INTERFACE">WAR_COORDINATION_SCRIPT_INTERFACE</a></h4>
 <dd>Description: Favour Points Script Interface. Can be accessed from the episodic scripting interface.</dd>
@@ -10844,6 +11637,8 @@
 <dd><a href="#WORLD_SCRIPT_INTERFACEwinds_of_magic_compass">winds_of_magic_compass</a></dd>
 <dd><a href="#WORLD_SCRIPT_INTERFACEteleportation_network_system">teleportation_network_system</a></dd>
 <dd><a href="#WORLD_SCRIPT_INTERFACEfaction_strength_rank">faction_strength_rank</a></dd>
+<dd><a href="#WORLD_SCRIPT_INTERFACElookup_factions_from_faction_set">lookup_factions_from_faction_set</a></dd>
+<dd><a href="#WORLD_SCRIPT_INTERFACElookup_regions_from_region_group">lookup_regions_from_region_group</a></dd>
 <br><dd>Function: <a name="WORLD_SCRIPT_INTERFACEis_null_interface">is_null_interface</a></dd>
 <dd>Description: Is this the null script interface</dd>
 <dd>Parameters: is_null_interface()</dd>
@@ -10998,6 +11793,16 @@
 <dd>Description: Get faction strength rank</dd>
 <dd>Parameters: faction_strength_rank(FACTION_SCRIPT_INTERFACE faction)</dd>
 <dd>Return: card32</dd>
+<br>
+<dd>Function: <a name="WORLD_SCRIPT_INTERFACElookup_factions_from_faction_set">lookup_factions_from_faction_set</a></dd>
+<dd>Description: Get a list of factions present in the campaign that are contained within the given faction set</dd>
+<dd>Parameters: lookup_factions_from_faction_set(String faction_set_key)</dd>
+<dd>Return: <a href="#FACTION_LIST_SCRIPT_INTERFACE">FACTION_LIST_SCRIPT_INTERFACE</a></dd>
+<br>
+<dd>Function: <a name="WORLD_SCRIPT_INTERFACElookup_regions_from_region_group">lookup_regions_from_region_group</a></dd>
+<dd>Description: Get a list of regions present in the campaign that are contained within the given region group</dd>
+<dd>Parameters: lookup_regions_from_region_group(String region_group_key)</dd>
+<dd>Return: <a href="#REGION_LIST_SCRIPT_INTERFACE">REGION_LIST_SCRIPT_INTERFACE</a></dd>
 <br>
 </dl>
 
