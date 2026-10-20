@@ -87,6 +87,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_global_vo_argument">set_global_vo_argument</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:contextual_vo_enabled">contextual_vo_enabled</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_character_actor_group_override">add_character_actor_group_override</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_episode_stage_audio_awareness">set_episode_stage_audio_awareness</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Camera">Camera</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_camera_position">set_camera_position</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:get_camera_position">get_camera_position</a></li>
@@ -154,6 +155,19 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:disable_shopping_for_ai_under_shroud">disable_shopping_for_ai_under_shroud</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_terrain_patch_visible">force_terrain_patch_visible</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:reset_forced_terrain_patch_visibility">reset_forced_terrain_patch_visibility</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:dynamic_region_group_exists">dynamic_region_group_exists</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:create_dynamic_region_group">create_dynamic_region_group</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_dynamic_region_group">remove_dynamic_region_group</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_region_to_dynamic_region_group">add_region_to_dynamic_region_group</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_region_from_dynamic_region_group">remove_region_from_dynamic_region_group</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:dynamic_region_group_pooled_resource_manager_exists"><div class="tooltip_container">dynamic_region_group_pooled_resource_manager_exi...<span style="background-color:#fff7cc"  class="tooltip_text">dynamic_region_group_pooled_resource_manager_exists</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:create_dynamic_region_group_pooled_resource_manager"><div class="tooltip_container">create_dynamic_region_group_pooled_resource_mana...<span style="background-color:#fff7cc"  class="tooltip_text">create_dynamic_region_group_pooled_resource_manager</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_dynamic_region_group_pooled_resource_manager"><div class="tooltip_container">remove_dynamic_region_group_pooled_resource_mana...<span style="background-color:#fff7cc"  class="tooltip_text">remove_dynamic_region_group_pooled_resource_manager</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:region_group_add_pooled_resource">region_group_add_pooled_resource</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:character_details_add_experience">character_details_add_experience</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:character_details_add_ancillary">character_details_add_ancillary</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:character_details_set_rank">character_details_set_rank</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:character_details_add_skill_point">character_details_add_skill_point</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:grant_faction_additional_vision">grant_faction_additional_vision</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_faction_additional_vision">remove_faction_additional_vision</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Shared States">Shared States</a></li>
@@ -187,6 +201,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_agent_experience">add_agent_experience</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_agent_experience_through_family_member">add_agent_experience_through_family_member</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_experience_to_unit">add_experience_to_unit</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:upgrade_unit">upgrade_unit</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_experience_to_units_commanded_by_character">add_experience_to_units_commanded_by_character</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_character_experience_disabled">set_character_experience_disabled</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_unit_experience_disabled">set_unit_experience_disabled</a></li>
@@ -196,12 +211,15 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:cancel_actions_for">cancel_actions_for</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:teleport_to">teleport_to</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:teleport_military_force_to">teleport_military_force_to</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:enter_limbo">enter_limbo</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:leave_limbo">leave_limbo</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:join_garrison">join_garrison</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:leave_garrison">leave_garrison</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:attack">attack</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:attack_region">attack_region</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:attack_queued">attack_queued</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_attack_of_opportunity">force_attack_of_opportunity</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:teleport_and_prepare_for_battle">teleport_and_prepare_for_battle</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:seek_exchange">seek_exchange</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:replenish_action_points">replenish_action_points</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:zero_action_points">zero_action_points</a></li>
@@ -308,10 +326,14 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_unit_to_faction_mercenary_pool">add_unit_to_faction_mercenary_pool</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_units_to_faction_mercenary_pool">add_units_to_faction_mercenary_pool</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_unit_to_province_mercenary_pool">add_unit_to_province_mercenary_pool</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_mercenary_pool_unit_scripted_capacity_bonus">set_mercenary_pool_unit_scripted_capacity_bonus</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_units_to_province_mercenary_pool_by_region">add_units_to_province_mercenary_pool_by_region</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_units_from_province_mercenary_pool_by_region"><div class="tooltip_container">remove_units_from_province_mercenary_pool_by_reg...<span style="background-color:#fff7cc"  class="tooltip_text">remove_units_from_province_mercenary_pool_by_region</span></div></a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:change_home_region_of_faction">change_home_region_of_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:override_human_player_max_units">override_human_player_max_units</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_or_remove_faction_features">add_or_remove_faction_features</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:grant_research_points">grant_research_points</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:change_influence">change_influence</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Missions">Missions</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:trigger_mission">trigger_mission</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:trigger_custom_mission">trigger_custom_mission</a></li>
@@ -330,6 +352,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:complete_scripted_mission_objective">complete_scripted_mission_objective</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_scripted_mission_entity_completion_states">set_scripted_mission_entity_completion_states</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_scripted_mission_entities">remove_scripted_mission_entities</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:increase_scripted_mission_count">increase_scripted_mission_count</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Incidents & Dilemmas">Incidents & Dilemmas</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:trigger_incident">trigger_incident</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:trigger_custom_incident">trigger_custom_incident</a></li>
@@ -362,14 +385,21 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:region_slot_instantly_repair_building">region_slot_instantly_repair_building</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:foreign_slot_instantly_dismantle_building">foreign_slot_instantly_dismantle_building</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:foreign_slot_instantly_upgrade_building">foreign_slot_instantly_upgrade_building</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:foreign_slot_instantly_complete_construction">foreign_slot_instantly_complete_construction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_faction_foreign_slots_from_region">remove_faction_foreign_slots_from_region</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:instant_set_building_health_percent">instant_set_building_health_percent</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_lifecycle_transition_progress">force_lifecycle_transition_progress</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_lifecycle_transition">force_lifecycle_transition</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:override_building_chain_display">override_building_chain_display</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_building_to_force">add_building_to_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_building_to_settlement">add_building_to_settlement</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_building_to_settlement_queue">add_building_to_settlement_queue</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_foreign_slot_set_to_region_for_faction">add_foreign_slot_set_to_region_for_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:instantly_set_settlement_primary_slot_level">instantly_set_settlement_primary_slot_level</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_settlement_wall_health">set_settlement_wall_health</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:damage_settlement_walls">damage_settlement_walls</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:override_settlement_climate">override_settlement_climate</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:reset_settlement_climate">reset_settlement_climate</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:get_building_level_upgrades">get_building_level_upgrades</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Effect Bundles">Effect Bundles</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_effect_bundle">apply_effect_bundle</a></li>
@@ -392,17 +422,25 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_custom_effect_bundle_to_force">apply_custom_effect_bundle_to_force</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_custom_effect_bundle_to_faction_province">apply_custom_effect_bundle_to_faction_province</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_custom_effect_bundle_to_characters_force">apply_custom_effect_bundle_to_characters_force</a></li>
+						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Effect List">Effect List</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:get_effect_list_by_key">get_effect_list_by_key</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Diplomacy">Diplomacy</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_diplomacy_new">force_diplomacy_new</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_declare_war">force_declare_war</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_make_vassal">force_make_vassal</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_break_vassalage">force_break_vassalage</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_alliance">force_alliance</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_grant_military_access">force_grant_military_access</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_break_military_access">force_break_military_access</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_non_aggression_pact">force_non_aggression_pact</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_break_non_aggression_pact">force_break_non_aggression_pact</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_make_peace">force_make_peace</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_rebellion_with_faction">force_rebellion_with_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_confederation">force_confederation</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_awake_from_death_and_confederate">force_awake_from_death_and_confederate</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_make_trade_agreement">force_make_trade_agreement</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:make_diplomacy_available">make_diplomacy_available</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_garrison_residence_exposed_to_faction">add_garrison_residence_exposed_to_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_offers_peace_to_other_faction">faction_offers_peace_to_other_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_dilemma_diplomatic_bonus">apply_dilemma_diplomatic_bonus</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Restrictions">Restrictions</a></li>
@@ -414,6 +452,10 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_event_restricted_building_record">remove_event_restricted_building_record</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_event_restricted_building_record_for_faction">add_event_restricted_building_record_for_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_event_restricted_building_record_for_faction"><div class="tooltip_container">remove_event_restricted_building_record_for_fact...<span style="background-color:#fff7cc"  class="tooltip_text">remove_event_restricted_building_record_for_faction</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_event_restricted_occupation_option_record">add_event_restricted_occupation_option_record</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_event_restricted_occupation_option_record">remove_event_restricted_occupation_option_record</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_event_restricted_occupation_option_record_for_faction"><div class="tooltip_container">add_event_restricted_occupation_option_record_fo...<span style="background-color:#fff7cc"  class="tooltip_text">add_event_restricted_occupation_option_record_for_faction</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_event_restricted_occupation_option_record_for_faction"><div class="tooltip_container">remove_event_restricted_occupation_option_record...<span style="background-color:#fff7cc"  class="tooltip_text">remove_event_restricted_occupation_option_record_for_faction</span></div></a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:lock_technology">lock_technology</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:lock_one_technology_node">lock_one_technology_node</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_technology">unlock_technology</a></li>
@@ -427,6 +469,8 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:enable_movement_for_character">enable_movement_for_character</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:enable_movement_for_faction">enable_movement_for_faction</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:disable_pathfinding_restriction">disable_pathfinding_restriction</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_event_restricted_building_chain_record_for_region"><div class="tooltip_container">add_event_restricted_building_chain_record_for_r...<span style="background-color:#fff7cc"  class="tooltip_text">add_event_restricted_building_chain_record_for_region</span></div></a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:remove_event_restricted_building_chain_record_for_region"><div class="tooltip_container">remove_event_restricted_building_chain_record_fo...<span style="background-color:#fff7cc"  class="tooltip_text">remove_event_restricted_building_chain_record_for_region</span></div></a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Pooled Resources">Pooled Resources</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:faction_add_pooled_resource">faction_add_pooled_resource</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:add_regular_pooled_resource_transaction">add_regular_pooled_resource_transaction</a></li>
@@ -436,6 +480,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_regular_reset_income">apply_regular_reset_income</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Winds of Magic">Winds of Magic</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_winds_of_magic_change">force_winds_of_magic_change</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:get_winds_of_magic_in_area_for_region">get_winds_of_magic_in_area_for_region</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Rituals">Rituals</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:perform_ritual">perform_ritual</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:create_new_ritual_setup">create_new_ritual_setup</a></li>
@@ -447,6 +492,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_ritual_chain">unlock_ritual_chain</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:lock_rituals_in_category">lock_rituals_in_category</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_rituals_in_category">unlock_rituals_in_category</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_ritual_cooldown">apply_ritual_cooldown</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_active_ritual">apply_active_ritual</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:apply_active_rituals">apply_active_rituals</a></li>
 						<li>&emsp;&emsp;<a href="#section:episodic_scripting:Plagues">Plagues</a></li>
@@ -461,6 +507,7 @@
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:force_cook_recipe_with_ingredients">force_cook_recipe_with_ingredients</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_cooking_ingredient">unlock_cooking_ingredient</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:unlock_cooking_recipe">unlock_cooking_recipe</a></li>
+							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:upgrade_cooking_recipe">upgrade_cooking_recipe</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:clear_active_cooking_recipe">clear_active_cooking_recipe</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_faction_max_primary_cooking_ingredients">set_faction_max_primary_cooking_ingredients</a></li>
 							<li>&emsp;&emsp;&emsp;&emsp;<a href="#function:episodic_scripting:set_faction_max_secondary_cooking_ingredients">set_faction_max_secondary_cooking_ingredients</a></li>
@@ -615,6 +662,7 @@
 					<li><a href="narrative_events.html">Narrative Event Templates</a></li>
 					<li><a href="narrative_queries.html">Narrative Query Templates</a></li>
 					<li><a href="narrative_triggers.html">Narrative Trigger Templates</a></li>
+					<li><a href="victory_objective_helpers.html">Victory Objective Helpers</a></li>
 
 				</ul>
 
@@ -1589,6 +1637,50 @@
 									</td>
 									<td>
 										<p>Actor VO record key, from the <code>audio_vo_actors</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:set_episode_stage_audio_awareness"><h3 class="function_name"><strong><code>cm:set_episode_stage_audio_awareness(string </strong></code><i class="parameter">episode_dialogue_event</i><code><strong>, string </strong></code><i class="parameter">stage_type</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Set the episode stage audio awareness event and type for the audio system
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Dynamic dialoge event that is used for this episode</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Type of the stage - this will be passed to the dynamic dialogue event</p>
 									</td>
 								</tr>
 							</table>
@@ -4210,6 +4302,569 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:dynamic_region_group_exists"><h3 class="function_name"><strong><code>cm:dynamic_region_group_exists(string </strong></code><i class="parameter">region_group_id</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Checks whether a dynamic region group with the provided id exists
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the region group</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> </li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:create_dynamic_region_group"><h3 class="function_name"><strong><code>cm:create_dynamic_region_group(string </strong></code><i class="parameter">region_group_id</i><code><strong>, string </strong></code><i class="parameter">region_group_category_key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Creates a dynamic region group with the provided id
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id for the new region group</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Key of the region group category from DB</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="model_hierarchy.html#class:region_group_dynamic_data">region_group_dynamic_data</a></code>,</code> The created dynamic region group</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_dynamic_region_group"><h3 class="function_name"><strong><code>cm:remove_dynamic_region_group(string </strong></code><i class="parameter">region_group_id</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a dynamic region group with the provided id
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the region group to remove</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:add_region_to_dynamic_region_group"><h3 class="function_name"><strong><code>cm:add_region_to_dynamic_region_group(string </strong></code><i class="parameter">region_group_id</i><code><strong>, REGION_SCRIPT_INTERFACE </strong></code><i class="parameter">region</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Add a region to a dynamic region group
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the region group</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>REGION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Region to add to the group</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_region_from_dynamic_region_group"><h3 class="function_name"><strong><code>cm:remove_region_from_dynamic_region_group(string </strong></code><i class="parameter">region_group_id</i><code><strong>, REGION_SCRIPT_INTERFACE </strong></code><i class="parameter">region</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Remove a region from a dynamic region group
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the region group</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>REGION_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>Region to remove from the group</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:dynamic_region_group_pooled_resource_manager_exists"><h3 class="function_name"><strong><code>cm:dynamic_region_group_pooled_resource_manager_exists(string </strong></code><i class="parameter">region_group_id</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Checks whether a dynamic region group pooled resource manager with the provided id exists
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the resource manager</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> </li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:create_dynamic_region_group_pooled_resource_manager"><h3 class="function_name"><strong><code>cm:create_dynamic_region_group_pooled_resource_manager(string </strong></code><i class="parameter">region_group_id</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Creates a dynamic region group pooled resource manager with the provided id
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id for the new resource manager</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>REGION_GROUP_POOLED_RESOURCE_MANAGERS_SYSTEM_SCRIPT_INTERFACE</code> The created dynamic region group pooled resource manager</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_dynamic_region_group_pooled_resource_manager"><h3 class="function_name"><strong><code>cm:remove_dynamic_region_group_pooled_resource_manager(string </strong></code><i class="parameter">region_group_id</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a dynamic region group pooled resource manager with the provided id
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the resource manager to remove</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:region_group_add_pooled_resource"><h3 class="function_name"><strong><code>cm:region_group_add_pooled_resource(<br />&emsp;&emsp;string </strong></code><i class="parameter">region_group_id</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">resource key</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">factor key</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">amount</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Add a specified amount of resource to a region group pooled resource manager as the specified factor. Clamped to pool and factor bounds
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Id of the resource manager to remove</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Pooled resource key, from the <code>pooled_resources</code> table</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>Change factor key, from the <code>pooled_resource_factors</code> table</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code>number</code></p>
+									</td>
+									<td>
+										<p>Amount of resource to add. This value can be negative</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:character_details_add_experience"><h3 class="function_name"><strong><code>cm:character_details_add_experience(<br />&emsp;&emsp;CHARACTER_DETAILS_SCRIPT_INTERFACE </strong></code><i class="parameter">character_details The character details object</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">experience_amount Amount of experience to add</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Add experience to a character details object. This can be used to pre-configure a character setup for the recruitment pool.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>CHARACTER_DETAILS_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>character_details The character details object</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>number</code></p>
+									</td>
+									<td>
+										<p>experience_amount Amount of experience to add</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:character_details_add_ancillary"><h3 class="function_name"><strong><code>cm:character_details_add_ancillary(<br />&emsp;&emsp;CHARACTER_DETAILS_SCRIPT_INTERFACE </strong></code><i class="parameter">character_details The character details object</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">ancillary_key The ancillary to add to the character</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Add an ancillary to a character details object. This can be used to pre-configure a character setup for the recruitment pool.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>CHARACTER_DETAILS_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>character_details The character details object</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>ancillary_key The ancillary to add to the character</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>boolean</code> Whetehr the ancillary was equipped successfully</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:character_details_set_rank"><h3 class="function_name"><strong><code>cm:character_details_set_rank(<br />&emsp;&emsp;CHARACTER_DETAILS_SCRIPT_INTERFACE </strong></code><i class="parameter">character_details The character details object</i><code><strong>, <br />&emsp;&emsp;number </strong></code><i class="parameter">rank The rank to instantly set to</i><code><strong>, <br />&emsp;&emsp;[boolean </strong></code><i class="parameter">reset_skills Whetehr the points assigned to skills should be reset</i><code><strong>], <br />&emsp;&emsp;[boolean </strong></code><i class="parameter">should_stack_recruitment_rank_bonus Whether positive recruit-rank bonuses should be added to the stored rank instead of replacing it</i><code><strong>]<br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Set the rank on a character details object. This can be used to pre-configure a character setup for the recruitment pool.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>CHARACTER_DETAILS_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>character_details The character details object</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>number</code></p>
+									</td>
+									<td>
+										<p>rank The rank to instantly set to</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code>boolean</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=true</i></p>
+										<p>reset_skills Whetehr the points assigned to skills should be reset</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code>boolean</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>should_stack_recruitment_rank_bonus Whether positive recruit-rank bonuses should be added to the stored rank instead of replacing it</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:character_details_add_skill_point"><h3 class="function_name"><strong><code>cm:character_details_add_skill_point(<br />&emsp;&emsp;CHARACTER_DETAILS_SCRIPT_INTERFACE </strong></code><i class="parameter">character_details The character details object</i><code><strong>, <br />&emsp;&emsp;string </strong></code><i class="parameter">character_skill_key The key of the character skill</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Add a skill point to a character details object. This can be used to pre-configure a character setup for the recruitment pool.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code>CHARACTER_DETAILS_SCRIPT_INTERFACE</code></p>
+									</td>
+									<td>
+										<p>character_details The character details object</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code>string</code></p>
+									</td>
+									<td>
+										<p>that the point will be added to</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:grant_faction_additional_vision"><h3 class="function_name"><strong><code>cm:grant_faction_additional_vision(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="model_hierarchy.html#class:region_data">region_data</a></code> </strong></code><i class="parameter">region data</i><code><strong>, [<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">duration</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -4539,7 +5194,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:create_force_with_general"><h3 class="function_name"><strong><code>cm:create_force_with_general(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character type</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character subtype</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">forename</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">clanname</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">surname</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">other name</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">id</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">make faction leader</i><code><strong><br />)</code></strong></h3></a>
+							<a name="function:episodic_scripting:create_force_with_general"><h3 class="function_name"><strong><code>cm:create_force_with_general(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">unit list</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">x</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">y</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character type</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character subtype</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">forename</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">clanname</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">surname</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">other name</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">id</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">make faction leader</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">force diplomatic discovery for AI</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">no background trait</i><code><strong><br />)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Creates an army or a navy commanded by a specified character at the specified position, belonging to the specified faction, with the specified list of units. If the faction doesn't exist on the campaign map then it will also be created.
@@ -4692,6 +5347,28 @@
 									</td>
 									<td>
 										<p>Make this character the faction leader.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>14</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>This makes their faction discover all the other AI factions (AI factions dont have shroud).This will not work for human factions.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>15</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>This will make it so the character spawned doesn't have any initial traits.</p>
 									</td>
 								</tr>
 							</table>
@@ -6352,6 +7029,50 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:upgrade_unit"><h3 class="function_name"><strong><code>cm:upgrade_unit(<code><a href="model_hierarchy.html#class:unit">unit</a></code> </strong></code><i class="parameter">unit interface</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">upgrade main unit key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Upgrade unit using a provided main unit key. Returns the new unit. If the upgrade succeeds, all references to the previous unit are invalidated.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:unit">unit</a></code></code></p>
+									</td>
+									<td>
+										<p>unit interface</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>upgrade main unit key</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="model_hierarchy.html#class:unit">unit</a></code></code> the resulting unit</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:add_experience_to_units_commanded_by_character"><h3 class="function_name"><strong><code>cm:add_experience_to_units_commanded_by_character(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">level</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -6761,6 +7482,128 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:enter_limbo"><h3 class="function_name"><strong><code>cm:enter_limbo(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">x</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">y</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Sends character in limbo. Uses normal character lookup.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Character lookup string. For more information, see <code><a href="#section:episodic_scripting:Character Lookups">Character Lookups</a></code>.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Logical x co-ordinate of target position.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Logical y co-ordinate of target position.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:leave_limbo"><h3 class="function_name"><strong><code>cm:leave_limbo(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">x</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">y</i><code><strong>, [<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">force_leave</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Causes character to leave limbo, forcing if force_leave is set to true, at logical position given with x, y.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Character lookup string. For more information, see <code><a href="#section:episodic_scripting:Character Lookups">Character Lookups</a></code>.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Logical x co-ordinate of target position.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Logical y co-ordinate of target position.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Forces the character to exit limbo.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:join_garrison"><h3 class="function_name"><strong><code>cm:join_garrison(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">settlement</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -7017,7 +7860,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:force_attack_of_opportunity"><h3 class="function_name"><strong><code>cm:force_attack_of_opportunity(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">attacker cqi</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">target cqi</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">is ambush</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:force_attack_of_opportunity"><h3 class="function_name"><strong><code>cm:force_attack_of_opportunity(<br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">attacker cqi</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">target cqi</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">is ambush</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">force regular battle</i><code><strong>], <br />&emsp;&emsp;[<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">restrict reinforcements</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Orders the specified character to attack a target character through an attack of opportunity - either an interception or an ambush. Note that this function requires character cqis to be passed in as arguments and not lookup strings.<br />
@@ -7038,7 +7881,7 @@
 										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
 									</td>
 									<td>
-										<p>Command-queue index of the attacking character.</p>
+										<p>Command-queue index of the attacking military force.</p>
 									</td>
 								</tr>
 								<tr>
@@ -7049,7 +7892,7 @@
 										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
 									</td>
 									<td>
-										<p>Command-queue index of the target character.</p>
+										<p>Command-queue index of the target military force.</p>
 									</td>
 								</tr>
 								<tr>
@@ -7061,6 +7904,122 @@
 									</td>
 									<td>
 										<p>Set to <code>true</code> to ambush, or <code>false</code> to intercept.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>If set to <code>true</code>, the pre-battle UI will display the battle as a regular battle rather than an attack of opportunity.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>5</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>If set to <code>true</code>, only the primary attacker and defender armies will participate in the battle. Nearby armies in reinforcement range will not be included.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:teleport_and_prepare_for_battle"><h3 class="function_name"><strong><code>cm:teleport_and_prepare_for_battle(<br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">character cqi</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">mission_key</i><code><strong>, <br />&emsp;&emsp;[location_x, </strong></code><i class="parameter">X position of the overriden location of the quest battle</i><code><strong>], <br />&emsp;&emsp;[location_y, </strong></code><i class="parameter">Y position of the overriden location of the quest battle</i><code><strong>], <br />&emsp;&emsp;[ignore_cost, </strong></code><i class="parameter">ignore teleportation cost</i><code><strong>], <br />&emsp;&emsp;[start_mission, </strong></code><i class="parameter">whether to start the mission</i><code><strong>]<br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Start a quest battle (with optionally overriden location) and teleport a character to it
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Command-queue index of the character.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the mission</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code>location_x,</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=-1</i></p>
+										<p>X position of the overriden location of the quest battle</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code>location_y,</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=-1</i></p>
+										<p>Y position of the overriden location of the quest battle</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>5</strong></p>
+									</td>
+									<td>
+										<p><code>ignore_cost,</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>ignore teleportation cost</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>6</strong></p>
+									</td>
+									<td>
+										<p><code>start_mission,</code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=true</i></p>
+										<p>whether to start the mission</p>
 									</td>
 								</tr>
 							</table>
@@ -7238,7 +8197,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:kill_character_and_commanded_unit"><h3 class="function_name"><strong><code>cm:kill_character_and_commanded_unit(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">destroy force</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:kill_character_and_commanded_unit"><h3 class="function_name"><strong><code>cm:kill_character_and_commanded_unit(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">character lookup</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">destroy force</i><code><strong>, [<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">silent</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
 							Kills a specified character and their associated unit, and optionally also the entire military force they command.
@@ -7270,6 +8229,18 @@
 									</td>
 									<td>
 										<p>Destroy the character and the entire military force they command.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=false</i></p>
+										<p>Suppress the event message.</p>
 									</td>
 								</tr>
 							</table>
@@ -9011,7 +9982,7 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:toggle_initiative_active"><h3 class="function_name"><strong><code>cm:toggle_initiative_active(INITIATIVE_INTERFACE </strong></code><i class="parameter">initiative</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">set active</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:toggle_initiative_active"><h3 class="function_name"><strong><code>cm:toggle_initiative_active(<br />&emsp;&emsp;<code><a href="model_hierarchy.html#class:initiative_set">initiative_set</a></code> </strong></code><i class="parameter">initiative_set</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">initiative_key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">set active</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">slot index</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Sets an initiative to active/inactive. A <code><a href="lua.html#class:boolean">boolean</a></code> value indicating whether the toggle was successful is returned.
@@ -9028,10 +9999,10 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
-										<p><code>INITIATIVE_INTERFACE</code></p>
+										<p><code><code><a href="model_hierarchy.html#class:initiative_set">initiative_set</a></code></code></p>
 									</td>
 									<td>
-										<p>initiative</p>
+										<p>initiative_set</p>
 									</td>
 								</tr>
 								<tr>
@@ -9039,10 +10010,33 @@
 										<p><strong>2</strong></p>
 									</td>
 									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>initiative_key</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
 										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
 									</td>
 									<td>
 										<p>set active</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=nil</i></p>
+										<p>The slot in which the initiative is to be activated it. Unassigned slot is used if no number is provided. </p>
 									</td>
 								</tr>
 							</table>
@@ -9055,7 +10049,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:toggle_initiative_script_locked"><h3 class="function_name"><strong><code>cm:toggle_initiative_script_locked(INITIATIVE_INTERFACE </strong></code><i class="parameter">initiative</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">script locked</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:toggle_initiative_script_locked"><h3 class="function_name"><strong><code>cm:toggle_initiative_script_locked(<br />&emsp;&emsp;<code><a href="model_hierarchy.html#class:initiative_set">initiative_set</a></code> </strong></code><i class="parameter">initiative_set</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">initiative_key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">script locked</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">lock reason</i><code><strong>]<br />)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Sets whether an initiative is script locked. A <code><a href="lua.html#class:boolean">boolean</a></code> value indicating whether the toggle was successful is returned.
@@ -9072,15 +10066,26 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
-										<p><code>INITIATIVE_INTERFACE</code></p>
+										<p><code><code><a href="model_hierarchy.html#class:initiative_set">initiative_set</a></code></code></p>
 									</td>
 									<td>
-										<p>initiative</p>
+										<p>initiative_set</p>
 									</td>
 								</tr>
 								<tr>
 									<td>
 										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>initiative_key</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
 									</td>
 									<td>
 										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
@@ -9089,11 +10094,23 @@
 										<p>script locked</p>
 									</td>
 								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=nil</i></p>
+										<p>lock reason</p>
+									</td>
+								</tr>
 							</table>
 
 							<h4>Returns:</h4>
 							<ol>
-								<li><code>nil</code></li>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> lock successful</li>
 							</ol>
 						</dd>
 					</dl>
@@ -11357,7 +12374,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:transfer_region_to_faction"><h3 class="function_name"><strong><code>cm:transfer_region_to_faction(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:transfer_region_to_faction"><h3 class="function_name"><strong><code>cm:transfer_region_to_faction(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, [<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">settlement type</i><code><strong>])</code></strong></h3></a>
 						</dt>
 						<dd>
 							Immediately transfers ownership of the specified region to the specified faction.
@@ -11389,6 +12406,18 @@
 									</td>
 									<td>
 										<p>Faction key, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=""</i></p>
+										<p>Settlement type, from the <code>settlement_types</code> table.</p>
 									</td>
 								</tr>
 							</table>
@@ -11864,6 +12893,72 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:set_mercenary_pool_unit_scripted_capacity_bonus"><h3 class="function_name"><strong><code>cm:set_mercenary_pool_unit_scripted_capacity_bonus(<br />&emsp;&emsp;<code><a href="model_hierarchy.html#class:mercenary_pool_unit">mercenary_pool_unit</a></code> </strong></code><i class="parameter">pool unit</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">bonus</i><code><strong>, <br />&emsp;&emsp;[opt] </strong></code><i class="parameter"><code><a href="lua.html#class:string">string</a></code> source</i><code><strong>, <br />&emsp;&emsp;[opt] </strong></code><i class="parameter"><code><a href="lua.html#class:number">number</a></code> expiry_turn</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Province mercenary pool capacity is driven by DB base max plus faction-province effects, and that total is rebuilt on turn start. Script could only soft-add units up to the current max, or fully replace the pool entry with <code><a href="#function:episodic_scripting:add_unit_to_province_mercenary_pool">cm:add_unit_to_province_mercenary_pool</a></code>, which overwrites count, base max, and current max and breaks effect-driven capacity. There was no way to grant temporary extra stock above the live cap without permanently corrupting those values. This sets a flat scripted capacity bonus that adjusts current max immediately and is reapplied when caps are recalculated, so script can raise capacity, soft-add units, and leave DB/effect math intact. Bonuses are stored per optional source key and summed into the total; use a unique source per feature so cleanup does not affect other scripts. Optional expiry_turn removes that source during pool replenishment at the start of the given script turn.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:mercenary_pool_unit">mercenary_pool_unit</a></code></code></p>
+									</td>
+									<td>
+										<p>Mercenary pool unit to modify.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Flat capacity bonus to apply for the source.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code>[opt]</code></p>
+									</td>
+									<td>
+										<p>Source key for this bonus. Empty string is the default/anonymous source.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code>[opt]</code></p>
+									</td>
+									<td>
+										<p>Script turn number at which this source is removed. Pass a negative value (or omit) for no expiry. For next-turn expiry, pass <code>cm:model():turn_number() + 1</code>.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:add_units_to_province_mercenary_pool_by_region"><h3 class="function_name"><strong><code>cm:add_units_to_province_mercenary_pool_by_region(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">unit key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">count</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -11907,6 +13002,61 @@
 									</td>
 									<td>
 										<p>Number of units to add.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_units_from_province_mercenary_pool_by_region"><h3 class="function_name"><strong><code>cm:remove_units_from_province_mercenary_pool_by_region(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">unit key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">count</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes one or more of a specified unit from the specified province mercenary pool. The province is specified by a region within it. Unlike with <code><a href="#function:episodic_scripting:add_unit_to_province_mercenary_pool">cm:add_unit_to_province_mercenary_pool</a></code>, the unit type must already be represented in the pool.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Region key of a region within the target province, from the <code>campaign_map_regions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Unit key, from the <code>main_units</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Number of units to remove.</p>
 									</td>
 								</tr>
 							</table>
@@ -12046,6 +13196,94 @@
 							<h4>Returns:</h4>
 							<ol>
 								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> any features successfully added or removed</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:grant_research_points"><h3 class="function_name"><strong><code>cm:grant_research_points(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction_key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">amount</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Immediately gives a faction a set number of research points.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the faction to give research points to.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The amount of research points to give.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:change_influence"><h3 class="function_name"><strong><code>cm:change_influence(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction_key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">amount</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Immediately gives a faction a set number of influence points
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the faction to give influence points to.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The amount of  points to give. Can be negative.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
 							</ol>
 						</dd>
 					</dl>
@@ -12984,6 +14222,61 @@
 									</td>
 									<td>
 										<p>Entity table. This should be a table containing one or more interface objects to remove, in the form <code>{region, character, faction}</code>.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:increase_scripted_mission_count"><h3 class="function_name"><strong><code>cm:increase_scripted_mission_count(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">mission key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">script key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">count</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Increase scripted objective counter. Scripted mission has to be set up with a counter condition (need example of setup)
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Mission key, from the <code>missions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the particular scripted objective associated with the mission.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>The value to increase counter by</p>
 									</td>
 								</tr>
 							</table>
@@ -14508,10 +15801,43 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:remove_faction_foreign_slots_from_region"><h3 class="function_name"><strong><code>cm:remove_faction_foreign_slots_from_region(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">faction cqi</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">region cqi</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:foreign_slot_instantly_complete_construction"><h3 class="function_name"><strong><code>cm:foreign_slot_instantly_complete_construction(<code><a href="model_hierarchy.html#class:foreign_slot">foreign_slot</a></code> </strong></code><i class="parameter">slot</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Removes the specified foreign slot set from the target region, for the target faction.
+							Instantly completes any in-progress construction in the specified foreign slot.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:foreign_slot">foreign_slot</a></code></code></p>
+									</td>
+									<td>
+										<p>Foreign slot script interface.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_faction_foreign_slots_from_region"><h3 class="function_name"><strong><code>cm:remove_faction_foreign_slots_from_region(<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">faction cqi</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">region cqi</i><code><strong>, [<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">slot set key</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Remove the specified foreign slot manager of the specified faction from the specified region [optionally of the specified slot_set key]. If slot_set_key is not supplied then the first foreign slot manager found in the region for the faction is removed.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -14540,6 +15866,18 @@
 									</td>
 									<td>
 										<p>Command-queue index value of the target region.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=nil</i></p>
+										<p>Slot set key, from the <code>slot_sets</code> table.</p>
 									</td>
 								</tr>
 							</table>
@@ -14595,6 +15933,105 @@
 									</td>
 									<td>
 										<p>New health value of building, expressed as a number from 0 to 100.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_lifecycle_transition_progress"><h3 class="function_name"><strong><code>cm:force_lifecycle_transition_progress(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">building key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">transition amount</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force a lifecycle building to transition N amount of turns.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Region key, from the <code>campaign_map_regions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Building level or chain key, from either the <code>building_levels</code> or <code>building_chains</code> tables.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>How many turns to transition.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_lifecycle_transition"><h3 class="function_name"><strong><code>cm:force_lifecycle_transition(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">building key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force a lifecycle building to transition to the next building.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Region key, from the <code>campaign_map_regions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Building level or chain key, from either the <code>building_levels</code> or <code>building_chains</code> tables.</p>
 									</td>
 								</tr>
 							</table>
@@ -14881,6 +16318,171 @@
 							<h4>Returns:</h4>
 							<ol>
 								<li><code><code><a href="model_hierarchy.html#class:building">building</a></code></code> new primary building</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:set_settlement_wall_health"><h3 class="function_name"><strong><code>cm:set_settlement_wall_health(<code><a href="model_hierarchy.html#class:settlement">settlement</a></code> </strong></code><i class="parameter">settlement</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">number_of_breaches</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Set the settlement wall health by number of breaches
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:settlement">settlement</a></code></code></p>
+									</td>
+									<td>
+										<p>The settlement we'll be modifying the wall health to</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>How many breaches to set the health to. 0 means wall is healed to full, 2 means wall will have the exact amount of health for 2 breaches</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> success, Returns true on success, false on failure. Failure can be due to wrong settlement interface or settlement not having walls.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:damage_settlement_walls"><h3 class="function_name"><strong><code>cm:damage_settlement_walls(<code><a href="model_hierarchy.html#class:settlement">settlement</a></code> </strong></code><i class="parameter">settlement</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">number_of_breaches</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Add additional breaches to a settlement's walls
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:settlement">settlement</a></code></code></p>
+									</td>
+									<td>
+										<p>The settlement we'll be breaching</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>How many breaches to add to the walls.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> success, Returns true on success, false on failure. Failure can be due to wrong settlement interface or settlement not having walls.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:override_settlement_climate"><h3 class="function_name"><strong><code>cm:override_settlement_climate(<code><a href="model_hierarchy.html#class:settlement">settlement</a></code> </strong></code><i class="parameter">settlement</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">new_climate_type</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Override the settlement's climate with a new one
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:settlement">settlement</a></code></code></p>
+									</td>
+									<td>
+										<p>The settlement we're modifying</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Climate type from 'settlement_climate_types' database table</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> success, Returns true on success, false on failure. Failure can be due to wrong settlement interface or wrong climate type.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:reset_settlement_climate"><h3 class="function_name"><strong><code>cm:reset_settlement_climate(<code><a href="model_hierarchy.html#class:settlement">settlement</a></code> </strong></code><i class="parameter">settlement</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Reset the settlement's climate to the original one
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:settlement">settlement</a></code></code></p>
+									</td>
+									<td>
+										<p>The settlement we're resetting</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
 							</ol>
 						</dd>
 					</dl>
@@ -15832,6 +17434,47 @@
 
 				<div>
 					<a style="float:right;" href="#top">Back to top</a>
+					<a name="section:episodic_scripting:Effect List"><h2 class="section_header">Effect List</h2></a>
+				</div>
+				<div class="section_body">
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:get_effect_list_by_key"><h3 class="function_name"><strong><code>cm:get_effect_list_by_key(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">effect_list_key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Returns a EFFECT_LIST_SCRIPT_INTERFACE that contains the effects that are part of an effect list key
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>effect_list_key</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:table">table</a></code></code> table of effects in the effect list</li>
+							</ol>
+						</dd>
+					</dl>
+				</div>
+
+
+				<div>
+					<a style="float:right;" href="#top">Back to top</a>
 					<a name="section:episodic_scripting:Diplomacy"><h2 class="section_header">Diplomacy</h2></a>
 				</div>
 				<div class="section_body">
@@ -16081,6 +17724,39 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:force_break_vassalage"><h3 class="function_name"><strong><code>cm:force_break_vassalage(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">vassal faction key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force a faction to stop being a vassal of another faction
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Key of the faction which is the vassal, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:force_alliance"><h3 class="function_name"><strong><code>cm:force_alliance(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">first faction key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">second faction key</i><code><strong>, <code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">is military alliance</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -16179,6 +17855,171 @@
 									</td>
 									<td>
 										<p>Indicates whether this should be hard military access. This concept is currently unused.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_break_military_access"><h3 class="function_name"><strong><code>cm:force_break_military_access(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">breaking faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipient faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">dissolved</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">is hard access</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force one faction to revoke military access to another faction
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the breaking faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the recipient faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Whether the access was dissolved. If true will not have any repercussions for the breaking faction, if false there will be a negative diplomatic event and reliability of breaking faction may lower.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>4</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Indicates whether this should be hard military access. This concept is currently unused.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_non_aggression_pact"><h3 class="function_name"><strong><code>cm:force_non_aggression_pact(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">granting faction key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipient faction key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force one faction to sign a non aggression pact with another faction
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the granting faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the recipient faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:force_break_non_aggression_pact"><h3 class="function_name"><strong><code>cm:force_break_non_aggression_pact(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">breaking faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipient faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">dissolved</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Force one faction to break a non aggression pact with another faction
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the breaking faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the recipient faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p>Whether the pact was dissolved. If true will not have any repercussions for the breaking faction, if false there will be a negative diplomatic event and reliability of breaking faction may lower.</p>
 									</td>
 								</tr>
 							</table>
@@ -16357,6 +18198,50 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:force_awake_from_death_and_confederate"><h3 class="function_name"><strong><code>cm:force_awake_from_death_and_confederate(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">proposing faction key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">target faction key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Awakes a faction from death and then forces it to be subsumed by another faction into its confederation.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the proposing faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the target faction, from the <code>factions</code> table. This faction will be awakened from death and then subsumed into the confederation.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:force_make_trade_agreement"><h3 class="function_name"><strong><code>cm:force_make_trade_agreement(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">first faction key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">second faction key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -16433,6 +18318,62 @@
 									</td>
 									<td>
 										<p>Faction key of the second faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:add_garrison_residence_exposed_to_faction"><h3 class="function_name"><strong><code>cm:add_garrison_residence_exposed_to_faction(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:boolean">boolean</a></code> </strong></code><i class="parameter">skip event feed</i><code><strong>]<br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Exposes a disguised garrison residence (e.g. a Skaven under-city) to the specified faction, so it no longer appears abandoned to that observer. Pair with <code>make_region_seen_in_shroud</code> for human factions, or exposure may be cleared at end of turn if it has been covered by the shroud.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key of the observing faction, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Region key of the settlement to expose, from the <code>regions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:boolean">boolean</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=true</i></p>
+										<p>When <code>true</code>, suppresses the hidden settlement exposed event feed message. Defaults to <code>true</code>.</p>
 									</td>
 								</tr>
 							</table>
@@ -16674,8 +18615,8 @@
 										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
-										<p><i>optional, default value=nil] <code><a href="lua.html#class:string">string</a></code> tooltip key, Key of localised text in full [table]_[field]_[key</i></p>
-										<p>Key of localised text in full [table]_[field]_[key] format to show as a tooltip on the restricted unit icon. This can be omitted.</p>
+										<p><i>optional, default value=nil</i></p>
+										<p>Key of localised text from campaign_localised_strings table to show as a tooltip on the restricted unit icon. This can be omitted.</p>
 									</td>
 								</tr>
 							</table>
@@ -16764,8 +18705,8 @@
 										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
-										<p><i>optional, default value=nil] <code><a href="lua.html#class:string">string</a></code> tooltip key, Key of localised text in full [table]_[field]_[key</i></p>
-										<p>Key of localised text in full [table]_[field]_[key] format to show as a tooltip on the restricted building icon. This can be omitted.</p>
+										<p><i>optional, default value=nil</i></p>
+										<p>Key of localised text from campaign_localised_strings table to show as a tooltip on the restricted building icon. This can be omitted.</p>
 									</td>
 								</tr>
 							</table>
@@ -16854,8 +18795,8 @@
 										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
 									</td>
 									<td>
-										<p><i>optional, default value=nil] <code><a href="lua.html#class:string">string</a></code> tooltip key, Key of localised text in full [table]_[field]_[key</i></p>
-										<p>Key of localised text in full [table]_[field]_[key] format to show as a tooltip on the restricted building icon. This can be omitted.</p>
+										<p><i>optional, default value=nil</i></p>
+										<p>Key of localised text from campaign_localised_strings table to show as a tooltip on the restricted building icon. This can be omitted.</p>
 									</td>
 								</tr>
 							</table>
@@ -16889,6 +18830,195 @@
 									</td>
 									<td>
 										<p>Building key, from the <code>building_levels</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:add_event_restricted_occupation_option_record"><h3 class="function_name"><strong><code>cm:add_event_restricted_occupation_option_record(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">occupation option key</i><code><strong>, [<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">tooltip key</i><code><strong>])</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a restriction preventing a specified settlement occupation option from being selected.<br />
+							If a tooltip key is provided and resolves to localised text, the restricted option remains visible on the post-battle occupation screen but is greyed out and shows that tooltip.<br />
+							If no tooltip key is provided, or the key does not resolve to localised text, the option is hidden entirely. This matches the behaviour of <code><a href="#function:episodic_scripting:add_event_restricted_building_record">cm:add_event_restricted_building_record</a></code>.<br />
+							The occupation option key must be from the <code>culture_settlement_occupation_options</code> table (a numeric string such as <code>"1218317010"</code>), not from <code>settlement_occupation_options</code>. Each culture row is a distinct button/outcome; the settlement table only defines shared base types (e.g. sack, colonise) and is too coarse for per-option restrictions.<br />
+							Passing no faction applies the restriction globally: the specified culture row is blocked for whichever faction's occupation outcome list contains that row. Use this when multiple factions can see the same culture row, or when the option should be banned without naming factions. For faction-specific custom options (the usual DLC case), prefer <code><a href="#function:episodic_scripting:add_event_restricted_occupation_option_record_for_faction">cm:add_event_restricted_occupation_option_record_for_faction</a></code>.<br />
+							The occupation option key is available in occupation event callbacks via <code>context:occupation_decision()</code>.<br />
+							This setting is saved into the campaign save file when the game is saved, and automatically re-established when the campaign is reloaded.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Occupation option key, from the <code>culture_settlement_occupation_options</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=nil</i></p>
+										<p>Key of localised text from campaign_localised_strings table to show as a tooltip on the restricted occupation option. This can be omitted.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_event_restricted_occupation_option_record"><h3 class="function_name"><strong><code>cm:remove_event_restricted_occupation_option_record(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">occupation option key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a global restriction previously added with <code><a href="#function:episodic_scripting:add_event_restricted_occupation_option_record">cm:add_event_restricted_occupation_option_record</a></code>.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Occupation option key, from the <code>culture_settlement_occupation_options</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:add_event_restricted_occupation_option_record_for_faction"><h3 class="function_name"><strong><code>cm:add_event_restricted_occupation_option_record_for_faction(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">occupation option key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">tooltip key</i><code><strong>]<br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a restriction preventing a specified settlement occupation option from being selected for a specified faction.<br />
+							If a tooltip key is provided and resolves to localised text, the restricted option remains visible on the post-battle occupation screen but is greyed out and shows that tooltip.<br />
+							If no tooltip key is provided, or the key does not resolve to localised text, the option is hidden entirely. This matches the behaviour of <code><a href="#function:episodic_scripting:add_event_restricted_building_record_for_faction">cm:add_event_restricted_building_record_for_faction</a></code>.<br />
+							The occupation option key must be from the <code>culture_settlement_occupation_options</code> table (numeric string). This is the usual API for restricting a faction-specific custom occupation button; use the global variant only when the same culture row must be blocked for every faction that can see it.<br />
+							The occupation option key is available in occupation event callbacks via <code>context:occupation_decision()</code>.<br />
+							This setting is saved into the campaign save file when the game is saved, and automatically re-established when the campaign is reloaded.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Occupation option key, from the <code>culture_settlement_occupation_options</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction key, from the <code>factions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=nil</i></p>
+										<p>Key of localised text from campaign_localised_strings table to show as a tooltip on the restricted occupation option. This can be omitted.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_event_restricted_occupation_option_record_for_faction"><h3 class="function_name"><strong><code>cm:remove_event_restricted_occupation_option_record_for_faction(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">occupation option key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">faction key</i><code><strong><br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a restriction previously added with <code><a href="#function:episodic_scripting:add_event_restricted_occupation_option_record_for_faction">cm:add_event_restricted_occupation_option_record_for_faction</a></code>.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Occupation option key, from the <code>culture_settlement_occupation_options</code> table.</p>
 									</td>
 								</tr>
 								<tr>
@@ -17434,6 +19564,107 @@
 							</ol>
 						</dd>
 					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:add_event_restricted_building_chain_record_for_region"><h3 class="function_name"><strong><code>cm:add_event_restricted_building_chain_record_for_region(<br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">building key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>, <br />&emsp;&emsp;[<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">tooltip key</i><code><strong>]<br />)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Adds a restriction preventing a specified building from being a construction option in the specified region.<br />
+							This setting is saved into the campaign save file when the game is saved, and automatically re-established when the campaign is reloaded.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Building key, from the <code>building_levels</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Region key, from the <code>regions</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p><i>optional, default value=nil] <code><a href="lua.html#class:string">string</a></code> tooltip key, Key of localised text in full [table]_[field]_[key</i></p>
+										<p>Key of localised text in full [table]_[field]_[key] format to show as a tooltip on the restricted building icon. This can be omitted.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:remove_event_restricted_building_chain_record_for_region"><h3 class="function_name"><strong><code>cm:remove_event_restricted_building_chain_record_for_region(<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">building key</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">region key</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Removes a restriction previously added with <code><a href="#function:episodic_scripting:add_event_restricted_building_chain_record_for_region">cm:add_event_restricted_building_chain_record_for_region</a></code>.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Building key, from the <code>building_levels</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Region key, from the <code>regions</code> table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
 				</div>
 
 
@@ -17653,10 +19884,10 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:pooled_resource_factor_transaction"><h3 class="function_name"><strong><code>cm:pooled_resource_factor_transaction(<br />&emsp;&emsp;<code><a href="model_hierarchy.html#class:pooled_resource_manager">pooled_resource_manager</a></code> </strong></code><i class="parameter">resource manager</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">resource factor key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">amount</i><code><strong><br />)</code></strong></h3></a>
+							<a name="function:episodic_scripting:pooled_resource_factor_transaction"><h3 class="function_name"><strong><code>cm:pooled_resource_factor_transaction(<br />&emsp;&emsp;<code><a href="model_hierarchy.html#class:pooled_resource">pooled_resource</a></code> </strong></code><i class="parameter">resource interface</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">resource factor key</i><code><strong>, <br />&emsp;&emsp;<code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">amount</i><code><strong><br />)</code></strong></h3></a>
 						</dt>
 						<dd>
-							Apply a transaction to a pooled resource manager. The single factor to change and amount to change it by are supplied as arguments.
+							Apply a transaction to a pooled resource. The single factor to change and amount to change it by are supplied as arguments.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -17670,10 +19901,10 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
-										<p><code><code><a href="model_hierarchy.html#class:pooled_resource_manager">pooled_resource_manager</a></code></code></p>
+										<p><code><code><a href="model_hierarchy.html#class:pooled_resource">pooled_resource</a></code></code></p>
 									</td>
 									<td>
-										<p>Resource manager interface.</p>
+										<p>Resource interface.</p>
 									</td>
 								</tr>
 								<tr>
@@ -17788,6 +20019,39 @@
 							<h4>Returns:</h4>
 							<ol>
 								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:get_winds_of_magic_in_area_for_region"><h3 class="function_name"><strong><code>cm:get_winds_of_magic_in_area_for_region(<code><a href="model_hierarchy.html#class:region">region</a></code> </strong></code><i class="parameter">region</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Get the winds_of_magic level for a given region
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:region">region</a></code></code></p>
+									</td>
+									<td>
+										<p>The region that we want to check the winds_of_magic for</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:number">number</a></code></code> Level of the winds of magic for this region</li>
 							</ol>
 						</dd>
 					</dl>
@@ -18275,6 +20539,61 @@
 					</dl>
 					<dl class="function">
 						<dt>
+							<a name="function:episodic_scripting:apply_ritual_cooldown"><h3 class="function_name"><strong><code>cm:apply_ritual_cooldown(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">ritual key</i><code><strong>, <code><a href="lua.html#class:number">number</a></code> </strong></code><i class="parameter">remaining turns</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Set the remaining cooldown turns on a ritual for a faction. Does not affect category cooldown.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:faction">faction</a></code></code></p>
+									</td>
+									<td>
+										<p>Target faction interface.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Ritual key, from the <code>rituals</code> table.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>3</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:number">number</a></code></code></p>
+									</td>
+									<td>
+										<p>Remaining cooldown rounds to apply.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code><code><a href="lua.html#class:boolean">boolean</a></code></code> success, Whether the cooldown was applied.</li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
 							<a name="function:episodic_scripting:apply_active_ritual"><h3 class="function_name"><strong><code>cm:apply_active_ritual(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="model_hierarchy.html#class:active_ritual">active_ritual</a></code> </strong></code><i class="parameter">ritual</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
@@ -18362,7 +20681,7 @@
 				<div class="section_body">
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:spawn_plague_at_settlement"><h3 class="function_name"><strong><code>cm:spawn_plague_at_settlement(<code><a href="model_hierarchy.html#class:settlement">settlement</a></code> </strong></code><i class="parameter">settlement</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">plague key</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:spawn_plague_at_settlement"><h3 class="function_name"><strong><code>cm:spawn_plague_at_settlement(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="model_hierarchy.html#class:settlement">settlement</a></code> </strong></code><i class="parameter">settlement</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">plague key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Spawn a plague at a settlement.
@@ -18379,6 +20698,17 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
+										<p><code><code><a href="model_hierarchy.html#class:faction">faction</a></code></code></p>
+									</td>
+									<td>
+										<p>Spreader faction interface.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
 										<p><code><code><a href="model_hierarchy.html#class:settlement">settlement</a></code></code></p>
 									</td>
 									<td>
@@ -18387,7 +20717,7 @@
 								</tr>
 								<tr>
 									<td>
-										<p><strong>2</strong></p>
+										<p><strong>3</strong></p>
 									</td>
 									<td>
 										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
@@ -18406,7 +20736,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:spawn_plague_at_region"><h3 class="function_name"><strong><code>cm:spawn_plague_at_region(<code><a href="model_hierarchy.html#class:region">region</a></code> </strong></code><i class="parameter">region</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">plague key</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:spawn_plague_at_region"><h3 class="function_name"><strong><code>cm:spawn_plague_at_region(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="model_hierarchy.html#class:region">region</a></code> </strong></code><i class="parameter">region</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">plague key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Spawn a plague in a region.
@@ -18423,6 +20753,17 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
+										<p><code><code><a href="model_hierarchy.html#class:faction">faction</a></code></code></p>
+									</td>
+									<td>
+										<p>Spreader faction interface.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
 										<p><code><code><a href="model_hierarchy.html#class:region">region</a></code></code></p>
 									</td>
 									<td>
@@ -18431,7 +20772,7 @@
 								</tr>
 								<tr>
 									<td>
-										<p><strong>2</strong></p>
+										<p><strong>3</strong></p>
 									</td>
 									<td>
 										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
@@ -18450,7 +20791,7 @@
 					</dl>
 					<dl class="function">
 						<dt>
-							<a name="function:episodic_scripting:spawn_plague_at_military_force"><h3 class="function_name"><strong><code>cm:spawn_plague_at_military_force(<code><a href="model_hierarchy.html#class:military_force">military_force</a></code> </strong></code><i class="parameter">military force</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">plague key</i><code><strong>)</code></strong></h3></a>
+							<a name="function:episodic_scripting:spawn_plague_at_military_force"><h3 class="function_name"><strong><code>cm:spawn_plague_at_military_force(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="model_hierarchy.html#class:military_force">military_force</a></code> </strong></code><i class="parameter">military force</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">plague key</i><code><strong>)</code></strong></h3></a>
 						</dt>
 						<dd>
 							Spawn a plague at a military force.
@@ -18467,6 +20808,17 @@
 										<p><strong>1</strong></p>
 									</td>
 									<td>
+										<p><code><code><a href="model_hierarchy.html#class:faction">faction</a></code></code></p>
+									</td>
+									<td>
+										<p>Spreader faction interface.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
 										<p><code><code><a href="model_hierarchy.html#class:military_force">military_force</a></code></code></p>
 									</td>
 									<td>
@@ -18475,7 +20827,7 @@
 								</tr>
 								<tr>
 									<td>
-										<p><strong>2</strong></p>
+										<p><strong>3</strong></p>
 									</td>
 									<td>
 										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
@@ -18836,6 +21188,50 @@
 						</dt>
 						<dd>
 							Unlock a cooking recipe for a faction. The recipe must be permitted for the faction.
+
+							<h4>Parameters:</h4>
+							<table class="parameter_list">
+								<colgroup>
+									<col style="width: 3%;">
+									<col style="width: 12%;">
+									<col style="width: 85%;">
+								</colgroup>
+								<tr>
+									<td>
+										<p><strong>1</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="model_hierarchy.html#class:faction">faction</a></code></code></p>
+									</td>
+									<td>
+										<p>Faction interface.</p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p><strong>2</strong></p>
+									</td>
+									<td>
+										<p><code><code><a href="lua.html#class:string">string</a></code></code></p>
+									</td>
+									<td>
+										<p>Recipe key, from the <code>cooking_recipes</code> database table.</p>
+									</td>
+								</tr>
+							</table>
+
+							<h4>Returns:</h4>
+							<ol>
+								<li><code>nil</code></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="function">
+						<dt>
+							<a name="function:episodic_scripting:upgrade_cooking_recipe"><h3 class="function_name"><strong><code>cm:upgrade_cooking_recipe(<code><a href="model_hierarchy.html#class:faction">faction</a></code> </strong></code><i class="parameter">faction</i><code><strong>, <code><a href="lua.html#class:string">string</a></code> </strong></code><i class="parameter">recipe</i><code><strong>)</code></strong></h3></a>
+						</dt>
+						<dd>
+							Upgrade a cooking recipe for a faction.
 
 							<h4>Parameters:</h4>
 							<table class="parameter_list">
@@ -22473,7 +24869,7 @@
 
 		</div>
 
-		<div id="about">Last updated 7/9/2024 11:45:04 AM</div>
+		<div id="about">Last updated 9/11/2026 3:00:54 PM</div>
 
 	</div>
 
